@@ -54,7 +54,7 @@ int main() {
         }
         
         pGame->VideoPageFlip();
-        sleep(2);
+        sleep(5);
     }
 
     pGame->ShutDown();

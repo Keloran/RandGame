@@ -15,14 +15,14 @@ namespace NordicArts {
     void Game::RenderGame(GameState eGS) {
         while(eGS != GS_QUIT) {
             std::cout << "Render Game" << std::endl;
-            std::cout << "\n" << std::endl;
+            sleep(1);
         }
     }   
 
     void Game::UpdateGame(GameState eGS) {
         while (eGS != GS_QUIT) {
             std::cout << "Update" << std::endl;
-            std::cout << "\n" << std::endl;
+            sleep(3);
         }
     }
 
