@@ -5,14 +5,6 @@
 #include "./Game/Game.h"
 
 namespace NordicArts {
-    enum GameState {
-        GS_INTRO,
-        GS_MENU,
-        GS_PAUSED_MENU,
-        GS_GAME,
-        GS_QUIT,
-        GS_NUM_GAME_STATES,
-    };
 };
 
 #endif

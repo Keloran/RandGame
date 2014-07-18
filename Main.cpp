@@ -3,46 +3,58 @@
 
 using namespace NordicArts;
 
+void UpdateGame(Game *pGame, GameState eGS) {
+    pGame->UpdateGame(eGS);
+}
+void RenderGame(Game *pGame, GameState eGS) {
+    pGame->RenderGame(eGS);
+}
+
 int main() {
-    GameState gGameState = GS_INTRO;
+    GameState eGameState = GS_INTRO;
         
     Game::Game oGame;
     Game::Game* pGame = &oGame;    
 
     pGame->Startup();
 
-    while(gGameState != GS_QUIT) {
+    while(eGameState != GS_QUIT) {
         pGame->ProcessInputs();        
 
-        switch(gGameState) {
+        switch(eGameState) {
             case GS_INTRO: {
                 bool bFinished = pGame->RenderIntroCutScenes();
                 if (bFinished) {
-                    gGameState = GS_MENU;
+                    //eGameState = GS_MENU;
+                    eGameState = GS_GAME;
                 }
-            }
-                break;
+            } break;
 
-            case GS_PAUSED_MENU:
+            case GS_PAUSED_MENU: {
                 pGame->RenderPauseMenu();
-                pGame->RenderGame();
-                break;
+                pGame->RenderGame(eGameState);
+            } break;
             
-            case GS_GAME:  
-                pGame->UpdateGame();
-                pGame->RenderGame();
-                break;
-    
-            case GS_MENU:
-                pGame->RenderMainMenu();
-                break;
+            case GS_GAME: {
+                std::thread update (UpdateGame, pGame, eGameState);
+                std::thread render (RenderGame, pGame, eGameState);
 
-            case GS_NUM_GAME_STATES:
+                update.join();
+                render.join();
+            } break;
+    
+            case GS_MENU: {
+                pGame->RenderMainMenu();
+            } break;
+
             case GS_QUIT:
-                break;
+            case GS_NUM_STATES:
+            default: {
+            } break;
         }
         
         pGame->VideoPageFlip();
+        sleep(2);
     }
 
     pGame->ShutDown();

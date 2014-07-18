@@ -12,12 +12,18 @@ namespace NordicArts {
         std::cout << "Main Menu" << std::endl;    
     }
 
-    void Game::RenderGame() {
-        std::cout << "Game" << std::endl;
+    void Game::RenderGame(GameState eGS) {
+        while(eGS != GS_QUIT) {
+            std::cout << "Render Game" << std::endl;
+            std::cout << "\n" << std::endl;
+        }
     }   
 
-    void Game::UpdateGame() {
-        std::cout << "Update" << std::endl;
+    void Game::UpdateGame(GameState eGS) {
+        while (eGS != GS_QUIT) {
+            std::cout << "Update" << std::endl;
+            std::cout << "\n" << std::endl;
+        }
     }
 
     void Game::RenderPauseMenu() {
