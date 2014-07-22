@@ -3,6 +3,12 @@
 
 #include <map>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <boost/locale.hpp>
+
+#include "../../includes.h"
 
 namespace NordicArts {
     class Markov {
@@ -13,17 +19,19 @@ namespace NordicArts {
             std::map<std::string, double> m_firstLetterChance;
             std::map<std::string, double> m_lastLetterChance;
             std::map<std::string, std::map<std::string, double> > m_letterToLetterChance;
+            std::vector<std::string> m_vNames;
 
-            char *m_alphabet; 
+            const char *m_alphabet = "abcdefghijklmnopqrstuvqwxyz";
 
         // Methods
         public:
             Markov(); 
+            virtual ~Markov();
 
         protected:
         private:     
             std::string generateWord();
-            std::string fill   
+            void fillNameList();
 
     };
 };

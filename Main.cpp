@@ -1,5 +1,6 @@
 #include "./includes.h"
 #include "./Main.h"
+#include "./Libs/Markov/Markov.h"
 
 using namespace NordicArts;
 
@@ -26,7 +27,7 @@ int main() {
                 bool bFinished = pGame->RenderIntroCutScenes();
                 if (bFinished) {
                     //eGameState = GS_MENU;
-                    eGameState = GS_GAME;
+                    eGameState = GS_QUIT;
                 }
             } break;
 
@@ -56,6 +57,9 @@ int main() {
         pGame->VideoPageFlip();
         sleep(5);
     }
+
+    Markov::Markov oMarkov;
+    Markov::Markov *pMarkov = &oMarkov;
 
     pGame->ShutDown();
     return EXIT_SUCCESS;
