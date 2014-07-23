@@ -11,8 +11,10 @@ namespace NordicArts {
         std::ifstream inFile("./Extras/names");
         std::string cLine;
 
+        std::locale locale = boost::locale::generator().generate("en_US.UTF-8");
+
         while (std::getline(inFile, cLine)) {
-            cLine = boost::locale::to_lower(cLine);
+            cLine = boost::locale::to_lower(cLine, locale);
             names.push_back(cLine);
         }
 
