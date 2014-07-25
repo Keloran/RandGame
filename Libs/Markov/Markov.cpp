@@ -23,16 +23,11 @@ namespace NordicArts {
             char cLetter                = m_aAlphabet[randLetter];
             std::string firstLetter     = getString(cLetter);
 
-            double randChance           = (((double)rand() / (RAND_MAX)) + 1);
+            double randChance           = ((double)rand() / RAND_MAX);
             double randLetterValue      = m_firstLetterChance[firstLetter];
-            double randMath             = (m_firstLetterChance[firstLetter] * (2 + 0.05));
+            double randMath             = ((m_firstLetterChance[firstLetter] * 2) + 0.05);
 
-            std::cout << "RandChance:" << randChance << ", RandMath:" << randMath << ",  RandLetter: " << randLetterValue << std::endl;
-
-            if (i > 10) { break; }
-            i++;       
- 
-            if (rand() < (m_firstLetterChance[firstLetter] * (2 + 0.05))) {
+            if (randChance < randMath) {
                 word += word.append(firstLetter);
                 break;
             }
