@@ -60,6 +60,7 @@ int main() {
 
     Markov::Markov oMarkov;
     Markov::Markov *pMarkov = &oMarkov;
+    pMarkov->generateWord();
 
     pGame->ShutDown();
     return EXIT_SUCCESS;

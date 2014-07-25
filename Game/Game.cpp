@@ -43,7 +43,7 @@ namespace NordicArts {
     }    
 
     bool Game::RenderIntroCutScenes() {
-        std::cout << "Intro Cut Scnes" << std::endl;
+        std::cout << "Intro Cut Scenes" << std::endl;
 
         return true;
     }

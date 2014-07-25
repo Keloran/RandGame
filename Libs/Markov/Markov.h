@@ -21,18 +21,25 @@ namespace NordicArts {
             std::map<std::string, std::map<std::string, double> > m_letterToLetterChance;
             std::vector<std::string> m_vNames;
 
-            const char *m_alphabet = "abcdefghijklmnopqrstuvqwxyz";
+            char m_aAlphabet[28] = "abcdefghijklmnopqrstuvqwxyz";
+            //char m_aAlphabet[26];
 
         // Methods
         public:
             Markov(); 
             virtual ~Markov();
+            std::string generateWord();
 
         protected:
         private:     
-            std::string generateWord();
+            std::string getString(char c);
+
             void fillNameList();
 
+            std::map<std::string, double> generateFirstLetterMap();
+            std::map<std::string, double> generateLastLetterMap();
+            std::map<std::string, std::map<std::string, double> > generateLetterToLetterMap();
+            std::map<std::string, double> getAlphabetMap();
     };
 };
 
