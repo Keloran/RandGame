@@ -18,6 +18,7 @@ namespace NordicArts {
         std::string word = "";
         int i = 0;
 
+        // generate first letter
         while (true) {
             int randLetter              = (rand() % 27);
             char cLetter                = m_aAlphabet[randLetter];
@@ -28,8 +29,33 @@ namespace NordicArts {
             double randMath             = ((m_firstLetterChance[firstLetter] * 2) + 0.05);
 
             if (randChance < randMath) {
-                word += word.append(firstLetter);
+                word.append(firstLetter);
                 break;
+            }
+        }
+
+        // generate word
+        while (true) {
+            int randLetter              = (rand() % 27);
+            char cLetter                = m_aAlphabet[randLetter];
+            std::string nextLetter      = getString(cLetter);
+
+            std::string lastLetter      = getString(word.back());
+            double nextLetterChance     = (m_letterToLetterChance[lastLetter][nextLetter] * 2);
+            double randChance           = ((double)rand() / RAND_MAX);
+
+            if (randChance < nextLetterChance) {
+                word.append(nextLetter);
+
+                // check if word should end
+                lastLetter = getString(word.back());
+                double extraChance  = m_lastLetterChance[lastLetter];
+                double moreRand     = ((double)rand() / RAND_MAX);
+                if ((word.size() >= 4) && (moreRand < ((extraChance * 1.5) + .05))) {
+                    break;
+                } else if ((word.size() > 8) && (moreRand < .3)) {
+                    break;
+                }
             }
         }
 
@@ -83,7 +109,6 @@ namespace NordicArts {
         
             // set value
             map[s] = (map[s] / total);
-            std::cout << "Map -- Letter:" << s.c_str() << ", Percent: " << map[s] << std::endl;
         }
 
         return map;
