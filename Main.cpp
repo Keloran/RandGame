@@ -60,7 +60,15 @@ int main() {
 
     Markov::Markov oMarkov;
     Markov::Markov *pMarkov = &oMarkov;
-    pMarkov->generateWord();
+    pMarkov->setVariance(.05f);
+    for (int i = 0; i < 15; i++) {
+        pMarkov->generateWord();
+    }
+    std::cout << "----" << std::endl;
+    pMarkov->setVariance(.101f);
+    for (int i = 0; i < 15; i++) {
+        pMarkov->generateWord();
+    }
 
     pGame->ShutDown();
     return EXIT_SUCCESS;

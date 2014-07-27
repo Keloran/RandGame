@@ -16,29 +16,34 @@ namespace NordicArts {
         public:
         protected:
         private:
-            std::map<std::string, double> m_firstLetterChance;
-            std::map<std::string, double> m_lastLetterChance;
-            std::map<std::string, std::map<std::string, double> > m_letterToLetterChance;
+            std::map<std::string, double> m_mFirstLetterChance;
+            std::map<std::string, double> m_mLastLetterChance;
+
+            std::map<std::string, std::map<std::string, double> > m_mLetterToLetterChance;
+            
             std::vector<std::string> m_vNames;
 
-            char m_aAlphabet[28] = "abcdefghijklmnopqrstuvqwxyz";
-            //char m_aAlphabet[26];
+            char m_cAlphabet[28]    = "abcdefghijklmnopqrstuvqwxyz";
+            float m_fVariance       = 0.0f;
 
         // Methods
         public:
             Markov(); 
             virtual ~Markov();
+
             std::string generateWord();
+            
+            void setVariance(float fVariance);
 
         protected:
         private:     
+            void fillNameList();
+            void generateFirstLetterMap();
+            void generateLastLetterMap();
+            void generateLetterToLetterMap();
+
             std::string getString(char c);
 
-            void fillNameList();
-
-            std::map<std::string, double> generateFirstLetterMap();
-            std::map<std::string, double> generateLastLetterMap();
-            std::map<std::string, std::map<std::string, double> > generateLetterToLetterMap();
             std::map<std::string, double> getAlphabetMap();
     };
 };

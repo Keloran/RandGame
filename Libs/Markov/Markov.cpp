@@ -4,14 +4,13 @@ namespace NordicArts {
     Markov::Markov() {
         fillNameList();
 
-        std::map<std::string, double> firstLetterMap = generateFirstLetterMap();
-        m_firstLetterChance = firstLetterMap;
-        
-        std::map<std::string, double> lastLetterMap = generateLastLetterMap();
-        m_lastLetterChance = lastLetterMap;    
+        generateFirstLetterMap();
+        generateLastLetterMap();
+        generateLetterToLetterMap();
+    }
 
-        std::map<std::string, std::map<std::string, double> > letterToLetterMap = generateLetterToLetterMap();
-        m_letterToLetterChance = letterToLetterMap;
+    void Markov::setVariance(float fVariance) {
+        m_fVariance = fVariance;
     }
 
     std::string Markov::generateWord() {
@@ -21,12 +20,12 @@ namespace NordicArts {
         // generate first letter
         while (true) {
             int randLetter              = (rand() % 27);
-            char cLetter                = m_aAlphabet[randLetter];
+            char cLetter                = m_cAlphabet[randLetter];
             std::string firstLetter     = getString(cLetter);
 
             double randChance           = ((double)rand() / RAND_MAX);
-            double randLetterValue      = m_firstLetterChance[firstLetter];
-            double randMath             = ((m_firstLetterChance[firstLetter] * 2) + 0.05);
+            double randLetterValue      = m_mFirstLetterChance[firstLetter];
+            double randMath             = ((m_mFirstLetterChance[firstLetter] * 2) + .05);
 
             if (randChance < randMath) {
                 word.append(firstLetter);
@@ -37,19 +36,19 @@ namespace NordicArts {
         // generate word
         while (true) {
             int randLetter              = (rand() % 27);
-            char cLetter                = m_aAlphabet[randLetter];
+            char cLetter                = m_cAlphabet[randLetter];
             std::string nextLetter      = getString(cLetter);
 
             std::string lastLetter      = getString(word.back());
-            double nextLetterChance     = (m_letterToLetterChance[lastLetter][nextLetter] * 2);
+            double nextLetterChance     = ((m_mLetterToLetterChance[lastLetter][nextLetter] * 2) - m_fVariance);
             double randChance           = ((double)rand() / RAND_MAX);
 
             if (randChance < nextLetterChance) {
                 word.append(nextLetter);
 
                 // check if word should end
-                lastLetter = getString(word.back());
-                double extraChance  = m_lastLetterChance[lastLetter];
+                lastLetter          = getString(word.back());
+                double extraChance  = m_mLastLetterChance[lastLetter];
                 double moreRand     = ((double)rand() / RAND_MAX);
                 if ((word.size() >= 4) && (moreRand < ((extraChance * 1.5) + .05))) {
                     break;
@@ -81,7 +80,7 @@ namespace NordicArts {
         m_vNames = names;
     }
 
-    std::map<std::string, double> Markov::generateFirstLetterMap() {
+    void Markov::generateFirstLetterMap() {
         std::map<std::string, double> map = getAlphabetMap();
 
         double total = 0;
@@ -103,18 +102,18 @@ namespace NordicArts {
         }
 
         // find the percentage
-        for (int i = 0; i < m_aAlphabet[i] != '\0'; i++) {
+        for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
             // turn the character into a string
-            std::string s = getString(m_aAlphabet[i]);
+            std::string s = getString(m_cAlphabet[i]);
         
             // set value
             map[s] = (map[s] / total);
         }
 
-        return map;
+        m_mFirstLetterChance = map;
     }
 
-    std::map<std::string, double> Markov::generateLastLetterMap() {
+    void Markov::generateLastLetterMap() {
         std::map<std::string, double> map = getAlphabetMap();
         
         double total = 0;
@@ -136,23 +135,23 @@ namespace NordicArts {
             }
         }
 
-        for (int i = 0; i < m_aAlphabet[i] != '\0'; i++) {
+        for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
             // turn the character into a string
-            std::string s = getString(m_aAlphabet[i]);
+            std::string s = getString(m_cAlphabet[i]);
 
             // set value
             map[s] = (map[s] / total);
         }
 
-        return map;
+        m_mLastLetterChance = map;
     }
 
-    std::map<std::string, std::map<std::string, double> > Markov::generateLetterToLetterMap() {
+    void Markov::generateLetterToLetterMap() {
         std::map<std::string, std::map<std::string, double> > map;
 
         // create the map    
-        for (int i = 0; i < m_aAlphabet[i] != '\0'; i++) {
-            std::string s = getString(m_aAlphabet[i]);
+        for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
+            std::string s = getString(m_cAlphabet[i]);
             map[s] = getAlphabetMap();
         }
 
@@ -177,8 +176,8 @@ namespace NordicArts {
             }
         }
 
-        for (int i = 0; i < m_aAlphabet[i] != '\0'; i++) {
-            std::string firstChar = getString(m_aAlphabet[i]);
+        for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
+            std::string firstChar = getString(m_cAlphabet[i]);
 
             double total = 0;
             if (map.find(firstChar) != map.end()) {
@@ -191,14 +190,14 @@ namespace NordicArts {
                 }
             }
 
-            for (int j = 0; j < m_aAlphabet[j] != '\0'; j++) {
-                std::string secondChar = getString(m_aAlphabet[j]);
+            for (int j = 0; j < m_cAlphabet[j] != '\0'; j++) {
+                std::string secondChar = getString(m_cAlphabet[j]);
                 double mapValue = (map[firstChar][secondChar] / total);
                 map[firstChar][secondChar] = mapValue;
             }
         }
 
-        return map;
+        m_mLetterToLetterChance = map;
     }
 
     std::string Markov::getString(char c) {
@@ -215,8 +214,8 @@ namespace NordicArts {
         std::map<std::string, double> map;
         
         double d = 0;
-        for (int i = 0; i < m_aAlphabet[i] != '\0'; i++) {
-            std::string s = getString(m_aAlphabet[i]);
+        for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
+            std::string s = getString(m_cAlphabet[i]);
             map[s] = d;
         }
 
