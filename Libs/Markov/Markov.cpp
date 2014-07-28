@@ -2,8 +2,13 @@
 
 namespace NordicArts {
     Markov::Markov() {
+        // Set the locale
+        m_pLocale = boost::locale::generator().generate("en_US.UTF-8");
+        
+        // read the file
         fillNameList();
 
+        // generate the chance maps
         generateFirstLetterMap();
         generateLastLetterMap();
         generateLetterToLetterMap();
@@ -58,6 +63,8 @@ namespace NordicArts {
             }
         }
 
+        word = boost::locale::to_title(word, m_pLocale);
+
         std::cout << "Word: " << word.c_str() << std::endl;
 
         return word;
@@ -69,10 +76,8 @@ namespace NordicArts {
         std::ifstream inFile("./Extras/Names/names-list");
         std::string cLine;
 
-        std::locale locale = boost::locale::generator().generate("en_US.UTF-8");
-
         while (std::getline(inFile, cLine)) {
-            cLine = boost::locale::to_lower(cLine, locale);
+            cLine = boost::locale::to_lower(cLine, m_pLocale);
             names.push_back(cLine);
         }
 
@@ -86,16 +91,16 @@ namespace NordicArts {
         double total = 0;
         for (std::string c : m_vNames) {
             // create the char
-            char *name = new char[(c.size() + 1)];
-            name[c.size()] = 0;
+            char *name      = new char[(c.size() + 1)];
+            name[c.size()]  = 0;
             memcpy(name, c.c_str(), c.size());
             
             std::string s = getString(name[0]);
 
             if (map.find(s) != map.end()) {
                 double mapValue = map[s];
-                mapValue += 1;
-                map[s] = mapValue;
+                mapValue       += 1;
+                map[s]          = mapValue;
 
                 total++;
             }
@@ -119,8 +124,8 @@ namespace NordicArts {
         double total = 0;
         for (std::string c : m_vNames) {
             // create the char
-            char *name = new char[(c.size() + 1)];
-            name[c.size()] = 0;
+            char *name      = new char[(c.size() + 1)];
+            name[c.size()]  = 0;
             memcpy(name, c.c_str(), c.size());
 
             // turn the last letter into a string
@@ -128,8 +133,8 @@ namespace NordicArts {
 
             if (map.find(s) != map.end()) {
                 double mapValue = map[s];
-                mapValue += 1;
-                map[s] = mapValue;
+                mapValue       += 1;
+                map[s]          = mapValue;
                 
                 total++;
             }
@@ -151,14 +156,14 @@ namespace NordicArts {
 
         // create the map    
         for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
-            std::string s = getString(m_cAlphabet[i]);
-            map[s] = getAlphabetMap();
+            std::string s   = getString(m_cAlphabet[i]);
+            map[s]          = getAlphabetMap();
         }
 
         // count the amount of times 2 letter appear next to each other
         for (std::string c : m_vNames) {
-            char *name = new char[(c.size() + 1)];
-            name[c.size()] = 0;
+            char *name      = new char[(c.size() + 1)];
+            name[c.size()]  = 0;
             memcpy(name, c.c_str(), c.size());
     
             for (int i = 0; i < name[i] != '\0'; i++) {
@@ -167,10 +172,10 @@ namespace NordicArts {
 
                 if (map.find(firstChar) != map.end()) {
                     if (map[firstChar].find(secondChar) != map[firstChar].end()) {
-                        double mapValue = map[firstChar][secondChar];
-                        mapValue += 1;
+                        double mapValue             = map[firstChar][secondChar];
+                        mapValue                   += 1;
 
-                        map[firstChar][secondChar] = mapValue;
+                        map[firstChar][secondChar]  = mapValue;
                     }
                 }
             }
@@ -191,23 +196,13 @@ namespace NordicArts {
             }
 
             for (int j = 0; j < m_cAlphabet[j] != '\0'; j++) {
-                std::string secondChar = getString(m_cAlphabet[j]);
-                double mapValue = (map[firstChar][secondChar] / total);
-                map[firstChar][secondChar] = mapValue;
+                std::string secondChar      = getString(m_cAlphabet[j]);
+                double mapValue             = (map[firstChar][secondChar] / total);
+                map[firstChar][secondChar]  = mapValue;
             }
         }
 
         m_mLetterToLetterChance = map;
-    }
-
-    std::string Markov::getString(char c) {
-        std::stringstream ss;
-        std::string s;
-        
-        ss << c;
-        ss >> s;
-
-        return s;
     }
 
     std::map<std::string, double> Markov::getAlphabetMap() {
@@ -215,8 +210,8 @@ namespace NordicArts {
         
         double d = 0;
         for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
-            std::string s = getString(m_cAlphabet[i]);
-            map[s] = d;
+            std::string s   = getString(m_cAlphabet[i]);
+            map[s]          = d;
         }
 
         return map;

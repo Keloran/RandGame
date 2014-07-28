@@ -16,6 +16,8 @@ namespace NordicArts {
             std::vector<std::string> m_vStems;
             std::vector<std::string> m_vSuffixes;
 
+            std::locale m_pLocale;
+
         // Methods
         public:
             Names();

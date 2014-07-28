@@ -4,24 +4,7 @@
 #include "../../includes.h"
 
 namespace NordicArts {
-    class Strng {
-        // Variables
-        public:
-        protected:
-        private:
-
-        // Methods
-        public:
-            Strng();
-            virtual ~Strng();
-
-            std::string getString(char cCharacter);
-
-        protected:
-        private:
-
-
-    };
+    std::string getString(char cCharacter);
 };
 
 #endif

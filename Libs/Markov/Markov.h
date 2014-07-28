@@ -2,7 +2,9 @@
 #define MARKOV_HEADER
 
 #include <boost/locale.hpp>
+
 #include "../../includes.h"
+#include "../../Tools/Strng/Strng.h"
 
 namespace NordicArts {
     class Markov {
@@ -36,9 +38,9 @@ namespace NordicArts {
             void generateLastLetterMap();
             void generateLetterToLetterMap();
 
-            std::string getString(char c);
-
             std::map<std::string, double> getAlphabetMap();
+    
+            std::locale m_pLocale;
     };
 };
 
