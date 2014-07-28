@@ -75,7 +75,7 @@ set_target_properties(RandGame PROPERTIES COMPILE_FLAGS ${EXTRA_FLAGS})
 
 # Linker
 if (WIN32)
-    target_link_libraries(RandGame ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} winmm gdi32)
+    target_link_libraries(RandGame ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} winmm gdi32 boost_locale c++abi)
 elseif (APPLE)
     target_link_libraries(RandGame "-framework Foundation -framework AppKit -framework IOKit -framework Carbon -framework OpenGL -framework CoreFoundation -framework OpenAL -framework GameKit -framework GLKit" boost_locale c++abi)
 elseif (UNIX)
