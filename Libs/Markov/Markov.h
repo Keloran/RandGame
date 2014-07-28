@@ -1,13 +1,7 @@
 #ifndef MARKOV_HEADER
 #define MARKOV_HEADER
 
-#include <map>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <vector>
 #include <boost/locale.hpp>
-
 #include "../../includes.h"
 
 namespace NordicArts {

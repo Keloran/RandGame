@@ -66,7 +66,7 @@ namespace NordicArts {
     void Markov::fillNameList() {
         std::vector<std::string> names;
 
-        std::ifstream inFile("./Extras/names");
+        std::ifstream inFile("./Extras/Names/names-list");
         std::string cLine;
 
         std::locale locale = boost::locale::generator().generate("en_US.UTF-8");

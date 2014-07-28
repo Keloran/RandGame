@@ -45,12 +45,21 @@ list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.h)
 # Directories
 set(LIBS_DIR ${PROJECT_SOURCE_DIR}/Libs)
 set(GAME_DIR ${PROJECT_SOURCE_DIR}/Game)
+set(TOOLS_DIR ${PROJECT_SOURCE_DIR}/Tools)
+
+# Tools
+include_directories(${TOOLS_DIR})
+link_directories(${TOOLS_DIR})
+list(APPEND Main_Headers ${TOOLS_DIR}/Strng/Strng.h)
+list(APPEND Main_Libs ${TOOLS_DIR}/Strng/Strng.cpp)
 
 # Libs
 include_directories(${LIBS_DIR})
 link_directories(${LIBS_DIR})
 list(APPEND Main_Headers ${LIBS_DIR}/Markov/Markov.h)
 list(APPEND Main_Libs ${LIBS_DIR}/Markov/Markov.cpp) 
+list(APPEND Main_Headers ${LIBS_DIR}/Names/Names.h)
+list(APPEND Main_Libs ${LIBS_DIR}/Names/Names.cpp)
 
 # Game
 include_directories(${GAME_DIR})

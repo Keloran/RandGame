@@ -5,5 +5,14 @@
 #include <stdio.h>
 #include <thread>
 #include <unistd.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include <stdlib.h>
+#include <map>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
 
 #endif

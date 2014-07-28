@@ -1,6 +1,7 @@
 #include "./includes.h"
 #include "./Main.h"
 #include "./Libs/Markov/Markov.h"
+#include "./Libs/Names/Names.h"
 
 using namespace NordicArts;
 
@@ -68,6 +69,12 @@ int main() {
     pMarkov->setVariance(.101f);
     for (int i = 0; i < 15; i++) {
         pMarkov->generateWord();
+    }
+    std::cout << "----" << std::endl;
+    Names::Names oNames;
+    Names::Names *pNames = &oNames;
+    for (int i = 0; i < 15; i++) {
+        pNames->generateName();
     }
 
     pGame->ShutDown();

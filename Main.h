@@ -3,6 +3,7 @@
 
 #include "./includes.h"
 #include "./Game/Game.h"
+#include "./Tools/Strng/Strng.h"
 
 namespace NordicArts {
 };
