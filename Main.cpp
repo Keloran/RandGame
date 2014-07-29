@@ -2,6 +2,7 @@
 #include "./Main.h"
 #include "./Libs/Markov/Markov.h"
 #include "./Libs/Names/Names.h"
+#include "./Libs/Simplex/Simplex.h"
 
 using namespace NordicArts;
 
@@ -61,20 +62,30 @@ int main() {
 
     Markov::Markov oMarkov;
     Markov::Markov *pMarkov = &oMarkov;
+    std::cout << "---- .05f ---- " << std::endl;
     pMarkov->setVariance(.05f);
     for (int i = 0; i < 15; i++) {
         pMarkov->generateWord();
     }
-    std::cout << "----" << std::endl;
+    std::cout << "---- .101f ---- " << std::endl;
     pMarkov->setVariance(.101f);
     for (int i = 0; i < 15; i++) {
         pMarkov->generateWord();
     }
-    std::cout << "----" << std::endl;
+    std::cout << "---- Names ---- " << std::endl;
     Names::Names oNames;
     Names::Names *pNames = &oNames;
     for (int i = 0; i < 15; i++) {
         pNames->generateName();
+    }
+    
+    std::cout << "---- Simplex ---- " << std::endl;
+    Simplex::Simplex oSimplex;
+    Simplex::Simplex *pSimplex = &oSimplex;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            std::cout << pSimplex->octaveNoise2d(3, 0.5, 1, i, j) << std::endl;
+        }
     }
 
     pGame->ShutDown();

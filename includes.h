@@ -14,7 +14,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <math>
+#include <math.h>
 #include <cstdint>
 
 #endif

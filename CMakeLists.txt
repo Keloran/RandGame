@@ -60,6 +60,8 @@ list(APPEND Main_Headers ${LIBS_DIR}/Markov/Markov.h)
 list(APPEND Main_Libs ${LIBS_DIR}/Markov/Markov.cpp) 
 list(APPEND Main_Headers ${LIBS_DIR}/Names/Names.h)
 list(APPEND Main_Libs ${LIBS_DIR}/Names/Names.cpp)
+list(APPEND Main_Headers ${LIBS_DIR}/Simplex/Simplex.h)
+list(APPEND Main_Libs ${LIBS_DIR}/Simplex/Simplex.cpp)
 
 # Game
 include_directories(${GAME_DIR})
