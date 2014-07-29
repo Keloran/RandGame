@@ -14,5 +14,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <math>
+#include <cstdint>
 
 #endif
