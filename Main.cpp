@@ -79,12 +79,31 @@ int main() {
         pNames->generateName();
     }
     
-    std::cout << "---- Simplex ---- " << std::endl;
+    std::cout << "---- Simplex 2D ---- " << std::endl;
+    int it = 2;
     Simplex::Simplex oSimplex;
     Simplex::Simplex *pSimplex = &oSimplex;
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
+    for (int i = 0; i < it; i++) {
+        for (int j = 0; j < it; j++) {
             std::cout << pSimplex->octaveNoise2d(3, 0.5, 1, i, j) << std::endl;
+        }
+    }
+    std::cout << "---- Simplex 3D ---- " << std::endl;
+    for (int i = 0; i < it; i++) {
+        for (int j = 0; j < it; j++) {
+            for (int k = 0; k < it; k++) {
+                std::cout << pSimplex->octaveNoise3d(3, 0.5, 1, i, j, k) << std::endl;
+            }
+        }
+    }
+    std::cout << "---- Simplex 4D ---- " << std::endl;
+    for (int i = 0; i < it; i++) {
+        for (int j = 0; j < it; j++) {
+            for (int k = 0; k < it; k++) {
+                for (int l = 0; l < it; l++) {
+                    std::cout << pSimplex->octaveNoise4d(3, 0.5, 1, i, j, k, l) << std::endl;
+                }
+            }
         }
     }
 
