@@ -55,11 +55,11 @@ namespace NordicArts {
     float Simplex::scaledOctaveNoise2d(float fOctaves, float fPersistence, float fScale, float fLowBound, float fHighBound, float fX, float fY) {
         return (((octaveNoise2d(fOctaves, fPersistence, fScale, fX, fY) * (fHighBound - fLowBound)) / 2) + ((fHighBound - fLowBound) / 2));
     }
-    
+
     float Simplex::scaledOctaveNoise3d(float fOctaves, float fPersistence, float fScale, float fLowBound, float fHighBound, float fX, float fY, float fZ) {
         return (((octaveNoise3d(fOctaves, fPersistence, fScale, fX, fY, fZ) * (fHighBound - fLowBound)) / 2) + ((fHighBound - fLowBound) / 2));
     }
-    
+
     float Simplex::scaledOctaveNoise4d(float fOctaves, float fPersistence, float fScale, float fLowBound, float fHighBound, float fX, float fY, float fZ, float fW) {
         return (((octaveNoise4d(fOctaves, fPersistence, fScale, fX, fY, fZ, fW) * (fHighBound - fLowBound)) / 2) + ((fHighBound - fLowBound) / 2));
     }
@@ -71,7 +71,7 @@ namespace NordicArts {
     float Simplex::dot(int *iG, float fX, float fY) {
         return ((iG[0] * fX) + (iG[1] * fY));
     }
-    
+
     float Simplex::dot(int *iG, float fX, float fY, float fZ) {
         return ((iG[0] * fX) + (iG[1] * fY) + (iG[2] * fZ));
     }
@@ -91,7 +91,7 @@ namespace NordicArts {
 
         // noise factor
         float fS    = ((fX + fY) * fF2);
-        
+
         int iI      = fastFloor(fX + fS);
         int iJ      = fastFloor(fY + fS);
 
@@ -221,7 +221,7 @@ namespace NordicArts {
                 iK1 = 1;
                 iI2 = 0;
                 iJ2 = 1;
-                iK2 = 1;                
+                iK2 = 1;
             } else if (fX00 < fZ00) {
                 iI1 = 0;
                 iJ1 = 1;
@@ -238,7 +238,7 @@ namespace NordicArts {
                 iK2 = 0;
             }
         }
-    
+
         // step
         float fX1 = (fX00 - (iI1 + fG3));
         float fY1 = (fY00 - (iJ1 + fG3));
@@ -331,25 +331,97 @@ namespace NordicArts {
 
 
         int iI1;
-        int iI2;
-        int iI3;
         int iJ1;
-        int iJ2;
-        int iJ3;
         int iK1;
-        int iK2;
-        int iK3;
         int iL1;
+        int iI2;
+        int iJ2;
+        int iK2;
         int iL2;
+        int iI3;
+        int iJ3;
+        int iK3;
         int iL3;
 
-        i1 = ((m_iSimplex[iC][0] >= 3) ? 1 : 0);
-        i2 = ((m_iSimplex[iC][0] >= 2) ? 1 : 0);
-        i3 = ((m_iSimplex[iC][0] >= 1) ? 1 : 0);
-        j1 = ((m_iSimplex[iC][1] >= 3) ? 1: 0);
-        
+        iI1 = ((m_iSimplex[iC][0] >= 3) ? 1 : 0);
+        iJ1 = ((m_iSimplex[iC][1] >= 3) ? 1 : 0);
+        iK1 = ((m_iSimplex[iC][2] >= 3) ? 1 : 0);
+        iL1 = ((m_iSimplex[iC][3] >= 3) ? 1 : 0);
+        iI2 = ((m_iSimplex[iC][0] >= 2) ? 1 : 0);
+        iJ2 = ((m_iSimplex[iC][1] >= 2) ? 1 : 0);
+        iK2 = ((m_iSimplex[iC][2] >= 2) ? 1 : 0);
+        iL2 = ((m_iSimplex[iC][3] >= 2) ? 1 : 0);
+        iI3 = ((m_iSimplex[iC][0] >= 1) ? 1 : 0);
+        iJ3 = ((m_iSimplex[iC][1] >= 1) ? 1 : 0);
+        iK3 = ((m_iSimplex[iC][2] >= 1) ? 1 : 0);
+        iL3 = ((m_iSimplex[iC][3] >= 1) ? 1 : 0);
 
-        return 0.0f;
+        float fX1 = (fX00 - iI1 + fG4);
+        float fY1 = (fY00 - iJ1 + fG4);
+        float fZ1 = (fZ00 - iK1 + fG4);
+        float fW1 = (fW00 - iL1 + fG4);
+        float fX2 = (fX00 - iI2 + (2.0 * fG4));
+        float fY2 = (fY00 - iJ2 + (2.0 * fG4));
+        float fZ2 = (fZ00 - iK2 + (2.0 * fG4));
+        float fW2 = (fW00 - iL2 + (2.0 * fG4));
+        float fX3 = (fX00 - iI2 + (3.0 * fG4));
+        float fY3 = (fY00 - iJ2 + (3.0 * fG4));
+        float fZ3 = (fZ00 - iK2 + (3.0 * fG4));
+        float fW3 = (fW00 - iL2 + (3.0 * fG4));
+        float fX4 = (fX00 - 1.0 + (4.0 * fG4));
+        float fY4 = (fY00 - 1.0 + (4.0 * fG4));
+        float fZ4 = (fZ00 - 1.0 + (4.0 * fG4));
+        float fW4 = (fW00 - 1.0 + (4.0 * fG4));
+
+        int iII     = (iI & 255);
+        int iJJ     = (iJ & 255);
+        int iKK     = (iK & 255);
+        int iLL     = (iL & 255);
+        int iGi0    = (m_iPerm[iII + m_iPerm[iJJ + m_iPerm[iKK + m_iPerm[iLL]]]] % 32);
+        int iGi1    = (m_iPerm[(iII + iI1) + m_iPerm[(iJJ + iJ1) + m_iPerm[(iKK + iK1) + m_iPerm[iLL + iL1]]]] % 32);
+        int iGi2    = (m_iPerm[(iII + iI2) + m_iPerm[(iJJ + iJ2) + m_iPerm[(iKK + iK2) + m_iPerm[iLL + iL2]]]] % 32);
+        int iGi3    = (m_iPerm[(iII + iI3) + m_iPerm[(iJJ + iJ3) + m_iPerm[(iKK + iK3) + m_iPerm[iLL + iL3]]]] % 32);
+        int iGi4    = (m_iPerm[(iII + 1) + m_iPerm[(iJJ + 1) + m_iPerm[(iKK + 1) + m_iPerm[iLL + 1]]]] % 32);
+
+        float fT0 = (0.6 - (fX00 * fX00) - (fY00 * fY00) - (fZ00 * fZ00) - (fW00 * fW00));
+        if (fT0 < 0) {
+            fN0 = 0;
+        } else {
+            fT0 *= fT0;
+            fN0  = ((fT0 * fT0) * dot(m_iGrad3[iGi0], fX00, fY00, fZ00, fW00));
+        }
+
+        float fT1 = (0.6 - (fX1 * fX1) - (fY1 * fY1) - (fZ1 * fZ1) - (fW1 * fW1));
+        if (fT1 < 0) {
+            fN1 = 0;
+        } else {
+            fT1 *= fT1;
+            fN1  = ((fT1 * fT1) * dot(m_iGrad3[iGi1], fX1, fY1, fZ1, fW1));
+        }
+
+        float fT2 = (0.6 - (fX2 * fX2) - (fY2 * fY2) - (fZ2 * fZ2) - (fW2 * fW2));
+        if (fT2 < 0) {
+            fN2 = 0;
+        } else {
+            fT2 *= fT2;
+            fN2  = ((fT2 * fT2) * dot(m_iGrad3[iGi2], fX2, fY2, fZ2, fW2));
+        }
+
+        float fT3 = (0.6 - (fX3 * fX3) - (fY3 * fY3) - (fZ3 * fZ3) - (fW3 * fW3));
+        if (fT3 < 0) {
+            fN3 = 0;
+        } else {
+            fT3 *= fT3;
+            fN3  = ((fT3 * fT3) * dot(m_iGrad3[iGi3], fX3, fY3, fZ3, fW3));
+        }
+
+        float fT4 = (0.6 - (fX4 * fX4) - (fY4 * fY4) - (fZ4 * fZ4) - (fW4 * fW4));
+        if (fT4 < 0) {
+            fN4 = 0;
+        } else {
+            fT4 *= fT4;
+            fN4  = ((fT4 * fT4) * dot(m_iGrad3[iGi4], fX4, fY4, fZ4, fW4));
+        }
 
         return (27.0 * (fN0 + fN1 + fN2 + fN3 + fN4));
     }
