@@ -60,7 +60,7 @@ int main() {
         sleep(5);
     }
 
-    Markov::Markov oMarkov;
+    Markov::Markov oMarkov(true);
     Markov::Markov *pMarkov = &oMarkov;
     std::cout << "---- .05f ---- " << std::endl;
     pMarkov->setVariance(.05f);
@@ -73,7 +73,7 @@ int main() {
         pMarkov->generateWord();
     }
     std::cout << "---- Names ---- " << std::endl;
-    Names::Names oNames;
+    Names::Names oNames(true);
     Names::Names *pNames = &oNames;
     for (int i = 0; i < 15; i++) {
         pNames->generateName();
@@ -81,7 +81,7 @@ int main() {
     
     std::cout << "---- Simplex 2D ---- " << std::endl;
     int it = 2;
-    Simplex::Simplex oSimplex;
+    Simplex::Simplex oSimplex(true);
     Simplex::Simplex *pSimplex = &oSimplex;
     for (int i = 0; i < it; i++) {
         for (int j = 0; j < it; j++) {

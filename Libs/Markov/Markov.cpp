@@ -1,7 +1,15 @@
 #include "./Markov.h"
 
 namespace NordicArts {
+    Markov::Markov(bool bDebug) : m_bDebug(bDebug) {
+        init();
+    }
+
     Markov::Markov() {
+        init();
+    }
+
+    void Markov::init() {
         // Set the locale
         m_pLocale = boost::locale::generator().generate("en_US.UTF-8");
         
@@ -77,7 +85,7 @@ namespace NordicArts {
 
         word = boost::locale::to_title(word, m_pLocale);
 
-        std::cout << "Word: " << word.c_str() << std::endl;
+        if (m_bDebug) { std::cout << "Word: " << word.c_str() << std::endl; }
 
         return word;
     }

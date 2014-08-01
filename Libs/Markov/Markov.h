@@ -22,8 +22,11 @@ namespace NordicArts {
             char m_cAlphabet[28]    = "abcdefghijklmnopqrstuvqwxyz";
             float m_fVariance       = 0.0f;
 
+            bool m_bDebug;
+
         // Methods
         public:
+            Markov(bool bDebug);
             Markov(); 
             virtual ~Markov();
 
@@ -33,6 +36,8 @@ namespace NordicArts {
 
         protected:
         private:     
+            void init();
+
             void fillNameList();
             void generateFirstLetterMap();
             void generateLastLetterMap();

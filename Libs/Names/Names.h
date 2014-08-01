@@ -12,6 +12,8 @@ namespace NordicArts {
         public:
         protected:
         private:
+            bool m_bDebug;
+
             std::vector<std::string> m_vPrefixes;
             std::vector<std::string> m_vStems;
             std::vector<std::string> m_vSuffixes;
@@ -20,6 +22,7 @@ namespace NordicArts {
 
         // Methods
         public:
+            Names(bool bDebug);
             Names();
             virtual ~Names();
 
@@ -27,6 +30,8 @@ namespace NordicArts {
 
         protected:
         private:
+            void init();
+
             void fillPrefixes();
             void fillStems();
             void fillSuffixes();

@@ -1,7 +1,15 @@
 #include "./Names.h"
 
 namespace NordicArts {
+    Names::Names(bool bDebug) : m_bDebug(bDebug) {
+        init();
+    }
+
     Names::Names() {
+        init();
+    }
+
+    void Names::init() {
         m_pLocale = boost::locale::generator().generate("en_US.UTF-8");
 
         fillPrefixes();
@@ -80,7 +88,7 @@ namespace NordicArts {
 
         returnName          = boost::locale::to_title(returnName, m_pLocale);
         
-        std::cout << "Name: " << returnName.c_str() << std::endl;
+        if (m_bDebug) { std::cout << "Name: " << returnName.c_str() << std::endl; }
 
         return returnName;
     }
