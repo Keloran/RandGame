@@ -5,6 +5,8 @@
 
 namespace NordicArts {
     std::string getString(char cCharacter);
+    std::string randString();
+    std::string randString(int iLength);
 };
 
 #endif

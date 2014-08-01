@@ -23,6 +23,7 @@ namespace NordicArts {
         int i = 0;
 
         // generate first letter
+        srand(time(NULL));
         while (true) {
             int randLetter              = (rand() % 27);
             char cLetter                = m_cAlphabet[randLetter];
@@ -39,6 +40,7 @@ namespace NordicArts {
         }
 
         // generate word
+        srand(time(NULL));
         while (true) {
             int randLetter              = (rand() % 27);
             char cLetter                = m_cAlphabet[randLetter];

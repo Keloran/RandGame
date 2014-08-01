@@ -107,6 +107,16 @@ int main() {
         }
     }
 
+    std::cout << "---- Rand String ---- " << std::endl;
+    for (int i = 0; i < it; i++) {
+        std::cout << randString().c_str() << std::endl;
+    }
+
+    std::chrono::high_resolution_clock::time_point startPtr = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> start = std::chrono::duration_cast<std::chrono::duration<double>>(startPtr);
+
+    std::cout << "Start: " << start << std::endl;
+
     pGame->ShutDown();
     return EXIT_SUCCESS;
 }

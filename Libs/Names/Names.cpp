@@ -57,6 +57,7 @@ namespace NordicArts {
     std::string Names::generateName() {
         std::string returnName;
         
+        srand(time(NULL));
         returnName.append(m_vPrefixes[rand() % 7]);
         returnName.append(m_vStems[rand() % 20]);
         returnName.append(m_vSuffixes[rand() % 16]);
