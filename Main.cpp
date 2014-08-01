@@ -112,10 +112,10 @@ int main() {
         std::cout << randString().c_str() << std::endl;
     }
 
-    std::chrono::high_resolution_clock::time_point startPtr = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> start = std::chrono::duration_cast<std::chrono::duration<double>>(startPtr);
-
-    std::cout << "Start: " << start << std::endl;
+    std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
+    std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+    int timeCount                                               = timeDuration.count();
+    std::cout << "Stuff: " << timeDuration.count() << std::endl;
 
     pGame->ShutDown();
     return EXIT_SUCCESS;

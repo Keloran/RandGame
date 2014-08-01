@@ -56,11 +56,27 @@ namespace NordicArts {
 
     std::string Names::generateName() {
         std::string returnName;
-        
-        srand(time(NULL));
-        returnName.append(m_vPrefixes[rand() % 7]);
-        returnName.append(m_vStems[rand() % 20]);
-        returnName.append(m_vSuffixes[rand() % 16]);
+
+        // Prefix
+        std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
+        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        int timeCount                                               = timeDuration.count();
+        srand(timeCount);
+        returnName.append(m_vPrefixes[rand() % m_vPrefixes.size()]);
+
+        // Middle
+        timePoint       = std::chrono::high_resolution_clock::now();
+        timeDuration    = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        timeCount       = timeDuration.count();
+        srand(timeCount);
+        returnName.append(m_vStems[rand() % m_vStems.size()]);
+
+        // Suffix
+        timePoint       = std::chrono::high_resolution_clock::now();
+        timeDuration    = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        timeCount       = timeDuration.count();
+        srand(timeCount);
+        returnName.append(m_vSuffixes[rand() % m_vSuffixes.size()]);
 
         returnName          = boost::locale::to_title(returnName, m_pLocale);
         

@@ -20,7 +20,13 @@ namespace NordicArts {
 
     	char randChars[37] = "abcdefghijklmnopqrstuvwxyz1234567890";
 
-    	srand(time(NULL));
+        // Seed
+        std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
+        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        int timeCount                                               = timeDuration.count();
+        srand(timeCount);
+
+        // generate the string
     	for (int i = 0; i < iLength; i++) {
     		int iRand = (rand() % 36);
     		returnString.append(getString(randChars[iRand]));

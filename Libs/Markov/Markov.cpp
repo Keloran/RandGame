@@ -22,8 +22,13 @@ namespace NordicArts {
         std::string word = "";
         int i = 0;
 
+        // Seed
+        std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
+        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        int timeCount                                               = timeDuration.count();
+        srand(timeCount);
+
         // generate first letter
-        srand(time(NULL));
         while (true) {
             int randLetter              = (rand() % 27);
             char cLetter                = m_cAlphabet[randLetter];
@@ -39,8 +44,13 @@ namespace NordicArts {
             }
         }
 
+        // Seed
+        timePoint       = std::chrono::high_resolution_clock::now();
+        timeDuration    = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        timeCount       = timeDuration.count();
+        srand(timeCount);
+
         // generate word
-        srand(time(NULL));
         while (true) {
             int randLetter              = (rand() % 27);
             char cLetter                = m_cAlphabet[randLetter];
