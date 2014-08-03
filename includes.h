@@ -18,4 +18,8 @@
 #include <cstdint>
 #include <chrono>
 
+#include "./ThirdParty/sqlite/sqlite3.h"
+#include "./ThirdParty/sqlite/sqlite3ext.h"
+
+
 #endif

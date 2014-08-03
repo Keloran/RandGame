@@ -23,18 +23,6 @@ if(LINUX)
     include_directories(${X11_INCLUDE_DIR})
 endif()
 
-# Includes
-if (WIN32)
-    include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/Windows)
-    link_directories(${PROJECT_SOURCE_DIR}/ThirdParty/Windows)
-elseif(APPLE)
-    include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/OSX)
-    link_directories(${PROJECT_SOURCE_DIR}/ThirdParty/OSX)
-elseif(UNIX)
-    include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/Posix)
-    link_directories(${PROJECT_SOURCE_DIR}/ThirdParty/Posix)
-endif()
-
 # Main Stuff
 set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.h)
 set(Main_Libs ${PROJECT_SOURCE_DIR}/Main.cpp)
@@ -46,6 +34,7 @@ list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.h)
 set(LIBS_DIR ${PROJECT_SOURCE_DIR}/Libs)
 set(GAME_DIR ${PROJECT_SOURCE_DIR}/Game)
 set(TOOLS_DIR ${PROJECT_SOURCE_DIR}/Tools)
+set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 
 # Tools
 include_directories(${TOOLS_DIR})
@@ -62,6 +51,25 @@ list(APPEND Main_Headers ${LIBS_DIR}/Names/Names.h)
 list(APPEND Main_Libs ${LIBS_DIR}/Names/Names.cpp)
 list(APPEND Main_Headers ${LIBS_DIR}/Simplex/Simplex.h)
 list(APPEND Main_Libs ${LIBS_DIR}/Simplex/Simplex.cpp)
+
+# ThirdParty OS Specific
+if (WIN32)
+    include_directories(${THIRDPARTY_DIR}/Windows)
+    link_directories(${THIRDPARTY_DIR}/Windows)
+elseif(APPLE)
+    include_directories(${THIRDPARTY_DIR}/OSX)
+    link_directories(${THIRDPARTY_DIR}/OSX)
+elseif(UNIX)
+    include_directories(${THIRDPARTY_DIR}/Posix)
+    link_directories(${THIRDPARTY_DIR}/Posix)
+endif()
+
+# ThirdParty General
+include_directories(${THIRDPARTY_DIR}/sqlite)
+link_directories(${THIRDPARTY_DIR}/sqlite)
+list(APPEND Main_Headers ${THIRDPARTY_DIR}/sqlite/sqlite3.h)
+list(APPEND Main_Headers ${THIRDPARTY_DIR}/sqlite/sqlite3ext.h)
+list(APPEND Main_Libs ${THIRDPARTY_DIR}/sqlite/sqlite3.c)
 
 # Game
 include_directories(${GAME_DIR})
