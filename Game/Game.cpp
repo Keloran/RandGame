@@ -1,11 +1,17 @@
 #include "../includes.h"
 #include "./Game.h"
+#include "./Setup/Setup.h"
 
 namespace NordicArts {
     Game::Game() {}
      
     void Game::Startup() {
         std::cout << "Startup" << std::endl;
+
+        // Do the setup routine
+        Setup oSetup;
+        Setup *pSetup = &oSetup;
+        pSetup->doSetup();
     }
 
     void Game::RenderMainMenu() {

@@ -11,6 +11,8 @@ rm -rf `find . -type f -name cmake_install.cmake`
 rm -rf `find . -type f -name libGame.a`
 rm -rf `find . -type f -name libValkyrie.a`
 rm -rf `find . -type f -name libValkyrieEngine.a`
+rm -rf `find . -type f -name libThirdPartyLibs.a`
+rm -rf `find . -type f -name libGameLibrary.a`
 
 # Delete Binary
 rm -rf `find . -type f -name RandGame.app`

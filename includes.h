@@ -1,6 +1,7 @@
 #ifndef NORDICARTS_INCLUDES_H
 #define NORDICARTS_INCLUDES_H
 
+// General System Includes
 #include <iostream>
 #include <stdio.h>
 #include <thread>
@@ -18,8 +19,17 @@
 #include <cstdint>
 #include <chrono>
 
-#include "./ThirdParty/sqlite/sqlite3.h"
-#include "./ThirdParty/sqlite/sqlite3ext.h"
+// ThirdParty Includes
+#include "./ThirdParty/General/sqlite/sqlite3.h"
+#include "./ThirdParty/General/sqlite/sqlite3ext.h"
 
+// System Specific Includes
+#if defined(__APPLE__) || defined (__OSX__)
+	#include "./Includes/OSX.h"
+#elif defined (__LINUX__) || defined(__POSIX__)
+	#include "./Includes/Linux.h"
+#elif defined(__WINDOWS__) || defined(__WIN32__)
+	#include "./Includes/Windows.h"
+#endif
 
 #endif
