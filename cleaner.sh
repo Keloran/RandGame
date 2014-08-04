@@ -22,3 +22,4 @@ rm -rf `find . -type f -name libNordicOS.a`
 
 # Delete Binary
 rm -rf `find . -type f -name RandGame.app`
+rm -rf `find . -type f -name RandGame.log`

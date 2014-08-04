@@ -5,6 +5,7 @@
 #include "../Time/Time.hpp"
 #include "../Critical/Critical.hpp"
 #include "../Singleton/Singleton.hpp"
+#include "../String/String.hpp"
 
 namespace NordicArts {
     class Logger final : public Singleton {
@@ -33,6 +34,7 @@ namespace NordicArts {
             virtual ~Logger();
 
             static void log(const char *cLog);
+            static void log(float fLog);
             static void log(int iUnknown, const char *cLog);
             static void log(LoggerType eType, const std::string &cLog);
             static void log(LoggerType eType, const std::ostringstream &cLog);

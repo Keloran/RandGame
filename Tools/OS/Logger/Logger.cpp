@@ -38,6 +38,9 @@ namespace NordicArts {
     void Logger::log(const char *cLog) {
         log(Logger::TYPE_INFO, cLog);
     }
+    void Logger::log(float fLog) {
+        log(getString(fLog).c_str());
+    }
     void Logger::log(int iUnknown, const char *cLog) {
         log(static_cast<LoggerType>(iUnknown), cLog);
     }

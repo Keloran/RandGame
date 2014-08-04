@@ -1,6 +1,7 @@
 #include "./String.hpp"
 
 namespace NordicArts {
+    // Get String from input
     std::string getString(char cCharacter) {
         std::stringstream stringStream;
         std::string returnString;
@@ -10,11 +11,20 @@ namespace NordicArts {
 
         return returnString;
     }
+    std::string getString(float fFloat) {
+        std::stringstream stringStream;
+        std::string returnString;
 
+        stringStream << fFloat;
+        stringStream >> returnString;
+
+        return returnString;
+    }
+
+    // Generate Random String
     std::string randString() {
         return randString(15);
     }
-
     std::string randString(int iLength) {
         std::string returnString;
 

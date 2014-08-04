@@ -14,109 +14,119 @@ void RenderGame(Game *pGame, GameState eGS) {
 }
 
 int main() {
-    GameState eGameState = GS_INTRO;
-        
-    Game::Game oGame;
-    Game::Game* pGame = &oGame;    
+    try {
+        Logger::Logger oLogger("RandGame.log");
+        Logger::Logger *pLogger = &oLogger;
 
-    pGame->Startup();
-
-    while(eGameState != GS_QUIT) {
-        pGame->ProcessInputs();        
-
-        switch(eGameState) {
-            case GS_INTRO: {
-                bool bFinished = pGame->RenderIntroCutScenes();
-                if (bFinished) {
-                    //eGameState = GS_MENU;
-                    eGameState = GS_QUIT;
-                }
-            } break;
-
-            case GS_PAUSED_MENU: {
-                pGame->RenderPauseMenu();
-                pGame->RenderGame(eGameState);
-            } break;
+        GameState eGameState = GS_INTRO;
             
-            case GS_GAME: {
-                std::thread update (UpdateGame, pGame, eGameState);
-                std::thread render (RenderGame, pGame, eGameState);
+        Game::Game oGame;
+        Game::Game* pGame = &oGame;    
 
-                update.join();
-                render.join();
-            } break;
-    
-            case GS_MENU: {
-                pGame->RenderMainMenu();
-            } break;
+        pGame->Startup();
 
-            case GS_QUIT:
-            case GS_NUM_STATES:
-            default: {
-            } break;
+        while(eGameState != GS_QUIT) {
+            pGame->ProcessInputs();        
+
+            switch(eGameState) {
+                case GS_INTRO: {
+                    bool bFinished = pGame->RenderIntroCutScenes();
+                    if (bFinished) {
+                        //eGameState = GS_MENU;
+                        eGameState = GS_QUIT;
+                    }
+                } break;
+
+                case GS_PAUSED_MENU: {
+                    pGame->RenderPauseMenu();
+                    pGame->RenderGame(eGameState);
+                } break;
+                
+                case GS_GAME: {
+                    std::thread update (UpdateGame, pGame, eGameState);
+                    std::thread render (RenderGame, pGame, eGameState);
+
+                    update.join();
+                    render.join();
+                } break;
+        
+                case GS_MENU: {
+                    pGame->RenderMainMenu();
+                } break;
+
+                case GS_QUIT:
+                case GS_NUM_STATES:
+                default: {
+                } break;
+            }
+            
+            pGame->VideoPageFlip();
+            sleep(5);
+        }
+
+        Markov::Markov oMarkov(true);
+        Markov::Markov *pMarkov = &oMarkov;
+
+        pLogger->log("---- .05f ----");
+        pMarkov->setVariance(.05f);
+        for (int i = 0; i < 15; i++) {
+            pMarkov->generateWord();
+        }
+
+        pLogger->log("---- .101f ---- ");
+        pMarkov->setVariance(.101f);
+        for (int i = 0; i < 15; i++) {
+            pMarkov->generateWord();
+        }
+        pLogger->log("---- Names ---- ");
+        Names::Names oNames(true);
+        Names::Names *pNames = &oNames;
+        for (int i = 0; i < 15; i++) {
+            pNames->generateName();
         }
         
-        pGame->VideoPageFlip();
-        sleep(5);
-    }
-
-    Markov::Markov oMarkov(true);
-    Markov::Markov *pMarkov = &oMarkov;
-    std::cout << "---- .05f ---- " << std::endl;
-    pMarkov->setVariance(.05f);
-    for (int i = 0; i < 15; i++) {
-        pMarkov->generateWord();
-    }
-    std::cout << "---- .101f ---- " << std::endl;
-    pMarkov->setVariance(.101f);
-    for (int i = 0; i < 15; i++) {
-        pMarkov->generateWord();
-    }
-    std::cout << "---- Names ---- " << std::endl;
-    Names::Names oNames(true);
-    Names::Names *pNames = &oNames;
-    for (int i = 0; i < 15; i++) {
-        pNames->generateName();
-    }
-    
-    std::cout << "---- Simplex 2D ---- " << std::endl;
-    int it = 2;
-    Simplex::Simplex oSimplex(true);
-    Simplex::Simplex *pSimplex = &oSimplex;
-    for (int i = 0; i < it; i++) {
-        for (int j = 0; j < it; j++) {
-            std::cout << pSimplex->octaveNoise2d(3, 0.5, 1, i, j) << std::endl;
-        }
-    }
-    std::cout << "---- Simplex 3D ---- " << std::endl;
-    for (int i = 0; i < it; i++) {
-        for (int j = 0; j < it; j++) {
-            for (int k = 0; k < it; k++) {
-                std::cout << pSimplex->octaveNoise3d(3, 0.5, 1, i, j, k) << std::endl;
+        pLogger->log("---- Simplex 2D ---- ");
+        int it = 2;
+        Simplex::Simplex oSimplex(true);
+        Simplex::Simplex *pSimplex = &oSimplex;
+        for (int i = 0; i < it; i++) {
+            for (int j = 0; j < it; j++) {
+                pLogger->log(pSimplex->octaveNoise2d(3, 0.5, 1, i, j));
             }
         }
-    }
-    std::cout << "---- Simplex 4D ---- " << std::endl;
-    for (int i = 0; i < it; i++) {
-        for (int j = 0; j < it; j++) {
-            for (int k = 0; k < it; k++) {
-                for (int l = 0; l < it; l++) {
-                    std::cout << pSimplex->octaveNoise4d(3, 0.5, 1, i, j, k, l) << std::endl;
+        pLogger->log("---- Simplex 3D ---- ");
+        for (int i = 0; i < it; i++) {
+            for (int j = 0; j < it; j++) {
+                for (int k = 0; k < it; k++) {
+                    pLogger->log(pSimplex->octaveNoise3d(3, 0.5, 1, i, j, k));
                 }
             }
         }
+        pLogger->log("---- Simplex 4D ---- ");
+        for (int i = 0; i < it; i++) {
+            for (int j = 0; j < it; j++) {
+                for (int k = 0; k < it; k++) {
+                    for (int l = 0; l < it; l++) {
+                        pLogger->log(pSimplex->octaveNoise4d(3, 0.5, 1, i, j, k, l));
+                    }
+                }
+            }
+        }
+
+        pLogger->log("---- Rand String ---- ");
+        for (int i = 0; i < it; i++) {
+            pLogger->log(randString().c_str());
+        }
+
+        std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
+        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
+        int timeCount                                               = timeDuration.count();
+
+        std::cout << "Stuff: " << timeDuration.count() << std::endl;
+
+        pGame->ShutDown();
+    } catch (std::exception &ex) {
+        throw ExceptionHandler(ex.what());
     }
-
-    std::cout << "---- Rand String ---- " << std::endl;
-    for (int i = 0; i < it; i++) {
-        std::cout << randString().c_str() << std::endl;
-    }
-
-    std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
-    std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
-    int timeCount                                               = timeDuration.count();
-    std::cout << "Stuff: " << timeDuration.count() << std::endl;
-
-    pGame->ShutDown();
     return EXIT_SUCCESS;
 }

@@ -22,5 +22,6 @@
 // Time
 #include "./Time/Time.hpp"
 #include "./String/String.hpp"
+#include "./Logger/Logger.hpp"
 
 #endif

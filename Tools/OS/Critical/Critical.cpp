@@ -12,7 +12,7 @@ namespace NordicArts {
         #endif
     }
 
-    void enterCritial(NA_CRITICAL &oCritical) {
+    void enterCritical(NA_CRITICAL &oCritical) {
         #if defined(nonWindows)
             pthread_mutex_lock(&oCritical);
         #else
