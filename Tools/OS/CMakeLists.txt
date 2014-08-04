@@ -106,6 +106,12 @@ include_directories(${PROJECT_SOURCE_DIR}/Mutex)
 list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/Mutex/Mutex.hpp)
 list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Mutex/Mutex.cpp)
 
+# Singleton
+link_directories(${PROJECT_SOURCE_DIR}/Singleton)
+include_directories(${PROJECT_SOURCE_DIR}/Singleton)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/Singleton/Singleton.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Singleton/Singleton.cpp)
+
 # Generate Library
 add_library(NordicOS STATIC ${Lib_Source} ${Lib_Headers})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)

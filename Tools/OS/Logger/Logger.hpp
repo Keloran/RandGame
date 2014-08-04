@@ -4,9 +4,10 @@
 #include "../OSLoad.hpp"
 #include "../Time/Time.hpp"
 #include "../Critical/Critical.hpp"
+#include "../Singleton/Singleton.hpp"
 
 namespace NordicArts {
-    class Logger final {
+    class Logger final : public Singleton {
         // Variables   
         public:
             enum LoggerType {

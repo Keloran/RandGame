@@ -7,7 +7,7 @@
 namespace NordicArts {
     static Logger *s_pLogger = nullptr;
 
-    Logger::Logger(const std::string &cFile) : m_cLogFile(cFile), m_ulFileLength(0), m_cUnknownLogType("UNKNOWN") {
+    Logger::Logger(const std::string &cFile) : Singleton(TYPE_LOGGER), m_cLogFile(cFile), m_ulFileLength(0), m_cUnknownLogType("UNKNOWN") {
         m_aLogTypes[0] = "Info";
         m_aLogTypes[1] = "Warning";
         m_aLogTypes[2] = "Error";
