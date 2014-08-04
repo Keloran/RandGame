@@ -3,8 +3,8 @@
 
 #include <boost/locale.hpp>
 
-#include "../../includes.h"
-#include "../../Tools/Strng/Strng.h"
+#include "../../includes.hpp"
+#include "../../Tools/Strng/Strng.hpp"
 
 namespace NordicArts {
     class Markov {

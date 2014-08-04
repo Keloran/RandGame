@@ -1,8 +1,8 @@
-#include "./includes.h"
-#include "./Main.h"
-#include "./Libs/Markov/Markov.h"
-#include "./Libs/Names/Names.h"
-#include "./Libs/Simplex/Simplex.h"
+#include "./includes.hpp"
+#include "./Main.hpp"
+#include "./Libs/Markov/Markov.hpp"
+#include "./Libs/Names/Names.hpp"
+#include "./Libs/Simplex/Simplex.hpp"
 
 using namespace NordicArts;
 

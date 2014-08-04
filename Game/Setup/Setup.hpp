@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_GAME_SETUP_H
 #define NORDICARTS_GAME_SETUP_H
 
-#include "../../includes.h"
+#include "../../includes.hpp"
 
 namespace NordicArts {
 	class Setup {

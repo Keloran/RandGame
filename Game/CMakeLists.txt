@@ -13,32 +13,32 @@ set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
 set(MainDir ${PROJECT_SOURCE_DIR}/../)
 
 # Main Game Files
-set(GameHeaders ${PROJECT_SOURCE_DIR}/Game.h)
+set(GameHeaders ${PROJECT_SOURCE_DIR}/Game.hpp)
 set(GameLibs ${PROJECT_SOURCE_DIR}/Game.cpp)
 
 # Includes
-list(APPEND GameHeaders ${MainDir}/includes.h)
+list(APPEND GameHeaders ${MainDir}/includes.hpp)
 
 # OS Specific Includes
 include_directories(${MainDir}/Includes)
 if (WIN32)
-    list(APPEND GameHeaders ${MainDir}/Includes/Windows.h)
+    list(APPEND GameHeaders ${MainDir}/Includes/Windows.hpp)
 elseif(APPLE)
-    list(APPEND GameHeaders ${MainDir}/Includes/OSX.h)
+    list(APPEND GameHeaders ${MainDir}/Includes/OSX.hpp)
 elseif(UNIX)
-    list(APPEND GameHeaders ${MainDir}/Includes/Linux.h)
+    list(APPEND GameHeaders ${MainDir}/Includes/Linux.hpp)
 endif()
 
 # Setup
 link_directories(${SetupDir})
 include_directories(${SetupDir})
-list(APPEND GameHeaders ${SetupDir}/Setup.h)
+list(APPEND GameHeaders ${SetupDir}/Setup.hpp)
 list(APPEND GameLibs ${SetupDir}/Setup.cpp)
 
 # Setup Parser
 link_directories(${SetupDir}/Parser)
 include_directories(${SetupDir}/Parser)
-list(APPEND GameHeaders ${SetupDir}/Parser/Parser.h)
+list(APPEND GameHeaders ${SetupDir}/Parser/Parser.hpp)
 list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
 
 # Library

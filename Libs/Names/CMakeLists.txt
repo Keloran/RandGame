@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(Names)
 
-set(Lib_Headers ${PROJECT_SOURCE_DIR}/Names.h)
+set(Lib_Headers ${PROJECT_SOURCE_DIR}/Names.hpp)
 set(Lib_Source ${PROJECT_SOURCE_DIR}/Names.cpp)
 
 # Generate Library

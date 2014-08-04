@@ -1,4 +1,4 @@
-#include "./Markov.h"
+#include "./Markov.hpp"
 
 namespace NordicArts {
     Markov::Markov(bool bDebug) : m_bDebug(bDebug) {

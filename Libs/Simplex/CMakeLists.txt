@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(Simplex)
 
-set(Lib_Headers ${PROJECT_SOURCE_DIR}/Simplex.h)
+set(Lib_Headers ${PROJECT_SOURCE_DIR}/Simplex.hpp)
 set(Lib_Source ${PROJECT_SOURCE_DIR}/Simplex.cpp)
 
 # Generate Library

@@ -25,11 +25,11 @@
 
 // System Specific Includes
 #if defined(__APPLE__) || defined (__OSX__)
-	#include "./Includes/OSX.h"
+	#include "./Includes/OSX.hpp"
 #elif defined (__LINUX__) || defined(__POSIX__)
-	#include "./Includes/Linux.h"
+	#include "./Includes/Linux.hpp"
 #elif defined(__WINDOWS__) || defined(__WIN32__)
-	#include "./Includes/Windows.h"
+	#include "./Includes/Windows.hpp"
 #endif
 
 #endif

@@ -1,4 +1,4 @@
-#include "./Strng.h"
+#include "./Strng.hpp"
 
 namespace NordicArts {
     std::string getString(char cCharacter) {

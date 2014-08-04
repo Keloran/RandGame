@@ -1,4 +1,4 @@
-#include "./Simplex.h"
+#include "./Simplex.hpp"
 
 namespace NordicArts {
     Simplex::Simplex(bool bDebug) : m_bDebug(bDebug) {   

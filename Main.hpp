@@ -1,9 +1,9 @@
 #ifndef NORDICARTS_RANDGAME_H
 #define NORDICARTS_RANDGAME_H
 
-#include "./includes.h"
-#include "./Game/Game.h"
-#include "./Tools/Strng/Strng.h"
+#include "./includes.hpp"
+#include "./Game/Game.hpp"
+#include "./Tools/Strng/Strng.hpp"
 
 namespace NordicArts {
 };

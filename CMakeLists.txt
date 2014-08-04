@@ -35,26 +35,26 @@ link_directories(${THIRDPARTY_DIR}/General/sqlite)
 add_subdirectory(${THIRDPARTY_DIR}/General/sqlite)
 
 # Main Stuff
-set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.h)
+set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.hpp)
 set(Main_Libs ${PROJECT_SOURCE_DIR}/Main.cpp)
 
 # Includes
-list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.h)
+list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.hpp)
 
 # OS Specific Includes
 include_directories(${PROJECT_SOURCE_DIR}/Includes)
 if (WIN32)
-    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Windows.h)
+    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Windows.hpp)
 elseif(APPLE)
-    list(APPEND Main_Headers ${PROJECT_BINARY_DIR}/Includes/OSX.h)
+    list(APPEND Main_Headers ${PROJECT_BINARY_DIR}/Includes/OSX.hpp)
 elseif(UNIX)
-    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Linux.h)
+    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Linux.hpp)
 endif()
 
 # Tools
 include_directories(${TOOLS_DIR})
 link_directories(${TOOLS_DIR})
-list(APPEND Main_Headers ${TOOLS_DIR}/Strng/Strng.h)
+list(APPEND Main_Headers ${TOOLS_DIR}/Strng/Strng.hpp)
 list(APPEND Main_Libs ${TOOLS_DIR}/Strng/Strng.cpp)
 
 # Libs

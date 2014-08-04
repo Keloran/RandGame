@@ -1,4 +1,4 @@
-#include "./Parser.h"
+#include "./Parser.hpp"
 
 namespace NordicArts {
 	Parser::Parser() {

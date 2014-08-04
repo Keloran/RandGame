@@ -1,4 +1,4 @@
-#include "./Names.h"
+#include "./Names.hpp"
 
 namespace NordicArts {
     Names::Names(bool bDebug) : m_bDebug(bDebug) {

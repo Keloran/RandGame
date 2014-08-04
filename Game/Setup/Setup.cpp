@@ -1,4 +1,4 @@
-#include "./Setup.h"
+#include "./Setup.hpp"
 
 namespace NordicArts {
 	Setup::Setup() {

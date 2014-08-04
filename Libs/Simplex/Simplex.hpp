@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_SIMPLEX_H
 #define NORDICARTS_SIMPLEX_H
 
-#include "../../includes.h"
+#include "../../includes.hpp"
 
 namespace NordicArts {
     class Simplex {

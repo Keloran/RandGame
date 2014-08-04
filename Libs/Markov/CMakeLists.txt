@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(Markov)
 
-set(Lib_Headers ${PROJECT_SOURCE_DIR}/Markov.h)
+set(Lib_Headers ${PROJECT_SOURCE_DIR}/Markov.hpp)
 set(Lib_Source ${PROJECT_SOURCE_DIR}/Markov.cpp)
 
 # Generate Library

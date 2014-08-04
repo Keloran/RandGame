@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_RANDGAME_GAME_H
 #define NORDICARTS_RANDGAME_GAME_H
 
-#include "../includes.h"
+#include "../includes.hpp"
 
 namespace NordicArts {
     // Game State
