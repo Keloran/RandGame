@@ -4,7 +4,6 @@
 #include "./includes.hpp"
 #include "./Game/Game.hpp"
 #include "./Tools/OS/OS.hpp"
-#include "./Tools/OS/String/String.hpp"
 
 namespace NordicArts {
 };

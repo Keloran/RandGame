@@ -5,7 +5,6 @@
 
 #include "../../includes.hpp"
 #include "../Tools/OS/OS.hpp"
-#include "../Tools/OS/String/String.hpp"
 
 namespace NordicArts {
     class Names {
