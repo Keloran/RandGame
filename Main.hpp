@@ -3,8 +3,8 @@
 
 #include "./includes.hpp"
 #include "./Game/Game.hpp"
-#include "./OS/OS.hpp"
-#include "./OS/String/String.hpp"
+#include "./Tools/OS/OS.hpp"
+#include "./Tools/OS/String/String.hpp"
 
 namespace NordicArts {
 };

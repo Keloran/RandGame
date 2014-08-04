@@ -4,8 +4,8 @@
 #include <boost/locale.hpp>
 
 #include "../../includes.hpp"
-#include "../OS/OS.hpp"
-#include "../OS/String/String.hpp"
+#include "../../Tools/OS/OS.hpp"
+#include "../../Tools/OS/String/String.hpp"
 
 namespace NordicArts {
     class Markov {
