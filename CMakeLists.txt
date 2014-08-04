@@ -30,9 +30,9 @@ set(TOOLS_DIR ${PROJECT_SOURCE_DIR}/Tools)
 set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 
 # ThirdParty General
-include_directories(${THIRDPARTY_DIR}/General)
-link_directories(${THIRDPARTY_DIR}/General)
-add_subdirectory(${THIRDPARTY_DIR})
+include_directories(${THIRDPARTY_DIR}/General/sqlite)
+link_directories(${THIRDPARTY_DIR}/General/sqlite)
+add_subdirectory(${THIRDPARTY_DIR}/General/sqlite)
 
 # Main Stuff
 set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.h)
@@ -60,12 +60,18 @@ list(APPEND Main_Libs ${TOOLS_DIR}/Strng/Strng.cpp)
 # Libs
 include_directories(${LIBS_DIR})
 link_directories(${LIBS_DIR})
-list(APPEND Main_Headers ${LIBS_DIR}/Markov/Markov.h)
-list(APPEND Main_Libs ${LIBS_DIR}/Markov/Markov.cpp) 
-list(APPEND Main_Headers ${LIBS_DIR}/Names/Names.h)
-list(APPEND Main_Libs ${LIBS_DIR}/Names/Names.cpp)
-list(APPEND Main_Headers ${LIBS_DIR}/Simplex/Simplex.h)
-list(APPEND Main_Libs ${LIBS_DIR}/Simplex/Simplex.cpp)
+
+include_directories(${LIBS_DIR}/Markov)
+link_directories(${LIBS_DIR}/Markov)
+add_subdirectory(${LIBS_DIR}/Markov)
+
+include_directories(${LIBS_DIR}/Names)
+link_directories(${LIBS_DIR}/Names)
+add_subdirectory(${LIBS_DIR}/Names)
+
+include_directories(${LIBS_DIR}/Simplex)
+link_directories(${LIBS_DIR}/Simplex)
+add_subdirectory(${LIBS_DIR}/Simplex)
 
 # ThirdParty OS Specific
 if (WIN32)
@@ -99,4 +105,5 @@ elseif (UNIX)
     target_link_libraries(RandGame ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} boost_locale c++abi)
 endif()
 
-target_link_libraries(RandGame ThirdPartyLibs GameLibrary)
+target_link_libraries(RandGame SQLite GameLibrary)
+target_link_libraries(RandGame Markov Names Simplex)

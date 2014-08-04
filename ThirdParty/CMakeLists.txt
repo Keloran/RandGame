@@ -4,14 +4,13 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(ThirdPartyLibs)
 
+# Directories
 set(GeneralDir ${PROJECT_SOURCE_DIR}/General)
 
-# Defines
-set(Lib_Headers ${GeneralDir}/sqlite/sqlite3.h)
-set(Lib_Libs ${GeneralDir}/sqlite/sqlite3.c)
-
-# SQLite3 Extension
-list(APPEND ${Lib_Headers} ${GeneralDir}/sqlite/sqlite3ext.h)
+# Add Library
+link_directories(${GeneralDir}/sqlite)
+include_directories(${GeneralDir}/sqlite)
+add_subdirectory(${GeneralDir}/sqlite)
 
 # Create Library
 add_library(ThirdPartyLibs STATIC ${Lib_Libs} ${Lib_Headers})
@@ -26,3 +25,6 @@ elseif (APPLE)
 elseif (UNIX)
     target_link_libraries(ThirdPartyLibs ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} boost_locale c++abi)
 endif()
+
+# Link Libraries
+target_link_libraries(ThirdPartyLibs SQLite)

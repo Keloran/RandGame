@@ -13,6 +13,11 @@ rm -rf `find . -type f -name libValkyrie.a`
 rm -rf `find . -type f -name libValkyrieEngine.a`
 rm -rf `find . -type f -name libThirdPartyLibs.a`
 rm -rf `find . -type f -name libGameLibrary.a`
+rm -rf `find . -type f -name libSQLite.a`
+rm -rf `find . -type f -name libNames.a`
+rm -rf `find . -type f -name libMarkov.a`
+rm -rf `find . -type f -name libSimplex.a`
+
 
 # Delete Binary
 rm -rf `find . -type f -name RandGame.app`
