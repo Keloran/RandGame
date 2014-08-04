@@ -82,6 +82,30 @@ include_directories(${PROJECT_SOURCE_DIR}/FileHandler/TextFileReader)
 list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/FileHandler/TextFileReader/TextFileReader.hpp)
 list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/FileHandler/TextFileReader/TextFileReader.cpp)
 
+# BlockProcess
+link_directories(${PROJECT_SOURCE_DIR}/BlockProcess)
+include_directories(${PROJECT_SOURCE_DIR}/BlockProcess)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/BlockProcess/BlockProcess.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/BlockProcess/BlockProcess.cpp)
+
+# BlockThread
+link_directories(${PROJECT_SOURCE_DIR}/BlockThread)
+include_directories(${PROJECT_SOURCE_DIR}/BlockThread)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/BlockThread/BlockThread.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/BlockThread/BlockThread.cpp)
+
+# Critical Section
+link_directories(${PROJECT_SOURCE_DIR}/Critical)
+include_directories(${PROJECT_SOURCE_DIR}/Critical)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/Critical/Critical.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Critical/Critical.cpp)
+
+# Mutex
+link_directories(${PROJECT_SOURCE_DIR}/Mutex)
+include_directories(${PROJECT_SOURCE_DIR}/Mutex)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/Mutex/Mutex.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Mutex/Mutex.cpp)
+
 # Generate Library
 add_library(NordicOS STATIC ${Lib_Source} ${Lib_Headers})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)

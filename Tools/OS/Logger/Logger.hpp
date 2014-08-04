@@ -3,6 +3,7 @@
 
 #include "../OSLoad.hpp"
 #include "../Time/Time.hpp"
+#include "../Critical/Critical.hpp"
 
 namespace NordicArts {
     class Logger final {
@@ -22,6 +23,8 @@ namespace NordicArts {
             unsigned long               m_ulFileLength;
 
             std::array<std::string, 3>  m_aLogTypes;
+
+            NA_CRITICAL                 m_Critical;
 
         // Methods
         public:

@@ -1,6 +1,8 @@
 #include "./Logger.hpp"
 #include "../ExceptionHandler/ExceptionHandler.hpp"
 #include "../FileHandler/TextFileWriter/TextFileWriter.hpp"
+#include "../Critical/Critical.hpp"
+#include "../BlockThread/BlockThread.hpp"
 
 namespace NordicArts {
     static Logger *s_pLogger = nullptr;
@@ -18,6 +20,9 @@ namespace NordicArts {
             }
         }
 
+        createCritical(m_Critical);
+        BlockThread blockThread(m_Critical);
+
         TextFileWriter file(m_cLogFile, false, false);
 
         s_pLogger = this;
@@ -25,6 +30,8 @@ namespace NordicArts {
 
     Logger::~Logger() {
         s_pLogger = nullptr;   
+
+        deleteCritical(m_Critical);
     }
 
     // Logger polymorph
@@ -48,6 +55,8 @@ namespace NordicArts {
             
             return;
         }
+
+        BlockThread oBlockThread(s_pLogger->m_Critical);
 
         std::ostringstream cStream;
         cStream << std::setfill(' ') << std::setw((int)s_pLogger->m_ulFileLength);
