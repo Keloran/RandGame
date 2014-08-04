@@ -1,7 +1,7 @@
-#ifndef NORDICARTS_TOOLS_H
-#define NORDICARTS_TOOLS_H
+#ifndef NORDICARTS_OS_STRING_H
+#define NORDICARTS_OS_STRING_H
 
-#include "../../includes.hpp"
+#include "../../OSLoad.hpp"
 
 namespace NordicArts {
     std::string getString(char cCharacter);

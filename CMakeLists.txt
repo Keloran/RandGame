@@ -51,12 +51,6 @@ elseif(UNIX)
     list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Linux.hpp)
 endif()
 
-# Tools
-include_directories(${TOOLS_DIR})
-link_directories(${TOOLS_DIR})
-list(APPEND Main_Headers ${TOOLS_DIR}/Strng/Strng.hpp)
-list(APPEND Main_Libs ${TOOLS_DIR}/Strng/Strng.cpp)
-
 # Libs
 include_directories(${LIBS_DIR})
 link_directories(${LIBS_DIR})

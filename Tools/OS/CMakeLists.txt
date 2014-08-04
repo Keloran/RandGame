@@ -39,6 +39,12 @@ elseif (UNIX)
     list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Linux/Linux.cpp)
 endif()
 
+# String
+link_directories(${PROJECT_SOURCE_DIR}/String)
+include_directories(${PROJECT_SOURCE_DIR}/String)
+list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/String/String.hpp)
+list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/String/String.cpp)
+
 # Time
 link_directories(${PROJECT_SOURCE_DIR}/Time)
 include_directories(${PROJECT_SOURCE_DIR}/Time)

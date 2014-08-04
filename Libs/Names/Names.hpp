@@ -4,7 +4,8 @@
 #include <boost/locale.hpp>
 
 #include "../../includes.hpp"
-#include "../../Tools/Strng/Strng.hpp"
+#include "../OS/OS.hpp"
+#include "../OS/String.hpp"
 
 namespace NordicArts {
     class Names {

@@ -1,4 +1,4 @@
-#include "./Strng.hpp"
+#include "./String.hpp"
 
 namespace NordicArts {
     std::string getString(char cCharacter) {
@@ -12,13 +12,13 @@ namespace NordicArts {
     }
 
     std::string randString() {
-    	return randString(15);
+        return randString(15);
     }
 
     std::string randString(int iLength) {
-    	std::string returnString;
+        std::string returnString;
 
-    	char randChars[37] = "abcdefghijklmnopqrstuvwxyz1234567890";
+        char randChars[37] = "abcdefghijklmnopqrstuvwxyz1234567890";
 
         // Seed
         std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
@@ -27,11 +27,11 @@ namespace NordicArts {
         srand(timeCount);
 
         // generate the string
-    	for (int i = 0; i < iLength; i++) {
-    		int iRand = (rand() % 36);
-    		returnString.append(getString(randChars[iRand]));
-    	}
+        for (int i = 0; i < iLength; i++) {
+            int iRand = (rand() % 36);
+            returnString.append(getString(randChars[iRand]));
+        }
 
-    	return returnString;
+        return returnString;
     }
 };

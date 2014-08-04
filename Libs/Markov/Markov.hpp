@@ -4,7 +4,8 @@
 #include <boost/locale.hpp>
 
 #include "../../includes.hpp"
-#include "../../Tools/Strng/Strng.hpp"
+#include "../OS/OS.hpp"
+#include "../OS/String/String.hpp"
 
 namespace NordicArts {
     class Markov {
@@ -16,7 +17,7 @@ namespace NordicArts {
             std::map<std::string, double> m_mLastLetterChance;
 
             std::map<std::string, std::map<std::string, double> > m_mLetterToLetterChance;
-            
+
             std::vector<std::string> m_vNames;
 
             char m_cAlphabet[28]    = "abcdefghijklmnopqrstuvqwxyz";
@@ -27,15 +28,15 @@ namespace NordicArts {
         // Methods
         public:
             Markov(bool bDebug);
-            Markov(); 
+            Markov();
             virtual ~Markov();
 
             std::string generateWord();
-            
+
             void setVariance(float fVariance);
 
         protected:
-        private:     
+        private:
             void init();
 
             void fillNameList();
@@ -44,7 +45,7 @@ namespace NordicArts {
             void generateLetterToLetterMap();
 
             std::map<std::string, double> getAlphabetMap();
-    
+
             std::locale m_pLocale;
     };
 };
