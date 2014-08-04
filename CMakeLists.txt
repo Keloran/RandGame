@@ -73,6 +73,11 @@ include_directories(${LIBS_DIR}/Simplex)
 link_directories(${LIBS_DIR}/Simplex)
 add_subdirectory(${LIBS_DIR}/Simplex)
 
+# NordicOS
+include_directories(${TOOLS_DIR}/OS)
+link_directories(${TOOLS_DIR}/OS)
+add_subdirectory(${TOOLS_DIR}/OS)
+
 # ThirdParty OS Specific
 if (WIN32)
     include_directories(${THIRDPARTY_DIR}/Windows)
@@ -107,3 +112,4 @@ endif()
 
 target_link_libraries(RandGame SQLite GameLibrary)
 target_link_libraries(RandGame Markov Names Simplex)
+target_link_libraries(RandGame NordicOS)

@@ -17,6 +17,7 @@ rm -rf `find . -type f -name libSQLite.a`
 rm -rf `find . -type f -name libNames.a`
 rm -rf `find . -type f -name libMarkov.a`
 rm -rf `find . -type f -name libSimplex.a`
+rm -rf `find . -type f -name libNordicOS.a`
 
 
 # Delete Binary
