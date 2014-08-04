@@ -4,8 +4,9 @@
 #include "../OSLoad.hpp"
 
 namespace NordicArts {
-    std::string getString(char cCharacter);
-    std::string getString(float fCharacter);
+    std::string getString(char cChar);
+    std::string getString(float fFloat);
+    std::string getString(int iInt);
 
     std::string randString();
     std::string randString(int iLength);

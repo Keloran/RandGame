@@ -9,8 +9,6 @@ namespace NordicArts {
         public:
         protected:
         private:
-            bool m_bDebug;
-
             int m_iGrad3[12][3] = {
                 {1, 1, 0}, {-1, 1, 0}, {1, -1, 0}, {-1, -1, 0},
                 {1, 0, 1}, {-1, 0, 1}, {1, 0, -1}, {-1, 0, -1},
@@ -71,7 +69,6 @@ namespace NordicArts {
 
         // Methods
         public:
-            Simplex(bool bDebug);
             Simplex();
         
             float octaveNoise2d(float fOctaves, float fPersistence, float fScale, float fX, float fY);

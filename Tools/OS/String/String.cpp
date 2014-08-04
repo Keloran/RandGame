@@ -2,11 +2,11 @@
 
 namespace NordicArts {
     // Get String from input
-    std::string getString(char cCharacter) {
+    std::string getString(char cChar) {
         std::stringstream stringStream;
         std::string returnString;
 
-        stringStream << cCharacter;
+        stringStream << cChar;
         stringStream >> returnString;
 
         return returnString;
@@ -16,6 +16,15 @@ namespace NordicArts {
         std::string returnString;
 
         stringStream << fFloat;
+        stringStream >> returnString;
+
+        return returnString;
+    }
+    std::string getString(int iInt) {
+        std::stringstream stringStream;
+        std::string returnString;
+
+        stringStream << iInt;
         stringStream >> returnString;
 
         return returnString;

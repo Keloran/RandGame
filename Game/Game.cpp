@@ -4,9 +4,14 @@
 
 namespace NordicArts {
     Game::Game() {}
+    Game::Game(Logger *pLogger) : m_pLogger(pLogger) {}
+
+    Game::~Game() {
+        m_pLogger = nullptr;
+    }
      
     void Game::Startup() {
-        std::cout << "Startup" << std::endl;
+        m_pLogger->log("Startup");
 
         // Do the setup routine
         Setup oSetup;
@@ -15,41 +20,41 @@ namespace NordicArts {
     }
 
     void Game::RenderMainMenu() {
-        std::cout << "Main Menu" << std::endl;    
+        m_pLogger->log("Main Menu");
     }
 
     void Game::RenderGame(GameState eGS) {
         while(eGS != GS_QUIT) {
-            std::cout << "Render Game" << std::endl;
+            m_pLogger->log("Render Game");
             sleep(1);
         }
     }   
 
     void Game::UpdateGame(GameState eGS) {
         while (eGS != GS_QUIT) {
-            std::cout << "Update" << std::endl;
+            m_pLogger->log("Update");
             sleep(3);
         }
     }
 
     void Game::RenderPauseMenu() {
-        std::cout << "Pause Menu" << std::endl;
+        m_pLogger->log("Pause Menu");
     }
 
     void Game::ShutDown() {
-        std::cout << "ShutDown" << std::endl;
+        m_pLogger->log("ShutDown");
     }
 
     void Game::ProcessInputs() {
-        std::cout << "Inputs" << std::endl;
+        m_pLogger->log("Inputs");
     }
 
     void Game::VideoPageFlip() {
-        std::cout << "Video Page Flip" << std::endl;
+        m_pLogger->log("Video Page Flip");
     }    
 
     bool Game::RenderIntroCutScenes() {
-        std::cout << "Intro Cut Scenes" << std::endl;
+        m_pLogger->log("Intro Cut Scenes");
 
         return true;
     }

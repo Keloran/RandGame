@@ -1,12 +1,12 @@
 #include "./Names.hpp"
 
 namespace NordicArts {
-    Names::Names(bool bDebug) : m_bDebug(bDebug) {
-        init();
-    }
-
     Names::Names() {
         init();
+    }
+    Names::Names(Logger *pLogger) : m_pLogger(pLogger) {
+        init();
+        m_bDebug = true;
     }
 
     void Names::init() {
@@ -60,6 +60,7 @@ namespace NordicArts {
     }
 
     Names::~Names() {
+        m_pLogger = nullptr;
     }
 
     std::string Names::generateName() {
@@ -88,7 +89,11 @@ namespace NordicArts {
 
         returnName          = boost::locale::to_title(returnName, m_pLocale);
         
-        if (m_bDebug) { std::cout << "Name: " << returnName.c_str() << std::endl; }
+        if (m_bDebug) { 
+            std::string cString = "Name: ";
+            cString.append(returnName);
+            m_pLogger->log(cString);
+        }
 
         return returnName;
     }

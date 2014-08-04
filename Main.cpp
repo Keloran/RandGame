@@ -20,7 +20,7 @@ int main() {
 
         GameState eGameState = GS_INTRO;
             
-        Game::Game oGame;
+        Game::Game oGame(pLogger);
         Game::Game* pGame = &oGame;    
 
         pGame->Startup();
@@ -64,7 +64,7 @@ int main() {
             sleep(5);
         }
 
-        Markov::Markov oMarkov(true);
+        Markov::Markov oMarkov(pLogger);
         Markov::Markov *pMarkov = &oMarkov;
 
         pLogger->log("---- .05f ----");
@@ -79,7 +79,7 @@ int main() {
             pMarkov->generateWord();
         }
         pLogger->log("---- Names ---- ");
-        Names::Names oNames(true);
+        Names::Names oNames(pLogger);
         Names::Names *pNames = &oNames;
         for (int i = 0; i < 15; i++) {
             pNames->generateName();
@@ -87,7 +87,7 @@ int main() {
         
         pLogger->log("---- Simplex 2D ---- ");
         int it = 2;
-        Simplex::Simplex oSimplex(true);
+        Simplex::Simplex oSimplex;
         Simplex::Simplex *pSimplex = &oSimplex;
         for (int i = 0; i < it; i++) {
             for (int j = 0; j < it; j++) {
@@ -121,8 +121,9 @@ int main() {
         std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
         std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
         int timeCount                                               = timeDuration.count();
-
-        std::cout << "Stuff: " << timeDuration.count() << std::endl;
+        std::string cString = "Stuff: ";
+        cString.append(getString(timeCount));
+        pLogger->log(cString.c_str());
 
         pGame->ShutDown();
     } catch (std::exception &ex) {

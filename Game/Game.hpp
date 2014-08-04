@@ -2,6 +2,7 @@
 #define NORDICARTS_RANDGAME_GAME_H
 
 #include "../includes.hpp"
+#include "../Tools/OS/OS.hpp"
 
 namespace NordicArts {
     // Game State
@@ -20,10 +21,15 @@ namespace NordicArts {
         public:
         protected:
         private:
+            Logger *m_pLogger = nullptr;
 
         // Methods
         public:
             Game();
+            Game(Logger *pLogger);
+
+            virtual ~Game();
+
             void Startup();
             bool RenderIntroCutScenes();
             void RenderMainMenu();

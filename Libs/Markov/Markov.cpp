@@ -1,11 +1,12 @@
 #include "./Markov.hpp"
 
 namespace NordicArts {
-    Markov::Markov(bool bDebug) : m_bDebug(bDebug) {
+    Markov::Markov() {
         init();
     }
 
-    Markov::Markov() {
+    Markov::Markov(Logger *pLogger) : m_pLogger(pLogger) {
+        m_bDebug = true;
         init();
     }
 
@@ -85,7 +86,11 @@ namespace NordicArts {
 
         word = boost::locale::to_title(word, m_pLocale);
 
-        if (m_bDebug) { std::cout << "Word: " << word.c_str() << std::endl; }
+        if (m_bDebug) { 
+            std::string cString = "Word: ";
+            cString.append(word);
+            m_pLogger->log(cString);
+        }
 
         return word;
     }
@@ -238,5 +243,6 @@ namespace NordicArts {
     }
 
     Markov::~Markov() {
+        m_pLogger = nullptr;
     }
 };

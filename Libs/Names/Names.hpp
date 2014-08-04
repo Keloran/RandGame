@@ -20,9 +20,11 @@ namespace NordicArts {
 
             std::locale m_pLocale;
 
+            Logger      *m_pLogger = nullptr;;
+
         // Methods
         public:
-            Names(bool bDebug);
+            Names(Logger *pLogger);
             Names();
             virtual ~Names();
 

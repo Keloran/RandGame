@@ -12,22 +12,23 @@ namespace NordicArts {
         public:
         protected:
         private:
-            std::map<std::string, double> m_mFirstLetterChance;
-            std::map<std::string, double> m_mLastLetterChance;
+            std::map<std::string, double>                           m_mFirstLetterChance;
+            std::map<std::string, double>                           m_mLastLetterChance;
 
-            std::map<std::string, std::map<std::string, double> > m_mLetterToLetterChance;
+            std::map<std::string, std::map<std::string, double> >   m_mLetterToLetterChance;
 
-            std::vector<std::string> m_vNames;
+            std::vector<std::string>                                m_vNames;
 
-            char m_cAlphabet[28]    = "abcdefghijklmnopqrstuvqwxyz";
-            float m_fVariance       = 0.0f;
+            char                                                    m_cAlphabet[28]     = "abcdefghijklmnopqrstuvqwxyz";
+            float                                                   m_fVariance         = 0.0f;
 
-            bool m_bDebug;
+            Logger                                                 *m_pLogger           = nullptr;
+            bool                                                    m_bDebug;
 
         // Methods
         public:
-            Markov(bool bDebug);
             Markov();
+            Markov(Logger *pLogger);
             virtual ~Markov();
 
             std::string generateWord();
