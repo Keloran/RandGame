@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 2.8)# Project Name
 project(NordicOS)
 
 # C++11
-#set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -std=c++11 -stdlib=libc++ -m64")
-#set(EXTRA_FLAGS " -x objective-c++")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
+set(EXTRA_FLAGS " -x objective-c++")
 
 # NOS Files
 set(Lib_Headers ${PROJECT_SOURCE_DIR}/OS.hpp)
@@ -122,6 +122,7 @@ list(APPEND Lib_Source ${PROJECT_SOURCE_DIR}/Noise/Simplex.cpp)
 add_library(NordicOS STATIC ${Lib_Source} ${Lib_Headers})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(NordicOS PROPERTIES OUTPUT_NAME "NordicOS")
+set_target_properties(NordicOS PROPERTIES COMPILE_FLAGS ${EXTRA_FLAGS})
 
 # Linker
 if (WIN32)

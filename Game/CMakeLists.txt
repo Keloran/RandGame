@@ -5,8 +5,10 @@ cmake_minimum_required(VERSION 2.8)
 project(GameLibrary)
 
 # C++11
-#set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -std=c++11 -stdlib=libc++ -m64")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${PROJECT_SOURCE_DIR}/../ThirdParty/General/")
+message(STATUS "CXXFLAGS: ${CMAKE_CXX_FLAGS}")
 
 # Directories
 set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
@@ -29,6 +31,9 @@ elseif(UNIX)
     list(APPEND GameHeaders ${MainDir}/Includes/Linux.hpp)
 endif()
 
+# General
+include_directories(${PROJECT_SOURCE_DIR})
+
 # Setup
 link_directories(${SetupDir})
 include_directories(${SetupDir})
@@ -42,13 +47,7 @@ list(APPEND GameHeaders ${SetupDir}/Parser/Parser.hpp)
 list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
 
 # GLM
-find_package(GLM REQUIRED)
-include_directories(${GLM_INCLUDE_DIR})
-link_directories(${GLM_LIBRARY_DIR})
-add_definitions(${GLM_DEFINITIONS})
-if (NOT GLM_FOUND)
-    message(ERROR "GLM Not Found")
-endif(NOT GLM_FOUND)
+include_directories(${PROJECT_SOURCE_DIR}../ThirdParty/General)
 
 # Library
 add_library(GameLibrary STATIC ${GameLibs} ${GameHeaders})
@@ -65,4 +64,3 @@ elseif (UNIX)
 endif()
 
 # Link
-target_link_libraries(GameLibrary ${GLM_LIBRARY_DIR})
