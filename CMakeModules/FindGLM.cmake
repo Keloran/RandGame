@@ -1,4 +1,4 @@
-SET(_glm_HEADER_SEARCH_DIRS "../ThirdParty/" "../ThirdParty/General")
+SET(_glm_HEADER_SEARCH_DIRS "./ThirdParty/" "./ThirdParty/General")
 SET(_glm_ENV_ROOT_DIR "$ENV{GLM_ROOT_DIR}")
 
 IF(NOT GLM_ROOT_DIR AND _glm_ENV_ROOT_DIR)

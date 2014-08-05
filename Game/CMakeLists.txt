@@ -12,9 +12,6 @@ set(EXTRA_FLAGS " -x objective-c++")
 set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
 set(MainDir ${PROJECT_SOURCE_DIR}/../)
 
-file(GLOB GameHeaders ${PROJECT_SOURCE_DIR}/*.hpp)
-file(GLOB GameLibs ${PROJECT_SOURCE_DIR}/*.cpp)
-
 # Main Game Files
 set(GameHeaders ${PROJECT_SOURCE_DIR}/Game.hpp)
 set(GameLibs ${PROJECT_SOURCE_DIR}/Game.cpp)
@@ -46,9 +43,9 @@ list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
 
 # GLM
 find_package(GLM REQUIRED)
-include_directories(${GLM_INCLUDE_DIR}/)
-#link_directories(${GLM_LIBRARY_DIR}/)
-#add_definitions(${GLM_DEFINITIONS})
+include_directories(${GLM_INCLUDE_DIR})
+link_directories(${GLM_LIBRARY_DIR})
+add_definitions(${GLM_DEFINITIONS})
 if (NOT GLM_FOUND)
     message(ERROR "GLM Not Found")
 endif(NOT GLM_FOUND)
