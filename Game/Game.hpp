@@ -3,6 +3,7 @@
 
 #include "../includes.hpp"
 #include "../Tools/OS/OS.hpp"
+#include <glm/glm.hpp>
 
 namespace NordicArts {
     // Game State

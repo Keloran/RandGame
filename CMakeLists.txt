@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(RandGame)
 
+# Module Finder Path
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/")
+
 # C++11
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
@@ -33,8 +36,6 @@ set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 include_directories(${THIRDPARTY_DIR}/General/sqlite)
 link_directories(${THIRDPARTY_DIR}/General/sqlite)
 add_subdirectory(${THIRDPARTY_DIR}/General/sqlite)
-include_directories(${THIRDPARTY_DIR}/General/glm)
-link_directories(${THIRDPARTY_DIR}/General/glm)
 
 # Main Stuff
 set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.hpp)
@@ -66,7 +67,7 @@ link_directories(${LIBS_DIR}/Names)
 add_subdirectory(${LIBS_DIR}/Names)
 
 # NordicOS
-include_directories(${TOOLS_DIR}/OS)
+include_directories(${TOOLS_DIR})
 link_directories(${TOOLS_DIR}/OS)
 add_subdirectory(${TOOLS_DIR}/OS)
 

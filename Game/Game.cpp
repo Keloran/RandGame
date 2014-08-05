@@ -1,6 +1,7 @@
 #include "../includes.hpp"
 #include "./Game.hpp"
 #include <Setup/Setup.hpp>
+#include <glm/glm.hpp>
 
 namespace NordicArts {
     Game::Game() {}

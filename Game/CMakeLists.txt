@@ -44,6 +44,15 @@ include_directories(${SetupDir}/Parser)
 list(APPEND GameHeaders ${SetupDir}/Parser/Parser.hpp)
 list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
 
+# GLM
+find_package(GLM REQUIRED)
+include_directories(${GLM_INCLUDE_DIR}/)
+#link_directories(${GLM_LIBRARY_DIR}/)
+#add_definitions(${GLM_DEFINITIONS})
+if (NOT GLM_FOUND)
+    message(ERROR "GLM Not Found")
+endif(NOT GLM_FOUND)
+
 # Library
 add_library(GameLibrary STATIC ${GameLibs} ${GameHeaders})
 set_target_properties(GameLibrary PROPERTIES LINKER_LANGUAGE CXX)
@@ -57,3 +66,6 @@ elseif (APPLE)
 elseif (UNIX)
     target_link_libraries(GameLibrary ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} boost_locale c++abi)
 endif()
+
+# Link
+target_link_libraries(GameLibrary ${GLM_LIBRARY_DIR})
