@@ -1,6 +1,6 @@
 #include "../includes.hpp"
 #include "./Game.hpp"
-#include "./Setup/Setup.hpp"
+#include <Setup/Setup.hpp>
 
 namespace NordicArts {
     Game::Game() {}

@@ -33,6 +33,8 @@ set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 include_directories(${THIRDPARTY_DIR}/General/sqlite)
 link_directories(${THIRDPARTY_DIR}/General/sqlite)
 add_subdirectory(${THIRDPARTY_DIR}/General/sqlite)
+include_directories(${THIRDPARTY_DIR}/General/glm)
+link_directories(${THIRDPARTY_DIR}/General/glm)
 
 # Main Stuff
 set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.hpp)

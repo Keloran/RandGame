@@ -12,6 +12,9 @@ set(EXTRA_FLAGS " -x objective-c++")
 set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
 set(MainDir ${PROJECT_SOURCE_DIR}/../)
 
+file(GLOB GameHeaders ${PROJECT_SOURCE_DIR}/*.hpp)
+file(GLOB GameLibs ${PROJECT_SOURCE_DIR}/*.cpp)
+
 # Main Game Files
 set(GameHeaders ${PROJECT_SOURCE_DIR}/Game.hpp)
 set(GameLibs ${PROJECT_SOURCE_DIR}/Game.cpp)
