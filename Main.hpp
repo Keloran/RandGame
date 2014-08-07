@@ -3,7 +3,10 @@
 
 #include "./includes.hpp"
 #include "./Game/Game.hpp"
-#include "./NordicOS/OS.hpp"
+
+#include <Markov/Markov.hpp>
+#include <Names/Names.hpp>
+#include <NordicOS/Noise/Simplex.hpp>
 
 namespace NordicArts {
 };

@@ -33,6 +33,9 @@ elseif(UNIX)
     list(APPEND GameHeaders ${MainDir}/Includes/Linux.hpp)
 endif()
 
+# General
+include_directories(${PROJECT_SOURCE_DIR})
+
 # Setup
 link_directories(${SetupDir})
 include_directories(${SetupDir})
@@ -46,13 +49,7 @@ list(APPEND GameHeaders ${SetupDir}/Parser/Parser.hpp)
 list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
 
 # GLM
-find_package(GLM REQUIRED)
-include_directories(${GLM_INCLUDE_DIR})
-link_directories(${GLM_LIBRARY_DIR})
-add_definitions(${GLM_DEFINITIONS})
-if (NOT GLM_FOUND)
-    message(ERROR "GLM Not Found")
-endif(NOT GLM_FOUND)
+include_directories(${PROJECT_SOURCE_DIR}../ThirdParty/General)
 
 find_package(NordicOS REQUIRED)
 include_directories(${NORDICOS_INCLIDE_DIR})
