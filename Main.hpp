@@ -3,7 +3,7 @@
 
 #include "./includes.hpp"
 #include "./Game/Game.hpp"
-#include "./Tools/OS/OS.hpp"
+#include "./NordicOS/OS.hpp"
 
 namespace NordicArts {
 };

@@ -2,8 +2,8 @@
 #define NORDICARTS_RANDGAME_GAME_H
 
 #include "../includes.hpp"
-#include "../Tools/OS/OS.hpp"
-#include <glm/glm.hpp>
+#include <NordicOS/OS.hpp>
+#include "./ThirdParty/glm/glm.hpp"
 
 namespace NordicArts {
     // Game State

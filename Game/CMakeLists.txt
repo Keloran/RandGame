@@ -4,9 +4,13 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(GameLibrary)
 
+# Module Finder Path
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/")
+
 # C++11
-#set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} " -std=c++11 -stdlib=libc++ -m64")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -INordicOS")
 
 # Directories
 set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
@@ -50,6 +54,11 @@ if (NOT GLM_FOUND)
     message(ERROR "GLM Not Found")
 endif(NOT GLM_FOUND)
 
+find_package(NordicOS REQUIRED)
+include_directories(${NORDICOS_INCLIDE_DIR})
+link_directories(${NORDICOS_LIBRARY_DIR})
+add_definitions(${NORDICOS_DEFINITIONS})
+
 # Library
 add_library(GameLibrary STATIC ${GameLibs} ${GameHeaders})
 set_target_properties(GameLibrary PROPERTIES LINKER_LANGUAGE CXX)
@@ -65,4 +74,4 @@ elseif (UNIX)
 endif()
 
 # Link
-target_link_libraries(GameLibrary ${GLM_LIBRARY_DIR})
+target_link_libraries(GameLibrary NordicOS)

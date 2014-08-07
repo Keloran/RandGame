@@ -29,7 +29,6 @@ endif()
 # Directories
 set(LIBS_DIR ${PROJECT_SOURCE_DIR}/Libs)
 set(GAME_DIR ${PROJECT_SOURCE_DIR}/Game)
-set(TOOLS_DIR ${PROJECT_SOURCE_DIR}/Tools)
 set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 
 # ThirdParty General
@@ -67,9 +66,11 @@ link_directories(${LIBS_DIR}/Names)
 add_subdirectory(${LIBS_DIR}/Names)
 
 # NordicOS
-include_directories(${TOOLS_DIR})
-link_directories(${TOOLS_DIR}/OS)
-add_subdirectory(${TOOLS_DIR}/OS)
+find_package(NordicOS)
+include_directories(${NORDICOS_INCLUDE_DIR})
+link_directories(${NORDICOS_LIBRARY_DIR})
+add_definitions(${NORDICOS_DEFINITIONS})
+add_subdirectory(${PROJECT_SOURCE_DIR}/NordicOS)
 
 # ThirdParty OS Specific
 if (WIN32)
