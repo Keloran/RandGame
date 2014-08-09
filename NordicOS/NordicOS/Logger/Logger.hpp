@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_LOGGER_H
 #define NORDICARTS_OS_LOGGER_H
 
-#include "../../OSLoad.hpp"
+#include "../OSLoad.hpp"
 #include "../Time/Time.hpp"
 #include "../Critical/Critical.hpp"
 #include "../Singleton/Singleton.hpp"

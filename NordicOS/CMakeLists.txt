@@ -8,121 +8,119 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
 
 # NOS Files
-set(Lib_Headers ${PROJECT_SOURCE_DIR}/OS.hpp)
-set(Lib_Source ${PROJECT_SOURCE_DIR}/OS.cpp)
+set(NOS ${PROJECT_SOURCE_DIR}/NordicOS)
+set(LibHeaders ${NOS}/OS.hpp)
+set(LibSources ${NOS}/OS.cpp)
 
 # NOS Loader
-list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/OSLoad.hpp)
-
-# NOS Folder
-set(NOS ${PROJECT_SOURCE_DIR}/NordicOS)
+list(APPEND LibHeaders ${NOS}/OSLoad.hpp)
 
 # nonWindows
 link_directories(${NOS}/nonWindows)
 include_directories(${NOS}/nonWindows)
-list(APPEND Lib_Headers ${NOS}/nonWindows/nonWindows.hpp)
-list(APPEND Lib_Source ${NOS}/nonWindows/nonWindows.cpp)
+list(APPEND LibHeaders ${NOS}/nonWindows/nonWindows.hpp)
+list(APPEND LibSources ${NOS}/nonWindows/nonWindows.cpp)
 
 # OS Specific Classes
 if (WIN32)
     link_directories(${NOS}/Windows)
     include_directories(${NOS}/Windows)
-    list(APPEND Lib_Headers ${IR}/Windows/Windows.hpp)
-    list(APPEND Lib_Source ${NOS}/Windows/Windows.cpp)
+    list(APPEND LibHeaders ${IR}/Windows/Windows.hpp)
+    list(APPEND LibSources ${NOS}/Windows/Windows.cpp)
 elseif (APPLE)
     link_directories(${NOS}/OSX)
     include_directories(${NOS}/OSX)
-    list(APPEND Lib_Headers ${NOS}/OSX/OSX.hpp)
-    list(APPEND Lib_Headers ${NOS}/OSX/OSX.mm)
-#    list(APPEND Lib_Source ${NOS}/OSX/OSX.cpp)
+    list(APPEND LibHeaders ${NOS}/OSX/OSX.hpp)
+    list(APPEND LibHeaders ${NOS}/OSX/OSX.mm)
+#    list(APPEND LibSources ${NOS}/OSX/OSX.cpp)
 elseif (UNIX)
     link_directories(${NOS}/Linux)
     include_directories(${NOS}/Linux)
-    list(APPEND Lib_Headers ${NOS}/Linux/Linux.hpp)
-    list(APPEND Lib_Source ${NOS}/Linux/Linux.cpp)
+    list(APPEND LibHeaders ${NOS}/Linux/Linux.hpp)
+    list(APPEND LibSources ${NOS}/Linux/Linux.cpp)
 endif()
 
 # String
 link_directories(${NOS}/String)
 include_directories(${NOS}/String)
-list(APPEND Lib_Headers ${NOS}/String/String.hpp)
-list(APPEND Lib_Source ${NOS}/String/String.cpp)
+list(APPEND LibHeaders ${NOS}/String/String.hpp)
+list(APPEND LibSources ${NOS}/String/String.cpp)
 
 # Time
 link_directories(${NOS}/Time)
 include_directories(${NOS}/Time)
-list(APPEND Lib_Headers ${NOS}/Time/Time.hpp)
-list(APPEND Lib_Source ${NOS}/Time/Time.cpp)
+list(APPEND LibHeaders ${NOS}/Time/Time.hpp)
+list(APPEND LibSources ${NOS}/Time/Time.cpp)
 
 # Logger
 link_directories(${NOS}/Logger)
 include_directories(${NOS}/Logger)
-list(APPEND Lib_Headers ${NOS}/Logger/Logger.hpp)
-list(APPEND Lib_Source ${NOS}/Logger/Logger.cpp)
+list(APPEND LibHeaders ${NOS}/Logger/Logger.hpp)
+list(APPEND LibSources ${NOS}/Logger/Logger.cpp)
 
 # Exception Handler
 link_directories(${NOS}/ExceptionHandler)
 include_directories(${NOS}/ExceptionHandler)
-list(APPEND Lib_Headers ${NOS}/ExceptionHandler/ExceptionHandler.hpp)
-list(APPEND Lib_Source ${NOS}/ExceptionHandler/ExceptionHandler.cpp)
+list(APPEND LibHeaders ${NOS}/ExceptionHandler/ExceptionHandler.hpp)
+list(APPEND LibSources ${NOS}/ExceptionHandler/ExceptionHandler.cpp)
 
 # File Handler
 link_directories(${NOS}/FileHandler)
 include_directories(${NOS}/FileHandler)
-list(APPEND Lib_Headers ${NOS}/FileHandler/FileUtils.hpp)
-list(APPEND Lib_Headers ${NOS}/FileHandler/FileHandler.hpp)
-list(APPEND Lib_Source ${NOS}/FileHandler/FileHandler.cpp)
+list(APPEND LibHeaders ${NOS}/FileHandler/FileUtils.hpp)
+list(APPEND LibHeaders ${NOS}/FileHandler/FileHandler.hpp)
+list(APPEND LibSources ${NOS}/FileHandler/FileHandler.cpp)
 
 # TextFile Writer
 link_directories(${NOS}/FileHandler/TextFileWriter)
 include_directories(${NOS}/FileHandler/TextFileWriter)
-list(APPEND Lib_Headers ${NOS}/FileHandler/TextFileWriter/TextFileWriter.hpp)
-list(APPEND Lib_Source ${NOS}/FileHandler/TextFileWriter/TextFileWriter.cpp)
+list(APPEND LibHeaders ${NOS}/FileHandler/TextFileWriter/TextFileWriter.hpp)
+list(APPEND LibSources ${NOS}/FileHandler/TextFileWriter/TextFileWriter.cpp)
 
 # TextFile Reader
 link_directorieS(${NOS}/FileHandler/TextFileReader)
 include_directories(${NOS}/FileHandler/TextFileReader)
-list(APPEND Lib_Headers ${NOS}/FileHandler/TextFileReader/TextFileReader.hpp)
-list(APPEND Lib_Source ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
+list(APPEND LibHeaders ${NOS}/FileHandler/TextFileReader/TextFileReader.hpp)
+list(APPEND LibSources ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
 
 # BlockProcess
 link_directories(${NOS}/BlockProcess)
 include_directories(${NOS}/BlockProcess)
-list(APPEND Lib_Headers ${NOS}/BlockProcess/BlockProcess.hpp)
-list(APPEND Lib_Source ${NOS}/BlockProcess/BlockProcess.cpp)
+list(APPEND LibHeaders ${NOS}/BlockProcess/BlockProcess.hpp)
+list(APPEND LibSources ${NOS}/BlockProcess/BlockProcess.cpp)
 
 # BlockThread
 link_directories(${NOS}/BlockThread)
 include_directories(${NOS}/BlockThread)
-list(APPEND Lib_Headers ${NOS}/BlockThread/BlockThread.hpp)
-list(APPEND Lib_Source ${NOS}/BlockThread/BlockThread.cpp)
+list(APPEND LibHeaders ${NOS}/BlockThread/BlockThread.hpp)
+list(APPEND LibSources ${NOS}/BlockThread/BlockThread.cpp)
 
 # Critical Section
 link_directories(${NOS}/Critical)
 include_directories(${NOS}/Critical)
-list(APPEND Lib_Headers ${NOS}/Critical/Critical.hpp)
-list(APPEND Lib_Source ${NOS}/Critical/Critical.cpp)
+list(APPEND LibHeaders ${NOS}/Critical/Critical.hpp)
+list(APPEND LibSources ${NOS}/Critical/Critical.cpp)
 
 # Mutex
 link_directories(${NOS}/Mutex)
 include_directories(${NOS}/Mutex)
-list(APPEND Lib_Headers ${NOS}/Mutex/Mutex.hpp)
-list(APPEND Lib_Source ${NOS}/Mutex/Mutex.cpp)
+list(APPEND LibHeaders ${NOS}/Mutex/Mutex.hpp)
+list(APPEND LibSources ${NOS}/Mutex/Mutex.cpp)
 
 # Singleton
 link_directories(${NOS}/Singleton)
 include_directories(${NOS}/Singleton)
-list(APPEND Lib_Headers ${NOS}/Singleton/Singleton.hpp)
-list(APPEND Lib_Source ${NOS}/Singleton/Singleton.cpp)
+list(APPEND LibHeaders ${NOS}/Singleton/Singleton.hpp)
+list(APPEND LibSources ${NOS}/Singleton/Singleton.cpp)
 
 # Noise
 link_directories(${NOS}/Noise)
 include_directories(${NOS}/Noise)
-list(APPEND Lib_Headers ${NOS}/Noise/Simplex.hpp)
-list(APPEND Lib_Source ${NOS}/Noise/Simplex.cpp)
+list(APPEND LibHeaders ${NOS}/Noise/Simplex.hpp)
+list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 
 # Generate Library
-add_library(NordicOS STATIC ${Lib_Source} ${Lib_Headers})
+add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(NordicOS PROPERTIES OUTPUT_NAME "NordicOS")
 

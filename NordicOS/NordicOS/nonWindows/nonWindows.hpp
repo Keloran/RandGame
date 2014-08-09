@@ -2,7 +2,7 @@
 #define NORDICARTS_OS_NONWINDOWS_H
 
 // Make sure we should be compiling this on nonWindows
-#include "../../OSLoad.hpp"
+#include "../OSLoad.hpp"
 
 #if defined(nonWindows)
     #include <pthread.h>

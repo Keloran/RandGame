@@ -1,8 +1,8 @@
 #ifndef NORDICARTS_OS_BLOCKTHREAD_H
 #define NORDICARTS_OS_BLOCKTHREAD_H
 
-#include "../../OS.hpp"
-#include "../../OSLoad.hpp"
+#include "../OS.hpp"
+#include "../OSLoad.hpp"
 #include "../Critical/Critical.hpp"
 
 namespace NordicArts {

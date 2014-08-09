@@ -2,7 +2,7 @@
 #define NORDICARTS_OS_WINDOWS_H
 
 // Make sure its Windows
-#include "../../OSLoad.hpp"
+#include "../OSLoad.hpp"
 
 #if !defined(nonWindows)
     // Strip lots of rubbish from windows builds

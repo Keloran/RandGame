@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_FILEUTILS_H
 #define NORDICARTS_OS_FILEUTILS_H
 
-#include "../../OSLoad.hpp"
+#include "../OSLoad.hpp"
 
 namespace NordicArts {
     static bool fileExists(const char *cFileName) {

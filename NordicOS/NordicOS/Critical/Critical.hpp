@@ -1,8 +1,8 @@
 #ifndef NORDICARTS_OS_CRITICAL_H
 #define NORDICARTS_OS_CRITICAL_H
 
-#include "../../OS.hpp"
-#include "../../OSLoad.hpp"
+#include "../OS.hpp"
+#include "../OSLoad.hpp"
 
 namespace NordicArts {
     #ifndef NA_CRITICAL
