@@ -13,43 +13,44 @@ set(EXTRA_FLAGS " -x objective-c++")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -INordicOS")
 
 # Directories
-set(SetupDir ${PROJECT_SOURCE_DIR}/Setup)
-set(MainDir ${PROJECT_SOURCE_DIR}/../)
+set(GameDir ${PROJECT_SOURCE_DIR}/Game)
 
 # Main Game Files
-set(GameHeaders ${PROJECT_SOURCE_DIR}/Game.hpp)
-set(GameLibs ${PROJECT_SOURCE_DIR}/Game.cpp)
+set(GameHeaders ${GameDir}/Game.hpp)
+set(GameLibs ${GameDir}/Game.cpp)
 
 # Includes
-list(APPEND GameHeaders ${MainDir}/includes.hpp)
-
-# OS Specific Includes
-include_directories(${MainDir}/Includes)
-if (WIN32)
-    list(APPEND GameHeaders ${MainDir}/Includes/Windows.hpp)
-elseif(APPLE)
-    list(APPEND GameHeaders ${MainDir}/Includes/OSX.hpp)
-elseif(UNIX)
-    list(APPEND GameHeaders ${MainDir}/Includes/Linux.hpp)
-endif()
+list(APPEND GameHeaders ${GameDir}/includes.hpp)
 
 # General
-include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${GameDir})
 
 # Setup
-link_directories(${SetupDir})
-include_directories(${SetupDir})
-list(APPEND GameHeaders ${SetupDir}/Setup.hpp)
-list(APPEND GameLibs ${SetupDir}/Setup.cpp)
+link_directories(${GameDir}/Setup)
+include_directories(${GameDir}/Setup)
+list(APPEND GameHeaders ${GameDir}/Setup/Setup.hpp)
+list(APPEND GameLibs ${GameDir}/Setup/Setup.cpp)
 
 # Setup Parser
-link_directories(${SetupDir}/Parser)
-include_directories(${SetupDir}/Parser)
-list(APPEND GameHeaders ${SetupDir}/Parser/Parser.hpp)
-list(APPEND GameLibs ${SetupDir}/Parser/Parser.cpp)
+link_directories(${GameDir}/Setup/Parser)
+include_directories(${GameDir}/Setup/Parser)
+list(APPEND GameHeaders ${GameDir}/Setup/Parser/Parser.hpp)
+list(APPEND GameLibs ${GameDir}/Setup/Parser/Parser.cpp)
+
+# Names
+link_directories(${GameDir}/Names)
+include_directories(${GameDir}/Names)
+list(APPEND GameHeaders ${GameDir}/Names/Names.hpp)
+list(APPEND GameLibs ${GameDir}/Names/Names.cpp)
+
+# Markov
+link_directories(${GameDir}/Markov)
+include_directories(${GameDir}/Markov)
+list(APPEND GameHeaders ${GameDir}/Markov/Markov.hpp)
+list(APPEND GameLibs ${GameDir}/Markov/Markov.cpp)
 
 # GLM
-include_directories(${PROJECT_SOURCE_DIR}../ThirdParty/General)
+include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 
 find_package(NordicOS REQUIRED)
 include_directories(${NORDICOS_INCLIDE_DIR})

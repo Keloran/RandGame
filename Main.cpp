@@ -1,4 +1,3 @@
-//#include "./includes.hpp"
 #include "./Main.hpp"
 
 using namespace NordicArts;

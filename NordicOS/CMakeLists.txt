@@ -119,12 +119,17 @@ include_directories(${NOS}/Noise)
 list(APPEND LibHeaders ${NOS}/Noise/Simplex.hpp)
 list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 
+# SQLite
+link_directories(${NOS}/sqlite)
+include_directories(${NOS}/sqlite)
+add_subdirectory(${NOS}/sqlite)
+
 # Generate Library
 add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(NordicOS PROPERTIES OUTPUT_NAME "NordicOS")
 
-# Linker
+# System Linker
 if (WIN32)
     target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} winmm gdi32 boost_locale c++abi)
 elseif (APPLE)
@@ -132,3 +137,6 @@ elseif (APPLE)
 elseif (UNIX)
     target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} boost_locale c++abi)
 endif()
+
+# Library Linker
+target_link_libraries(NordicOS SQLite)

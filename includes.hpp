@@ -19,10 +19,6 @@
 #include <cstdint>
 #include <chrono>
 
-// ThirdParty Includes
-#include "./ThirdParty/General/sqlite/sqlite3.h"
-#include "./ThirdParty/General/sqlite/sqlite3ext.h"
-
 // System Specific Includes
 #if defined(__APPLE__) || defined (__OSX__)
 	#include "./Includes/OSX.hpp"

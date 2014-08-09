@@ -9,7 +9,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/")
 
 # C++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${PROJECT_SOURCE_DIR}/ThirdParty/General/")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${PROJECT_SOURCE_DIR}/Tools")
 set(EXTRA_FLAGS " -x objective-c++")
 
@@ -29,14 +28,8 @@ if(LINUX)
 endif()
 
 # Directories
-set(LIBS_DIR ${PROJECT_SOURCE_DIR}/Libs)
 set(GAME_DIR ${PROJECT_SOURCE_DIR}/Game)
 set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
-
-# ThirdParty General
-include_directories(${THIRDPARTY_DIR}/General/sqlite)
-link_directories(${THIRDPARTY_DIR}/General/sqlite)
-add_subdirectory(${THIRDPARTY_DIR}/General/sqlite)
 
 # Main Stuff
 set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.hpp)
@@ -55,36 +48,12 @@ elseif(UNIX)
     list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Linux.hpp)
 endif()
 
-# Libs
-include_directories(${LIBS_DIR})
-link_directories(${LIBS_DIR})
-
-include_directories(${LIBS_DIR}/Markov)
-link_directories(${LIBS_DIR}/Markov)
-add_subdirectory(${LIBS_DIR}/Markov)
-
-include_directories(${LIBS_DIR}/Names)
-link_directories(${LIBS_DIR}/Names)
-add_subdirectory(${LIBS_DIR}/Names)
-
 # NordicOS
 find_package(NordicOS)
 include_directories(${NORDICOS_INCLUDE_DIR})
 link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
 add_subdirectory(${PROJECT_SOURCE_DIR}/NordicOS)
-
-# ThirdParty OS Specific
-if (WIN32)
-    include_directories(${THIRDPARTY_DIR}/Windows)
-    link_directories(${THIRDPARTY_DIR}/Windows)
-elseif(APPLE)
-    include_directories(${THIRDPARTY_DIR}/OSX)
-    link_directories(${THIRDPARTY_DIR}/OSX)
-elseif(UNIX)
-    include_directories(${THIRDPARTY_DIR}/Posix)
-    link_directories(${THIRDPARTY_DIR}/Posix)
-endif()
 
 # Game
 include_directories(${GAME_DIR})
@@ -107,5 +76,4 @@ elseif (UNIX)
 endif()
 
 target_link_libraries(RandGame SQLite GameLibrary)
-target_link_libraries(RandGame Markov Names)
 target_link_libraries(RandGame NordicOS)

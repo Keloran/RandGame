@@ -19,9 +19,7 @@
     #include "./nonWindows/nonWindows.hpp"
 #endif
 
-// Time
-#include "./Time/Time.hpp"
+// String
 #include "./String/String.hpp"
-#include "./Logger/Logger.hpp"
 
 #endif

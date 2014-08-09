@@ -2,11 +2,14 @@
 #define NORDICARTS_RANDGAME_H
 
 #include "./includes.hpp"
-#include "./Game/Game.hpp"
 
-#include <Markov/Markov.hpp>
-#include <Names/Names.hpp>
+#include <Game/Game.hpp>
+#include <Game/Markov/Markov.hpp>
+#include <Game/Names/Names.hpp>
+
 #include <NordicOS/Noise/Simplex.hpp>
+#include <NordicOS/Time/Time.hpp>
+#include <NordicOS/Logger/Logger.hpp>
 
 namespace NordicArts {
 };
