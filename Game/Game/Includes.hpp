@@ -19,4 +19,7 @@
 #include <cstdint>
 #include <chrono>
 
+// GLM
+#include "./ThirdParty/glm/glm.hpp"
+
 #endif

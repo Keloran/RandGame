@@ -49,6 +49,12 @@ include_directories(${GameDir}/Markov)
 list(APPEND GameHeaders ${GameDir}/Markov/Markov.hpp)
 list(APPEND GameLibs ${GameDir}/Markov/Markov.cpp)
 
+# Settings
+link_directories(${GameDir}/Settings)
+include_directories(${GameDir}/Settings)
+list(APPEND GameHeaders ${GameDir}/Settings/Settings.hpp)
+list(APPEND GameLibs ${GameDir}/Settings/Settings.cpp)
+
 # GLM
 include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 
