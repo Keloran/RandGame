@@ -13,7 +13,7 @@ namespace NordicArts {
     void Forest::addTree(Tree oTree) {
         m_vTrees.insert(m_vTrees.begin(), oTree);
         
-        //std::map<std::map<int, int>, Tree> mCell = getCell(oTree);
+        std::map<std::map<int, int>, Tree> mCell = getCell(oTree);
     }
 
     int Forest::getHeight() const {
@@ -26,4 +26,18 @@ namespace NordicArts {
         return m_iCellSize;
     }
 
+    std::map<std::map<int, int>, Tree> Forest::getCell(Tree oTree) {
+        return getCellFromPoint(oTree.getX(), oTree.getY());
+    }
+
+    std::map<std::map<int, int>, Tree> Forest::getCellFromPoint(int iX, int iY) {
+        int iCol = (int)(iX / getSize());
+        int iRow = (int)(iY / getSize());
+
+        std::map<std::map<int, int>, Tree> ret;
+    
+        return ret;
+
+        //return m_mCells[iRow][iCol];
+    }
 };
