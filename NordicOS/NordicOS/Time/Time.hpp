@@ -27,8 +27,12 @@ namespace NordicArts {
             NA_TIME m_oTime;
             NA_TIMEINFO *m_sTimeInfo;
 
+            std::chrono::system_clock::time_point           m_tpSystemTime;
+            std::chrono::high_resolution_clock::time_point  m_tpHighClock;
+
         // Methods
         public:
+            TimeNA();
             TimeNA(NA_TIME &oTime);
             
             int getDay();
@@ -38,6 +42,7 @@ namespace NordicArts {
             int getMinute();
             int getSecond();
             int getMilliSecond();
+            int getNanoSeconds();
 
         protected:
         private:

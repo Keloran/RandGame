@@ -2,6 +2,7 @@
 #define NORDICARTS_OS_STRING_H
 
 #include "../OSLoad.hpp"
+#include "../Time/Time.hpp"
 
 namespace NordicArts {
     std::string getString(char cChar);

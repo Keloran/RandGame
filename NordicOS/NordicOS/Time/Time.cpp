@@ -1,6 +1,11 @@
 #include "./Time.hpp"
 
 namespace NordicArts {
+    TimeNA::TimeNA() {
+        m_tpSystemTime      = std::chrono::system_clock::now();
+        m_tpHighClock       = std::chrono::high_resolution_clock::now();
+    }
+
     TimeNA::TimeNA(NA_TIME &oTime) {
         m_oTime = oTime;
 
@@ -74,12 +79,12 @@ namespace NordicArts {
     }
 
     int TimeNA::getMilliSecond() {
-        #if defined(nonWindows)
-            return 0;
-        #else
-            return m_oTime.wMilliseconds;
-        #endif
-    
-        return -1;
+        std::chrono::milliseconds timeDuration                      = std::chrono::duration_cast<std::chrono::milliseconds>(m_tpHighClock.time_since_epoch());
+        return timeDuration.count();
+    }
+
+    int TimeNA::getNanoSeconds() {
+        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(m_tpHighClock.time_since_epoch());
+        return timeDuration.count();
     }
 };
