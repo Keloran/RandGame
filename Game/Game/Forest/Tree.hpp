@@ -28,6 +28,8 @@ namespace NordicArts {
 
             int m_iX;
             int m_iY;
+
+            int m_iTree;
             
             Species m_sSpecies;
         
@@ -39,9 +41,11 @@ namespace NordicArts {
 
             int getX() const;
             int getY() const;
+            int getTree() const;
 
             void absorb(Tree oVictim);
             void grow();
+            void setTree(int iTree);
 
             bool overLapping(Tree oOther);
             bool containsPoint(int iX, int iY);

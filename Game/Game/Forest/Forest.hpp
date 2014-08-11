@@ -14,12 +14,13 @@ namespace NordicArts {
         private:
             std::vector<Tree> m_vTrees;
 
-            std::map<std::map<int, int>, Tree> m_mCells;
+            std::map<int, std::map<int, std::vector<Tree> > > m_mCells;
             
             int m_iWidth;
             int m_iHeight;
             int m_iCellSize;
-            
+            int m_iMaxWidth;
+            int m_iMaxHeight;            
 
         // Methods
         public:
@@ -29,15 +30,17 @@ namespace NordicArts {
             void removeTree(Tree oTree);
             void iterate();
 
-            std::list<Tree> spreadTreeSeed(Tree oTree);
+            std::vector<Tree> spreadTreeSeed(Tree oTree);
         
-            std::map<std::map<int, int>, Tree> getAllBoringCellsByPoint(int iX, int iY);
-            std::map<std::map<int, int>, Tree> getAllBoringCellsByTree(Tree oTree);
-            std::map<std::map<int, int>, Tree> getCellFromPoint(int iX, int iY);
-            std::map<std::map<int, int>, Tree> getCell(Tree oTree);
+            std::vector<Tree> getAllBoringCellsByPoint(int iX, int iY);
+            std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
+            std::vector<Tree> getCellFromPoint(int iX, int iY);
+            std::vector<Tree> getCell(Tree oTree);
 
             int getHeight() const;
+            int getMaxHeight() const;
             int getWidth() const;
+            int getMaxWidth() const;
             int getSize() const;
 
         protected:

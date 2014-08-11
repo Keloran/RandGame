@@ -12,6 +12,10 @@ namespace NordicArts {
         m_fSize = std::min((getSize() + m_sSpecies.fGrowthRate), m_sSpecies.fMaxSize);
     }
 
+    void Tree::setTree(int iTree) {
+        m_iTree = iTree;
+    }
+
     bool Tree::overLapping(Tree oOther) {
         float fOverLap = std::sqrt(std::pow(oOther.getX() - getX(), 2) + std::pow(oOther.getY() - getY(), 2));
         
@@ -42,5 +46,9 @@ namespace NordicArts {
 
     int Tree::getY() const {
         return m_iY;
+    }
+
+    int Tree::getTree() const {
+        return m_iTree;
     }
 };
