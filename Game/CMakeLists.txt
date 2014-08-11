@@ -55,6 +55,14 @@ include_directories(${GameDir}/Settings)
 list(APPEND GameHeaders ${GameDir}/Settings/Settings.hpp)
 list(APPEND GameLibs ${GameDir}/Settings/Settings.cpp)
 
+# Forest
+link_directories(${GameDir}/Forest)
+include_directories(${GameDir}/Forest)
+list(APPEND GameHeaders ${GameDir}/Forest/Forest.hpp)
+list(APPEND GameLibs ${GameDir}/Forest/Forest.cpp)
+list(APPEND GameHeaders ${GameDir}/Forest/Tree.hpp)
+list(APPEND GameLibs ${GameDir}/Forest/Tree.cpp)
+
 # GLM
 include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 

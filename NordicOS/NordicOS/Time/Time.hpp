@@ -9,12 +9,9 @@
     #if defined(nonWindows)
         #define NA_TIME time_t
         #define NA_TIMEINFO tm
-    #elif defined(NordicArtsWindows)
+    #else
         #define NA_TIME SYSTEMTIME
         #define NA_TIMEINFO NULL
-    #else
-        #define NA_TIME time_t
-        #define NA_TIMEINFO tm
     #endif
 #endif
 

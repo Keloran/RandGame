@@ -5,6 +5,7 @@
 #include "../OSLoad.hpp"
 
 #if !defined(nonWindows)
+
     // Strip lots of rubbish from windows builds
     #define VC_EXTRALEAN
 
@@ -13,6 +14,7 @@
     #include <conio.h>
     #include <tchar.h>
     #include <process.h>
+    #include <winbase.h>
 
     // MUTEX_THREAD is really a HANDLE on Windows
     typedef HANDLE MUTEX_THREAD;

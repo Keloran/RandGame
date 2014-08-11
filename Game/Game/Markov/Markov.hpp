@@ -7,6 +7,7 @@
 
 #include <NordicOS/OS.hpp>
 #include <NordicOS/Logger/Logger.hpp>
+#include <NordicOS/Time/Time.hpp>
 
 namespace NordicArts {
     class Markov {
