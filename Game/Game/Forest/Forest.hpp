@@ -12,7 +12,7 @@ namespace NordicArts {
         public:
         protected:
         private:
-            std::list<Tree> m_lTrees;
+            std::vector<Tree> m_vTrees;
 
             std::map<std::map<int, int>, Tree> m_mCells;
             

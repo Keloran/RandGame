@@ -11,7 +11,7 @@ namespace NordicArts {
     }
 
     void Forest::addTree(Tree oTree) {
-        //m_lTrees.insert(oTree);
+        m_vTrees.insert(m_vTrees.begin(), oTree);
         
         //std::map<std::map<int, int>, Tree> mCell = getCell(oTree);
     }
