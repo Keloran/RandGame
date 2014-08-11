@@ -14,7 +14,7 @@ namespace NordicArts {
         private:
             std::list<Tree> m_lTrees;
 
-            std::map<int, int> m_mCells;
+            std::map<std::map<int, int>, Tree> m_mCells;
             
             int m_iWidth;
             int m_iHeight;
@@ -31,10 +31,10 @@ namespace NordicArts {
 
             std::list<Tree> spreadTreeSeed(Tree oTree);
         
-            std::map<int, int> getAllBoringCellsByPoint(int iX, int iY);
-            std::map<int, int> getAllBoringCellsByTree(Tree oTree);
-            std::map<int, int> getCellFromPoint(int iX, int iY);
-            std::map<int, int> getCell(Tree oTree);
+            std::map<std::map<int, int>, Tree> getAllBoringCellsByPoint(int iX, int iY);
+            std::map<std::map<int, int>, Tree> getAllBoringCellsByTree(Tree oTree);
+            std::map<std::map<int, int>, Tree> getCellFromPoint(int iX, int iY);
+            std::map<std::map<int, int>, Tree> getCell(Tree oTree);
 
             int getHeight() const;
             int getWidth() const;
