@@ -2,7 +2,7 @@
 
 namespace NordicArts {
     Species::Species() {
-        loadSpecies();
+        //loadSpecies();
     }
 
     void Species::loadSpecies() {
@@ -29,10 +29,9 @@ namespace NordicArts {
             TimeNA::TimeNA oTime;
             TimeNA::TimeNA *pTime = &oTime;
             srand(pTime->getNanoSeconds());
-            //int iRand = ((rand() % sSpecies.iMaxSize) + 1);
-            int iRand = 1;
+            int iRand = ((rand() % sSpecies.iMaxSize) + 1);
             
-            sSpecies.iInitialSize = iRand;
+            //sSpecies.iInitialSize = iRand;
             
             m_vTrees.insert(m_vTrees.begin(), sSpecies);
         }

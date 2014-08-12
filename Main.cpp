@@ -9,7 +9,19 @@ void RenderGame(Game *pGame, GameState eGS) {
     pGame->RenderGame(eGS);
 }
 
+void handleException(std::exception_ptr ptrException) {
+    try {
+        if (ptrException) {
+            std::rethrow_exception(ptrException);
+        }
+    } catch (const std::exception &ex) {
+        std::cout << "Caught Exception: " << ex.what() << std::endl;
+    }
+}
+
 int main() {
+    std::exception_ptr ptrException;
+
     try {
         Logger::Logger oLogger("RandGame.log");
         Logger::Logger *pLogger = &oLogger;
@@ -125,6 +137,11 @@ int main() {
         pGame->ShutDown();
     } catch (std::exception &ex) {
         throw ExceptionHandler(ex.what());
+    } catch ( ... ) {
+        ptrException = std::current_exception();
     }
+
+    handleException(ptrException);
+
     return EXIT_SUCCESS;
 }

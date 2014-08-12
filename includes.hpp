@@ -18,6 +18,8 @@
 #include <math.h>
 #include <cstdint>
 #include <chrono>
+#include <exception>
+#include <stdexcept>
 
 // System Specific Includes
 #if defined(__APPLE__) || defined (__OSX__)
