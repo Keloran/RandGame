@@ -26,6 +26,7 @@
 #include <algorithm> // Misc
 #include <unordered_map> // Unordered Map
 #include <map> // Map
+#include <ios> // Some standard input-output
 
 // OSX Includes
 #ifdef __OBJC__

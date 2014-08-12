@@ -55,7 +55,10 @@ namespace NordicArts {
     }
 
     std::vector<Tree> Forest::getAllBoringCellsByTree(Tree oTree) {
-        return getAllBoringCellsByPoint(oTree.getX(), oTree.getY());
+        std::vector<Tree> ret;
+        return ret;
+
+        //return getAllBoringCellsByPoint(oTree.getX(), oTree.getY());
     }
 
     std::map<int, std::map<int, std::vector<Tree>>> Forest::getAllBoringCellsByPoint(int iX, int iY) {
@@ -70,10 +73,12 @@ namespace NordicArts {
         std::vector<int> vY;
         boost::push_back(vY, boost::irange(-1, 2));
 
+        Species::Species oSpecies;
+
         for (std::vector<int>::iterator itX = vX.begin(); itX != vX.end(); itX++) {
             for (std::vector<int>::iterator itY = vY.begin(); itY != vY.end(); itY++) {
                 if (((iRow + *itX) >= 0) && ((iRow + *itX) < m_mCells.size()) && ((iCol + *itY) >= 0) && ((iCol + *itY) < m_mCells[0].size())) {
-                    m_mCells.insert(m_mCells.end(), m_mCells[iRow + *itX][iCol + *itY]);
+                    //m_mCells.insert(m_mCells.end(), m_mCells[iRow + *itX][iCol + *itY]);
                 }
             }
         }

@@ -94,7 +94,7 @@ namespace NordicArts {
     void Markov::fillNameList() {
         std::vector<std::string> names;
 
-        std::ifstream inFile("./Extras/Names/names-list");
+        std::ifstream inFile("./GameFiles/Names/names-list");
         std::string cLine;
 
         while (std::getline(inFile, cLine)) {

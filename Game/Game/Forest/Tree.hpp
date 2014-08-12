@@ -1,29 +1,17 @@
-#ifndef NORDICARTS_GAME_TREE_H
-#define NORDICARTS_GAME_TREE_H
+#ifndef NORDICARTS_GAME_FOREST_TREE_H
+#define NORDICARTS_GAME_FOREST_TREE_H
 
 #include <NordicOS/OS.hpp>
 #include "../Includes.hpp"
+#include "./Species.hpp"
 
 namespace NordicArts {
-    struct Species {
-        std::string cName;
-        
-        float fGrowthRate;
-        float fMaxSize;
-        float fSeedSurvability;
-        float fSeedSpreadDistance;
-        float fSeedRate;
-        float fSlopeThreshhold;
-        float fInitialSize;
-
-        Species(std::string cNameIn, float fGrowthRateIn) : cName(cNameIn), fGrowthRate(fGrowthRateIn) {}
-    };
-
     class Tree {
         // Variables
         public:
         protected:
         private:
+            int m_iSize;
             float m_fSize;
 
             int m_iX;
@@ -31,13 +19,14 @@ namespace NordicArts {
 
             int m_iTree;
             
-            Species m_sSpecies;
+            TreeSpecies m_sSpecies;
         
         // Methods
         public:
-            Tree(Species sSpecies, int iX, int iY);
+            Tree(TreeSpecies sSpecies, int iX, int iY);
 
-            float getSize() const;
+            int iGetSize() const;
+            float fGetSize() const;
 
             int getX() const;
             int getY() const;

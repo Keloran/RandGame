@@ -114,12 +114,13 @@ int main() {
             pLogger->log(randString().c_str());
         }
 
-        std::chrono::high_resolution_clock::time_point timePoint    = std::chrono::high_resolution_clock::now();
-        std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(timePoint.time_since_epoch());
-        int timeCount                                               = timeDuration.count();
+        TimeNA::TimeNA oTime;
+        TimeNA::TimeNA *pTime = &oTime;
         std::string cString = "Stuff: ";
-        cString.append(getString(timeCount));
+        cString.append(getString(pTime->getNanoSeconds()));
         pLogger->log(cString.c_str());
+
+        Species::Species oSpecies;
 
         pGame->ShutDown();
     } catch (std::exception &ex) {

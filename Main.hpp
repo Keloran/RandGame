@@ -6,6 +6,7 @@
 #include <Game/Game.hpp>
 #include <Game/Markov/Markov.hpp>
 #include <Game/Names/Names.hpp>
+#include <Game/Forest/Species.hpp>
 
 #include <NordicOS/Noise/Simplex.hpp>
 #include <NordicOS/Time/Time.hpp>

@@ -62,6 +62,8 @@ list(APPEND GameHeaders ${GameDir}/Forest/Forest.hpp)
 list(APPEND GameLibs ${GameDir}/Forest/Forest.cpp)
 list(APPEND GameHeaders ${GameDir}/Forest/Tree.hpp)
 list(APPEND GameLibs ${GameDir}/Forest/Tree.cpp)
+list(APPEND GameHeaders ${GameDir}/Forest/Species.hpp)
+list(APPEND GameLibs ${GameDir}/Forest/Species.cpp)
 
 # GLM
 include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)

@@ -20,7 +20,7 @@ namespace NordicArts {
     void Names::fillPrefixes() {
         std::vector<std::string> prefixes;
         
-        std::ifstream inFile("./Extras/Names/prefix");
+        std::ifstream inFile("./GameFiles/Names/prefix");
         std::string cLine;
     
         while (std::getline(inFile, cLine)) {
@@ -34,7 +34,7 @@ namespace NordicArts {
     void Names::fillStems() {
         std::vector<std::string> stems;
         
-        std::ifstream inFile("./Extras/Names/stems");
+        std::ifstream inFile("./GameFiles/Names/stems");
         std::string cLine;
     
         while (std::getline(inFile, cLine)) {
@@ -48,7 +48,7 @@ namespace NordicArts {
     void Names::fillSuffixes() {
         std::vector<std::string> suffixes;
     
-        std::ifstream inFile("./Extras/Names/suffix");
+        std::ifstream inFile("./GameFiles/Names/suffix");
         std::string cLine;
 
         while (std::getline(inFile, cLine)) {
