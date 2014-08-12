@@ -23,6 +23,7 @@ namespace NordicArts {
         
         // Methods
         public:
+            Tree();
             Tree(TreeSpecies sSpecies, int iX, int iY);
 
             int iGetSize() const;

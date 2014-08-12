@@ -133,6 +133,20 @@ int main() {
         pLogger->log(cString.c_str());
 
         Species::Species oSpecies;
+        Species::Species *pSpecies = &oSpecies;
+        std::vector<TreeSpecies> vTrees = pSpecies->getSpecies();
+        srand(pTime->getNanoSeconds());
+        int iRand = 0;
+        for (int i = 0; i < it; i++) {
+            iRand = ((rand() % vTrees.size()) + 1);
+
+            switch (iRand) {
+                case 0: {
+                    Tree::Tree oTree(vTrees[iRand], 0, 0);
+                }
+                break;
+            }
+        }
 
         pGame->ShutDown();
     } catch (std::exception &ex) {

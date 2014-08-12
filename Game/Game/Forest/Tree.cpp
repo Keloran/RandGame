@@ -1,20 +1,18 @@
 #include "./Tree.hpp"
 
 namespace NordicArts {
-    //Tree::Tree(TreeSpecies sSpecies, int iX, int iY) : m_iX(iX), m_iY(iY), m_sSpecies(sSpecies), m_iSize(sSpecies.iInitialSize), m_fSize(float(sSpecies.iInitialSize)) {
+    Tree::Tree() : m_sSpecies(nullptr) {
+    }
+    
     Tree::Tree(TreeSpecies sSpecies, int iX, int iY) : m_iX(iX), m_iY(iY), m_sSpecies(sSpecies), m_iSize(sSpecies.iInitialSize) {
     }
 
     void Tree::absorb(Tree oVictim) {
-        //m_iSize = std::min((iGetSize() + int(oVictim.fGetSize())), iGetSize());
-        m_fSize = 0;
-        m_iSize = 0;
+        m_iSize = std::min((iGetSize() + int(oVictim.fGetSize())), iGetSize());
     }
 
     void Tree::grow() {
-        //m_iSize = std::min((iGetSize() + int(m_sSpecies.fGrowthRate)), m_sSpecies.iMaxSize);
-        m_fSize = 0;
-        m_iSize = 0;
+        m_iSize = std::min((iGetSize() + int(m_sSpecies.fGrowthRate)), m_sSpecies.iMaxSize);
     }
 
     void Tree::setTree(int iTree) {

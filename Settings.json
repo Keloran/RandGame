@@ -1,0 +1,20 @@
+{
+	"settings": {
+		"refreshRate": 60,
+		"fsaa": 0,
+		"openGLES": 0,
+		"seedNumber": 0,
+		"windowMode": false,
+		"statsLogging": false,
+		"vSync": false,
+		"mobile": false,
+		"resolution": [
+			{
+				"width": 800,
+				"height": 600
+			}
+		],
+		"gameName": "RandGame",
+		"fov": 75
+	}
+}

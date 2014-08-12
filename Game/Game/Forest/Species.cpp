@@ -40,4 +40,8 @@ namespace NordicArts {
             m_vTrees.insert(m_vTrees.begin(), sSpecies);
         }
     }
+
+    std::vector<TreeSpecies> Species::getSpecies() {
+        return m_vTrees;
+    }
 };
