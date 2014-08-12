@@ -9,26 +9,26 @@ namespace NordicArts {
     }
 
     void Forest::addTree(Tree oTree) {
-        int iTree = m_vTrees = m_vTrees.end();
+        int iTree = m_vTrees.size();
         oTree.setTree(iTree);
 
-        m_vTrees.insert(iTree, oTree);
+        m_vTrees.insert(m_vTrees.end(), oTree);
         
         std::vector<Tree> mCell = getCell(oTree);
         mCell.insert(mCell.end(), oTree);
     }
 
     void Forest::removeTree(Tree oTree) {
-        for (int it = m_vTrees.begin(); it != m_vTrees.end(); it++) {
-            if (it == oTree.getTree()) {
-                m_vTrees.erase(oTree.getTree());
+        for (std::vector<Tree>::iterator it = m_vTrees.begin(); it != m_vTrees.end(); it++) {
+            if (it->getTree() == oTree.getTree()) {
+                m_vTrees.erase(it);
             }
         }
 
         std::vector<Tree> mCell = getCell(oTree);
-        for (int it = mCell.begin(); it != mCell.end(); it++) {
-            if (it == oTree.getTree()) {
-                mCell.erase(oTree.getTree());
+        for (std::vector<Tree>::iterator it = mCell.begin(); it != mCell.end(); it++) {
+            if (it->getTree() == oTree.getTree()) {
+                mCell.erase(it);
             }
         }
     }
@@ -58,7 +58,26 @@ namespace NordicArts {
         return getAllBoringCellsByPoint(oTree.getX(), oTree.getY());
     }
 
-    std::vector<Tree> Forest::getAllBoringCellsByPoint(int iX, int iY) {
-        
+    std::map<int, std::map<int, std::vector<Tree>>> Forest::getAllBoringCellsByPoint(int iX, int iY) {
+        int iCol = (int)(iX / getSize());
+        int iRow = (int)(iY / getSize());
+
+        // X Range
+        std::vector<int> vX;
+        boost::push_back(vX, boost::irange(-1, 2));
+
+        // Y Range
+        std::vector<int> vY;
+        boost::push_back(vY, boost::irange(-1, 2));
+
+        for (std::vector<int>::iterator itX = vX.begin(); itX != vX.end(); itX++) {
+            for (std::vector<int>::iterator itY = vY.begin(); itY != vY.end(); itY++) {
+                if (((iRow + *itX) >= 0) && ((iRow + *itX) < m_mCells.size()) && ((iCol + *itY) >= 0) && ((iCol + *itY) < m_mCells[0].size())) {
+                    m_mCells.insert(m_mCells.end(), m_mCells[iRow + *itX][iCol + *itY]);
+                }
+            }
+        }
+
+        return m_mCells;
     }
 };

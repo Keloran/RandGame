@@ -2,6 +2,8 @@
 #define NORDICARTS_GAME_FOREST_H
 
 #include <NordicOS/OS.hpp>
+#include <boost/range/irange.hpp>
+#include <boost/range/algorithm_ext/push_back.hpp>
 
 #include "../Includes.hpp"
 #include "./Tree.hpp"
@@ -14,7 +16,7 @@ namespace NordicArts {
         private:
             std::vector<Tree> m_vTrees;
 
-            std::map<int, std::map<int, std::vector<Tree> > > m_mCells;
+            std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
             
             int m_iWidth;
             int m_iHeight;
@@ -32,7 +34,7 @@ namespace NordicArts {
 
             std::vector<Tree> spreadTreeSeed(Tree oTree);
         
-            std::vector<Tree> getAllBoringCellsByPoint(int iX, int iY);
+            std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
             std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
             std::vector<Tree> getCellFromPoint(int iX, int iY);
             std::vector<Tree> getCell(Tree oTree);
