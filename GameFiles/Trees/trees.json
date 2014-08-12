@@ -10,7 +10,8 @@
             "seedRate": 3,
             "slopeThreshold": 9,
             "leafType": "pine",
-            "seedType": "pineCone"
+            "seedType": "pineCone",
+            "maxSize": 5
         },
         {
             "name": "Quercus Robur",
@@ -22,7 +23,8 @@
             "seedRate": 3,
             "slopeThreshold": 2,
             "leafType": "oak",
-            "seedType": "acorn"
+            "seedType": "acorn",
+            "maxSize": 8
         }
     ]
 }
