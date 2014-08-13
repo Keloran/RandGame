@@ -68,10 +68,16 @@ list(APPEND GameLibs ${GameDir}/Forest/Species.cpp)
 # GLM
 include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 
+# NordicOS
 find_package(NordicOS REQUIRED)
 include_directories(${NORDICOS_INCLIDE_DIR})
 link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
+
+# Build Number
+string(TIMESTAMP buildNumber "%j%Y%H%M%S")
+file(WRITE ${GameDir}/buildNumber.hpp "#ifndef GAME_BUILDNUMBER\n#define GAME_BUILDNUMBER ${buildNumber}\n#endif")
+list(APPEND LibHeaders ${GameDir}/buildNumber.hpp)
 
 # Library
 add_library(GameLibrary STATIC ${GameLibs} ${GameHeaders})

@@ -2,6 +2,7 @@
 #define NORDICARTS_RANDGAME_H
 
 #include "./includes.hpp"
+#include "./buildNumber.hpp"
 
 #include <Game/Game.hpp>
 #include <Game/Markov/Markov.hpp>

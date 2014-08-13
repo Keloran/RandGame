@@ -3,6 +3,7 @@
 
 #include "./Includes.hpp"
 #include "./Setup/Setup.hpp"
+#include "./buildNumber.hpp"
 
 #include <NordicOS/OS.hpp>
 #include <NordicOS/Logger/Logger.hpp>

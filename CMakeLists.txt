@@ -60,6 +60,11 @@ include_directories(${GAME_DIR})
 link_directories(${GAME_DIR})
 add_subdirectory(${GAME_DIR})
 
+# Build Number
+string(TIMESTAMP buildNumber "%j%Y%H%M%S")
+file(WRITE ${PROJECT_SOURCE_DIR}/buildNumber.hpp "#ifndef RANDGAME_BUILDNUMBER\n#define RANDGAME_BUILDNUMBER ${buildNumber}\n#endif")
+list(APPEND LibHeaders ${PROJECT_SOURCE_DIR}/buildNumber.hpp)
+
 # Executable
 add_executable(RandGame ${Main_Libs} ${Main_Headers})
 set_target_properties(RandGame PROPERTIES LINKER_LANGUAGE CXX)

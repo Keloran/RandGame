@@ -124,6 +124,11 @@ link_directories(${NOS}/sqlite)
 include_directories(${NOS}/sqlite)
 add_subdirectory(${NOS}/sqlite)
 
+# Build Number
+string(TIMESTAMP buildNumber "%j%Y%H%M%S")
+file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER ${buildNumber}\n#endif")
+list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
+
 # Generate Library
 add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)

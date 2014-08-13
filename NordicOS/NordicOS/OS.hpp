@@ -1,6 +1,8 @@
 #ifndef NORDICARTS_OS_H
 #define NORDICARTS_OS_H
 
+#include "./buildNumber.hpp"
+
 // OS Specific Includes
 #if defined(__APPLE_CC__) || defined(__APPLE__)
     #define NordicArtsOSX true

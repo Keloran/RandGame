@@ -160,6 +160,10 @@ namespace NordicArts {
 
         handleException(ptrException);
 
+        std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
+        std::cout << "NordicOS: " << NORDICOS_BUILDNUMBER << std::endl;
+        std::cout << "Game: " << GAME_BUILDNUMBER << std::endl;
+
         return EXIT_SUCCESS;
     }
 };
