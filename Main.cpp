@@ -49,12 +49,14 @@ namespace NordicArts {
 
                     case GS_PAUSED_MENU: {
                         pGame->RenderPauseMenu();
-                        pGame->RenderGame(eGameState);
+
+                        std::thread render(ThreadRenderGame, pGame, eGameState);
+                        render.join(); 
                     } break;
                     
                     case GS_GAME: {
-                        std::thread update (ThreadUpdateGame, pGame, eGameState);
-                        std::thread render (ThreadRenderGame, pGame, eGameState);
+                        std::thread update(ThreadUpdateGame, pGame, eGameState);
+                        std::thread render(ThreadRenderGame, pGame, eGameState);
 
                         update.join();
                         render.join();
