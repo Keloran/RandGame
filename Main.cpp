@@ -1,14 +1,14 @@
 #include "./Main.hpp"
 
-using namespace NordicArts;
-
-void UpdateGame(Game *pGame, GameState eGS) {
+// Threading
+void ThreadUpdateGame(NordicArts::Game *pGame, NordicArts::GameState eGS) {
     pGame->UpdateGame(eGS);
 }
-void RenderGame(Game *pGame, GameState eGS) {
+void ThreadRenderGame(NordicArts::Game *pGame, NordicArts::GameState eGS) {
     pGame->RenderGame(eGS);
 }
 
+// Handle Unknown Exceptions
 void handleException(std::exception_ptr ptrException) {
     try {
         if (ptrException) {
@@ -23,57 +23,56 @@ int main() {
     std::exception_ptr ptrException;
 
     try {
-        Logger::Logger oLogger("RandGame.log");
-        Logger::Logger *pLogger = &oLogger;
+        NordicArts::Logger::Logger oLogger("RandGame.log");
+        NordicArts::Logger::Logger *pLogger = &oLogger;
 
-        GameState eGameState = GS_INTRO;
+        NordicArts::GameState eGameState = NordicArts::GS_INTRO;
             
-        Game::Game oGame(pLogger);
-        Game::Game* pGame = &oGame;    
+        NordicArts::Game::Game oGame(pLogger);
+        NordicArts::Game::Game* pGame = &oGame;    
 
         pGame->Startup();
 
-        while(eGameState != GS_QUIT) {
+        while(eGameState != NordicArts::GS_QUIT) {
             pGame->ProcessInputs();        
 
             switch(eGameState) {
-                case GS_INTRO: {
+                case NordicArts::GS_INTRO: {
                     bool bFinished = pGame->RenderIntroCutScenes();
                     if (bFinished) {
                         //eGameState = GS_MENU;
-                        eGameState = GS_QUIT;
+                        eGameState = NordicArts::GS_QUIT;
                     }
                 } break;
 
-                case GS_PAUSED_MENU: {
+                case NordicArts::GS_PAUSED_MENU: {
                     pGame->RenderPauseMenu();
                     pGame->RenderGame(eGameState);
                 } break;
                 
-                case GS_GAME: {
-                    std::thread update (UpdateGame, pGame, eGameState);
-                    std::thread render (RenderGame, pGame, eGameState);
+                case NordicArts::GS_GAME: {
+                    std::thread update (ThreadUpdateGame, pGame, eGameState);
+                    std::thread render (ThreadRenderGame, pGame, eGameState);
 
                     update.join();
                     render.join();
                 } break;
         
-                case GS_MENU: {
+                case NordicArts::GS_MENU: {
                     pGame->RenderMainMenu();
                 } break;
 
-                case GS_QUIT:
-                case GS_NUM_STATES:
+                case NordicArts::GS_QUIT:
+                case NordicArts::GS_NUM_STATES:
                 default: {
                 } break;
             }
             
             pGame->VideoPageFlip();
-            sleep(5);
         }
 
-        Markov::Markov oMarkov(pLogger);
-        Markov::Markov *pMarkov = &oMarkov;
+        NordicArts::Markov::Markov oMarkov(pLogger);
+        NordicArts::Markov::Markov *pMarkov = &oMarkov;
 
         pLogger->log("---- .05f ----");
         pMarkov->setVariance(.05f);
@@ -87,16 +86,16 @@ int main() {
             pMarkov->generateWord();
         }
         pLogger->log("---- Names ---- ");
-        Names::Names oNames(pLogger);
-        Names::Names *pNames = &oNames;
+        NordicArts::Names::Names oNames(pLogger);
+        NordicArts::Names::Names *pNames = &oNames;
         for (int i = 0; i < 15; i++) {
             pNames->generateName();
         }
         
         pLogger->log("---- Simplex 2D ---- ");
         int it = 2;
-        Simplex::Simplex oSimplex;
-        Simplex::Simplex *pSimplex = &oSimplex;
+        NordicArts::Simplex::Simplex oSimplex;
+        NordicArts::Simplex::Simplex *pSimplex = &oSimplex;
         for (int i = 0; i < it; i++) {
             for (int j = 0; j < it; j++) {
                 pLogger->log(pSimplex->octaveNoise2d(3, 0.5, 1, i, j));
@@ -123,18 +122,18 @@ int main() {
 
         pLogger->log("---- Rand String ---- ");
         for (int i = 0; i < it; i++) {
-            pLogger->log(randString().c_str());
+            pLogger->log(NordicArts::randString().c_str());
         }
 
-        TimeNA::TimeNA oTime;
-        TimeNA::TimeNA *pTime = &oTime;
+        NordicArts::TimeNA::TimeNA oTime;
+        NordicArts::TimeNA::TimeNA *pTime = &oTime;
         std::string cString = "Stuff: ";
-        cString.append(getString(pTime->getNanoSeconds()));
+        cString.append(NordicArts::getString(pTime->getNanoSeconds()));
         pLogger->log(cString.c_str());
 
-        Species::Species oSpecies;
-        Species::Species *pSpecies = &oSpecies;
-        std::vector<TreeSpecies> vTrees = pSpecies->getSpecies();
+        NordicArts::Species::Species oSpecies;
+        NordicArts::Species::Species *pSpecies = &oSpecies;
+        std::vector<NordicArts::TreeSpecies> vTrees = pSpecies->getSpecies();
         srand(pTime->getNanoSeconds());
         int iRand = 0;
         for (int i = 0; i < it; i++) {
@@ -142,7 +141,7 @@ int main() {
 
             switch (iRand) {
                 case 0: {
-                    Tree::Tree oTree(vTrees[iRand], 0, 0);
+                    NordicArts::Tree::Tree oTree(vTrees[iRand], 0, 0);
                 }
                 break;
             }
@@ -150,7 +149,7 @@ int main() {
 
         pGame->ShutDown();
     } catch (std::exception &ex) {
-        throw ExceptionHandler(ex.what());
+        throw NordicArts::ExceptionHandler::ExceptionHandler(ex.what());
     } catch ( ... ) {
         ptrException = std::current_exception();
     }

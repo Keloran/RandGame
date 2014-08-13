@@ -24,14 +24,12 @@ namespace NordicArts {
     void Game::RenderGame(GameState eGS) {
         while(eGS != GS_QUIT) {
             m_pLogger->log("Render Game");
-            sleep(1);
         }
     }   
 
     void Game::UpdateGame(GameState eGS) {
         while (eGS != GS_QUIT) {
             m_pLogger->log("Update");
-            sleep(3);
         }
     }
 

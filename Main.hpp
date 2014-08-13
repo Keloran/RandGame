@@ -8,11 +8,9 @@
 #include <Game/Names/Names.hpp>
 #include <Game/Forest/Forest.hpp>
 
+#include <NordicOS/ExceptionHandler/ExceptionHandler.hpp>
 #include <NordicOS/Noise/Simplex.hpp>
 #include <NordicOS/Time/Time.hpp>
 #include <NordicOS/Logger/Logger.hpp>
-
-namespace NordicArts {
-};
 
 #endif
