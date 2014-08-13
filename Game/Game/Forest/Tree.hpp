@@ -26,6 +26,8 @@ namespace NordicArts {
             Tree();
             Tree(TreeSpecies sSpecies, int iX, int iY);
 
+            std::string getName() const;
+
             int iGetSize() const;
             float fGetSize() const;
 

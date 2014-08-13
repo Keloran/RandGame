@@ -27,6 +27,7 @@ namespace NordicArts {
         int iSeedRate;
         int iSlopeThreshold;        
         int iInitialSize;
+        int iSpecies;
 
         TreeSpecies(std::string cNameIn) : cName(cNameIn) {}
     };

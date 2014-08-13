@@ -6,7 +6,8 @@ namespace NordicArts {
     }
 
     void Species::loadSpecies() {
-        int iRand = 0;
+        int iRand   = 0;
+        int i       = 0;
 
         boost::property_tree::ptree pTree;
         boost::property_tree::read_json("./GameFiles/Trees/trees.json", pTree);
@@ -33,11 +34,13 @@ namespace NordicArts {
             Time::Time oTime;
             Time::Time *pTime = &oTime;
             srand(pTime->getNanoSeconds());
-            int iRand = ((rand() % iMaxSize) + 1);
+            int iRand = (rand() % iMaxSize);
            
-            sSpecies.iInitialSize = iRand;
+            sSpecies.iInitialSize   = iRand;
+            sSpecies.iSpecies       = i;
             
             m_vTrees.insert(m_vTrees.begin(), sSpecies);
+            i++;
         }
     }
 

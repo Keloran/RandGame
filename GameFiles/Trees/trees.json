@@ -25,6 +25,19 @@
             "leafType": "oak",
             "seedType": "acorn",
             "maxSize": 8
+        },
+        {
+            "name": "Made Up",
+            "growthRate": 3,
+            "maxHeight": 20,
+            "maxWidth": 20,
+            "seedSurvivability": 8,
+            "seedSpread": 3,
+            "seedRate": 3,
+            "slopeThreshold": 2,
+            "leafType": "oak",
+            "seedType": "acorn",
+            "maxSize": 8  
         }
     ]
 }

@@ -46,7 +46,7 @@ namespace NordicArts {
 
         // generate the string
         for (int i = 0; i < iLength; i++) {
-            int iRand = ((rand() % 36) + 1);
+            int iRand = (rand() % 36);
             returnString.append(getString(randChars[iRand]));
         }
 

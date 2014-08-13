@@ -39,6 +39,10 @@ namespace NordicArts {
         return (iGetSize() < oOther.iGetSize());
     }
 
+    std::string Tree::getName() const {
+        return m_sSpecies.cName;
+    }
+
     int Tree::iGetSize() const {
         return m_iSize;
     }
