@@ -39,7 +39,9 @@ namespace NordicArts {
     std::string Settings::getBuildNumber() const {
         std::ostringstream cReturn;
         
-        cReturn << "Valkyrie Build: " << ENGINEBUILD;
+        cReturn << "Valkyrie Build: " << ENGINEBUILD << std::endl;
+        cReturn << "NordicOS Build: " << NORDICOS_BUILDNUMBER << std::endl;
+        cReturn << "Game Build: " << GAME_BUILDNUMBER << std::endl;
         
         return cReturn.str();
     }

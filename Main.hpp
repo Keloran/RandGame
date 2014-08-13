@@ -8,6 +8,7 @@
 #include <Game/Markov/Markov.hpp>
 #include <Game/Names/Names.hpp>
 #include <Game/Forest/Forest.hpp>
+#include <Game/Settings/Settings.hpp>
 
 #include <NordicOS/ExceptionHandler/ExceptionHandler.hpp>
 #include <NordicOS/Noise/Simplex.hpp>

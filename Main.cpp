@@ -151,6 +151,10 @@ namespace NordicArts {
                 }
             }
 
+            Settings::Settings oSettings;
+            Settings::Settings *pSettings = &oSettings;
+            std::cout << pSettings->getBuildNumber().c_str() << std::endl;
+
             pGame->ShutDown();
         } catch (std::exception &ex) {
             throw ExceptionHandler::ExceptionHandler(ex.what());
@@ -159,10 +163,6 @@ namespace NordicArts {
         }
 
         handleException(ptrException);
-
-        std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
-        std::cout << "NordicOS: " << NORDICOS_BUILDNUMBER << std::endl;
-        std::cout << "Game: " << GAME_BUILDNUMBER << std::endl;
 
         return EXIT_SUCCESS;
     }

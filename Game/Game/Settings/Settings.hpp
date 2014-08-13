@@ -11,9 +11,11 @@
 
 // Prefix
 #include "../Includes.hpp"
+#include "../buildNumber.hpp"
 
 // Includes
 #include <NordicOS/Singleton/Singleton.hpp>
+#include <NordicOS/buildNumber.hpp>
 
 // Namespace
 namespace NordicArts {
