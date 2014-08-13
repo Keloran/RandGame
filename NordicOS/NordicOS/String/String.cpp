@@ -40,8 +40,8 @@ namespace NordicArts {
         char randChars[37] = "abcdefghijklmnopqrstuvwxyz1234567890";
 
         // Seed
-        TimeNA::TimeNA oTime;
-        TimeNA::TimeNA *pTime = &oTime;
+        Time::Time oTime;
+        Time::Time *pTime = &oTime;
         srand(pTime->getNanoSeconds());
 
         // generate the string

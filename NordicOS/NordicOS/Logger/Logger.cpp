@@ -74,7 +74,7 @@ namespace NordicArts {
         }
 
         NA_TIME sTime;
-        TimeNA oTime(sTime);
+        Time oTime(sTime);
     
         // Output the time
         cStream << " [ " << oTime.getYear() << ".";

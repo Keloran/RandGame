@@ -30,8 +30,8 @@ namespace NordicArts {
             sSpecies.iSlopeThreshold    = trees.second.get<int>("slopeThreshold");
             
             // Random inital size
-            TimeNA::TimeNA oTime;
-            TimeNA::TimeNA *pTime = &oTime;
+            Time::Time oTime;
+            Time::Time *pTime = &oTime;
             srand(pTime->getNanoSeconds());
             int iRand = ((rand() % iMaxSize) + 1);
            

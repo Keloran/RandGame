@@ -67,8 +67,8 @@ namespace NordicArts {
         std::string returnName;
 
         // Prefix
-        TimeNA::TimeNA oTime;
-        TimeNA::TimeNA *pTime = &oTime;
+        Time::Time oTime;
+        Time::Time *pTime = &oTime;
         srand(pTime->getNanoSeconds());
         returnName.append(m_vPrefixes[rand() % m_vPrefixes.size()]);
 

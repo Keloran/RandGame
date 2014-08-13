@@ -32,8 +32,8 @@ namespace NordicArts {
         int i = 0;
 
         // Seed
-        TimeNA::TimeNA oTime;
-        TimeNA::TimeNA *pTime = &oTime;
+        Time::Time oTime;
+        Time::Time *pTime = &oTime;
         srand(pTime->getNanoSeconds());
 
         // generate first letter

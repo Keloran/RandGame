@@ -1,12 +1,12 @@
 #include "./Time.hpp"
 
 namespace NordicArts {
-    TimeNA::TimeNA() {
+    Time::Time() {
         m_tpSystemTime      = std::chrono::system_clock::now();
         m_tpHighClock       = std::chrono::high_resolution_clock::now();
     }
 
-    TimeNA::TimeNA(NA_TIME &oTime) {
+    Time::Time(NA_TIME &oTime) {
         m_oTime = oTime;
 
         #if defined(nonWindows)
@@ -17,7 +17,7 @@ namespace NordicArts {
         #endif
     }
 
-    int TimeNA::getDay() {
+    int Time::getDay() {
         #if defined(nonWindows)
             return m_sTimeInfo->tm_mday;
         #else
@@ -27,7 +27,7 @@ namespace NordicArts {
         return -1;
     }
 
-    int TimeNA::getMonth() {
+    int Time::getMonth() {
         #if defined(nonWindows)
             return m_sTimeInfo->tm_mon;
         #else
@@ -38,7 +38,7 @@ namespace NordicArts {
     }
 
 
-    int TimeNA::getYear() {
+    int Time::getYear() {
         #if defined(nonWindows)
             return (1900 + m_sTimeInfo->tm_year);    
         #else
@@ -48,7 +48,7 @@ namespace NordicArts {
         return -1;
     }
 
-    int TimeNA::getHour() {
+    int Time::getHour() {
         #if defined(nonWindows)
             return m_sTimeInfo->tm_hour;
         #else
@@ -58,7 +58,7 @@ namespace NordicArts {
         return -1;
     }
 
-    int TimeNA::getMinute() {
+    int Time::getMinute() {
         #if defined(nonWindows)
             return m_sTimeInfo->tm_min;
         #else
@@ -68,7 +68,7 @@ namespace NordicArts {
         return -1;
     }
 
-    int TimeNA::getSecond() {
+    int Time::getSecond() {
         #if defined(nonWindows)
             return m_sTimeInfo->tm_sec;
         #else
@@ -78,12 +78,12 @@ namespace NordicArts {
         return -1;
     }
 
-    int TimeNA::getMilliSecond() {
+    int Time::getMilliSecond() {
         std::chrono::milliseconds timeDuration                      = std::chrono::duration_cast<std::chrono::milliseconds>(m_tpHighClock.time_since_epoch());
         return timeDuration.count();
     }
 
-    int TimeNA::getNanoSeconds() {
+    int Time::getNanoSeconds() {
         std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(m_tpHighClock.time_since_epoch());
         return timeDuration.count();
     }

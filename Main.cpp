@@ -127,8 +127,8 @@ namespace NordicArts {
                 pLogger->log(randString().c_str());
             }
 
-            TimeNA::TimeNA oTime;
-            TimeNA::TimeNA *pTime = &oTime;
+            Time::Time oTime;
+            Time::Time *pTime = &oTime;
             std::string cString = "Stuff: ";
             cString.append(getString(pTime->getNanoSeconds()));
             pLogger->log(cString.c_str());

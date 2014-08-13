@@ -16,7 +16,7 @@
 #endif
 
 namespace NordicArts {
-    class TimeNA {
+    class Time {
         // Variables
         public:
         protected:
@@ -29,8 +29,8 @@ namespace NordicArts {
 
         // Methods
         public:
-            TimeNA();
-            TimeNA(NA_TIME &oTime);
+            Time();
+            Time(NA_TIME &oTime);
             
             int getDay();
             int getMonth();
