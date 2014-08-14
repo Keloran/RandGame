@@ -129,6 +129,11 @@ string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER ${buildNumber}\n#endif")
 list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 
+# AngelScript
+include_directories(${NOS}/angelscript/include)
+link_directories(${NOS}/angelscript)
+add_subdirectory(${NOS}/angelscript/projects/cmake)
+
 # Generate Library
 add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
@@ -145,4 +150,5 @@ endif()
 
 # Library Linker
 target_link_libraries(NordicOS SQLite)
+target_link_libraries(NordicOS Angelscript)
 target_link_libraries(NordicOS boost_locale)

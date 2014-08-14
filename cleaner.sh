@@ -18,11 +18,8 @@ rm -rf `find . -type f -name libNames.a`
 rm -rf `find . -type f -name libMarkov.a`
 rm -rf `find . -type f -name libSimplex.a`
 rm -rf `find . -type f -name libNordicOS.a`
-rm -rf `find . -type f -name liblua.dylib`
-
+rm -rf `find . -type f -name libAngelscript.a`
 
 # Delete Binary
-rm -rf `find . -type f -name lua`
-rm -rf `find . -type f -name luac`
 rm -rf `find . -type f -name RandGame.app`
 rm -rf `find . -type f -name RandGame.log`
