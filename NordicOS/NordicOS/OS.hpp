@@ -24,4 +24,9 @@
 // String
 #include "./String/String.hpp"
 
+// SQLite
+extern "C" {
+    #include <sqlite3.h>
+}
+
 #endif
