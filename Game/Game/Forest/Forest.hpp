@@ -1,57 +1,34 @@
 #ifndef NORDICARTS_GAME_FOREST_H
 #define NORDICARTS_GAME_FOREST_H
 
-#include <NordicOS/OS.hpp>
-#include <boost/range/irange.hpp>
-#include <boost/range/algorithm_ext/push_back.hpp>
-
 #include "../Includes.hpp"
-#include "./Tree.hpp"
+
+#include <NordicOS/OS.hpp>
+#include <NordicOS/Noise/Simplex.hpp>
 
 namespace NordicArts {
-    class Forest {
-        // Variables
-        public:
-        protected:
-        private:
-            std::vector<Tree> m_vTrees;
+	class Forest {
+		// Variables
+		public:
+		protected:
+		private:
+			int m_iX;
+			int m_iY;
+			int m_iGridX;
+			int m_iGridY;
 
-            std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
-            
-            int m_iWidth;
-            int m_iHeight;
-            int m_iCellSize;
-            int m_iMaxWidth;
-            int m_iMaxHeight;            
+			int m_iMaxSize;
 
-        // Methods
-        public:
-            Forest(int iRandomSeed, int iWidth, int iHeight);
+		// Methods
+		public:
+			Forest(int iX, int iY, int iMaxSize);
 
-            void addTree(Tree oTree);
-            void removeTree(Tree oTree);
-            void iterate();
+			void setGridSize(int iGridSize);
 
-            std::vector<Tree> spreadTreeSeed(Tree oTree);
-        
-            std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
-            std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
-            std::vector<Tree> getCellFromPoint(int iX, int iY);
-            std::vector<Tree> getCell(Tree oTree);
+		protected:
+		private:
 
-            int getHeight() const;
-            int getMaxHeight() const;
-            int getWidth() const;
-            int getMaxWidth() const;
-            int getSize() const;
-
-        protected:
-        private:
-            bool canPlantSeed(int iX, int iY, Species sSpecies);
-            bool isPointTooCloseToTree(int iX, int iY, Species sSpecies);
-            bool isPointInTree(int iX, int iY);
-
-    };
+	};
 };
 
 #endif
