@@ -3,10 +3,10 @@
 namespace NordicArts {
 
     // Threading
-    void ThreadUpdateGame(Game *pGame, GameState eGS) {
+    void threadUpdateGame(Game *pGame, GameState eGS) {
         pGame->UpdateGame(eGS);
     }
-    void ThreadRenderGame(Game *pGame, GameState eGS) {
+    void threadRenderGame(Game *pGame, GameState eGS) {
         pGame->RenderGame(eGS);
     }
 
@@ -21,20 +21,41 @@ namespace NordicArts {
         }
     }
 
+    void messageCallback(const asSMessageInfo *pMsg, void *pParam) {
+        const char *cType = "ERR: ";
+        if (pMsg->type == asMSGTYPE_WARNING) {
+            cType = "WARN: ";
+        } else if (pMsg->type == asMSGTYPE_INFORMATION) {
+            cType = "INFO: ";
+        }
+
+        printf("%s (%d, %d) : %s : %s\n", pMsg->section, pMsg->row, pMsg->col, cType, pMsg->message);
+    }
+
     int main() {
+        // Exception Pointer
         std::exception_ptr ptrException;
 
         try {
+            // Create the Logger Pointer
             Logger::Logger oLogger("RandGame.log");
             Logger::Logger *pLogger = &oLogger;
 
+             // AngelScript
+            asIScriptEngine *pEngine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+            int iR = pEngine->SetMessageCallback(asFUNCTION(messageCallback), 0, asCALL_CDECL);
+            assert(iR >= 0);
+
+            // Set the inital GameState
             GameState eGameState = GS_INTRO;
                 
-            Game::Game oGame(pLogger);
+            // Create the Game Pointer
+            Game::Game oGame(pLogger, pEngine);
             Game::Game* pGame = &oGame;    
 
             pGame->Startup();
 
+            // GameLoop
             while(eGameState != GS_QUIT) {
                 pGame->ProcessInputs();        
 
@@ -50,13 +71,13 @@ namespace NordicArts {
                     case GS_PAUSED_MENU: {
                         pGame->RenderPauseMenu();
 
-                        std::thread render(ThreadRenderGame, pGame, eGameState);
+                        std::thread render(threadRenderGame, pGame, eGameState);
                         render.join(); 
                     } break;
                     
                     case GS_GAME: {
-                        std::thread update(ThreadUpdateGame, pGame, eGameState);
-                        std::thread render(ThreadRenderGame, pGame, eGameState);
+                        std::thread update(threadUpdateGame, pGame, eGameState);
+                        std::thread render(threadRenderGame, pGame, eGameState);
 
                         update.join();
                         render.join();
@@ -75,82 +96,6 @@ namespace NordicArts {
                 pGame->VideoPageFlip();
             }
 
-            Markov::Markov oMarkov(pLogger);
-            Markov::Markov *pMarkov = &oMarkov;
-
-            pLogger->log("---- .05f ----");
-            pMarkov->setVariance(.05f);
-            for (int i = 0; i < 15; i++) {
-                pMarkov->generateWord();
-            }
-
-            pLogger->log("---- .101f ---- ");
-            pMarkov->setVariance(.101f);
-            for (int i = 0; i < 15; i++) {
-                pMarkov->generateWord();
-            }
-            pLogger->log("---- Names ---- ");
-            Names::Names oNames(pLogger);
-            Names::Names *pNames = &oNames;
-            for (int i = 0; i < 15; i++) {
-                pNames->generateName();
-            }
-            
-            pLogger->log("---- Simplex 2D ---- ");
-            int it = 2;
-            Simplex::Simplex oSimplex;
-            Simplex::Simplex *pSimplex = &oSimplex;
-            for (int i = 0; i < it; i++) {
-                for (int j = 0; j < it; j++) {
-                    pLogger->log(pSimplex->octaveNoise2d(3, 0.5, 1, i, j));
-                }
-            }
-            pLogger->log("---- Simplex 3D ---- ");
-            for (int i = 0; i < it; i++) {
-                for (int j = 0; j < it; j++) {
-                    for (int k = 0; k < it; k++) {
-                        pLogger->log(pSimplex->octaveNoise3d(3, 0.5, 1, i, j, k));
-                    }
-                }
-            }
-            pLogger->log("---- Simplex 4D ---- ");
-            for (int i = 0; i < it; i++) {
-                for (int j = 0; j < it; j++) {
-                    for (int k = 0; k < it; k++) {
-                        for (int l = 0; l < it; l++) {
-                            pLogger->log(pSimplex->octaveNoise4d(3, 0.5, 1, i, j, k, l));
-                        }
-                    }
-                }
-            }
-
-            pLogger->log("---- Rand String ---- ");
-            for (int i = 0; i < it; i++) {
-                pLogger->log(randString().c_str());
-            }
-
-            Time::Time oTime;
-            Time::Time *pTime = &oTime;
-            std::string cString = "Stuff: ";
-            cString.append(getString(pTime->getNanoSeconds()));
-            pLogger->log(cString.c_str());
-
-            Species::Species oSpecies;
-            Species::Species *pSpecies = &oSpecies;
-            std::vector<TreeSpecies> vTrees = pSpecies->getSpecies();
-            srand(pTime->getNanoSeconds());
-            int iRand = 0;
-            for (int i = 0; i < it; i++) {
-                iRand = ((rand() % vTrees.size()) + 1);
-
-                switch (iRand) {
-                    case 0: {
-                        Tree::Tree oTree(vTrees[iRand], 0, 0);
-                    }
-                    break;
-                }
-            }
-
             pGame->ShutDown();
         } catch (std::exception &ex) {
             throw ExceptionHandler::ExceptionHandler(ex.what());
@@ -158,16 +103,14 @@ namespace NordicArts {
             ptrException = std::current_exception();
         }
 
+        // Handle Exceptions {kinda}
         handleException(ptrException);
-
-        std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
-        std::cout << "NordicOS: " << NORDICOS_BUILDNUMBER << std::endl;
-        std::cout << "Game: " << GAME_BUILDNUMBER << std::endl;
 
         return EXIT_SUCCESS;
     }
 };
 
+// Keep Main in NameSpace
 int main() {
     return NordicArts::main();
 }

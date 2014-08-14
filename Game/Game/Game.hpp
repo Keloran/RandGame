@@ -25,12 +25,14 @@ namespace NordicArts {
         public:
         protected:
         private:
-            Logger *m_pLogger = nullptr;
+            Logger          *m_pLogger  = nullptr;
+            asIScriptEngine *m_pAngel   = nullptr;
 
         // Methods
         public:
             Game();
             Game(Logger *pLogger);
+            Game(Logger *pLogger, asIScriptEngine *pAngel);
 
             virtual ~Game();
 

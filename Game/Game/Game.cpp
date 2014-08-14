@@ -3,9 +3,11 @@
 namespace NordicArts {
     Game::Game() {}
     Game::Game(Logger *pLogger) : m_pLogger(pLogger) {}
+    Game::Game(Logger *pLogger, asIScriptEngine *pAngel) : m_pLogger(pLogger), m_pAngel(pAngel) {}
 
     Game::~Game() {
-        m_pLogger = nullptr;
+        m_pLogger   = nullptr;
+        m_pAngel    = nullptr;
     }
      
     void Game::Startup() {

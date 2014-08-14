@@ -5,13 +5,8 @@
 #include "./buildNumber.hpp"
 
 #include <Game/Game.hpp>
-#include <Game/Markov/Markov.hpp>
-#include <Game/Names/Names.hpp>
-#include <Game/Forest/Forest.hpp>
 
+#include <NordicOS/OS.hpp>
 #include <NordicOS/ExceptionHandler/ExceptionHandler.hpp>
-#include <NordicOS/Noise/Simplex.hpp>
-#include <NordicOS/Time/Time.hpp>
-#include <NordicOS/Logger/Logger.hpp>
 
 #endif

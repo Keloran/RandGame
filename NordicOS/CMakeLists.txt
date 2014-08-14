@@ -132,7 +132,7 @@ list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 # AngelScript
 include_directories(${NOS}/angelscript/include)
 link_directories(${NOS}/angelscript)
-add_subdirectory(${NOS}/angelscript/projects/cmake)
+add_subdirectory(${NOS}/angelscript)
 
 # Generate Library
 add_library(NordicOS STATIC ${LibSources} ${LibHeaders})

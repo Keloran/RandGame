@@ -2,6 +2,7 @@
 #define NORDICARTS_OS_H
 
 #include "./buildNumber.hpp"
+#include "./OSLoad.hpp"
 
 // OS Specific Includes
 #if defined(__APPLE_CC__) || defined(__APPLE__)
@@ -28,5 +29,8 @@
 extern "C" {
     #include <sqlite3.h>
 }
+
+// AngelScript
+#include "./angelscript/include/angelscript.h"
 
 #endif
