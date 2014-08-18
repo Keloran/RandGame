@@ -19,4 +19,17 @@ namespace NordicArts {
 	void Setup::createDatabase() {
 		
 	}
+
+    glm::vec2 Setup::getResolution() {
+        return glm::vec2(1, 1);    
+    }
+
+    bool Setup::isVSync() {
+        return true;
+    }
+
+    std::string Setup::getGameName() {
+        std::string cName = "Bob";
+        return cName;
+    }
 };

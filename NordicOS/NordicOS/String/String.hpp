@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_STRING_H
 #define NORDICARTS_OS_STRING_H
 
-#include "../OSLoad.hpp"
+#include "../OS.hpp"
 #include "../Time/Time.hpp"
 
 namespace NordicArts {
@@ -11,6 +11,14 @@ namespace NordicArts {
 
     std::string randString();
     std::string randString(int iLength);
+
+    std::string toUpper(std::string &cString);
+    std::string toLower(std::string &cString);
+    
+    unsigned covertToUnsigned(std::string &cString, std::ios_base &(*pFormat)(std::ios_base&));
+
+    // Inline
+    #include "./String.inl"
 };
 
 #endif

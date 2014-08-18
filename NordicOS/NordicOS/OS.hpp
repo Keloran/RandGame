@@ -24,6 +24,9 @@
 // String
 #include "./String/String.hpp"
 
+// ExceptionHandler
+#include "./ExceptionHandler/ExceptionHandler.hpp"
+
 // SQLite
 extern "C" {
     #include <sqlite3.h>

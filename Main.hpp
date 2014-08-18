@@ -1,17 +1,33 @@
 #ifndef NORDICARTS_RANDGAME_H
 #define NORDICARTS_RANDGAME_H
 
-#include "./includes.hpp"
+// General System Includes#include <iostream>
+
+#include <stdio.h>
+#include <thread>
+#include <unistd.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include <stdlib.h>
+#include <map>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <math.h>
+#include <cstdint>
+#include <chrono>
+#include <exception>
+#include <stdexcept>
+
+// Build Number of Main
 #include "./buildNumber.hpp"
 
+// Game Stuff
 #include <Game/Game.hpp>
-#include <Game/Markov/Markov.hpp>
-#include <Game/Names/Names.hpp>
-#include <Game/Forest/Forest.hpp>
 
-#include <NordicOS/ExceptionHandler/ExceptionHandler.hpp>
-#include <NordicOS/Noise/Simplex.hpp>
-#include <NordicOS/Time/Time.hpp>
-#include <NordicOS/Logger/Logger.hpp>
+// NordicOS Stuff
+#include <NordicOS/OS.hpp>
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_EXCEPTIONHANDLER_H
 #define NORDICARTS_OS_EXCEPTIONHANDLER_H
 
-#include "../OSLoad.hpp"
+#include "../OS.hpp"
 
 namespace NordicArts {
     class ExceptionHandler final {

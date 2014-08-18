@@ -5,8 +5,13 @@
 #include "./Setup/Setup.hpp"
 #include "./buildNumber.hpp"
 
+// NordicOS
 #include <NordicOS/OS.hpp>
 #include <NordicOS/Logger/Logger.hpp>
+
+// SFML
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 namespace NordicArts {
     // Game State
@@ -25,7 +30,9 @@ namespace NordicArts {
         public:
         protected:
         private:
-            Logger *m_pLogger = nullptr;
+            Logger              *m_pLogger  = nullptr;
+            
+            sf::RenderWindow     m_Window;
 
         // Methods
         public:

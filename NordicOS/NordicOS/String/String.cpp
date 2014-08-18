@@ -52,4 +52,25 @@ namespace NordicArts {
 
         return returnString;
     }
+
+    // Case
+    std::string toUpper(std::string &cString) {
+        std::transform(cString.begin(), cString.end(), cString.begin(), ::toupper);
+
+        return cString;
+    }
+    std::string toLower(std::string &cString) {
+        std::transform(cString.begin(), cString.end(), cString.begin(), ::tolower);
+
+        return cString;
+    }
+
+    // Signed
+    unsigned convertToUnsigned(const std::string &cString, std::ios_base &(*pFormat)(std::ios_base&)) {
+        try {
+            return convertToType<unsigned>(cString, pFormat);
+        } catch ( ... ) {
+            return 0;
+        }
+    }
 };

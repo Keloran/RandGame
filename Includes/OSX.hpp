@@ -1,4 +1,0 @@
-#ifndef NORDICARTS_INCLUDES_OSX_H
-#define NORDICARTS_INCLUDES_OSX_H
-
-#endif

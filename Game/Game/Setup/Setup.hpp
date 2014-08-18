@@ -17,6 +17,11 @@ namespace NordicArts {
 			virtual ~Setup();
 
 			bool doSetup();
+            bool isVSync();
+
+            glm::vec2 getResolution();
+
+            std::string getGameName();
 
 		protected:
 		private:

@@ -44,6 +44,7 @@ endif()
 link_directories(${NOS}/String)
 include_directories(${NOS}/String)
 list(APPEND LibHeaders ${NOS}/String/String.hpp)
+list(APPEND LibHeaders ${NOS}/String/String.inl)
 list(APPEND LibSources ${NOS}/String/String.cpp)
 
 # Time

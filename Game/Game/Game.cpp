@@ -15,6 +15,14 @@ namespace NordicArts {
         Setup oSetup;
         Setup *pSetup = &oSetup;
         pSetup->doSetup();
+
+        glm::vec2 vResolution = pSetup->getResolution();
+
+        m_Window.create(sf::VideoMode(vResolution.x, vResolution.y), pSetup->getGameName());
+        
+        if (pSetup->isVSync()) {
+            m_Window.setFramerateLimit(60);
+        }
     }
 
     void Game::RenderMainMenu() {

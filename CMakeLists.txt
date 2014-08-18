@@ -9,7 +9,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/")
 
 # C++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${PROJECT_SOURCE_DIR}/Tools")
 set(EXTRA_FLAGS " -x objective-c++")
 
 # OpenGL
@@ -37,16 +36,6 @@ set(Main_Libs ${PROJECT_SOURCE_DIR}/Main.cpp)
 
 # Includes
 list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.hpp)
-
-# OS Specific Includes
-include_directories(${PROJECT_SOURCE_DIR}/Includes)
-if (WIN32)
-    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Windows.hpp)
-elseif(APPLE)
-    list(APPEND Main_Headers ${PROJECT_BINARY_DIR}/Includes/OSX.hpp)
-elseif(UNIX)
-    list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Includes/Linux.hpp)
-endif()
 
 # NordicOS
 find_package(NordicOS)
