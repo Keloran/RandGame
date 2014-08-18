@@ -60,6 +60,10 @@ include_directories(${GAME_DIR})
 link_directories(${GAME_DIR})
 add_subdirectory(${GAME_DIR})
 
+# SFML
+find_package(SFML REQUIRED system window graphics audio network)
+include_directories(${SFML_INCLUDE_DIR})
+
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${PROJECT_SOURCE_DIR}/buildNumber.hpp "#ifndef RANDGAME_BUILDNUMBER\n#define RANDGAME_BUILDNUMBER ${buildNumber}\n#endif")
@@ -82,3 +86,4 @@ endif()
 
 target_link_libraries(RandGame SQLite GameLibrary)
 target_link_libraries(RandGame NordicOS)
+target_link_libraries(RandGame ${SFML_LIBRARIES})
