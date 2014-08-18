@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_NOISE_SIMPLEX_H
 #define NORDICARTS_OS_NOISE_SIMPLEX_H
 
-#include "../OSLoad.hpp"
+#include "../OS.hpp"
 
 namespace NordicArts {
     class Simplex {

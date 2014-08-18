@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_OS_LINUX_H
 #define NORDICARTS_OS_LINUX_H
 
-#include "../OSLoad.hpp"
+#include "../OS.hpp"
 
 namespace NordicArts {
     class OSSpecific {

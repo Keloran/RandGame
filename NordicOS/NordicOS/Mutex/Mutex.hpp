@@ -2,7 +2,6 @@
 #define NORDICARTS_OS_MUTEX_H
 
 #include "../OS.hpp"
-#include "../OSLoad.hpp"
 
 namespace NordicArts {
     #ifndef MUTEX_THREAD

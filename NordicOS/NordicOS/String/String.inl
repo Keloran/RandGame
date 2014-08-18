@@ -1,8 +1,7 @@
-#ifndef NORDICOS_STRING_INLINE
-#define NORDICOS_STRING_INLINE
+#ifndef NORDICARTS_OS_STRING_INLINE
+#define NORDICARTS_OS_STRING_INLINE
 
 #include "../ExceptionHandler/ExceptionHandler.hpp"
-#include "../Logger/Logger.hpp"
 
 template<typename T>
 T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_base&)) {
@@ -14,7 +13,7 @@ T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_b
     if (!input) {
         std::ostringstream cStream;
         cStream << __FUNCTION__ << ": Bad conversion of [" << cString << "] to " << typeid(output).name();
-        throw ExceptionHandler(cStream);
+        throw NordicArts::ExceptionHandler::ExceptionHandler(cStream);
     }    
 
     char cChar;
@@ -22,7 +21,7 @@ T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_b
         std::ostringstream cStream;
         cStream << __FUNCTION__ << ": Conversion of [" << cString << "] to " << typeid(output).name() << " - [" << output << "] Failed";
         
-        Logger::log(Logger::TYPE_WARNING, cStream);
+        throw NordicArts::ExceptionHandler::ExceptionHandler(cStream);
     }
 
     return output;

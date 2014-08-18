@@ -1,7 +1,6 @@
 #ifndef NORDICARTS_FILEHANDLER_TEXTFILEREADER_H
 #define NORDICARTS_FILEHANDLER_TEXTFILEREADER_H
 
-#include "../../OSLoad.hpp"
 #include "../../OS.hpp"
 #include "../FileHandler.hpp"
 

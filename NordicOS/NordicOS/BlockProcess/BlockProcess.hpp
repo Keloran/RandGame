@@ -2,7 +2,6 @@
 #define NORDICARTS_OS_BLOCKPROCESS_H
 
 #include "../OS.hpp"
-#include "../OSLoad.hpp"
 
 #include "../Mutex/Mutex.hpp"
 #ifndef MUTEX_THREAD

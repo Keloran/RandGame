@@ -2,6 +2,7 @@
 #define NORDICARTS_OS_H
 
 #include "./buildNumber.hpp"
+#include "./OSLoad.hpp"
 
 // OS Specific Includes
 #if defined(__APPLE_CC__) || defined(__APPLE__)
@@ -20,9 +21,6 @@
     #include "./Linux/Linux.hpp"
     #include "./nonWindows/nonWindows.hpp"
 #endif
-
-// String
-#include "./String/String.hpp"
 
 // ExceptionHandler
 #include "./ExceptionHandler/ExceptionHandler.hpp"

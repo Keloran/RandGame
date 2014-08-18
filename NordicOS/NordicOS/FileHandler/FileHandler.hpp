@@ -2,7 +2,6 @@
 #define NORDICARTS_OS_FILEHANDLER_H
 
 #include "../OS.hpp"
-#include "../OSLoad.hpp"
 #include "./FileUtils.hpp"
 
 namespace NordicArts {

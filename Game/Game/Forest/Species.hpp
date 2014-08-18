@@ -3,6 +3,7 @@
 
 #include <NordicOS/OS.hpp>
 #include <NordicOS/FileHandler/TextFileReader/TextFileReader.hpp>
+#include <NordicOS/Time/Time.hpp>
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>

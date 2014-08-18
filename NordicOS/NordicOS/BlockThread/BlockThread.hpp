@@ -2,7 +2,6 @@
 #define NORDICARTS_OS_BLOCKTHREAD_H
 
 #include "../OS.hpp"
-#include "../OSLoad.hpp"
 #include "../Critical/Critical.hpp"
 
 namespace NordicArts {
