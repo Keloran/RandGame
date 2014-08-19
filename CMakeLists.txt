@@ -31,11 +31,11 @@ set(GAME_DIR ${PROJECT_SOURCE_DIR}/Game)
 set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/ThirdParty)
 
 # Main Stuff
-set(Main_Headers ${PROJECT_SOURCE_DIR}/Main.hpp)
-set(Main_Libs ${PROJECT_SOURCE_DIR}/Main.cpp)
+set(Main_Headers ${PROJECT_SOURCE_DIR}/Main/Main.hpp)
+set(Main_Libs ${PROJECT_SOURCE_DIR}/Main/Main.cpp)
 
 # Includes
-list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/includes.hpp)
+list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Main/includes.hpp)
 
 # NordicOS
 find_package(NordicOS)
@@ -55,8 +55,8 @@ include_directories(${SFML_INCLUDE_DIR})
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
-file(WRITE ${PROJECT_SOURCE_DIR}/buildNumber.hpp "#ifndef RANDGAME_BUILDNUMBER\n#define RANDGAME_BUILDNUMBER ${buildNumber}\n#endif")
-list(APPEND LibHeaders ${PROJECT_SOURCE_DIR}/buildNumber.hpp)
+file(WRITE ${PROJECT_SOURCE_DIR}/Main/buildNumber.hpp "#ifndef RANDGAME_BUILDNUMBER\n#define RANDGAME_BUILDNUMBER ${buildNumber}\n#endif")
+list(APPEND LibHeaders ${PROJECT_SOURCE_DIR}/Main/buildNumber.hpp)
 
 # Executable
 add_executable(RandGame ${Main_Libs} ${Main_Headers})
