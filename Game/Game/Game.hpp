@@ -10,7 +10,7 @@
 #include <NordicOS/Logger/Logger.hpp>
 
 // Valkyrie
-//#include <Valkyrie/Valkyrie.hpp>
+#include <Valkyrie/Valkyrie.hpp>
 #include <Valkyrie/Window/Window.hpp>
 
 namespace NordicArts {
