@@ -62,4 +62,11 @@ namespace NordicArts {
 
         return true;
     }
+
+    // Build Number
+    const char *getBuildNumber() {
+        std::ostringstream output;
+        output << GAME_BUILDNUMBER;
+        return output.str().c_str();
+    }
 };

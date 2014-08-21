@@ -14,4 +14,7 @@ namespace NordicArts {
     void Window::setTitle(std::string cTitle) {
         m_cTitle = cTitle;
     }
+
+    Window::~Window() {
+    }
 };
