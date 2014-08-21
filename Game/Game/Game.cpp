@@ -6,6 +6,7 @@ namespace NordicArts {
 
     Game::~Game() {
         m_pLogger = nullptr;
+        m_Window.close();
     }
      
     void Game::Startup() {
@@ -17,7 +18,7 @@ namespace NordicArts {
         pSetup->doSetup();
 
         glm::vec2 vResolution = pSetup->getResolution();
-
+    
         m_Window.create(sf::VideoMode(vResolution.x, vResolution.y), pSetup->getGameName());
         
         if (pSetup->isVSync()) {
