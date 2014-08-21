@@ -30,4 +30,7 @@
 // NordicOS Stuff
 #include <NordicOS/OS.hpp>
 
+// Valkyrie
+#include <Valkyrie/Valkyrie.hpp>
+
 #endif
