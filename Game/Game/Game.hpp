@@ -52,6 +52,10 @@ namespace NordicArts {
         protected:
         private:
     };
+
+    namespace GameNS {
+        const char *getBuildNumber();
+    };
 };
 
 #endif

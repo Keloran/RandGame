@@ -4,8 +4,6 @@
 #include "./buildNumber.hpp"
 #include "./Includes.hpp"
 
-#include <NordicOS/String/String.hpp>
-
 namespace NordicArts {
     class Valkyrie {
         // Variables
@@ -18,6 +16,10 @@ namespace NordicArts {
         protected:
         private:
 
+    };
+
+    namespace ValkyrieNS {
+        const char *getBuildNumber();
     };
 };
 

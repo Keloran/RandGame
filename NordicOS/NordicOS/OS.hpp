@@ -30,4 +30,10 @@ extern "C" {
     #include <sqlite3.h>
 }
 
+namespace NordicArts {
+    namespace NordicOS {
+        const char *getBuildNumber();
+    };
+};
+
 #endif

@@ -85,9 +85,9 @@ namespace NordicArts {
         handleException(ptrException);
 
         std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
-        std::cout << "NordicOS: " << NORDICOS_BUILDNUMBER << std::endl;
-        std::cout << "Game: " << GAME_BUILDNUMBER << std::endl;
-        std::cout << "Valkyrie: " << VALKYRIE_BUILDNUMBER << std::endl;
+        std::cout << "NordicOS: " << NordicOS::getBuildNumber() << std::endl;
+        std::cout << "Game: " << GameNS::getBuildNumber() << std::endl;
+        std::cout << "Valkyrie: " << ValkyrieNS::getBuildNumber() << std::endl;
 
         return EXIT_SUCCESS;
     }
