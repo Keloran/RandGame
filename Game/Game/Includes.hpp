@@ -19,7 +19,8 @@
 #include <cstdint>
 
 // GLM
-#include "./ThirdParty/glm/glm.hpp"
+//#include "./ThirdParty/glm/glm.hpp"
+#include <Valkyrie/glm/glm.hpp>
 
 // Boost
 

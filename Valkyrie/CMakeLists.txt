@@ -35,6 +35,9 @@ add_definitions(${NORDICOS_DEFINITIONS})
 find_package(SFML REQUIRED system window graphics audio network)
 include_directories(${SFML_INCLUDE_DIR})
 
+# GLM
+include_directories(${BasePath}/glm)
+
 # Generate Library
 add_library(Valkyrie STATIC ${LibSources} ${LibHeaders})
 set_target_properties(Valkyrie PROPERTIES LINKER_LANGUAGE CXX)

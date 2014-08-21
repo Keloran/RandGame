@@ -10,8 +10,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/
 # C++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -INordicOS")
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -IValkyrie")
 
 # Directories
 set(GameDir ${PROJECT_SOURCE_DIR}/Game)
@@ -21,7 +19,7 @@ set(GameHeaders ${GameDir}/Game.hpp)
 set(GameLibs ${GameDir}/Game.cpp)
 
 # Includes
-list(APPEND GameHeaders ${GameDir}/includes.hpp)
+list(APPEND GameHeaders ${GameDir}/Includes.hpp)
 
 # General
 include_directories(${GameDir})
@@ -65,9 +63,6 @@ list(APPEND GameHeaders ${GameDir}/Forest/Tree.hpp)
 list(APPEND GameLibs ${GameDir}/Forest/Tree.cpp)
 list(APPEND GameHeaders ${GameDir}/Forest/Species.hpp)
 list(APPEND GameLibs ${GameDir}/Forest/Species.cpp)
-
-# GLM
-include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 
 # NordicOS
 find_package(NordicOS REQUIRED)

@@ -24,7 +24,7 @@ namespace NordicArts {
             void setWidth(int iX);
             void setHeight(int iY);
             void setTitle(std::string cTitle);
-            void setFrameLimit(int iFrameLimit);
+            void setFramerateLimit(int iFrameLimit);
 
             virtual ~Window();
 
