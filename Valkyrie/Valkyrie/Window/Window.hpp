@@ -11,6 +11,7 @@ namespace NordicArts {
         private:
             int m_iWidth;
             int m_iHeight;
+            int m_iFrameLimit;
             
             std::string m_cTitle;
 
@@ -23,6 +24,7 @@ namespace NordicArts {
             void setWidth(int iX);
             void setHeight(int iY);
             void setTitle(std::string cTitle);
+            void setFrameLimit(int iFrameLimit);
 
             virtual ~Window();
 

@@ -14,6 +14,9 @@ namespace NordicArts {
     void Window::setTitle(std::string cTitle) {
         m_cTitle = cTitle;
     }
+    void Window::setFrameLimit(int iFrameLimit) {
+        m_iFrameLimit = iFrameLimit;
+    }
 
     Window::~Window() {
     }

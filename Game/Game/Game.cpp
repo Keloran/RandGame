@@ -21,7 +21,7 @@ namespace NordicArts {
         Window::Window pWindow(vResolution.x, vResolution.y, pSetup->getGameName());
         
         if (pSetup->isVSync()) {
-//            m_Window.setFramerateLimit(60);
+            pWindow.setFramerateLimit(60);
         }
     }
 
