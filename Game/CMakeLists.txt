@@ -74,6 +74,11 @@ include_directories(${NORDICOS_INCLIDE_DIR})
 link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
 
+# Valkyrie
+find_package(Valkyrie REQUIRED)
+include_directories(${VALKYRIE_INCLUDE_DIR})
+link_directories(${VALKYRIE_LIBRARY_DIR})
+
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${GameDir}/buildNumber.hpp "#ifndef GAME_BUILDNUMBER\n#define GAME_BUILDNUMBER ${buildNumber}\n#endif")
@@ -95,3 +100,4 @@ endif()
 
 # Link
 target_link_libraries(GameLibrary NordicOS)
+target_link_libraries(GameLibrary Valkyrie)

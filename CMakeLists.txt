@@ -53,6 +53,12 @@ add_subdirectory(${GAME_DIR})
 find_package(SFML REQUIRED system window graphics audio network)
 include_directories(${SFML_INCLUDE_DIR})
 
+# Valkyrie
+find_package(Valkyrie)
+include_directories(${VALKYRIE_INCLUDE_DIR})
+link_directories(${VALKYRIE_INCLUDE_DIR})
+add_subdirectory(${PROJECT_SOURCE_DIR}/Valkyrie)
+
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${PROJECT_SOURCE_DIR}/Main/buildNumber.hpp "#ifndef RANDGAME_BUILDNUMBER\n#define RANDGAME_BUILDNUMBER ${buildNumber}\n#endif")
