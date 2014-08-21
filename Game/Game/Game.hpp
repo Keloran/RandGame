@@ -9,9 +9,9 @@
 #include <NordicOS/OS.hpp>
 #include <NordicOS/Logger/Logger.hpp>
 
-// SFML
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
+// Valkyrie
+//#include <Valkyrie/Valkyrie.hpp>
+#include <Valkyrie/Window/Window.hpp>
 
 namespace NordicArts {
     // Game State
@@ -31,8 +31,6 @@ namespace NordicArts {
         protected:
         private:
             Logger              *m_pLogger  = nullptr;
-            
-            sf::RenderWindow     m_Window;
 
         // Methods
         public:

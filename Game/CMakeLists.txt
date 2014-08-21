@@ -10,7 +10,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/
 # C++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -INordicOS")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -INordicOS")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -IValkyrie")
 
 # Directories
 set(GameDir ${PROJECT_SOURCE_DIR}/Game)
@@ -70,7 +71,7 @@ include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/General)
 
 # NordicOS
 find_package(NordicOS REQUIRED)
-include_directories(${NORDICOS_INCLIDE_DIR})
+include_directories(${NORDICOS_INCLUDE_DIR})
 link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
 
@@ -78,6 +79,7 @@ add_definitions(${NORDICOS_DEFINITIONS})
 find_package(Valkyrie REQUIRED)
 include_directories(${VALKYRIE_INCLUDE_DIR})
 link_directories(${VALKYRIE_LIBRARY_DIR})
+add_definitions(${VALKYRIE_DEFINITIONS})
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")

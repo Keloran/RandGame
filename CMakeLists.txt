@@ -44,20 +44,16 @@ link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
 add_subdirectory(${PROJECT_SOURCE_DIR}/NordicOS)
 
-# Game
-include_directories(${GAME_DIR})
-link_directories(${GAME_DIR})
-add_subdirectory(${GAME_DIR})
-
-# SFML
-find_package(SFML REQUIRED system window graphics audio network)
-include_directories(${SFML_INCLUDE_DIR})
-
 # Valkyrie
 find_package(Valkyrie)
 include_directories(${VALKYRIE_INCLUDE_DIR})
 link_directories(${VALKYRIE_INCLUDE_DIR})
 add_subdirectory(${PROJECT_SOURCE_DIR}/Valkyrie)
+
+# Game
+include_directories(${GAME_DIR})
+link_directories(${GAME_DIR})
+add_subdirectory(${GAME_DIR})
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
@@ -79,6 +75,7 @@ elseif (UNIX)
     target_link_libraries(RandGame ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} c++abi)
 endif()
 
-target_link_libraries(RandGame SQLite GameLibrary)
+target_link_libraries(RandGame SQLite)
+target_link_libraries(RandGame GameLibrary)
 target_link_libraries(RandGame NordicOS)
-target_link_libraries(RandGame ${SFML_LIBRARIES})
+target_link_libraries(RandGame Valkyrie)

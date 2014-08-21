@@ -2,6 +2,9 @@
 #define NORDICARTS_VALKYRIE_H
 
 #include "./buildNumber.hpp"
+#include "./Includes.hpp"
+
+#include <NordicOS/String/String.hpp>
 
 namespace NordicArts {
     class Valkyrie {

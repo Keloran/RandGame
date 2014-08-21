@@ -1,16 +1,24 @@
 # CMake Version
-cmake_minimum_required(VERSION 2.8)# Project Name
+cmake_minimum_required(VERSION 2.8)
 
+# Project Name
 project(Valkyrie)
 
 # C++11
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
 
+# Module Finder Path
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/")
+
 # NOS Files
 set(BasePath ${PROJECT_SOURCE_DIR}/Valkyrie)
 set(LibHeaders ${BasePath}/Valkyrie.hpp)
 set(LibSources ${BasePath}/Valkyrie.cpp)
+
+# Window
+list(APPEND LibHeaders ${BasePath}/Window/Window.hpp)
+list(APPEND LibSources ${BasePath}/Window/Window.cpp)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
@@ -19,14 +27,18 @@ list(APPEND LibHeaders ${BasePath}/buildNumber.hpp)
 
 # NordicOS
 find_package(NordicOS REQUIRED)
-include_directories(${NORDICOS_INCLIDE_DIR})
+include_directories(${NORDICOS_INCLUDE_DIR})
 link_directories(${NORDICOS_LIBRARY_DIR})
 add_definitions(${NORDICOS_DEFINITIONS})
+
+# SFML
+find_package(SFML REQUIRED system window graphics audio network)
+include_directories(${SFML_INCLUDE_DIR})
 
 # Generate Library
 add_library(Valkyrie STATIC ${LibSources} ${LibHeaders})
 set_target_properties(Valkyrie PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(Valkyrie PROPERTIES OUTPUT_NAME "NordicOS")
+set_target_properties(Valkyrie PROPERTIES OUTPUT_NAME "Valkyrie")
 
 # System Linker
 if (WIN32)
@@ -39,3 +51,4 @@ endif()
 
 # Library Linker
 target_link_libraries(Valkyrie NordicOS)
+target_link_libraries(Valkyrie ${SFML_LIBRARIES})
