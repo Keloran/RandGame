@@ -1,12 +1,11 @@
 #include "./Main.hpp"
 
 namespace NordicArts {
-
     // Threading
-    void ThreadUpdateGame(Game *pGame, GameState eGS) {
+    void ThreadUpdateGame(GameNS::Game *pGame, GameState eGS) {
         pGame->UpdateGame(eGS);
     }
-    void ThreadRenderGame(Game *pGame, GameState eGS) {
+    void ThreadRenderGame(GameNS::Game *pGame, GameState eGS) {
         pGame->RenderGame(eGS);
     }
 
@@ -25,18 +24,18 @@ namespace NordicArts {
         std::exception_ptr ptrException;
 
         try {
-            Logger::Logger oLogger("RandGame.log");
-            Logger::Logger *pLogger = &oLogger;
+            NordicOS::Logger::Logger oLogger("RandGame.log");
+            NordicOS::Logger::Logger *pLogger = &oLogger;
 
-            GameState eGameState = GS_INTRO;
-                
-            Game::Game oGame(pLogger);
-            Game::Game* pGame = &oGame;    
+            GameNS::GameState eGameState = GS_INTRO;
+
+            GameNS::Game::Game oGame(pLogger);
+            GameNS::Game::Game* pGame = &oGame;
 
             pGame->Startup();
 
             while(eGameState != GS_QUIT) {
-                pGame->ProcessInputs();        
+                pGame->ProcessInputs();
 
                 switch(eGameState) {
                     case GS_INTRO: {
@@ -51,9 +50,9 @@ namespace NordicArts {
                         pGame->RenderPauseMenu();
 
                         std::thread render(ThreadRenderGame, pGame, eGameState);
-                        render.join(); 
+                        render.join();
                     } break;
-                    
+
                     case GS_GAME: {
                         std::thread update(ThreadUpdateGame, pGame, eGameState);
                         std::thread render(ThreadRenderGame, pGame, eGameState);
@@ -61,7 +60,7 @@ namespace NordicArts {
                         update.join();
                         render.join();
                     } break;
-            
+
                     case GS_MENU: {
                         pGame->RenderMainMenu();
                     } break;
@@ -71,13 +70,13 @@ namespace NordicArts {
                     default: {
                     } break;
                 }
-                
+
                 pGame->VideoPageFlip();
             }
 
             pGame->ShutDown();
         } catch (std::exception &ex) {
-            throw ExceptionHandler::ExceptionHandler(ex.what());
+            throw NordicOS::ExceptionHandler::ExceptionHandler(ex.what());
         } catch ( ... ) {
             ptrException = std::current_exception();
         }

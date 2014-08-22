@@ -14,46 +14,46 @@
 #include <Valkyrie/Window/Window.hpp>
 
 namespace NordicArts {
-    // Game State
-    enum GameState {
-        GS_INTRO,
-        GS_MENU,
-        GS_PAUSED_MENU,
-        GS_GAME,
-        GS_QUIT,
-        GS_NUM_STATES,
-    };
-
-    // Class
-    class Game {
-        // Variables
-        public:
-        protected:
-        private:
-            Logger              *m_pLogger  = nullptr;
-
-        // Methods
-        public:
-            Game();
-            Game(Logger *pLogger);
-
-            virtual ~Game();
-
-            void Startup();
-            bool RenderIntroCutScenes();
-            void RenderMainMenu();
-            void RenderGame(GameState eGS);
-            void UpdateGame(GameState eGS);
-            void RenderPauseMenu();
-            void ShutDown();            
-            void ProcessInputs();
-            void VideoPageFlip();
-
-        protected:
-        private:
-    };
-
     namespace GameNS {
+        // Game State
+        enum GameState {
+            GS_INTRO,
+            GS_MENU,
+            GS_PAUSED_MENU,
+            GS_GAME,
+            GS_QUIT,
+            GS_NUM_STATES,
+        };
+
+        // Class
+        class Game {
+            // Variables
+            public:
+            protected:
+            private:
+                Logger              *m_pLogger  = nullptr;
+
+            // Methods
+            public:
+                Game();
+                Game(Logger *pLogger);
+
+                virtual ~Game();
+
+                void Startup();
+                bool RenderIntroCutScenes();
+                void RenderMainMenu();
+                void RenderGame(GameState eGS);
+                void UpdateGame(GameState eGS);
+                void RenderPauseMenu();
+                void ShutDown();
+                void ProcessInputs();
+                void VideoPageFlip();
+
+            protected:
+            private:
+        };
+
         const char *getBuildNumber();
     };
 };

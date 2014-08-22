@@ -12,43 +12,44 @@
 #include "../Includes.hpp"
 
 namespace NordicArts {
-    struct TreeSpecies {
-        std::string cName;
-        std::string cLeafType;
-        std::string cSeedType;
+    namespace GameNS {
+        struct TreeSpecies {
+            std::string cName;
+            std::string cLeafType;
+            std::string cSeedType;
 
-        float fGrowthRate;
-        float fSeedRate;
+            float fGrowthRate;
+            float fSeedRate;
 
-        int iMaxHeight;
-        int iMaxWidth;
-        int iMaxSize;
-        int iSeedSurvability;
-        int iSeedSpread;
-        int iSeedRate;
-        int iSlopeThreshold;        
-        int iInitialSize;
+            int iMaxHeight;
+            int iMaxWidth;
+            int iMaxSize;
+            int iSeedSurvability;
+            int iSeedSpread;
+            int iSeedRate;
+            int iSlopeThreshold;
+            int iInitialSize;
 
-        TreeSpecies(std::string cNameIn) : cName(cNameIn) {}
-    };
+            TreeSpecies(std::string cNameIn) : cName(cNameIn) {}
+        };
 
-    class Species {
-        // Variables
-        public:           
-        protected:
-        private:
-            std::vector<TreeSpecies> m_vTrees;
+        class Species {
+            // Variables
+            public:
+            protected:
+            private:
+                std::vector<TreeSpecies> m_vTrees;
 
-        // Methods
-        public:
-            Species();
-            
-            std::vector<TreeSpecies> getSpecies();
+            // Methods
+            public:
+                Species();
 
-        protected:
-        private:
-            void loadSpecies();
+                std::vector<TreeSpecies> getSpecies();
 
+            protected:
+            private:
+                void loadSpecies();
+        };
     };
 };
 

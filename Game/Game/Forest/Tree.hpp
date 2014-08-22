@@ -6,45 +6,46 @@
 #include "./Species.hpp"
 
 namespace NordicArts {
-    class Tree {
-        // Variables
-        public:
-        protected:
-        private:
-            int m_iSize;
-            float m_fSize;
+    namespace GameNS {
+        class Tree {
+            // Variables
+            public:
+            protected:
+            private:
+                int m_iSize;
+                float m_fSize;
 
-            int m_iX;
-            int m_iY;
+                int m_iX;
+                int m_iY;
 
-            int m_iTree;
-            
-            TreeSpecies m_sSpecies;
-        
-        // Methods
-        public:
-            Tree();
-            Tree(TreeSpecies sSpecies, int iX, int iY);
+                int m_iTree;
 
-            int iGetSize() const;
-            float fGetSize() const;
+                TreeSpecies m_sSpecies;
 
-            int getX() const;
-            int getY() const;
-            int getTree() const;
+            // Methods
+            public:
+                Tree();
+                Tree(TreeSpecies sSpecies, int iX, int iY);
 
-            void absorb(Tree oVictim);
-            void grow();
-            void setTree(int iTree);
+                int iGetSize() const;
+                float fGetSize() const;
 
-            bool overLapping(Tree oOther);
-            bool containsPoint(int iX, int iY);
-            bool smallerThan(Tree oOther);
-            bool isMature();
+                int getX() const;
+                int getY() const;
+                int getTree() const;
 
-        protected:
-        private:
+                void absorb(Tree oVictim);
+                void grow();
+                void setTree(int iTree);
 
+                bool overLapping(Tree oOther);
+                bool containsPoint(int iX, int iY);
+                bool smallerThan(Tree oOther);
+                bool isMature();
+
+            protected:
+            private:
+        };
     };
 };
 

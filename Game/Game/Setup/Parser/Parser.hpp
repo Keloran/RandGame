@@ -4,20 +4,21 @@
 #include "../../Includes.hpp"
 
 namespace NordicArts {
-	class Parser {
-		// Variables
-		public:
-		protected:
-		private:
+	namespace GameNS {
+		class Parser {
+			// Variables
+			public:
+			protected:
+			private:
 
-		// Methods
-		public:
-			Parser();
-			virtual ~Parser();
+			// Methods
+			public:
+				Parser();
+				virtual ~Parser();
 
-		protected:
-		private:
-			
+			protected:
+			private:
+		};
 	};
 };
 

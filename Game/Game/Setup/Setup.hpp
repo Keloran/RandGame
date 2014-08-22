@@ -5,32 +5,33 @@
 #include <NordicOS/sqlite/sqlite3.h>
 
 namespace NordicArts {
-	class Setup {
-		// Variables
-		public:
-		protected:
-		private:
+    namespace GameNS {
+    	class Setup {
+    		// Variables
+    		public:
+    		protected:
+    		private:
 
-		// Methods
-		public:
-			Setup();
-			virtual ~Setup();
+    		// Methods
+    		public:
+    			Setup();
+    			virtual ~Setup();
 
-			bool doSetup();
-            bool isVSync();
+    			bool doSetup();
+                bool isVSync();
 
-            glm::vec2 getResolution();
-            glm::vec2 getOpenGL();
+                glm::vec2 getResolution();
+                glm::vec2 getOpenGL();
 
-            std::string getGameName();
+                std::string getGameName();
 
-		protected:
-		private:
-			bool checkForDatabase();
+    		protected:
+    		private:
+    			bool checkForDatabase();
 
-			void createDatabase();
-
-	};	
+    			void createDatabase();
+        };
+	};
 };
 
 #endif

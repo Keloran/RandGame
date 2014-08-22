@@ -1,10 +1,11 @@
 #include "./Parser.hpp"
 
 namespace NordicArts {
-	Parser::Parser() {
+    namespace GameNS {
+    	Parser::Parser() {
+    	}
 
-	}
-
-	Parser::~Parser() {
-	}
+    	Parser::~Parser() {
+    	}
+    };
 };

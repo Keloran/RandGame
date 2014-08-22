@@ -9,48 +9,49 @@
 #include "./Tree.hpp"
 
 namespace NordicArts {
-    class Forest {
-        // Variables
-        public:
-        protected:
-        private:
-            std::vector<Tree> m_vTrees;
+    namespace GameNS {
+        class Forest {
+            // Variables
+            public:
+            protected:
+            private:
+                std::vector<Tree> m_vTrees;
 
-            std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
-            
-            int m_iWidth;
-            int m_iHeight;
-            int m_iCellSize;
-            int m_iMaxWidth;
-            int m_iMaxHeight;            
+                std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
 
-        // Methods
-        public:
-            Forest(int iRandomSeed, int iWidth, int iHeight);
+                int m_iWidth;
+                int m_iHeight;
+                int m_iCellSize;
+                int m_iMaxWidth;
+                int m_iMaxHeight;
 
-            void addTree(Tree oTree);
-            void removeTree(Tree oTree);
-            void iterate();
+            // Methods
+            public:
+                Forest(int iRandomSeed, int iWidth, int iHeight);
 
-            std::vector<Tree> spreadTreeSeed(Tree oTree);
-        
-            std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
-            std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
-            std::vector<Tree> getCellFromPoint(int iX, int iY);
-            std::vector<Tree> getCell(Tree oTree);
+                void addTree(Tree oTree);
+                void removeTree(Tree oTree);
+                void iterate();
 
-            int getHeight() const;
-            int getMaxHeight() const;
-            int getWidth() const;
-            int getMaxWidth() const;
-            int getSize() const;
+                std::vector<Tree> spreadTreeSeed(Tree oTree);
 
-        protected:
-        private:
-            bool canPlantSeed(int iX, int iY, Species sSpecies);
-            bool isPointTooCloseToTree(int iX, int iY, Species sSpecies);
-            bool isPointInTree(int iX, int iY);
+                std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
+                std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
+                std::vector<Tree> getCellFromPoint(int iX, int iY);
+                std::vector<Tree> getCell(Tree oTree);
 
+                int getHeight() const;
+                int getMaxHeight() const;
+                int getWidth() const;
+                int getMaxWidth() const;
+                int getSize() const;
+
+            protected:
+            private:
+                bool canPlantSeed(int iX, int iY, Species sSpecies);
+                bool isPointTooCloseToTree(int iX, int iY, Species sSpecies);
+                bool isPointInTree(int iX, int iY);
+        };
     };
 };
 

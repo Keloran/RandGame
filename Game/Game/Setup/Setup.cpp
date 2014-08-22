@@ -1,38 +1,40 @@
 #include "./Setup.hpp"
 
 namespace NordicArts {
-	Setup::Setup() {
-	}
+    namespace GameNS {
+    	Setup::Setup() {
+    	}
 
-	Setup::~Setup() {
-	}
+    	Setup::~Setup() {
+    	}
 
-	bool Setup::doSetup() {
+    	bool Setup::doSetup() {
 
-		return false;
-	}
+    		return false;
+    	}
 
-	bool Setup::checkForDatabase() {
-		return false;
-	}
+    	bool Setup::checkForDatabase() {
+    		return false;
+    	}
 
-	void Setup::createDatabase() {
-		
-	}
+    	void Setup::createDatabase() {
 
-    glm::vec2 Setup::getResolution() {
-        return glm::vec2(1, 1);    
-    }
-    glm::vec2 Setup::getOpenGL() {
-        return glm::vec2(3, 3);
-    }
+    	}
 
-    bool Setup::isVSync() {
-        return true;
-    }
+        glm::vec2 Setup::getResolution() {
+            return glm::vec2(1, 1);
+        }
+        glm::vec2 Setup::getOpenGL() {
+            return glm::vec2(3, 3);
+        }
 
-    std::string Setup::getGameName() {
-        std::string cName = "Bob";
-        return cName;
-    }
+        bool Setup::isVSync() {
+            return true;
+        }
+
+        std::string Setup::getGameName() {
+            std::string cName = "Bob";
+            return cName;
+        }
+    };
 };
