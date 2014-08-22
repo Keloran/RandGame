@@ -19,6 +19,7 @@ namespace NordicArts {
 
             glm::vec2 vResolution   = pSetup->getResolution();
             glm::vec2 vOpenGL       = pSetup->getOpenGL();
+            int iRefreshRate        = pSetup->getRefreshRate();
 
             ValkyrieNS::Window::Window pWindow(vResolution.x, vResolution.y, pSetup->getGameName());
 

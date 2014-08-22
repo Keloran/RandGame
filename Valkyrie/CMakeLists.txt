@@ -11,7 +11,20 @@ set(EXTRA_FLAGS " -x objective-c++")
 # Module Finder Path
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/")
 
-# NOS Files
+# GLM
+include_directories(${PROJECT_SOURCE_DIR}/glm)
+
+# SFML
+find_package(SFML REQUIRED system window graphics audio network)
+include_directories(${SFML_INCLUDE_DIR})
+
+# NordicOS
+find_package(NordicOS REQUIRED)
+include_directories(${NORDICOS_INCLUDE_DIR})
+link_directories(${NORDICOS_LIBRARY_DIR})
+add_definitions(${NORDICOS_DEFINITIONS})
+
+# Valkyrie Files
 set(BasePath ${PROJECT_SOURCE_DIR}/Valkyrie)
 set(LibHeaders ${BasePath}/Valkyrie.hpp)
 set(LibSources ${BasePath}/Valkyrie.cpp)
@@ -28,19 +41,6 @@ list(APPEND LibSources ${BasePath}/Settings/Settings.cpp)
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${BasePath}/buildNumber.hpp "#ifndef VALKYRIE_BUILDNUMBER\n#define VALKYRIE_BUILDNUMBER ${buildNumber}\n#endif")
 list(APPEND LibHeaders ${BasePath}/buildNumber.hpp)
-
-# NordicOS
-find_package(NordicOS REQUIRED)
-include_directories(${NORDICOS_INCLUDE_DIR})
-link_directories(${NORDICOS_LIBRARY_DIR})
-add_definitions(${NORDICOS_DEFINITIONS})
-
-# SFML
-find_package(SFML REQUIRED system window graphics audio network)
-include_directories(${SFML_INCLUDE_DIR})
-
-# GLM
-include_directories(${BasePath}/glm)
 
 # Generate Library
 add_library(Valkyrie STATIC ${LibSources} ${LibHeaders})

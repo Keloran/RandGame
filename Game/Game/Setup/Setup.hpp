@@ -2,7 +2,10 @@
 #define NORDICARTS_GAME_SETUP_H
 
 #include "../Includes.hpp"
+
 #include <NordicOS/sqlite/sqlite3.h>
+
+#include <Valkyrie/Settings/Settings.hpp>
 
 namespace NordicArts {
     namespace GameNS {
@@ -11,6 +14,7 @@ namespace NordicArts {
     		public:
     		protected:
     		private:
+                ValkyrieNS::GameSettings m_sGameSettings;
 
     		// Methods
     		public:
@@ -18,12 +22,14 @@ namespace NordicArts {
     			virtual ~Setup();
 
     			bool doSetup();
-                bool isVSync();
+                bool isVSync() const;
 
-                glm::vec2 getResolution();
-                glm::vec2 getOpenGL();
+                glm::vec2 getResolution() const;
+                glm::vec2 getOpenGL() const;
 
                 std::string getGameName();
+
+                int getRefreshRate() const;
 
     		protected:
     		private:
