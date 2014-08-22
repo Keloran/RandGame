@@ -24,11 +24,11 @@ namespace NordicArts {
 
                 std::locale m_pLocale;
 
-                Logger      *m_pLogger = nullptr;;
+                NordicOS::Logger      *m_pLogger = nullptr;;
 
             // Methods
             public:
-                Names(Logger *pLogger);
+                Names(NordicOS::Logger *pLogger);
                 Names();
                 virtual ~Names();
 

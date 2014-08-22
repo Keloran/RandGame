@@ -19,7 +19,6 @@ list(APPEND LibHeaders ${NOS}/OSLoad.hpp)
 link_directories(${NOS}/nonWindows)
 include_directories(${NOS}/nonWindows)
 list(APPEND LibHeaders ${NOS}/nonWindows/nonWindows.hpp)
-list(APPEND LibSources ${NOS}/nonWindows/nonWindows.cpp)
 
 # OS Specific Classes
 if (WIN32)

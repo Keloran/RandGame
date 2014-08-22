@@ -19,7 +19,7 @@
 namespace NordicArts {
     namespace GameNS {
     	// Class
-    	class Settings final : public Singleton {
+    	class Settings final : public NordicOS::Singleton {
             // Variables
         	public:
         	protected:

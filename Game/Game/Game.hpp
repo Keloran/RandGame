@@ -31,12 +31,12 @@ namespace NordicArts {
             public:
             protected:
             private:
-                Logger              *m_pLogger  = nullptr;
+                NordicOS::Logger              *m_pLogger  = nullptr;
 
             // Methods
             public:
                 Game();
-                Game(Logger *pLogger);
+                Game(NordicOS::Logger *pLogger);
 
                 virtual ~Game();
 

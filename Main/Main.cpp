@@ -2,10 +2,10 @@
 
 namespace NordicArts {
     // Threading
-    void ThreadUpdateGame(GameNS::Game *pGame, GameState eGS) {
+    void ThreadUpdateGame(GameNS::Game *pGame, GameNS::GameState eGS) {
         pGame->UpdateGame(eGS);
     }
-    void ThreadRenderGame(GameNS::Game *pGame, GameState eGS) {
+    void ThreadRenderGame(GameNS::Game *pGame, GameNS::GameState eGS) {
         pGame->RenderGame(eGS);
     }
 
@@ -27,33 +27,33 @@ namespace NordicArts {
             NordicOS::Logger::Logger oLogger("RandGame.log");
             NordicOS::Logger::Logger *pLogger = &oLogger;
 
-            GameNS::GameState eGameState = GS_INTRO;
+            GameNS::GameState eGameState = GameNS::GS_INTRO;
 
             GameNS::Game::Game oGame(pLogger);
             GameNS::Game::Game* pGame = &oGame;
 
             pGame->Startup();
 
-            while(eGameState != GS_QUIT) {
+            while(eGameState != GameNS::GS_QUIT) {
                 pGame->ProcessInputs();
 
                 switch(eGameState) {
-                    case GS_INTRO: {
+                    case GameNS::GS_INTRO: {
                         bool bFinished = pGame->RenderIntroCutScenes();
                         if (bFinished) {
                             //eGameState = GS_MENU;
-                            eGameState = GS_QUIT;
+                            eGameState = GameNS::GS_QUIT;
                         }
                     } break;
 
-                    case GS_PAUSED_MENU: {
+                    case GameNS::GS_PAUSED_MENU: {
                         pGame->RenderPauseMenu();
 
                         std::thread render(ThreadRenderGame, pGame, eGameState);
                         render.join();
                     } break;
 
-                    case GS_GAME: {
+                    case GameNS::GS_GAME: {
                         std::thread update(ThreadUpdateGame, pGame, eGameState);
                         std::thread render(ThreadRenderGame, pGame, eGameState);
 
@@ -61,12 +61,12 @@ namespace NordicArts {
                         render.join();
                     } break;
 
-                    case GS_MENU: {
+                    case GameNS::GS_MENU: {
                         pGame->RenderMainMenu();
                     } break;
 
-                    case GS_QUIT:
-                    case GS_NUM_STATES:
+                    case GameNS::GS_QUIT:
+                    case GameNS::GS_NUM_STATES:
                     default: {
                     } break;
                 }

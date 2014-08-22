@@ -26,13 +26,13 @@ namespace NordicArts {
                 char                                                    m_cAlphabet[28]     = "abcdefghijklmnopqrstuvqwxyz";
                 float                                                   m_fVariance         = 0.0f;
 
-                Logger                                                 *m_pLogger           = nullptr;
+                NordicOS::Logger                                       *m_pLogger           = nullptr;
                 bool                                                    m_bDebug;
 
             // Methods
             public:
                 Markov();
-                Markov(Logger *pLogger);
+                Markov(NordicOS::Logger *pLogger);
                 virtual ~Markov();
 
                 std::string generateWord();

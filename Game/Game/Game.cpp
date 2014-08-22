@@ -3,7 +3,7 @@
 namespace NordicArts {
     namespace GameNS {
         Game::Game() {}
-        Game::Game(Logger *pLogger) : m_pLogger(pLogger) {}
+        Game::Game(NordicOS::Logger *pLogger) : m_pLogger(pLogger) {}
 
         Game::~Game() {
             m_pLogger = nullptr;
@@ -20,7 +20,7 @@ namespace NordicArts {
             glm::vec2 vResolution   = pSetup->getResolution();
             glm::vec2 vOpenGL       = pSetup->getOpenGL();
 
-            Window::Window pWindow(vResolution.x, vResolution.y, pSetup->getGameName());
+            ValkyrieNS::Window::Window pWindow(vResolution.x, vResolution.y, pSetup->getGameName());
 
             // VSync
             if (pSetup->isVSync()) {

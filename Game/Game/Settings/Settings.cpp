@@ -20,14 +20,14 @@ namespace NordicArts {
                 char cError[1024];
                 std::sprintf(cError, "%s Failed to use Settings", __FUNCTION__);
 
-                throw ExceptionHandler(cError);
+                throw NordicOS::ExceptionHandler(cError);
             }
 
             return g_pSettings;
         }
 
         // Constructor
-        Settings::Settings() : Singleton(TYPE_SETTINGS), m_iPhysicsRefreshRate(100), m_bWindowMode(true), m_lRandomNumberSeed(0), m_bStatsLogging(false), m_vResolution(1024, 768), m_fFOV(45.0f), m_bVSync(true), m_vOpenGL(3, 3), m_iFSAA(0), m_bMobile(false), m_iOpenGLES(2) {
+        Settings::Settings() : NordicOS::Singleton(TYPE_SETTINGS), m_iPhysicsRefreshRate(100), m_bWindowMode(true), m_lRandomNumberSeed(0), m_bStatsLogging(false), m_vResolution(1024, 768), m_fFOV(45.0f), m_bVSync(true), m_vOpenGL(3, 3), m_iFSAA(0), m_bMobile(false), m_iOpenGLES(2) {
             g_pSettings = this;
         }
 

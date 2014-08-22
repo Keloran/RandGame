@@ -6,7 +6,7 @@ namespace NordicArts {
             init();
         }
 
-        Markov::Markov(Logger *pLogger) : m_pLogger(pLogger) {
+        Markov::Markov(NordicOS::Logger *pLogger) : m_pLogger(pLogger) {
             m_bDebug = true;
             init();
         }
@@ -33,15 +33,15 @@ namespace NordicArts {
             int i = 0;
 
             // Seed
-            Time::Time oTime;
-            Time::Time *pTime = &oTime;
+            NordicOS::Time::Time oTime;
+            NordicOS::Time::Time *pTime = &oTime;
             srand(pTime->getNanoSeconds());
 
             // generate first letter
             while (true) {
                 int randLetter              = (rand() % 27);
                 char cLetter                = m_cAlphabet[randLetter];
-                std::string firstLetter     = getString(cLetter);
+                std::string firstLetter     = NordicOS::getString(cLetter);
 
                 double randChance           = ((double)rand() / RAND_MAX);
                 double randLetterValue      = m_mFirstLetterChance[firstLetter];
@@ -60,9 +60,9 @@ namespace NordicArts {
             while (true) {
                 int randLetter              = (rand() % 27);
                 char cLetter                = m_cAlphabet[randLetter];
-                std::string nextLetter      = getString(cLetter);
+                std::string nextLetter      = NordicOS::getString(cLetter);
 
-                std::string lastLetter      = getString(word.back());
+                std::string lastLetter      = NordicOS::getString(word.back());
                 double nextLetterChance     = ((m_mLetterToLetterChance[lastLetter][nextLetter] * 2) - m_fVariance);
                 double randChance           = ((double)rand() / RAND_MAX);
 
@@ -70,7 +70,7 @@ namespace NordicArts {
                     word.append(nextLetter);
 
                     // check if word should end
-                    lastLetter          = getString(word.back());
+                    lastLetter          = NordicOS::getString(word.back());
                     double extraChance  = m_mLastLetterChance[lastLetter];
                     double moreRand     = ((double)rand() / RAND_MAX);
                     if ((word.size() >= 4) && (moreRand < ((extraChance * 1.5) + .05))) {
@@ -117,7 +117,7 @@ namespace NordicArts {
                 name[c.size()]  = 0;
                 memcpy(name, c.c_str(), c.size());
 
-                std::string s = getString(name[0]);
+                std::string s = NordicOS::getString(name[0]);
 
                 if (map.find(s) != map.end()) {
                     double mapValue = map[s];
@@ -131,7 +131,7 @@ namespace NordicArts {
             // find the percentage
             for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
                 // turn the character into a string
-                std::string s = getString(m_cAlphabet[i]);
+                std::string s = NordicOS::getString(m_cAlphabet[i]);
 
                 // set value
                 map[s] = (map[s] / total);
@@ -151,7 +151,7 @@ namespace NordicArts {
                 memcpy(name, c.c_str(), c.size());
 
                 // turn the last letter into a string
-                std::string s = getString(name[(c.size() - 1)]);
+                std::string s = NordicOS::getString(name[(c.size() - 1)]);
 
                 if (map.find(s) != map.end()) {
                     double mapValue = map[s];
@@ -164,7 +164,7 @@ namespace NordicArts {
 
             for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
                 // turn the character into a string
-                std::string s = getString(m_cAlphabet[i]);
+                std::string s = NordicOS::getString(m_cAlphabet[i]);
 
                 // set value
                 map[s] = (map[s] / total);
@@ -178,7 +178,7 @@ namespace NordicArts {
 
             // create the map
             for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
-                std::string s   = getString(m_cAlphabet[i]);
+                std::string s   = NordicOS::getString(m_cAlphabet[i]);
                 map[s]          = getAlphabetMap();
             }
 
@@ -189,8 +189,8 @@ namespace NordicArts {
                 memcpy(name, c.c_str(), c.size());
 
                 for (int i = 0; i < name[i] != '\0'; i++) {
-                    std::string firstChar   = getString(name[i]);
-                    std::string secondChar  = getString(name[(i + 1)]);
+                    std::string firstChar   = NordicOS::getString(name[i]);
+                    std::string secondChar  = NordicOS::getString(name[(i + 1)]);
 
                     if (map.find(firstChar) != map.end()) {
                         if (map[firstChar].find(secondChar) != map[firstChar].end()) {
@@ -204,7 +204,7 @@ namespace NordicArts {
             }
 
             for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
-                std::string firstChar = getString(m_cAlphabet[i]);
+                std::string firstChar = NordicOS::getString(m_cAlphabet[i]);
 
                 double total = 0;
                 if (map.find(firstChar) != map.end()) {
@@ -218,7 +218,7 @@ namespace NordicArts {
                 }
 
                 for (int j = 0; j < m_cAlphabet[j] != '\0'; j++) {
-                    std::string secondChar      = getString(m_cAlphabet[j]);
+                    std::string secondChar      = NordicOS::getString(m_cAlphabet[j]);
                     double mapValue             = (map[firstChar][secondChar] / total);
                     map[firstChar][secondChar]  = mapValue;
                 }
@@ -232,7 +232,7 @@ namespace NordicArts {
 
             double d = 0;
             for (int i = 0; i < m_cAlphabet[i] != '\0'; i++) {
-                std::string s   = getString(m_cAlphabet[i]);
+                std::string s   = NordicOS::getString(m_cAlphabet[i]);
                 map[s]          = d;
             }
 

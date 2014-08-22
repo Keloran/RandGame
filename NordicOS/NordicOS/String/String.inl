@@ -13,7 +13,7 @@ T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_b
     if (!input) {
         std::ostringstream cStream;
         cStream << __FUNCTION__ << ": Bad conversion of [" << cString << "] to " << typeid(output).name();
-        throw NordicArts::ExceptionHandler::ExceptionHandler(cStream);
+        throw NordicArts::NordicOS::ExceptionHandler::ExceptionHandler(cStream);
     }    
 
     char cChar;
@@ -21,7 +21,7 @@ T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_b
         std::ostringstream cStream;
         cStream << __FUNCTION__ << ": Conversion of [" << cString << "] to " << typeid(output).name() << " - [" << output << "] Failed";
         
-        throw NordicArts::ExceptionHandler::ExceptionHandler(cStream);
+        throw NordicArts::NordicOS::ExceptionHandler::ExceptionHandler(cStream);
     }
 
     return output;

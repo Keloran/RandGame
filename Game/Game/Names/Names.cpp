@@ -5,7 +5,7 @@ namespace NordicArts {
         Names::Names() {
             init();
         }
-        Names::Names(Logger *pLogger) : m_pLogger(pLogger) {
+        Names::Names(NordicOS::Logger *pLogger) : m_pLogger(pLogger) {
             init();
             m_bDebug = true;
         }
@@ -68,8 +68,8 @@ namespace NordicArts {
             std::string returnName;
 
             // Prefix
-            Time::Time oTime;
-            Time::Time *pTime = &oTime;
+            NordicOS::Time::Time oTime;
+            NordicOS::Time::Time *pTime = &oTime;
             srand(pTime->getNanoSeconds());
             returnName.append(m_vPrefixes[rand() % m_vPrefixes.size()]);
 
