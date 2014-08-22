@@ -23,6 +23,9 @@ namespace NordicArts {
     glm::vec2 Setup::getResolution() {
         return glm::vec2(1, 1);    
     }
+    glm::vec2 Setup::getOpenGL() {
+        return glm::vec2(3, 3);
+    }
 
     bool Setup::isVSync() {
         return true;

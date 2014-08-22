@@ -5,21 +5,22 @@
 #include "../Critical/Critical.hpp"
 
 namespace NordicArts {
-    class BlockThread final {
-        // Variables
-        public:
-        protected:
-        private:
-            NA_CRITICAL m_Critical;
+    namespace NordicOS {
+        class BlockThread final {
+            // Variables
+            public:
+            protected:
+            private:
+                NA_CRITICAL m_Critical;
 
-        // Methods
-        public:
-            explicit BlockThread(NA_CRITICAL &oCritical);
-            ~BlockThread();
+            // Methods
+            public:
+                explicit BlockThread(NA_CRITICAL &oCritical);
+                ~BlockThread();
 
-        protected:
-        private:
-
+            protected:
+            private:
+        };
     };
 };
 

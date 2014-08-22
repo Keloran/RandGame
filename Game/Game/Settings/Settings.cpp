@@ -8,7 +8,6 @@
 
 // Includes
 #include "./Settings.hpp"
-//#include "../ValkyrieEngine/BuildNumber.h"
 #include <NordicOS/ExceptionHandler/ExceptionHandler.hpp>
 
 // Static pointer
@@ -33,15 +32,6 @@ namespace NordicArts {
 
     Settings::~Settings() {
         g_pSettings = nullptr;
-    }
-
-    // Get name and version
-    std::string Settings::getBuildNumber() const {
-        std::ostringstream cReturn;
-        
-        cReturn << "Valkyrie Build: " << ENGINEBUILD;
-        
-        return cReturn.str();
     }
 
     // Game Name

@@ -4,19 +4,20 @@
 #include "../OS.hpp"
 
 namespace NordicArts {
-    class OSSpecific {
-        // Variables
-        public:
-        protected:
-        private:
+    namespace NordicOS {
+        class OSSpecific {
+            // Variables
+            public:
+            protected:
+            private:
 
-        // Methods
-        public:
-            std::string ResourcePath(std::string cFileName);
+            // Methods
+            public:
+                std::string ResourcePath(std::string cFileName);
 
-        protected:
-        private:
-
+            protected:
+            private:
+        };
     };
 };
 

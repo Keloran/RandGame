@@ -5,29 +5,30 @@
 #include "./FileUtils.hpp"
 
 namespace NordicArts {
-    class FileHandler {
-        // Variables
-        public:
-        protected:
-            std::fstream    m_cFileStream;
-            std::string     m_cFilePath;
-            std::string     m_cFileName;
+    namespace NordicOS {
+        class FileHandler {
+            // Variables
+            public:
+            protected:
+                std::fstream    m_cFileStream;
+                std::string     m_cFilePath;
+                std::string     m_cFileName;
 
-        private:
-            bool            m_bSaveException;
+            private:
+                bool            m_bSaveException;
+    
+            // Methods
+            public:
+                virtual ~FileHandler();
 
-        // Methods
-        public:
-            virtual ~FileHandler();
+            protected:
+                FileHandler(const std::string &cFileName, bool bSaveException);
 
-        protected:
-            FileHandler(const std::string &cFileName, bool bSaveException);
+                void throwError(const std::string &cMessage) const;
+                void throwError(const std::ostringstream &cMessage) const;
 
-            void throwError(const std::string &cMessage) const;
-            void throwError(const std::ostringstream &cMessage) const;
-
-        private:
-
+            private:
+        };
     };
 };
 

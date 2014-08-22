@@ -13,26 +13,27 @@
 #endif
 
 namespace NordicArts {
-    class BlockProcess final {
-        // Variables
-        public:
-            MUTEX_THREAD m_pMutex;
+    namespace NordicOS {
+        class BlockProcess final {
+            // Variables
+            public:
+                MUTEX_THREAD m_pMutex;
 
-        protected:
-        private:
+            protected:
+            private:
 
-        // Methods
-        public:
-            explicit BlockProcess(const std::string &cName);
-            ~BlockProcess();
+            // Methods
+            public:
+                explicit BlockProcess(const std::string &cName);
+                ~BlockProcess();
+    
+                bool isBlocked();
 
-            bool isBlocked();
-
-        protected:
-        private:
-            BlockProcess(const BlockProcess &cConst);
-            BlockProcess &operator=(const BlockProcess &cConst);
-
+            protected:
+            private:
+                BlockProcess(const BlockProcess &cConst);
+                BlockProcess &operator=(const BlockProcess &cConst);
+        };
     };
 };
 

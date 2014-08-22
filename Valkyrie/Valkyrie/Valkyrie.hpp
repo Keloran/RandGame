@@ -5,20 +5,20 @@
 #include "./Includes.hpp"
 
 namespace NordicArts {
-    class Valkyrie {
-        // Variables
-        public:
-        protected:
-        private:
-
-        // Methods
-        public:
-        protected:
-        private:
-
-    };
-
     namespace ValkyrieNS {
+        class Valkyrie {
+            // Variables
+            public:
+            protected:
+            private:
+
+            // Methods
+            public:
+            protected:
+            private:
+
+        };
+
         const char *getBuildNumber();
     };
 };

@@ -17,10 +17,6 @@
 
 // Namespace
 namespace NordicArts {
-    // BuildNumber
-    #ifndef ENGINEBUILD
-        #define ENGINEBUILD "0x0001"
-    #endif
 
 	// Class
 	class Settings final : public Singleton {
@@ -54,8 +50,6 @@ namespace NordicArts {
         // Constructor
 		Settings();
 		virtual ~Settings();
-        
-        std::string getBuildNumber() const;
         
         void setRandomSeed(unsigned long lSeed);
         std::string showSummary() const;

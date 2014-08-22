@@ -1,24 +1,25 @@
 #include "./Simplex.hpp"
 
 namespace NordicArts {
-    Simplex::Simplex() {
-    }
-
-    float Simplex::octaveNoise2d(float fOctaves, float fPersistence, float fScale, float fX, float fY) {
-        float fTotal        = 0;
-        float fFrequency    = fScale;
-        float fAmplitude    = 1;
-        float fMaxAmplitude  = 0;
-
-        for (int i = 0; i < fOctaves; i++) {
-            fTotal          += (rawNoise2d((fX * fFrequency), (fY * fFrequency)) * fAmplitude);
-            fFrequency      *= 2;
-            fMaxAmplitude   += fAmplitude;
-            fAmplitude      *= fPersistence;
+    namespace NordicOS {
+        Simplex::Simplex() {
         }
 
-        return (fTotal / fMaxAmplitude);
-    }
+        float Simplex::octaveNoise2d(float fOctaves, float fPersistence, float fScale, float fX, float fY) {
+            float fTotal        = 0;
+            float fFrequency    = fScale;
+            float fAmplitude    = 1;
+            float fMaxAmplitude  = 0;
+    
+            for (int i = 0; i < fOctaves; i++) {
+                fTotal          += (rawNoise2d((fX * fFrequency), (fY * fFrequency)) * fAmplitude);
+                fFrequency      *= 2;
+                fMaxAmplitude   += fAmplitude;
+                fAmplitude      *= fPersistence;
+            }
+
+            return (fTotal / fMaxAmplitude);
+        }
 
     float Simplex::octaveNoise3d(float fOctaves, float fPersistence, float fScale, float fX, float fY, float fZ) {
         float fTotal        = 0;

@@ -20,6 +20,10 @@ set(LibSources ${BasePath}/Valkyrie.cpp)
 list(APPEND LibHeaders ${BasePath}/Window/Window.hpp)
 list(APPEND LibSources ${BasePath}/Window/Window.cpp)
 
+# Settings
+list(APPEND LibHeaders ${BasePath}/Settings/Settings.hpp)
+list(APPEND LibSources ${BasePath}/Settings/Settings.cpp)
+
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
 file(WRITE ${BasePath}/buildNumber.hpp "#ifndef VALKYRIE_BUILDNUMBER\n#define VALKYRIE_BUILDNUMBER ${buildNumber}\n#endif")

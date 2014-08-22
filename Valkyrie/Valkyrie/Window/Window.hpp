@@ -4,33 +4,39 @@
 #include "../Includes.hpp"
 
 namespace NordicArts {
-    class Window {
-        // Variables
-        public:
-        protected:
-        private:
-            int m_iWidth;
-            int m_iHeight;
-            int m_iFrameLimit;
-            
-            std::string m_cTitle;
+    namespace ValkyrieNS {
+        class Window {
+            // Variables
+            public:
+            protected:
+            private:
+                int m_iWidth;
+                int m_iHeight;
+                int m_iFrameLimit;
+                int m_iOpenGLMajor;
+                int m_iOpenGLMinor;
+                
+                std::string m_cTitle;
+    
+            // Methods
+            public:
+                Window();
+                Window(int iX, int iY);
+                Window(int iX, int iY, std::string cTitle);
 
-        // Methods
-        public:
-            Window();
-            Window(int iX, int iY);
-            Window(int iX, int iY, std::string cTitle);
+                void setWidth(int iX);
+                void setHeight(int iY);
+                void setTitle(std::string cTitle);
+                void setFramerateLimit(int iFrameLimit);
+                void setOpenGL(int iMajor, int iMinor);
+    
+                void debugStuff();
 
-            void setWidth(int iX);
-            void setHeight(int iY);
-            void setTitle(std::string cTitle);
-            void setFramerateLimit(int iFrameLimit);
-
-            virtual ~Window();
-
-        protected:
-        private:
-
+                virtual ~Window();
+    
+            protected:
+            private:
+        };
     };
 };
 

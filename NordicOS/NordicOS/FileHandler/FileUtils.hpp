@@ -4,17 +4,19 @@
 #include "../OS.hpp"
 
 namespace NordicArts {
-    static bool fileExists(const char *cFileName) {
-        bool bExists = false;
+    namespace NordicOS {
+        static bool fileExists(const char *cFileName) {
+            bool bExists = false;
 
-        std::ifstream pFile(cFileName);
-        if (pFile) {
-            bExists = true;
-            pFile.close();
+            std::ifstream pFile(cFileName);
+            if (pFile) {
+                bExists = true;
+                pFile.close();
+            }
+
+            return bExists;
         }
-
-        return bExists;
-    }
+    };
 };
 
 #endif

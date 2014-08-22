@@ -20,6 +20,7 @@ namespace NordicArts {
             bool isVSync();
 
             glm::vec2 getResolution();
+            glm::vec2 getOpenGL();
 
             std::string getGameName();
 

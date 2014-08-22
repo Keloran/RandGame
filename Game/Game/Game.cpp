@@ -16,13 +16,26 @@ namespace NordicArts {
         Setup *pSetup = &oSetup;
         pSetup->doSetup();
 
-        glm::vec2 vResolution = pSetup->getResolution();
+        glm::vec2 vResolution   = pSetup->getResolution();
+        glm::vec2 vOpenGL       = pSetup->getOpenGL();
 
         Window::Window pWindow(vResolution.x, vResolution.y, pSetup->getGameName());
         
-        if (pSetup->isVSync()) {
-            pWindow.setFramerateLimit(60);
+        // VSync
+        if (pSetup->isVSync()) { 
+            pWindow.setFramerateLimit(60); 
+        } else {
+            pWindow.setFramerateLimit(999);
         }
+
+        // Base OpenGL
+        if (vOpenGL.x == 0) {
+            pWindow.setOpenGL(3, 3);
+        } else {
+            pWindow.setOpenGL(vOpenGL.x, vOpenGL.y);
+        }
+
+        pWindow.debugStuff();
     }
 
     void Game::RenderMainMenu() {

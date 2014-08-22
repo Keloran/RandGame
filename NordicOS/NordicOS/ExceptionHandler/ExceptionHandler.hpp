@@ -4,26 +4,27 @@
 #include "../OS.hpp"
 
 namespace NordicArts {
-    class ExceptionHandler final {
-        // Variables
-        public:
-            ExceptionHandler    *m_pSingleton;
+    namespace NordicOS {
+        class ExceptionHandler final {
+            // Variables
+            public:
+                ExceptionHandler    *m_pSingleton;
 
-        protected:
-        private:
-            std::string          m_cMessage;
+            protected:
+            private:
+                std::string          m_cMessage;
 
-        // Methods
-        public:
-            explicit ExceptionHandler(const std::string &cMessage, bool bSaveToFile = true);
-            explicit ExceptionHandler(const std::ostringstream &cMessage, bool bSaveToFile = true);
+            // Methods
+            public:
+                explicit ExceptionHandler(const std::string &cMessage, bool bSaveToFile = true);
+                explicit ExceptionHandler(const std::ostringstream &cMessage, bool bSaveToFile = true);
 
-            const std::string &getMessage() const;
+                const std::string &getMessage() const;
 
-        protected:
-        private:
-            ExceptionHandler &operator=(const ExceptionHandler &cConst);
-
+            protected:
+            private:
+                ExceptionHandler &operator=(const ExceptionHandler &cConst);
+        };
     };
 };
 

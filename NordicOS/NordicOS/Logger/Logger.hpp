@@ -8,43 +8,44 @@
 #include "../String/String.hpp"
 
 namespace NordicArts {
-    class Logger final : public Singleton {
-        // Variables   
-        public:
-            enum LoggerType {
-                TYPE_INFO = 0,
-                TYPE_WARNING,
-                TYPE_ERROR,
-            };
+    namespace NordicOS {
+        class Logger final : public Singleton {
+            // Variables   
+            public:
+                enum LoggerType {
+                    TYPE_INFO = 0,
+                    TYPE_WARNING,
+                    TYPE_ERROR,
+                };
 
-        protected:
-        private:
-            std::string                 m_cLogFile;
-            const std::string           m_cUnknownLogType;
+            protected:
+            private:
+                std::string                 m_cLogFile;
+                const std::string           m_cUnknownLogType;
 
-            unsigned long               m_ulFileLength;
+                unsigned long               m_ulFileLength;
+    
+                std::array<std::string, 3>  m_aLogTypes;
+    
+                NA_CRITICAL                 m_Critical;
 
-            std::array<std::string, 3>  m_aLogTypes;
+            // Methods
+            public:
+                explicit Logger(const std::string &cFileName);
+                virtual ~Logger();
 
-            NA_CRITICAL                 m_Critical;
+                static void log(const char *cLog);
+                static void log(std::string cString);
+                static void log(float fLog);
+                static void log(int iUnknown, const char *cLog);
+                static void log(LoggerType eType, const std::string &cLog);
+                static void log(LoggerType eType, const std::ostringstream &cLog);
+                static void log(LoggerType eType, const char *cLog);
 
-        // Methods
-        public:
-            explicit Logger(const std::string &cFileName);
-            virtual ~Logger();
+            protected:
+            private:
 
-            static void log(const char *cLog);
-            static void log(std::string cString);
-            static void log(float fLog);
-            static void log(int iUnknown, const char *cLog);
-            static void log(LoggerType eType, const std::string &cLog);
-            static void log(LoggerType eType, const std::ostringstream &cLog);
-            static void log(LoggerType eType, const char *cLog);
-
-        protected:
-        private:
-
-
+        };
     };
 };
 

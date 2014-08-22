@@ -5,21 +5,22 @@
 #include "../FileHandler.hpp"
 
 namespace NordicArts {
-    class TextFileReader : public FileHandler {
-        // Variables
-        public:
-        protected:
-        private:
+    namespace NordicOS {
+        class TextFileReader : public FileHandler {
+            // Variables
+            public:
+            protected:
+            private:
 
-        // Methods
-        public:
-            explicit TextFileReader(const std::string &cFileName);
+            // Methods
+            public:
+                explicit TextFileReader(const std::string &cFileName);
         
-            std::string readAll() const;
-
-        protected:
-        private:
-
+                std::string readAll() const;
+    
+            protected:
+            private:
+        };
     };
 };
 
