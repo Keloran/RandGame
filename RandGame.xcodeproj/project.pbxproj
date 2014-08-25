@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F321ECCD19ABE7F60071DDC6 /* GameFiles in Resources */ = {isa = PBXBuildFile; fileRef = F321ECCC19ABE7F60071DDC6 /* GameFiles */; };
 		F3B2CC4419A8DDDB0047830E /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC3E19A8DDDA0047830E /* sfml-audio.framework */; };
 		F3B2CC4519A8DDDB0047830E /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC3F19A8DDDB0047830E /* sfml-graphics.framework */; };
 		F3B2CC4619A8DDDB0047830E /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC4019A8DDDB0047830E /* sfml-network.framework */; };
@@ -66,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F321ECCC19ABE7F60071DDC6 /* GameFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GameFiles; sourceTree = "<group>"; };
 		F36ECB0A19A8D1EA0081D3F8 /* RandGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B2CBD319A8D9E30047830E /* Valkyrie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Valkyrie.xcodeproj; path = RandGame/Valkyrie/Valkyrie.xcodeproj; sourceTree = "<group>"; };
 		F3B2CBD919A8D9EE0047830E /* Game.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Game.xcodeproj; path = RandGame/Game/Game.xcodeproj; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 		F3FE2B6019A8D22D0069F703 /* RandGame */ = {
 			isa = PBXGroup;
 			children = (
-				F321ECCC19ABE7F60071DDC6 /* GameFiles */,
 				F3B2CC4A19A8DDEF0047830E /* Frameworks */,
 				F3FE2B6419A8D22D0069F703 /* CMakeModules */,
 				F3FE2B9019A8D22D0069F703 /* Main */,
@@ -295,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F321ECCD19ABE7F60071DDC6 /* GameFiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
