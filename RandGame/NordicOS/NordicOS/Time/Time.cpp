@@ -81,12 +81,12 @@ namespace NordicArts {
 
         int Time::getMilliSecond() {
             std::chrono::milliseconds timeDuration                      = std::chrono::duration_cast<std::chrono::milliseconds>(m_tpHighClock.time_since_epoch());
-            return timeDuration.count();
+            return (int)timeDuration.count();
         }
 
         int Time::getNanoSeconds() {
             std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(m_tpHighClock.time_since_epoch());
-            return timeDuration.count();
+            return (int)timeDuration.count();
         }
     };
 };

@@ -30,7 +30,6 @@ namespace NordicArts {
 
         std::string Markov::generateWord() {
             std::string word = "";
-            int i = 0;
 
             // Seed
             NordicOS::Time::Time oTime;

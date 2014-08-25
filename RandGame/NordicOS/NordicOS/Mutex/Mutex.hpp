@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_MUTEX_H
-#define NORDICARTS_OS_MUTEX_H
+#ifndef NordicArts_NordicOS_Mutex_H
+#define NordicArts_NordicOS_Mutex_H
 
 #include "../OS.hpp"
 

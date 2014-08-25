@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_INCLUDES_H
-#define NORDICARTS_GAME_INCLUDES_H
+#ifndef NordicArts_Game_Includes_H
+#define NordicArts_Game_Includes_H
 
 // General System Includes
 #include <iostream>
@@ -19,7 +19,6 @@
 #include <cstdint>
 
 // GLM
-//#include "./ThirdParty/glm/glm.hpp"
 #include <Valkyrie/glm/glm.hpp>
 
 // Boost

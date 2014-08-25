@@ -120,9 +120,9 @@ list(APPEND LibHeaders ${NOS}/Noise/Simplex.hpp)
 list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 
 # SQLite
-link_directories(${NOS}/sqlite)
-include_directories(${NOS}/sqlite)
-add_subdirectory(${NOS}/sqlite)
+link_directories(${NOS}/SQLite)
+include_directories(${NOS}/SQLite)
+add_subdirectory(${NOS}/SQLite)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")

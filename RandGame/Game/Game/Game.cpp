@@ -15,6 +15,9 @@ namespace NordicArts {
             // Do the setup routine
             Setup oSetup;
             Setup *pSetup = &oSetup;
+            
+            pSetup->setOpenGL(m_vOpenGL);
+            pSetup->setGameName(m_cGameName);
             pSetup->doSetup();
 
             glm::vec2 vResolution   = pSetup->getResolution();
@@ -25,7 +28,7 @@ namespace NordicArts {
 
             // VSync
             if (pSetup->isVSync()) {
-                pWindow.setFramerateLimit(60);
+                pWindow.setFramerateLimit(iRefreshRate);
             } else {
                 pWindow.setFramerateLimit(999);
             }
@@ -77,6 +80,19 @@ namespace NordicArts {
 
             return true;
         }
+        
+        // settings
+        void Game::setGameName(std::string cGameName) {
+            m_cGameName = cGameName;
+        }
+        void Game::setOpenGL(int iMajor, int iMinor) {
+            glm::uvec2 vOpenGL;
+            vOpenGL.x = iMajor;
+            vOpenGL.y = iMinor;
+            
+            m_vOpenGL = vOpenGL;
+        }
+        
 
         // Build Number
         const char *getBuildNumber() {

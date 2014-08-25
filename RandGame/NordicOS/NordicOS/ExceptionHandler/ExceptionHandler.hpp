@@ -1,10 +1,10 @@
-#ifndef NORDICARTS_OS_EXCEPTIONHANDLER_H
-#define NORDICARTS_OS_EXCEPTIONHANDLER_H
+#ifndef NordicArts_NordicOS_ExceptionHandler_H
+#define NordicArts_NordicOS_ExceptionHandler_H
 
 #include "../OS.hpp"
 
 namespace NordicArts {
-    namespace NordicOS {
+    namespace NordicOS {        
         class ExceptionHandler final {
             // Variables
             public:

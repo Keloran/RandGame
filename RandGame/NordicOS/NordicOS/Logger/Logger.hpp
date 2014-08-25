@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_LOGGER_H
-#define NORDICARTS_OS_LOGGER_H
+#ifndef NordicArts_NordicOS_Logger_H
+#define NordicArts_NordicOS_Logger_H
 
 #include "../OS.hpp"
 #include "../Time/Time.hpp"

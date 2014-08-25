@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_VALKYRIE_H
-#define NORDICARTS_VALKYRIE_H
+#ifndef NordicArts_Valkyrie_H
+#define NordicArts_Valkyrie_H
 
 #include "./buildNumber.hpp"
 #include "./Includes.hpp"

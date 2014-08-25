@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_SETUP_H
-#define NORDICARTS_GAME_SETUP_H
+#ifndef NordicArts_Game_Setup_H
+#define NordicArts_Game_Setup_H
 
 #include "../Includes.hpp"
 
@@ -30,6 +30,9 @@ namespace NordicArts {
                 std::string getGameName();
 
                 int getRefreshRate() const;
+            
+                void setOpenGL(glm::uvec2 vOpenGL);
+                void setGameName(std::string cGameName);
 
     		protected:
     		private:

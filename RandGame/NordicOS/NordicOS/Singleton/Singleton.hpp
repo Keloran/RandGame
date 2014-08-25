@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_SINGLETON_H
-#define NORDICARTS_OS_SINGLETON_H
+#ifndef NordicArts_NordicOS_Singleton_H
+#define NordicArts_NordicOS_Singleton_H
 
 #include "../OS.hpp"
 

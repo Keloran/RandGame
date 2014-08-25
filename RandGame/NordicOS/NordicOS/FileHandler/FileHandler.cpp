@@ -1,14 +1,20 @@
 #include "./FileHandler.hpp"
-#include "../ExceptionHandler/ExceptionHandler.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
         FileHandler::FileHandler(const std::string &cFileName, bool bSaveException) : m_bSaveException(bSaveException), m_cFileName(cFileName) {
             OSSpecific oOS;
-            m_cFilePath = oOS.ResourcePath(cFileName);
+            std::string cLogFind(".log");
+            std::size_t szFound = cFileName.find(cLogFind);
+            
+            if (fileExists(cFileName.c_str()) || szFound) {
+                m_cFilePath = oOS.ResourcePath(cFileName);
 
-            if (cFileName.empty()) {
-                throw ExceptionHandler(__FUNCTION__ + std::string(" missing filename"), bSaveException);
+                if (cFileName.empty()) {
+                    throw ExceptionHandler(__FUNCTION__ + std::string(" missing filename"), bSaveException);
+                }
+            } else {
+                throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
             }
         }
 
@@ -24,6 +30,10 @@ namespace NordicArts {
 
         void FileHandler::throwError(const std::ostringstream &cMessage) const {
             throwError(cMessage.str().c_str());
+        }
+        
+        std::string FileHandler::getFilePath() const {
+            return m_cFilePath;
         }
     };
 };

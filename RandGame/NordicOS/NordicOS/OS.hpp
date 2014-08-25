@@ -1,25 +1,20 @@
-#ifndef NORDICARTS_OS_H
-#define NORDICARTS_OS_H
+#ifndef NordicArts_NordicOS_H
+#define NordicArts_NordicOS_H
 
 #include "./buildNumber.hpp"
 #include "./OSLoad.hpp"
 
 // OS Specific Includes
-#if defined(__APPLE_CC__) || defined(__APPLE__)
-    #define NordicArtsOSX true
-    #include "./OSX/OSX.hpp"
-    #include "./nonWindows/nonWindows.hpp"
-#endif
-
-#if defined(__WIN32__) || defined(_WIN32) || defined(_WIN64)
-    #define NordicArtsWindows true
+#if defined (__WIN32__) || defined(_WIN32) || defined(_WIN64)
     #include "./Windows/Windows.hpp"
-#endif
-
-#if defined(__LINUX__) || defined(linux) || defined(__linux__)
-    #define NordicArtsLinux true
-    #include "./Linux/Linux.hpp"
+#else
     #include "./nonWindows/nonWindows.hpp"
+
+    #if defined(__APPLE__) || defined(__APPLE_CC__)
+        #include "./OSX/OSX.hpp"
+    #else
+        #include "./Linux/Linux.hpp"
+    #endif
 #endif
 
 // ExceptionHandler

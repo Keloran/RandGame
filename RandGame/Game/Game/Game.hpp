@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_RANDGAME_GAME_H
-#define NORDICARTS_RANDGAME_GAME_H
+#ifndef NordicArts_Game_H
+#define NordicArts_Game_H
 
 #include "./Includes.hpp"
 #include "./Setup/Setup.hpp"
@@ -31,7 +31,10 @@ namespace NordicArts {
             public:
             protected:
             private:
-                NordicOS::Logger              *m_pLogger  = nullptr;
+                NordicOS::Logger    *m_pLogger  = nullptr;
+            
+                std::string          m_cGameName;
+                glm::uvec2           m_vOpenGL;
 
             // Methods
             public:
@@ -49,6 +52,9 @@ namespace NordicArts {
                 void ShutDown();
                 void ProcessInputs();
                 void VideoPageFlip();
+            
+                void setOpenGL(int iMajor, int iMinor);
+                void setGameName(std::string cGameName);
 
             protected:
             private:

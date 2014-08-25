@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_LOAD_H
-#define NORDICARTS_OS_LOAD_H
+#ifndef NordicArts_NordicOS_OSLoad_H
+#define NordicArts_NordicOS_OSLoad_H
 
 // Includes
 #include <cassert> // Asserts

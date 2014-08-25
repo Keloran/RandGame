@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_LINUX_H
-#define NORDICARTS_OS_LINUX_H
+#ifndef NordicArts_NordicOS_Linux_H
+#define NordicArts_NordicOS_Linux_H
 
 #include "../OS.hpp"
 

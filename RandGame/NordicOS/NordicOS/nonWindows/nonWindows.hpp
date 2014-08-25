@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_NONWINDOWS_H
-#define NORDICARTS_OS_NONWINDOWS_H
+#ifndef NordicArts_NordicOS_NonWindows_H
+#define NordicArts_NordicOS_NonWindows_H
 
 // Make sure we should be compiling this on nonWindows
 #include "../OS.hpp"

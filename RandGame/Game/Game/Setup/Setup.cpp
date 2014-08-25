@@ -22,21 +22,27 @@ namespace NordicArts {
     	void Setup::createDatabase() {
 
     	}
+        
+        void Setup::setOpenGL(glm::uvec2 vOpenGL) {
+            m_sGameSettings.vOpenGL = vOpenGL;
+        }
+        void Setup::setGameName(std::string cGameName) {
+            m_sGameSettings.cGameName = cGameName;
+        }
 
         glm::vec2 Setup::getResolution() const {
-            return glm::vec2(1, 1);
+            return m_sGameSettings.vResolution;
         }
         glm::vec2 Setup::getOpenGL() const {
-            return glm::vec2(3, 3);
+            return m_sGameSettings.vOpenGL;
         }
 
         bool Setup::isVSync() const {
-            return true;
+            return m_sGameSettings.bVSync;
         }
 
         std::string Setup::getGameName() {
-            std::string cName = "Bob";
-            return cName;
+            return m_sGameSettings.cGameName;
         }
         
         int Setup::getRefreshRate() const {

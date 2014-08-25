@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_FOREST_SPECIES_H
-#define NORDICARTS_GAME_FOREST_SPECIES_H
+#ifndef NordicArts_Game_Forest_Species_H
+#define NordicArts_Game_Forest_Species_H
 
 #include <NordicOS/OS.hpp>
 #include <NordicOS/FileHandler/TextFileReader/TextFileReader.hpp>

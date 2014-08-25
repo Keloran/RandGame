@@ -1,5 +1,5 @@
-#ifndef MARKOV_HEADER
-#define MARKOV_HEADER
+#ifndef NordicArts_Game_Markov_H
+#define NordicArts_Game_Markov_H
 
 #include <boost/locale.hpp>
 

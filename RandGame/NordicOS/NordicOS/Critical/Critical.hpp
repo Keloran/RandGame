@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_CRITICAL_H
-#define NORDICARTS_OS_CRITICAL_H
+#ifndef NordicArts_NordicOS_Critical_H
+#define NordicArts_NordicOS_Critical_H
 
 #include "../OS.hpp"
 

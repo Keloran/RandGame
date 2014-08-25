@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 NordicArts.net. All rights reserved.
 //
 
-#ifndef NORDICARTS_GAME_SETTINGS_H
-#define NORDICARTS_GAME_SETTINGS_H
+#ifndef NordicArts_Game_Settings_H
+#define NordicArts_Game_Settings_H
 
 // Prefix
 #include "../Includes.hpp"

@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_NAMES_H
-#define NORDICARTS_NAMES_H
+#ifndef NordicArts_Game_Names_H
+#define NordicArts_Game_Names_H
 
 #include <boost/locale.hpp>
 

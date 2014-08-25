@@ -27,8 +27,8 @@ namespace NordicArts {
         }
 
         void Window::debugStuff() {
-            std::cout << "Resolution: " << ", Width: " << m_iWidth << ", Height: " << m_iHeight << std::endl;
-            std::cout << "OpenGL: " << ", Major: " << m_iOpenGLMajor << ", Minor: " << m_iOpenGLMinor << std::endl;
+            std::cout << "Resolution: " << "Width: " << m_iWidth << ", Height: " << m_iHeight << std::endl;
+            std::cout << "OpenGL: " << "Major: " << m_iOpenGLMajor << ", Minor: " << m_iOpenGLMinor << std::endl;
             std::cout << "FrameRate: " << m_iFrameLimit << std::endl;
         }
     };

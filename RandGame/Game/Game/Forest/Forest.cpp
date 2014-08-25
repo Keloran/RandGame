@@ -10,7 +10,7 @@ namespace NordicArts {
         }
 
         void Forest::addTree(Tree oTree) {
-            int iTree = m_vTrees.size();
+            int iTree = (int)m_vTrees.size();
             oTree.setTree(iTree);
 
             m_vTrees.insert(m_vTrees.end(), oTree);

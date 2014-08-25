@@ -1,8 +1,9 @@
-#ifndef NORDICARTS_OS_FILEHANDLER_H
-#define NORDICARTS_OS_FILEHANDLER_H
+#ifndef NordicArts_NordicOS_FileHandler_H
+#define NordicArts_NordicOS_FileHandler_H
 
-#include "../OS.hpp"
 #include "./FileUtils.hpp"
+#include "../OS.hpp"
+#include "../ExceptionHandler/ExceptionHandler.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -20,6 +21,8 @@ namespace NordicArts {
             // Methods
             public:
                 virtual ~FileHandler();
+            
+                std::string getFilePath() const;
 
             protected:
                 FileHandler(const std::string &cFileName, bool bSaveException);

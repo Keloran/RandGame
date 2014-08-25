@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_STRING_H
-#define NORDICARTS_OS_STRING_H
+#ifndef NordicArts_NordicOS_String_H
+#define NordicArts_NordicOS_String_H
 
 #include "../OS.hpp"
 #include "../Time/Time.hpp"

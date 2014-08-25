@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_SETUP_PARSER_H
-#define NORDICARTS_GAME_SETUP_PARSER_H
+#ifndef NordicArts_Game_Setup_Parser_H
+#define NordicArts_Game_Setup_Parser_H
 
 #include "../../Includes.hpp"
 

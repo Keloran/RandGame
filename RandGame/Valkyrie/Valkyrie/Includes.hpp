@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_VALKYRIE_INCLUDES_H
-#define NORDICARTS_VALKYRIE_INCLUDES_H
+#ifndef NordicArts_Valkyrie_Includes_H
+#define NordicArts_Valkyrie_Includes_H
 
 // Includes
 #include <cassert> // Asserts

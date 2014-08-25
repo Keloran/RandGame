@@ -1,21 +1,12 @@
-#ifndef NORDICARTS_OS_FILEUTILS_H
-#define NORDICARTS_OS_FILEUTILS_H
+#ifndef NordicArts_NordicOS_FileUtils_H
+#define NordicArts_NordicOS_FileUtils_H
 
 #include "../OS.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
-        static bool fileExists(const char *cFileName) {
-            bool bExists = false;
-
-            std::ifstream pFile(cFileName);
-            if (pFile) {
-                bExists = true;
-                pFile.close();
-            }
-
-            return bExists;
-        }
+        bool fileExists(std::string cFileName);
+        bool fileExists(const char *cFileName);
     };
 };
 

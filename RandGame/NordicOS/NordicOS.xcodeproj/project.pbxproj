@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3B2CB5E19A8D5420047830E /* BlockProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB1E19A8D5420047830E /* BlockProcess.cpp */; };
+		F3B2CB5F19A8D5420047830E /* BlockProcess.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB1F19A8D5420047830E /* BlockProcess.hpp */; };
+		F3B2CB6019A8D5420047830E /* BlockThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2119A8D5420047830E /* BlockThread.cpp */; };
+		F3B2CB6119A8D5420047830E /* BlockThread.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2219A8D5420047830E /* BlockThread.hpp */; };
+		F3B2CB6219A8D5420047830E /* buildNumber.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2319A8D5420047830E /* buildNumber.hpp */; };
+		F3B2CB6319A8D5420047830E /* Critical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2519A8D5420047830E /* Critical.cpp */; };
+		F3B2CB6419A8D5420047830E /* Critical.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2619A8D5420047830E /* Critical.hpp */; };
+		F3B2CB6519A8D5420047830E /* ExceptionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */; };
+		F3B2CB6619A8D5420047830E /* ExceptionHandler.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2919A8D5420047830E /* ExceptionHandler.hpp */; };
+		F3B2CB6719A8D5420047830E /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2B19A8D5420047830E /* FileHandler.cpp */; };
+		F3B2CB6819A8D5420047830E /* FileHandler.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2C19A8D5420047830E /* FileHandler.hpp */; };
+		F3B2CB6919A8D5420047830E /* FileUtils.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB2D19A8D5420047830E /* FileUtils.hpp */; };
+		F3B2CB6A19A8D5420047830E /* TextFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2F19A8D5420047830E /* TextFileReader.cpp */; };
+		F3B2CB6B19A8D5420047830E /* TextFileReader.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB3019A8D5420047830E /* TextFileReader.hpp */; };
+		F3B2CB6C19A8D5420047830E /* TextFileWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB3219A8D5420047830E /* TextFileWriter.cpp */; };
+		F3B2CB6D19A8D5420047830E /* TextFileWriter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB3319A8D5420047830E /* TextFileWriter.hpp */; };
+		F3B2CB7019A8D5420047830E /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB3819A8D5420047830E /* Logger.cpp */; };
+		F3B2CB7119A8D5420047830E /* Logger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB3919A8D5420047830E /* Logger.hpp */; };
+		F3B2CB7219A8D5420047830E /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB3B19A8D5420047830E /* Mutex.cpp */; };
+		F3B2CB7319A8D5420047830E /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB3C19A8D5420047830E /* Mutex.hpp */; };
+		F3B2CB7419A8D5420047830E /* Simplex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB3E19A8D5420047830E /* Simplex.cpp */; };
+		F3B2CB7519A8D5420047830E /* Simplex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB3F19A8D5420047830E /* Simplex.hpp */; };
+		F3B2CB7619A8D5420047830E /* nonWindows.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB4119A8D5420047830E /* nonWindows.hpp */; };
+		F3B2CB7719A8D5420047830E /* OS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB4219A8D5420047830E /* OS.cpp */; };
+		F3B2CB7819A8D5420047830E /* OS.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB4319A8D5420047830E /* OS.hpp */; };
+		F3B2CB7919A8D5420047830E /* OSLoad.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB4419A8D5420047830E /* OSLoad.hpp */; };
+		F3B2CB7A19A8D5420047830E /* OSX.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB4619A8D5420047830E /* OSX.hpp */; };
+		F3B2CB7B19A8D5420047830E /* OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB4719A8D5420047830E /* OSX.mm */; };
+		F3B2CB7C19A8D5420047830E /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB4919A8D5420047830E /* Singleton.cpp */; };
+		F3B2CB7D19A8D5420047830E /* Singleton.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB4A19A8D5420047830E /* Singleton.hpp */; };
+		F3B2CB8319A8D5420047830E /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB5319A8D5420047830E /* String.cpp */; };
+		F3B2CB8419A8D5420047830E /* String.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB5419A8D5420047830E /* String.hpp */; };
+		F3B2CB8519A8D5420047830E /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB5719A8D5420047830E /* Time.cpp */; };
+		F3B2CB8619A8D5420047830E /* Time.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB5819A8D5420047830E /* Time.hpp */; };
+		F3B2CB8719A8D5420047830E /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB5A19A8D5420047830E /* Utility.cpp */; };
+		F3C31EA019A8DF0C00A249BB /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC1719A8DB3B0047830E /* libSQLite.a */; };
+		F3E1075019AB95EE006B821F /* FileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E1074F19AB95EE006B821F /* FileUtils.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3B2CC1619A8DB3B0047830E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B2CC1219A8DB3B0047830E /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3B2CC0419A8DAF40047830E;
+			remoteInfo = SQLite;
+		};
+		F3B2CC1819A8DB420047830E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B2CC1219A8DB3B0047830E /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B2CC0319A8DAF40047830E;
+			remoteInfo = SQLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F3B2CB1419A8D52F0047830E /* libNordicOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNordicOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B2CB1E19A8D5420047830E /* BlockProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlockProcess.cpp; sourceTree = "<group>"; };
+		F3B2CB1F19A8D5420047830E /* BlockProcess.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockProcess.hpp; sourceTree = "<group>"; };
+		F3B2CB2119A8D5420047830E /* BlockThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlockThread.cpp; sourceTree = "<group>"; };
+		F3B2CB2219A8D5420047830E /* BlockThread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockThread.hpp; sourceTree = "<group>"; };
+		F3B2CB2319A8D5420047830E /* buildNumber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = buildNumber.hpp; sourceTree = "<group>"; };
+		F3B2CB2519A8D5420047830E /* Critical.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Critical.cpp; sourceTree = "<group>"; };
+		F3B2CB2619A8D5420047830E /* Critical.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Critical.hpp; sourceTree = "<group>"; };
+		F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExceptionHandler.cpp; sourceTree = "<group>"; };
+		F3B2CB2919A8D5420047830E /* ExceptionHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExceptionHandler.hpp; sourceTree = "<group>"; };
+		F3B2CB2B19A8D5420047830E /* FileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileHandler.cpp; sourceTree = "<group>"; };
+		F3B2CB2C19A8D5420047830E /* FileHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileHandler.hpp; sourceTree = "<group>"; };
+		F3B2CB2D19A8D5420047830E /* FileUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileUtils.hpp; sourceTree = "<group>"; };
+		F3B2CB2F19A8D5420047830E /* TextFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextFileReader.cpp; sourceTree = "<group>"; };
+		F3B2CB3019A8D5420047830E /* TextFileReader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextFileReader.hpp; sourceTree = "<group>"; };
+		F3B2CB3219A8D5420047830E /* TextFileWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextFileWriter.cpp; sourceTree = "<group>"; };
+		F3B2CB3319A8D5420047830E /* TextFileWriter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextFileWriter.hpp; sourceTree = "<group>"; };
+		F3B2CB3519A8D5420047830E /* Linux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linux.cpp; sourceTree = "<group>"; };
+		F3B2CB3619A8D5420047830E /* Linux.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Linux.hpp; sourceTree = "<group>"; };
+		F3B2CB3819A8D5420047830E /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
+		F3B2CB3919A8D5420047830E /* Logger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Logger.hpp; sourceTree = "<group>"; };
+		F3B2CB3B19A8D5420047830E /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		F3B2CB3C19A8D5420047830E /* Mutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mutex.hpp; sourceTree = "<group>"; };
+		F3B2CB3E19A8D5420047830E /* Simplex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Simplex.cpp; sourceTree = "<group>"; };
+		F3B2CB3F19A8D5420047830E /* Simplex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Simplex.hpp; sourceTree = "<group>"; };
+		F3B2CB4119A8D5420047830E /* nonWindows.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nonWindows.hpp; sourceTree = "<group>"; };
+		F3B2CB4219A8D5420047830E /* OS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OS.cpp; sourceTree = "<group>"; };
+		F3B2CB4319A8D5420047830E /* OS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OS.hpp; sourceTree = "<group>"; };
+		F3B2CB4419A8D5420047830E /* OSLoad.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OSLoad.hpp; sourceTree = "<group>"; };
+		F3B2CB4619A8D5420047830E /* OSX.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OSX.hpp; sourceTree = "<group>"; };
+		F3B2CB4719A8D5420047830E /* OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OSX.mm; sourceTree = "<group>"; };
+		F3B2CB4919A8D5420047830E /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
+		F3B2CB4A19A8D5420047830E /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
+		F3B2CB5319A8D5420047830E /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		F3B2CB5419A8D5420047830E /* String.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
+		F3B2CB5519A8D5420047830E /* String.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = String.inl; sourceTree = "<group>"; };
+		F3B2CB5719A8D5420047830E /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
+		F3B2CB5819A8D5420047830E /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
+		F3B2CB5A19A8D5420047830E /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		F3B2CB5C19A8D5420047830E /* Windows.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Windows.cpp; sourceTree = "<group>"; };
+		F3B2CB5D19A8D5420047830E /* Windows.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Windows.hpp; sourceTree = "<group>"; };
+		F3B2CB8A19A8D5790047830E /* Utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utility.hpp; sourceTree = "<group>"; };
+		F3B2CC1219A8DB3B0047830E /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = NordicOS/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
+		F3E1074F19AB95EE006B821F /* FileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtils.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3B2CB1119A8D52F0047830E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3C31EA019A8DF0C00A249BB /* libSQLite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3B2CB0B19A8D52F0047830E = {
+			isa = PBXGroup;
+			children = (
+				F3B2CC1219A8DB3B0047830E /* SQLite.xcodeproj */,
+				F3B2CB1C19A8D5420047830E /* NordicOS */,
+				F3B2CB1519A8D52F0047830E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3B2CB1519A8D52F0047830E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB1419A8D52F0047830E /* libNordicOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3B2CB1C19A8D5420047830E /* NordicOS */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB1D19A8D5420047830E /* BlockProcess */,
+				F3B2CB2019A8D5420047830E /* BlockThread */,
+				F3B2CB2319A8D5420047830E /* buildNumber.hpp */,
+				F3B2CB2419A8D5420047830E /* Critical */,
+				F3B2CB2719A8D5420047830E /* ExceptionHandler */,
+				F3B2CB2A19A8D5420047830E /* FileHandler */,
+				F3B2CB3419A8D5420047830E /* Linux */,
+				F3B2CB3719A8D5420047830E /* Logger */,
+				F3B2CB3A19A8D5420047830E /* Mutex */,
+				F3B2CB3D19A8D5420047830E /* Noise */,
+				F3B2CB4019A8D5420047830E /* nonWindows */,
+				F3B2CB4219A8D5420047830E /* OS.cpp */,
+				F3B2CB4319A8D5420047830E /* OS.hpp */,
+				F3B2CB4419A8D5420047830E /* OSLoad.hpp */,
+				F3B2CB4519A8D5420047830E /* OSX */,
+				F3B2CB4819A8D5420047830E /* Singleton */,
+				F3B2CB5219A8D5420047830E /* String */,
+				F3B2CB5619A8D5420047830E /* Time */,
+				F3B2CB5919A8D5420047830E /* Utility */,
+				F3B2CB5B19A8D5420047830E /* Windows */,
+			);
+			path = NordicOS;
+			sourceTree = "<group>";
+		};
+		F3B2CB1D19A8D5420047830E /* BlockProcess */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB1E19A8D5420047830E /* BlockProcess.cpp */,
+				F3B2CB1F19A8D5420047830E /* BlockProcess.hpp */,
+			);
+			path = BlockProcess;
+			sourceTree = "<group>";
+		};
+		F3B2CB2019A8D5420047830E /* BlockThread */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB2119A8D5420047830E /* BlockThread.cpp */,
+				F3B2CB2219A8D5420047830E /* BlockThread.hpp */,
+			);
+			path = BlockThread;
+			sourceTree = "<group>";
+		};
+		F3B2CB2419A8D5420047830E /* Critical */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB2519A8D5420047830E /* Critical.cpp */,
+				F3B2CB2619A8D5420047830E /* Critical.hpp */,
+			);
+			path = Critical;
+			sourceTree = "<group>";
+		};
+		F3B2CB2719A8D5420047830E /* ExceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */,
+				F3B2CB2919A8D5420047830E /* ExceptionHandler.hpp */,
+			);
+			path = ExceptionHandler;
+			sourceTree = "<group>";
+		};
+		F3B2CB2A19A8D5420047830E /* FileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB2B19A8D5420047830E /* FileHandler.cpp */,
+				F3B2CB2C19A8D5420047830E /* FileHandler.hpp */,
+				F3B2CB2D19A8D5420047830E /* FileUtils.hpp */,
+				F3B2CB2E19A8D5420047830E /* TextFileReader */,
+				F3B2CB3119A8D5420047830E /* TextFileWriter */,
+				F3E1074F19AB95EE006B821F /* FileUtils.cpp */,
+			);
+			path = FileHandler;
+			sourceTree = "<group>";
+		};
+		F3B2CB2E19A8D5420047830E /* TextFileReader */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB2F19A8D5420047830E /* TextFileReader.cpp */,
+				F3B2CB3019A8D5420047830E /* TextFileReader.hpp */,
+			);
+			path = TextFileReader;
+			sourceTree = "<group>";
+		};
+		F3B2CB3119A8D5420047830E /* TextFileWriter */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB3219A8D5420047830E /* TextFileWriter.cpp */,
+				F3B2CB3319A8D5420047830E /* TextFileWriter.hpp */,
+			);
+			path = TextFileWriter;
+			sourceTree = "<group>";
+		};
+		F3B2CB3419A8D5420047830E /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB3519A8D5420047830E /* Linux.cpp */,
+				F3B2CB3619A8D5420047830E /* Linux.hpp */,
+			);
+			path = Linux;
+			sourceTree = "<group>";
+		};
+		F3B2CB3719A8D5420047830E /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB3819A8D5420047830E /* Logger.cpp */,
+				F3B2CB3919A8D5420047830E /* Logger.hpp */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		F3B2CB3A19A8D5420047830E /* Mutex */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB3B19A8D5420047830E /* Mutex.cpp */,
+				F3B2CB3C19A8D5420047830E /* Mutex.hpp */,
+			);
+			path = Mutex;
+			sourceTree = "<group>";
+		};
+		F3B2CB3D19A8D5420047830E /* Noise */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB3E19A8D5420047830E /* Simplex.cpp */,
+				F3B2CB3F19A8D5420047830E /* Simplex.hpp */,
+			);
+			path = Noise;
+			sourceTree = "<group>";
+		};
+		F3B2CB4019A8D5420047830E /* nonWindows */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB4119A8D5420047830E /* nonWindows.hpp */,
+			);
+			path = nonWindows;
+			sourceTree = "<group>";
+		};
+		F3B2CB4519A8D5420047830E /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB4619A8D5420047830E /* OSX.hpp */,
+				F3B2CB4719A8D5420047830E /* OSX.mm */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		F3B2CB4819A8D5420047830E /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB4919A8D5420047830E /* Singleton.cpp */,
+				F3B2CB4A19A8D5420047830E /* Singleton.hpp */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		F3B2CB5219A8D5420047830E /* String */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB5319A8D5420047830E /* String.cpp */,
+				F3B2CB5419A8D5420047830E /* String.hpp */,
+				F3B2CB5519A8D5420047830E /* String.inl */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		F3B2CB5619A8D5420047830E /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB5719A8D5420047830E /* Time.cpp */,
+				F3B2CB5819A8D5420047830E /* Time.hpp */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		F3B2CB5919A8D5420047830E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB5A19A8D5420047830E /* Utility.cpp */,
+				F3B2CB8A19A8D5790047830E /* Utility.hpp */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F3B2CB5B19A8D5420047830E /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CB5C19A8D5420047830E /* Windows.cpp */,
+				F3B2CB5D19A8D5420047830E /* Windows.hpp */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		F3B2CC1319A8DB3B0047830E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3B2CC1719A8DB3B0047830E /* libSQLite.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F3B2CB1219A8D52F0047830E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3B2CB6B19A8D5420047830E /* TextFileReader.hpp in Headers */,
+				F3B2CB6919A8D5420047830E /* FileUtils.hpp in Headers */,
+				F3B2CB7919A8D5420047830E /* OSLoad.hpp in Headers */,
+				F3B2CB7619A8D5420047830E /* nonWindows.hpp in Headers */,
+				F3B2CB6119A8D5420047830E /* BlockThread.hpp in Headers */,
+				F3B2CB7119A8D5420047830E /* Logger.hpp in Headers */,
+				F3B2CB8619A8D5420047830E /* Time.hpp in Headers */,
+				F3B2CB6819A8D5420047830E /* FileHandler.hpp in Headers */,
+				F3B2CB6419A8D5420047830E /* Critical.hpp in Headers */,
+				F3B2CB7319A8D5420047830E /* Mutex.hpp in Headers */,
+				F3B2CB6619A8D5420047830E /* ExceptionHandler.hpp in Headers */,
+				F3B2CB7519A8D5420047830E /* Simplex.hpp in Headers */,
+				F3B2CB7A19A8D5420047830E /* OSX.hpp in Headers */,
+				F3B2CB7D19A8D5420047830E /* Singleton.hpp in Headers */,
+				F3B2CB7819A8D5420047830E /* OS.hpp in Headers */,
+				F3B2CB6D19A8D5420047830E /* TextFileWriter.hpp in Headers */,
+				F3B2CB5F19A8D5420047830E /* BlockProcess.hpp in Headers */,
+				F3B2CB6219A8D5420047830E /* buildNumber.hpp in Headers */,
+				F3B2CB8419A8D5420047830E /* String.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F3B2CB1319A8D52F0047830E /* NordicOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B2CB1819A8D52F0047830E /* Build configuration list for PBXNativeTarget "NordicOS" */;
+			buildPhases = (
+				F3B2CB1019A8D52F0047830E /* Sources */,
+				F3B2CB1119A8D52F0047830E /* Frameworks */,
+				F3B2CB1219A8D52F0047830E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B2CC1919A8DB420047830E /* PBXTargetDependency */,
+			);
+			name = NordicOS;
+			productName = NordicOS;
+			productReference = F3B2CB1419A8D52F0047830E /* libNordicOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3B2CB0C19A8D52F0047830E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = NordicArts.net;
+				TargetAttributes = {
+					F3B2CB1319A8D52F0047830E = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = F3B2CB0F19A8D52F0047830E /* Build configuration list for PBXProject "NordicOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F3B2CB0B19A8D52F0047830E;
+			productRefGroup = F3B2CB1519A8D52F0047830E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F3B2CC1319A8DB3B0047830E /* Products */;
+					ProjectRef = F3B2CC1219A8DB3B0047830E /* SQLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F3B2CB1319A8D52F0047830E /* NordicOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F3B2CC1719A8DB3B0047830E /* libSQLite.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSQLite.a;
+			remoteRef = F3B2CC1619A8DB3B0047830E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3B2CB1019A8D52F0047830E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3B2CB8519A8D5420047830E /* Time.cpp in Sources */,
+				F3E1075019AB95EE006B821F /* FileUtils.cpp in Sources */,
+				F3B2CB7B19A8D5420047830E /* OSX.mm in Sources */,
+				F3B2CB7C19A8D5420047830E /* Singleton.cpp in Sources */,
+				F3B2CB6319A8D5420047830E /* Critical.cpp in Sources */,
+				F3B2CB8719A8D5420047830E /* Utility.cpp in Sources */,
+				F3B2CB8319A8D5420047830E /* String.cpp in Sources */,
+				F3B2CB7419A8D5420047830E /* Simplex.cpp in Sources */,
+				F3B2CB7019A8D5420047830E /* Logger.cpp in Sources */,
+				F3B2CB6719A8D5420047830E /* FileHandler.cpp in Sources */,
+				F3B2CB7219A8D5420047830E /* Mutex.cpp in Sources */,
+				F3B2CB5E19A8D5420047830E /* BlockProcess.cpp in Sources */,
+				F3B2CB6C19A8D5420047830E /* TextFileWriter.cpp in Sources */,
+				F3B2CB6A19A8D5420047830E /* TextFileReader.cpp in Sources */,
+				F3B2CB7719A8D5420047830E /* OS.cpp in Sources */,
+				F3B2CB6519A8D5420047830E /* ExceptionHandler.cpp in Sources */,
+				F3B2CB6019A8D5420047830E /* BlockThread.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3B2CC1919A8DB420047830E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SQLite;
+			targetProxy = F3B2CC1819A8DB420047830E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F3B2CB1619A8D52F0047830E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		F3B2CB1719A8D52F0047830E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		F3B2CB1919A8D52F0047830E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NordicOS/sqlite",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3B2CB1A19A8D52F0047830E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NordicOS/sqlite",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3B2CB0F19A8D52F0047830E /* Build configuration list for PBXProject "NordicOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B2CB1619A8D52F0047830E /* Debug */,
+				F3B2CB1719A8D52F0047830E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B2CB1819A8D52F0047830E /* Build configuration list for PBXNativeTarget "NordicOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B2CB1919A8D52F0047830E /* Debug */,
+				F3B2CB1A19A8D52F0047830E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3B2CB0C19A8D52F0047830E /* Project object */;
+}

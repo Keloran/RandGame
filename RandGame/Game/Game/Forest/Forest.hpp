@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_FOREST_H
-#define NORDICARTS_GAME_FOREST_H
+#ifndef NordicArts_Game_Forest_H
+#define NordicArts_Game_Forest_H
 
 #include <NordicOS/OS.hpp>
 #include <boost/range/irange.hpp>

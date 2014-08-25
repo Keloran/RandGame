@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_GAME_FOREST_TREE_H
-#define NORDICARTS_GAME_FOREST_TREE_H
+#ifndef NordicArts_Game_Forest_Tree_H
+#define NordicArts_Game_Forest_Tree_H
 
 #include <NordicOS/OS.hpp>
 #include "../Includes.hpp"

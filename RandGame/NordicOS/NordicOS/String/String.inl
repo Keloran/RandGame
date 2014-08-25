@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_STRING_INLINE
-#define NORDICARTS_OS_STRING_INLINE
+#ifndef NordicArts_NordicOS_String_INL
+#define NordicArts_NordicOS_String_INL
 
 #include "../ExceptionHandler/ExceptionHandler.hpp"
 

@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_OSX_H
-#define NORDICARTS_OS_OSX_H
+#ifndef NordicArts_NordicOS_OSX_H
+#define NordicArts_NordicOS_OSX_H
 
 #include "../OS.hpp"
 

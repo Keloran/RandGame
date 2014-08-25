@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_WINDOWS_H
-#define NORDICARTS_OS_WINDOWS_H
+#ifndef NordicArts_NordicOS_Windows_H
+#define NordicArts_NordicOS_Windows_H
 
 // Make sure its Windows
 #include "../OS.hpp"

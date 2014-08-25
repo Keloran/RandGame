@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_BLOCKTHREAD_H
-#define NORDICARTS_OS_BLOCKTHREAD_H
+#ifndef NordicArts_NordicOS_BlockThread_H
+#define NordicArts_NordicOS_BlockThread_H
 
 #include "../OS.hpp"
 #include "../Critical/Critical.hpp"

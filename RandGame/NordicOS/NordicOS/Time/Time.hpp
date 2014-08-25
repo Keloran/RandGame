@@ -1,8 +1,7 @@
-#ifndef NORDICARTS_OS_TIME_H
-#define NORDICARTS_OS_TIME_H
+#ifndef NordicArts_NordicOS_Time_H
+#define NordicArts_NordicOS_Time_H
 
 #include "../OS.hpp"
-#include "../OSLoad.hpp"
 
 // Time Defs
 #ifndef NA_TIME

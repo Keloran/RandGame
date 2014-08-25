@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_OS_BLOCKPROCESS_H
-#define NORDICARTS_OS_BLOCKPROCESS_H
+#ifndef NordicArts_NordicOS_BlockProcess_H
+#define NordicArts_NordicOS_BlockProcess_H
 
 #include "../OS.hpp"
 

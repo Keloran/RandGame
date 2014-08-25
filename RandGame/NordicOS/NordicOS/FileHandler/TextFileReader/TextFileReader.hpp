@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_FILEHANDLER_TEXTFILEREADER_H
-#define NORDICARTS_FILEHANDLER_TEXTFILEREADER_H
+#ifndef NordicArts_NordicOS_FileHandler_TextFileReader_H
+#define NordicArts_NordicOS_FileHandler_TextFileReader_H
 
 #include "../../OS.hpp"
 #include "../FileHandler.hpp"
@@ -15,6 +15,7 @@ namespace NordicArts {
             // Methods
             public:
                 explicit TextFileReader(const std::string &cFileName);
+                explicit TextFileReader(const std::string &cFileName, bool bFilePath);
         
                 std::string readAll() const;
     

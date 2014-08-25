@@ -1,5 +1,5 @@
-#ifndef NORDICARTS_VALKYRIE_WINDOW_H
-#define NORDICARTS_VALKYRIE_WINDOW_H
+#ifndef NordicArts_Valkyrie_Window_H
+#define NordicArts_Valkyrie_Window_H
 
 #include "../Includes.hpp"
 

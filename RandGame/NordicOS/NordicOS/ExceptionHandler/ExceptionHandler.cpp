@@ -22,5 +22,5 @@ namespace NordicArts {
         const std::string &ExceptionHandler::getMessage() const {
             return m_cMessage;
         }
-    }   ;
+    };
 };

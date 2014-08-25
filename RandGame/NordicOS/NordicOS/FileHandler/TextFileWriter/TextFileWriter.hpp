@@ -1,7 +1,7 @@
-#ifndef NORDICARTS_OS_FILEHANDLER_TEXTFILEWRITER_H
-#define NORDICARTS_OS_FILEHANDLER_TEXTFILEWRITER_H
+#ifndef NordicArts_NordicOS_FileHandler_TextFileWriter_H
+#define NordicArts_NordicOS_FileHandler_TextFileWriter_H
 
-#include "../OS.hpp"
+#include "../../OS.hpp"
 #include "../FileHandler.hpp"
 
 namespace NordicArts {
