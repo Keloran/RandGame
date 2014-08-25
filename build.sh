@@ -14,6 +14,7 @@ clear
 if [ -z "$rebuild" ]; then
     sh cleaner.sh
 fi
+cd RandGame
 cmake .
 make
 

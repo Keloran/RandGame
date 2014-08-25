@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8BB0CC5C-838B-4B8E-8818-6DFF8FE98B3F</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</key>
+		<string>github.com:Keloran/RandGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</key>
+		<string>RandGame</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Keloran/RandGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RandGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>
