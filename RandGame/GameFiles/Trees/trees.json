@@ -1,0 +1,30 @@
+{
+    "trees": [
+        {
+            "name": "Douglas Fir",
+            "growthRate": 8,
+            "maxHeight": 120,
+            "maxWidth": 6,
+            "seedSurvivability": 8,
+            "seedSpread": 7,
+            "seedRate": 3,
+            "slopeThreshold": 9,
+            "leafType": "pine",
+            "seedType": "pineCone",
+            "maxSize": 5
+        },
+        {
+            "name": "Quercus Robur",
+            "growthRate": 3,
+            "maxHeight": 20,
+            "maxWidth": 20,
+            "seedSurvivability": 8,
+            "seedSpread": 3,
+            "seedRate": 3,
+            "slopeThreshold": 2,
+            "leafType": "oak",
+            "seedType": "acorn",
+            "maxSize": 8
+        }
+    ]
+}
