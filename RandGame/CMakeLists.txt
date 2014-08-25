@@ -1,6 +1,7 @@
 # CMake Version
-cmake_minimum_required(VERSION 2.8)# Project Name
+cmake_minimum_required(VERSION 2.8)
 
+# Project Name
 project(NordicOS)
 
 # C++11
