@@ -13,7 +13,6 @@ namespace NordicArts {
     void handleException(std::exception_ptr ptrException) {
         try {
             if (ptrException) {
-                std::cout << "Throwing Excepting again" << std::endl;
                 std::rethrow_exception(ptrException);
             }
         } catch (const std::exception &ex) {
@@ -22,8 +21,6 @@ namespace NordicArts {
     }
 
     int main() {
-        std::exception_ptr ptrException;
-
         try {
             NordicOS::Logger::Logger oLogger("RandGame.log");
             NordicOS::Logger::Logger *pLogger = &oLogger;
@@ -76,16 +73,14 @@ namespace NordicArts {
             }
 
             pGame->ShutDown();
-        } catch (std::exception &ex) {         
-            std::cout << "Throw ExceptionHandler" << std::endl;
+        } catch (std::exception &ex) {
             throw NordicOS::ExceptionHandler::ExceptionHandler(ex.what());
+        } catch (NordicOS::ExceptionHandler::ExceptionHandler &ex) {
+            std::cout << "Exception: " << ex.getMessage() << std::endl;
         } catch ( ... ) {
-            ptrException = std::current_exception();
-            std::cout << "Unknown Exception" << std::endl;
+            handleException(std::current_exception());
         }
-
-        handleException(ptrException);
-
+        
         std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
         std::cout << "NordicOS: " << NordicOS::getBuildNumber() << std::endl;
         std::cout << "Game: " << GameNS::getBuildNumber() << std::endl;

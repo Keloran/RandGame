@@ -70,11 +70,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F3B2CB8B19A8D7480047830E = {
+		F3B239FD19AD2C3A0064E08F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				F3C31EA119A8DF1C00A249BB /* libNordicOS.a */,
 				F3C31EA219A8DF1C00A249BB /* libValkyrie.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		F3B2CB8B19A8D7480047830E = {
+			isa = PBXGroup;
+			children = (
+				F3B239FD19AD2C3A0064E08F /* Libraries */,
 				F3B2CB9C19A8D75B0047830E /* Game */,
 				F3B2CB9519A8D7480047830E /* Products */,
 			);

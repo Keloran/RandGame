@@ -10,11 +10,12 @@ namespace NordicArts {
             OSSpecific oOS;
             std::string cFilePath = oOS.ResourcePath(m_cFileName);
             if (fileExists(cFilePath)) {
-                if (cFileName.empty()) {
-                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), bSaveException);
+                if (m_cFileName.empty()) {
+                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), m_bSaveException);
                 }
+                m_cFilePath = cFilePath;
             } else {
-                throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
+                throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + m_cFileName, m_bSaveException);
             }
         }
 
