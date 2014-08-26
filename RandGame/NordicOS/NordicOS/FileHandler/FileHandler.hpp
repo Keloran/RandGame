@@ -25,12 +25,13 @@ namespace NordicArts {
                 std::string getFilePath() const;
 
             protected:
-                FileHandler(const std::string &cFileName, bool bSaveException);
+                FileHandler(std::string cFileName, bool bSaveException);
 
                 void throwError(const std::string &cMessage) const;
                 void throwError(const std::ostringstream &cMessage) const;
 
             private:
+                void doFile();
         };
     };
 };

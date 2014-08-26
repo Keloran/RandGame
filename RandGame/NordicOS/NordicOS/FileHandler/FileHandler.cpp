@@ -2,16 +2,16 @@
 
 namespace NordicArts {
     namespace NordicOS {
-        FileHandler::FileHandler(const std::string &cFileName, bool bSaveException) : m_bSaveException(bSaveException), m_cFileName(cFileName) {
-            OSSpecific oOS;
-            std::string cLogFind(".log");
-            std::size_t szFound = cFileName.find(cLogFind);
-            
-            if (fileExists(cFileName.c_str()) || szFound) {
-                m_cFilePath = oOS.ResourcePath(cFileName);
+        FileHandler::FileHandler(std::string cFileName, bool bSaveException) : m_bSaveException(bSaveException), m_cFileName(cFileName) {
+            doFile();
+        }
 
+        void FileHandler::doFile() {
+            OSSpecific oOS;
+            std::string cFilePath = oOS.ResourcePath(m_cFileName);
+            if (fileExists(cFilePath)) {
                 if (cFileName.empty()) {
-                    throw ExceptionHandler(__FUNCTION__ + std::string(" missing filename"), bSaveException);
+                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), bSaveException);
                 }
             } else {
                 throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);

@@ -1,5 +1,5 @@
 #ifndef NordicArts_NordicOS_Noise_Simplex_H
-#define NordicArts_NordicOS_Noise_Simplex_HH
+#define NordicArts_NordicOS_Noise_Simplex_H
 
 #include "../OS.hpp"
 
