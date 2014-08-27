@@ -5,11 +5,8 @@ cmake_minimum_required(VERSION 2.8)
 project(NordicOS)
 
 # C++11
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -m64")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 --stdlib=libc++ -m64")
 set(EXTRA_FLAGS " -x objective-c++")
-set(CMAKE_CXX_LINKER_FLAGS "${CMAKE_CXX_LINKER_FLAGS} -stdlib=libc++")
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++")
-set(CMAKE_LD_FLAGS "${CMAKE_LD_FLAGS} -stdlib=libc++")
 
 # NOS Files
 set(NOS ${PROJECT_SOURCE_DIR}/NordicOS)
@@ -136,13 +133,12 @@ list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(NordicOS PROPERTIES OUTPUT_NAME "NordicOS")
-set_target_properties(NordicOS PROPERTIES LINK_FLAGS "-stdlib=libc++")
 
 # System Linker
 if (WIN32)
     target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} winmm gdi32 c++abi)
 elseif (APPLE)
-    target_link_libraries(NordicOS "-framework Foundation -framework AppKit -framework IOKit -framework Carbon -framework OpenGL -framework CoreFoundation -framework OpenAL -framework GameKit -framework GLKit -stdlib=libc++" c++abi)
+    target_link_libraries(NordicOS "-framework Foundation -framework AppKit -framework IOKit -framework Carbon -framework OpenGL -framework CoreFoundation -framework OpenAL -framework GameKit -framework GLKit" c++abi)
 elseif (UNIX)
     target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} c++abi)
 endif()

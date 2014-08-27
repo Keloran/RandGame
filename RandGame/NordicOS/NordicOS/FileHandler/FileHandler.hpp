@@ -31,7 +31,6 @@ namespace NordicArts {
                 void throwError(const std::ostringstream &cMessage) const;
 
             private:
-                void doFile();
         };
     };
 };
