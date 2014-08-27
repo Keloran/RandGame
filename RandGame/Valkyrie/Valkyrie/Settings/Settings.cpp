@@ -7,7 +7,10 @@ namespace NordicArts {
             
             NordicOS::TextFileReader pFile(cFileName, true);
             std::string cFilePath = pFile.getFilePath();
+
+            std::cout << "Stuff: " << cFilePath.c_str() << std::endl;
             
+            /*
             if (NordicOS::fileExists(cFilePath)) {
                 boost::property_tree::ptree pSettings;
                 boost::property_tree::read_json(cFilePath, pSettings);
@@ -22,6 +25,7 @@ namespace NordicArts {
                     m_sGameSettings.vResolution.y = resolution.second.get<int>("height");
                 }
             }
+            */
         }
 
         Settings::~Settings() {

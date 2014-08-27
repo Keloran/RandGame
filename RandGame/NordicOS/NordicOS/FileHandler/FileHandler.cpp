@@ -5,15 +5,15 @@ namespace NordicArts {
         FileHandler::FileHandler(std::string cFileName, bool bSaveException) : m_bSaveException(bSaveException), m_cFileName(cFileName) {
             OSSpecific oOS;
             std::string cFilePath = oOS.ResourcePath(cFileName);
-            std::cout << "Stuff: " << cFilePath.c_str() << std::cout;
 
-            if (fileExists(cFilePath)) {
-                if (cFileName.empty()) {
-                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), bSaveException);
-                }
-                m_cFilePath = cFilePath;
+            if (cFileName.empty()) {
+                throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), bSaveException);
             } else {
-                throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
+                if (fileExists(cFilePath.c_str())) {
+                    m_cFilePath = cFilePath;
+                } else {
+                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
+                }
             }
         }
 
