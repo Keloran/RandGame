@@ -85,7 +85,7 @@ file(WRITE ${GameDir}/buildNumber.hpp "#ifndef GAME_BUILDNUMBER\n#define GAME_BU
 list(APPEND LibHeaders ${GameDir}/buildNumber.hpp)
 
 # Library
-add_library(GameLibrary STATIC ${GameLibs} ${GameHeaders})
+add_library(GameLibrary SHARED ${GameLibs} ${GameHeaders})
 set_target_properties(GameLibrary PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(GameLibrary PROPERTIES COMPILE_FLAGS ${EXTRA_FLAGS})
 

@@ -134,7 +134,7 @@ file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICO
 list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 
 # Generate Library
-add_library(NordicOS STATIC ${LibSources} ${LibHeaders})
+add_library(NordicOS SHARED ${LibSources} ${LibHeaders})
 set_target_properties(NordicOS PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(NordicOS PROPERTIES OUTPUT_NAME "NordicOS")
 

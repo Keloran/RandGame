@@ -15,7 +15,7 @@ set(Lib_Source ${PROJECT_SOURCE_DIR}/sqlite3.c)
 list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/sqlite3ext.h)
 
 # Library Build
-add_library(SQLite STATIC ${Lib_Source} ${Lib_Headers})
+add_library(SQLite SHARED ${Lib_Source} ${Lib_Headers})
 set_target_properties(SQLite PROPERTIES LINKER_LANGUAGE C)
 set_target_properties(SQLite PROPERTIES OUTPUT_NAME "SQLite")
 

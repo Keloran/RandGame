@@ -46,7 +46,7 @@ file(WRITE ${BasePath}/buildNumber.hpp "#ifndef VALKYRIE_BUILDNUMBER\n#define VA
 list(APPEND LibHeaders ${BasePath}/buildNumber.hpp)
 
 # Generate Library
-add_library(Valkyrie STATIC ${LibSources} ${LibHeaders})
+add_library(Valkyrie SHARED ${LibSources} ${LibHeaders})
 set_target_properties(Valkyrie PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(Valkyrie PROPERTIES OUTPUT_NAME "Valkyrie")
 
