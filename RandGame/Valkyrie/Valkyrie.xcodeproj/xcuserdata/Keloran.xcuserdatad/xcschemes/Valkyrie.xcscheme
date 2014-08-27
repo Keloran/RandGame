@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F356F54619A8D2FA00369D19"
-               BuildableName = "libValkyrie.a"
+               BlueprintIdentifier = "F3B23A4A19AE76AD0064E08F"
+               BuildableName = "libValkyrie.dylib"
                BlueprintName = "Valkyrie"
                ReferencedContainer = "container:Valkyrie.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F356F54619A8D2FA00369D19"
-            BuildableName = "libValkyrie.a"
+            BlueprintIdentifier = "F3B23A4A19AE76AD0064E08F"
+            BuildableName = "libValkyrie.dylib"
             BlueprintName = "Valkyrie"
             ReferencedContainer = "container:Valkyrie.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F356F54619A8D2FA00369D19"
-            BuildableName = "libValkyrie.a"
+            BlueprintIdentifier = "F3B23A4A19AE76AD0064E08F"
+            BuildableName = "libValkyrie.dylib"
             BlueprintName = "Valkyrie"
             ReferencedContainer = "container:Valkyrie.xcodeproj">
          </BuildableReference>

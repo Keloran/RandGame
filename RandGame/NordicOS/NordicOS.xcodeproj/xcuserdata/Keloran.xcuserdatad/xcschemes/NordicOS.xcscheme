@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3B2CB1319A8D52F0047830E"
-               BuildableName = "libNordicOS.a"
+               BlueprintIdentifier = "F3B23A1819AE75FB0064E08F"
+               BuildableName = "libNordicOS.dylib"
                BlueprintName = "NordicOS"
                ReferencedContainer = "container:NordicOS.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3B2CB1319A8D52F0047830E"
-            BuildableName = "libNordicOS.a"
+            BlueprintIdentifier = "F3B23A1819AE75FB0064E08F"
+            BuildableName = "libNordicOS.dylib"
             BlueprintName = "NordicOS"
             ReferencedContainer = "container:NordicOS.xcodeproj">
          </BuildableReference>
@@ -60,8 +60,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3B2CB1319A8D52F0047830E"
-            BuildableName = "libNordicOS.a"
+            BlueprintIdentifier = "F3B23A1819AE75FB0064E08F"
+            BuildableName = "libNordicOS.dylib"
             BlueprintName = "NordicOS"
             ReferencedContainer = "container:NordicOS.xcodeproj">
          </BuildableReference>

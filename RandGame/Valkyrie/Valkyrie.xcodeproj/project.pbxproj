@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3A7542219AD2B0E001DAEEF /* Valkyrie.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6B19A8D4EB0047830E /* Valkyrie.hpp */; };
-		F3A7542319AD2B1B001DAEEF /* buildNumber.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2C96519A8D4EB0047830E /* buildNumber.hpp */; };
-		F3A7542419AD2B1B001DAEEF /* Includes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6619A8D4EB0047830E /* Includes.hpp */; };
-		F3A7542519AD2B1B001DAEEF /* Settings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6919A8D4EB0047830E /* Settings.hpp */; };
-		F3A7542619AD2B21001DAEEF /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6E19A8D4EB0047830E /* Window.hpp */; };
-		F3B2CB0419A8D4EB0047830E /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6819A8D4EB0047830E /* Settings.cpp */; };
-		F3B2CB0619A8D4EB0047830E /* Valkyrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6A19A8D4EB0047830E /* Valkyrie.cpp */; };
-		F3B2CB0819A8D4EB0047830E /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6D19A8D4EB0047830E /* Window.cpp */; };
-		F3C31EA619A8DF2500A249BB /* libNordicOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C31EA519A8DF2500A249BB /* libNordicOS.a */; };
+		F3B23A4F19AE76BA0064E08F /* libNordicOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A7542119AD2AE1001DAEEF /* libNordicOS.dylib */; };
+		F3B23A5219AE76DF0064E08F /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6819A8D4EB0047830E /* Settings.cpp */; };
+		F3B23A5319AE76DF0064E08F /* Valkyrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6A19A8D4EB0047830E /* Valkyrie.cpp */; };
+		F3B23A5419AE76DF0064E08F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6D19A8D4EB0047830E /* Window.cpp */; };
+		F3B23A5519AE76EF0064E08F /* buildNumber.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2C96519A8D4EB0047830E /* buildNumber.hpp */; };
+		F3B23A5619AE76EF0064E08F /* Includes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6619A8D4EB0047830E /* Includes.hpp */; };
+		F3B23A5719AE76EF0064E08F /* Settings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6919A8D4EB0047830E /* Settings.hpp */; };
+		F3B23A5819AE76EF0064E08F /* Valkyrie.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6B19A8D4EB0047830E /* Valkyrie.hpp */; };
+		F3B23A5919AE76EF0064E08F /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CA6E19A8D4EB0047830E /* Window.hpp */; };
+		F3B23A6019AE771E0064E08F /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5A19AE771E0064E08F /* sfml-audio.framework */; };
+		F3B23A6119AE771E0064E08F /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5B19AE771E0064E08F /* sfml-graphics.framework */; };
+		F3B23A6219AE771E0064E08F /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5C19AE771E0064E08F /* sfml-network.framework */; };
+		F3B23A6319AE771E0064E08F /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5D19AE771E0064E08F /* sfml-system.framework */; };
+		F3B23A6419AE771E0064E08F /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5E19AE771E0064E08F /* sfml-window.framework */; };
+		F3B23A6519AE771E0064E08F /* SFML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A5F19AE771E0064E08F /* SFML.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +32,24 @@
 			remoteGlobalIDString = F3B2CB1419A8D52F0047830E;
 			remoteInfo = NordicOS;
 		};
+		F3B23A5019AE76BF0064E08F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3A7541B19AD2AE1001DAEEF /* NordicOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B23A1819AE75FB0064E08F;
+			remoteInfo = NordicOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F356F54719A8D2FA00369D19 /* libValkyrie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libValkyrie.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A7541B19AD2AE1001DAEEF /* NordicOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NordicOS.xcodeproj; path = ../NordicOS/NordicOS.xcodeproj; sourceTree = "<group>"; };
+		F3B23A4B19AE76AD0064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libValkyrie.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B23A5A19AE771E0064E08F /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "/Library/Frameworks/sfml-audio.framework"; sourceTree = "<absolute>"; };
+		F3B23A5B19AE771E0064E08F /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "/Library/Frameworks/sfml-graphics.framework"; sourceTree = "<absolute>"; };
+		F3B23A5C19AE771E0064E08F /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "/Library/Frameworks/sfml-network.framework"; sourceTree = "<absolute>"; };
+		F3B23A5D19AE771E0064E08F /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "/Library/Frameworks/sfml-system.framework"; sourceTree = "<absolute>"; };
+		F3B23A5E19AE771E0064E08F /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "/Library/Frameworks/sfml-window.framework"; sourceTree = "<absolute>"; };
+		F3B23A5F19AE771E0064E08F /* SFML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SFML.framework; path = /Library/Frameworks/SFML.framework; sourceTree = "<absolute>"; };
 		F3B2C96519A8D4EB0047830E /* buildNumber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = buildNumber.hpp; sourceTree = "<group>"; };
 		F3B2C96719A8D4EB0047830E /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		F3B2C96819A8D4EB0047830E /* common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
@@ -291,15 +310,20 @@
 		F3B2CA6B19A8D4EB0047830E /* Valkyrie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Valkyrie.hpp; sourceTree = "<group>"; };
 		F3B2CA6D19A8D4EB0047830E /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
 		F3B2CA6E19A8D4EB0047830E /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
-		F3C31EA519A8DF2500A249BB /* libNordicOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNordicOS.a; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F356F54419A8D2FA00369D19 /* Frameworks */ = {
+		F3B23A4819AE76AD0064E08F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C31EA619A8DF2500A249BB /* libNordicOS.a in Frameworks */,
+				F3B23A6019AE771E0064E08F /* sfml-audio.framework in Frameworks */,
+				F3B23A6119AE771E0064E08F /* sfml-graphics.framework in Frameworks */,
+				F3B23A6219AE771E0064E08F /* sfml-network.framework in Frameworks */,
+				F3B23A6319AE771E0064E08F /* sfml-system.framework in Frameworks */,
+				F3B23A6419AE771E0064E08F /* sfml-window.framework in Frameworks */,
+				F3B23A6519AE771E0064E08F /* SFML.framework in Frameworks */,
+				F3B23A4F19AE76BA0064E08F /* libNordicOS.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +333,8 @@
 		F356F53E19A8D2FA00369D19 = {
 			isa = PBXGroup;
 			children = (
+				F3B23A6619AE77270064E08F /* Libraries */,
 				F3A7541B19AD2AE1001DAEEF /* NordicOS.xcodeproj */,
-				F3A7541A19AD2AD4001DAEEF /* Libraries */,
 				F3B2C96419A8D4EB0047830E /* Valkyrie */,
 				F356F54819A8D2FA00369D19 /* Products */,
 			);
@@ -319,25 +343,30 @@
 		F356F54819A8D2FA00369D19 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F356F54719A8D2FA00369D19 /* libValkyrie.a */,
+				F3B23A4B19AE76AD0064E08F /* libValkyrie.dylib */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F3A7541A19AD2AD4001DAEEF /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				F3C31EA519A8DF2500A249BB /* libNordicOS.a */,
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 		F3A7541C19AD2AE1001DAEEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3A7542119AD2AE1001DAEEF /* libNordicOS.a */,
+				F3A7542119AD2AE1001DAEEF /* libNordicOS.dylib */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F3B23A6619AE77270064E08F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F3B23A5A19AE771E0064E08F /* sfml-audio.framework */,
+				F3B23A5B19AE771E0064E08F /* sfml-graphics.framework */,
+				F3B23A5C19AE771E0064E08F /* sfml-network.framework */,
+				F3B23A5D19AE771E0064E08F /* sfml-system.framework */,
+				F3B23A5E19AE771E0064E08F /* sfml-window.framework */,
+				F3B23A5F19AE771E0064E08F /* SFML.framework */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 		F3B2C96419A8D4EB0047830E /* Valkyrie */ = {
@@ -658,37 +687,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F356F54519A8D2FA00369D19 /* Headers */ = {
+		F3B23A4919AE76AD0064E08F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A7542319AD2B1B001DAEEF /* buildNumber.hpp in Headers */,
-				F3A7542419AD2B1B001DAEEF /* Includes.hpp in Headers */,
-				F3A7542519AD2B1B001DAEEF /* Settings.hpp in Headers */,
-				F3A7542219AD2B0E001DAEEF /* Valkyrie.hpp in Headers */,
-				F3A7542619AD2B21001DAEEF /* Window.hpp in Headers */,
+				F3B23A5519AE76EF0064E08F /* buildNumber.hpp in Headers */,
+				F3B23A5619AE76EF0064E08F /* Includes.hpp in Headers */,
+				F3B23A5719AE76EF0064E08F /* Settings.hpp in Headers */,
+				F3B23A5819AE76EF0064E08F /* Valkyrie.hpp in Headers */,
+				F3B23A5919AE76EF0064E08F /* Window.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F356F54619A8D2FA00369D19 /* Valkyrie */ = {
+		F3B23A4A19AE76AD0064E08F /* Valkyrie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F356F54B19A8D2FA00369D19 /* Build configuration list for PBXNativeTarget "Valkyrie" */;
+			buildConfigurationList = F3B23A4C19AE76AD0064E08F /* Build configuration list for PBXNativeTarget "Valkyrie" */;
 			buildPhases = (
-				F356F54319A8D2FA00369D19 /* Sources */,
-				F356F54419A8D2FA00369D19 /* Frameworks */,
-				F356F54519A8D2FA00369D19 /* Headers */,
+				F3B23A4719AE76AD0064E08F /* Sources */,
+				F3B23A4819AE76AD0064E08F /* Frameworks */,
+				F3B23A4919AE76AD0064E08F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F3B23A5119AE76BF0064E08F /* PBXTargetDependency */,
 			);
 			name = Valkyrie;
 			productName = Valkyrie;
-			productReference = F356F54719A8D2FA00369D19 /* libValkyrie.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = F3B23A4B19AE76AD0064E08F /* libValkyrie.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -699,7 +729,7 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = NordicArts.net;
 				TargetAttributes = {
-					F356F54619A8D2FA00369D19 = {
+					F3B23A4A19AE76AD0064E08F = {
 						CreatedOnToolsVersion = 6.0;
 					};
 				};
@@ -722,33 +752,41 @@
 			);
 			projectRoot = "";
 			targets = (
-				F356F54619A8D2FA00369D19 /* Valkyrie */,
+				F3B23A4A19AE76AD0064E08F /* Valkyrie */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F3A7542119AD2AE1001DAEEF /* libNordicOS.a */ = {
+		F3A7542119AD2AE1001DAEEF /* libNordicOS.dylib */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libNordicOS.a;
+			fileType = "compiled.mach-o.dylib";
+			path = libNordicOS.dylib;
 			remoteRef = F3A7542019AD2AE1001DAEEF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F356F54319A8D2FA00369D19 /* Sources */ = {
+		F3B23A4719AE76AD0064E08F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B2CB0619A8D4EB0047830E /* Valkyrie.cpp in Sources */,
-				F3B2CB0819A8D4EB0047830E /* Window.cpp in Sources */,
-				F3B2CB0419A8D4EB0047830E /* Settings.cpp in Sources */,
+				F3B23A5219AE76DF0064E08F /* Settings.cpp in Sources */,
+				F3B23A5319AE76DF0064E08F /* Valkyrie.cpp in Sources */,
+				F3B23A5419AE76DF0064E08F /* Window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3B23A5119AE76BF0064E08F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NordicOS;
+			targetProxy = F3B23A5019AE76BF0064E08F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F356F54919A8D2FA00369D19 /* Debug */ = {
@@ -837,43 +875,51 @@
 			};
 			name = Release;
 		};
-		F356F54C19A8D2FA00369D19 /* Debug */ = {
+		F3B23A4D19AE76AD0064E08F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"../NordicOS/**",
 					/usr/local/include,
 					"./glm/**",
-					"../NordicOS/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
-		F356F54D19A8D2FA00369D19 /* Release */ = {
+		F3B23A4E19AE76AD0064E08F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"../NordicOS/**",
 					/usr/local/include,
 					"./glm/**",
-					"../NordicOS/**",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -889,14 +935,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F356F54B19A8D2FA00369D19 /* Build configuration list for PBXNativeTarget "Valkyrie" */ = {
+		F3B23A4C19AE76AD0064E08F /* Build configuration list for PBXNativeTarget "Valkyrie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F356F54C19A8D2FA00369D19 /* Debug */,
-				F356F54D19A8D2FA00369D19 /* Release */,
+				F3B23A4D19AE76AD0064E08F /* Debug */,
+				F3B23A4E19AE76AD0064E08F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

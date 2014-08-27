@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3B2CC0F19A8DB170047830E /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CC0C19A8DB170047830E /* sqlite3.c */; };
-		F3B2CC1019A8DB170047830E /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CC0D19A8DB170047830E /* sqlite3.h */; };
-		F3B2CC1119A8DB170047830E /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CC0E19A8DB170047830E /* sqlite3ext.h */; };
+		F3B23A1219AE75A20064E08F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CC0C19A8DB170047830E /* sqlite3.c */; };
+		F3B23A1319AE75B40064E08F /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CC0D19A8DB170047830E /* sqlite3.h */; };
+		F3B23A1419AE75B40064E08F /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CC0E19A8DB170047830E /* sqlite3ext.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F3B2CC0419A8DAF40047830E /* libSQLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSQLite.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B23A0D19AE75170064E08F /* libSQLite.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSQLite.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B2CC0C19A8DB170047830E /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		F3B2CC0D19A8DB170047830E /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		F3B2CC0E19A8DB170047830E /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F3B2CC0119A8DAF40047830E /* Frameworks */ = {
+		F3B23A0A19AE75170064E08F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,7 +43,7 @@
 		F3B2CC0519A8DAF40047830E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3B2CC0419A8DAF40047830E /* libSQLite.a */,
+				F3B23A0D19AE75170064E08F /* libSQLite.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,25 +51,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F3B2CC0219A8DAF40047830E /* Headers */ = {
+		F3B23A0B19AE75170064E08F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B2CC1119A8DB170047830E /* sqlite3ext.h in Headers */,
-				F3B2CC1019A8DB170047830E /* sqlite3.h in Headers */,
+				F3B23A1319AE75B40064E08F /* sqlite3.h in Headers */,
+				F3B23A1419AE75B40064E08F /* sqlite3ext.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F3B2CC0319A8DAF40047830E /* SQLite */ = {
+		F3B23A0C19AE75170064E08F /* SQLite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3B2CC0819A8DAF40047830E /* Build configuration list for PBXNativeTarget "SQLite" */;
+			buildConfigurationList = F3B23A0E19AE75170064E08F /* Build configuration list for PBXNativeTarget "SQLite" */;
 			buildPhases = (
-				F3B2CC0019A8DAF40047830E /* Sources */,
-				F3B2CC0119A8DAF40047830E /* Frameworks */,
-				F3B2CC0219A8DAF40047830E /* Headers */,
+				F3B23A0919AE75170064E08F /* Sources */,
+				F3B23A0A19AE75170064E08F /* Frameworks */,
+				F3B23A0B19AE75170064E08F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -77,8 +77,8 @@
 			);
 			name = SQLite;
 			productName = SQLite;
-			productReference = F3B2CC0419A8DAF40047830E /* libSQLite.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = F3B23A0D19AE75170064E08F /* libSQLite.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -89,7 +89,7 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = NordicArts.net;
 				TargetAttributes = {
-					F3B2CC0319A8DAF40047830E = {
+					F3B23A0C19AE75170064E08F = {
 						CreatedOnToolsVersion = 6.0;
 					};
 				};
@@ -106,23 +106,47 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3B2CC0319A8DAF40047830E /* SQLite */,
+				F3B23A0C19AE75170064E08F /* SQLite */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F3B2CC0019A8DAF40047830E /* Sources */ = {
+		F3B23A0919AE75170064E08F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B2CC0F19A8DB170047830E /* sqlite3.c in Sources */,
+				F3B23A1219AE75A20064E08F /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F3B23A0F19AE75170064E08F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3B23A1019AE75170064E08F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F3B2CC0619A8DAF40047830E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -199,41 +223,22 @@
 			};
 			name = Release;
 		};
-		F3B2CC0919A8DAF40047830E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = x86_64;
-			};
-			name = Debug;
-		};
-		F3B2CC0A19A8DAF40047830E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = x86_64;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F3B23A0E19AE75170064E08F /* Build configuration list for PBXNativeTarget "SQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B23A0F19AE75170064E08F /* Debug */,
+				F3B23A1019AE75170064E08F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F3B2CBFF19A8DAF40047830E /* Build configuration list for PBXProject "SQLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F3B2CC0619A8DAF40047830E /* Debug */,
 				F3B2CC0719A8DAF40047830E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3B2CC0819A8DAF40047830E /* Build configuration list for PBXNativeTarget "SQLite" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3B2CC0919A8DAF40047830E /* Debug */,
-				F3B2CC0A19A8DAF40047830E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

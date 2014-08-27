@@ -7,32 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3B2CBB719A8D75B0047830E /* buildNumber.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB9D19A8D75B0047830E /* buildNumber.hpp */; };
-		F3B2CBB819A8D75B0047830E /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB9F19A8D75B0047830E /* Forest.cpp */; };
-		F3B2CBB919A8D75B0047830E /* Forest.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA019A8D75B0047830E /* Forest.hpp */; };
-		F3B2CBBA19A8D75B0047830E /* Species.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA119A8D75B0047830E /* Species.cpp */; };
-		F3B2CBBB19A8D75B0047830E /* Species.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA219A8D75B0047830E /* Species.hpp */; };
-		F3B2CBBC19A8D75B0047830E /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA319A8D75B0047830E /* Tree.cpp */; };
-		F3B2CBBD19A8D75B0047830E /* Tree.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA419A8D75B0047830E /* Tree.hpp */; };
-		F3B2CBBE19A8D75B0047830E /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA519A8D75B0047830E /* Game.cpp */; };
-		F3B2CBBF19A8D75B0047830E /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA619A8D75B0047830E /* Game.hpp */; };
-		F3B2CBC019A8D75B0047830E /* Includes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA719A8D75B0047830E /* Includes.hpp */; };
-		F3B2CBC119A8D75B0047830E /* Markov.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA919A8D75B0047830E /* Markov.cpp */; };
-		F3B2CBC219A8D75B0047830E /* Markov.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBAA19A8D75B0047830E /* Markov.hpp */; };
-		F3B2CBC319A8D75B0047830E /* Names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBAC19A8D75B0047830E /* Names.cpp */; };
-		F3B2CBC419A8D75B0047830E /* Names.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBAD19A8D75B0047830E /* Names.hpp */; };
-		F3B2CBC519A8D75B0047830E /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBAF19A8D75B0047830E /* Settings.cpp */; };
-		F3B2CBC619A8D75B0047830E /* Settings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB019A8D75B0047830E /* Settings.hpp */; };
-		F3B2CBC719A8D75B0047830E /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBB319A8D75B0047830E /* Parser.cpp */; };
-		F3B2CBC819A8D75B0047830E /* Parser.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB419A8D75B0047830E /* Parser.hpp */; };
-		F3B2CBC919A8D75B0047830E /* Setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBB519A8D75B0047830E /* Setup.cpp */; };
-		F3B2CBCA19A8D75B0047830E /* Setup.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB619A8D75B0047830E /* Setup.hpp */; };
-		F3C31EA319A8DF1C00A249BB /* libNordicOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C31EA119A8DF1C00A249BB /* libNordicOS.a */; };
-		F3C31EA419A8DF1C00A249BB /* libValkyrie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C31EA219A8DF1C00A249BB /* libValkyrie.a */; };
+		F3B23A7119AE7E610064E08F /* libNordicOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */; };
+		F3B23A7219AE7E610064E08F /* libValkyrie.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A7019AE7E610064E08F /* libValkyrie.dylib */; };
+		F3B23A7319AE7E990064E08F /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB9F19A8D75B0047830E /* Forest.cpp */; };
+		F3B23A7419AE7E990064E08F /* Species.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA119A8D75B0047830E /* Species.cpp */; };
+		F3B23A7519AE7E990064E08F /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA319A8D75B0047830E /* Tree.cpp */; };
+		F3B23A7619AE7E990064E08F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA519A8D75B0047830E /* Game.cpp */; };
+		F3B23A7719AE7E990064E08F /* Markov.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBA919A8D75B0047830E /* Markov.cpp */; };
+		F3B23A7819AE7E990064E08F /* Names.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBAC19A8D75B0047830E /* Names.cpp */; };
+		F3B23A7919AE7E990064E08F /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBAF19A8D75B0047830E /* Settings.cpp */; };
+		F3B23A7A19AE7E990064E08F /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBB319A8D75B0047830E /* Parser.cpp */; };
+		F3B23A7B19AE7E990064E08F /* Setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CBB519A8D75B0047830E /* Setup.cpp */; };
+		F3B23A7C19AE7EA80064E08F /* Forest.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA019A8D75B0047830E /* Forest.hpp */; };
+		F3B23A7D19AE7EA80064E08F /* Species.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA219A8D75B0047830E /* Species.hpp */; };
+		F3B23A7E19AE7EA80064E08F /* Tree.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA419A8D75B0047830E /* Tree.hpp */; };
+		F3B23A7F19AE7EA80064E08F /* Game.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA619A8D75B0047830E /* Game.hpp */; };
+		F3B23A8019AE7EA80064E08F /* Includes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBA719A8D75B0047830E /* Includes.hpp */; };
+		F3B23A8119AE7EA80064E08F /* Markov.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBAA19A8D75B0047830E /* Markov.hpp */; };
+		F3B23A8219AE7EA80064E08F /* Names.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBAD19A8D75B0047830E /* Names.hpp */; };
+		F3B23A8319AE7EA80064E08F /* Settings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB019A8D75B0047830E /* Settings.hpp */; };
+		F3B23A8419AE7EA80064E08F /* Parser.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB419A8D75B0047830E /* Parser.hpp */; };
+		F3B23A8519AE7EA80064E08F /* Setup.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CBB619A8D75B0047830E /* Setup.hpp */; };
+		F3B23A8719AE7FAD0064E08F /* libboost_locale.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A8619AE7FAD0064E08F /* libboost_locale.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F3B2CB9419A8D7480047830E /* libGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGame.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B23A6B19AE7E500064E08F /* libGame.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libGame.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libNordicOS.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.dylib"; sourceTree = "<group>"; };
+		F3B23A7019AE7E610064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libValkyrie.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libValkyrie.dylib"; sourceTree = "<group>"; };
+		F3B23A8619AE7FAD0064E08F /* libboost_locale.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_locale.dylib; path = /usr/local/lib/libboost_locale.dylib; sourceTree = "<absolute>"; };
 		F3B2CB9D19A8D75B0047830E /* buildNumber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = buildNumber.hpp; sourceTree = "<group>"; };
 		F3B2CB9F19A8D75B0047830E /* Forest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Forest.cpp; sourceTree = "<group>"; };
 		F3B2CBA019A8D75B0047830E /* Forest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Forest.hpp; sourceTree = "<group>"; };
@@ -53,17 +56,16 @@
 		F3B2CBB419A8D75B0047830E /* Parser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
 		F3B2CBB519A8D75B0047830E /* Setup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Setup.cpp; sourceTree = "<group>"; };
 		F3B2CBB619A8D75B0047830E /* Setup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Setup.hpp; sourceTree = "<group>"; };
-		F3C31EA119A8DF1C00A249BB /* libNordicOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNordicOS.a; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.a"; sourceTree = "<group>"; };
-		F3C31EA219A8DF1C00A249BB /* libValkyrie.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libValkyrie.a; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libValkyrie.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F3B2CB9119A8D7480047830E /* Frameworks */ = {
+		F3B23A6819AE7E500064E08F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C31EA319A8DF1C00A249BB /* libNordicOS.a in Frameworks */,
-				F3C31EA419A8DF1C00A249BB /* libValkyrie.a in Frameworks */,
+				F3B23A8719AE7FAD0064E08F /* libboost_locale.dylib in Frameworks */,
+				F3B23A7119AE7E610064E08F /* libNordicOS.dylib in Frameworks */,
+				F3B23A7219AE7E610064E08F /* libValkyrie.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +75,9 @@
 		F3B239FD19AD2C3A0064E08F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				F3C31EA119A8DF1C00A249BB /* libNordicOS.a */,
-				F3C31EA219A8DF1C00A249BB /* libValkyrie.a */,
+				F3B23A8619AE7FAD0064E08F /* libboost_locale.dylib */,
+				F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */,
+				F3B23A7019AE7E610064E08F /* libValkyrie.dylib */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -91,7 +94,7 @@
 		F3B2CB9519A8D7480047830E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3B2CB9419A8D7480047830E /* libGame.a */,
+				F3B23A6B19AE7E500064E08F /* libGame.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,34 +177,33 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F3B2CB9219A8D7480047830E /* Headers */ = {
+		F3B23A6919AE7E500064E08F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B2CBCA19A8D75B0047830E /* Setup.hpp in Headers */,
-				F3B2CBC619A8D75B0047830E /* Settings.hpp in Headers */,
-				F3B2CBBB19A8D75B0047830E /* Species.hpp in Headers */,
-				F3B2CBC019A8D75B0047830E /* Includes.hpp in Headers */,
-				F3B2CBC819A8D75B0047830E /* Parser.hpp in Headers */,
-				F3B2CBB719A8D75B0047830E /* buildNumber.hpp in Headers */,
-				F3B2CBC419A8D75B0047830E /* Names.hpp in Headers */,
-				F3B2CBBD19A8D75B0047830E /* Tree.hpp in Headers */,
-				F3B2CBB919A8D75B0047830E /* Forest.hpp in Headers */,
-				F3B2CBBF19A8D75B0047830E /* Game.hpp in Headers */,
-				F3B2CBC219A8D75B0047830E /* Markov.hpp in Headers */,
+				F3B23A7C19AE7EA80064E08F /* Forest.hpp in Headers */,
+				F3B23A7D19AE7EA80064E08F /* Species.hpp in Headers */,
+				F3B23A7E19AE7EA80064E08F /* Tree.hpp in Headers */,
+				F3B23A7F19AE7EA80064E08F /* Game.hpp in Headers */,
+				F3B23A8019AE7EA80064E08F /* Includes.hpp in Headers */,
+				F3B23A8119AE7EA80064E08F /* Markov.hpp in Headers */,
+				F3B23A8219AE7EA80064E08F /* Names.hpp in Headers */,
+				F3B23A8319AE7EA80064E08F /* Settings.hpp in Headers */,
+				F3B23A8419AE7EA80064E08F /* Parser.hpp in Headers */,
+				F3B23A8519AE7EA80064E08F /* Setup.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F3B2CB9319A8D7480047830E /* Game */ = {
+		F3B23A6A19AE7E500064E08F /* Game */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3B2CB9819A8D7480047830E /* Build configuration list for PBXNativeTarget "Game" */;
+			buildConfigurationList = F3B23A6C19AE7E500064E08F /* Build configuration list for PBXNativeTarget "Game" */;
 			buildPhases = (
-				F3B2CB9019A8D7480047830E /* Sources */,
-				F3B2CB9119A8D7480047830E /* Frameworks */,
-				F3B2CB9219A8D7480047830E /* Headers */,
+				F3B23A6719AE7E500064E08F /* Sources */,
+				F3B23A6819AE7E500064E08F /* Frameworks */,
+				F3B23A6919AE7E500064E08F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -209,8 +211,8 @@
 			);
 			name = Game;
 			productName = Game;
-			productReference = F3B2CB9419A8D7480047830E /* libGame.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = F3B23A6B19AE7E500064E08F /* libGame.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -221,7 +223,7 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = NordicArts.net;
 				TargetAttributes = {
-					F3B2CB9319A8D7480047830E = {
+					F3B23A6A19AE7E500064E08F = {
 						CreatedOnToolsVersion = 6.0;
 					};
 				};
@@ -238,31 +240,79 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3B2CB9319A8D7480047830E /* Game */,
+				F3B23A6A19AE7E500064E08F /* Game */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F3B2CB9019A8D7480047830E /* Sources */ = {
+		F3B23A6719AE7E500064E08F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3B2CBC719A8D75B0047830E /* Parser.cpp in Sources */,
-				F3B2CBBC19A8D75B0047830E /* Tree.cpp in Sources */,
-				F3B2CBBA19A8D75B0047830E /* Species.cpp in Sources */,
-				F3B2CBC319A8D75B0047830E /* Names.cpp in Sources */,
-				F3B2CBB819A8D75B0047830E /* Forest.cpp in Sources */,
-				F3B2CBC519A8D75B0047830E /* Settings.cpp in Sources */,
-				F3B2CBBE19A8D75B0047830E /* Game.cpp in Sources */,
-				F3B2CBC119A8D75B0047830E /* Markov.cpp in Sources */,
-				F3B2CBC919A8D75B0047830E /* Setup.cpp in Sources */,
+				F3B23A7319AE7E990064E08F /* Forest.cpp in Sources */,
+				F3B23A7419AE7E990064E08F /* Species.cpp in Sources */,
+				F3B23A7519AE7E990064E08F /* Tree.cpp in Sources */,
+				F3B23A7619AE7E990064E08F /* Game.cpp in Sources */,
+				F3B23A7719AE7E990064E08F /* Markov.cpp in Sources */,
+				F3B23A7819AE7E990064E08F /* Names.cpp in Sources */,
+				F3B23A7919AE7E990064E08F /* Settings.cpp in Sources */,
+				F3B23A7A19AE7E990064E08F /* Parser.cpp in Sources */,
+				F3B23A7B19AE7E990064E08F /* Setup.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F3B23A6D19AE7E500064E08F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					../Valkyrie,
+					../NordicOS,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3B23A6E19AE7E500064E08F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					../Valkyrie,
+					../NordicOS,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F3B2CB9619A8D7480047830E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -339,65 +389,22 @@
 			};
 			name = Release;
 		};
-		F3B2CB9919A8D7480047830E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-					/usr/local/include,
-					"../NordicOS/**",
-					"../Valkyrie/**",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = x86_64;
-			};
-			name = Debug;
-		};
-		F3B2CB9A19A8D7480047830E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-					/usr/local/include,
-					"../NordicOS/**",
-					"../Valkyrie/**",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
-				VALID_ARCHS = x86_64;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F3B23A6C19AE7E500064E08F /* Build configuration list for PBXNativeTarget "Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B23A6D19AE7E500064E08F /* Debug */,
+				F3B23A6E19AE7E500064E08F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F3B2CB8F19A8D7480047830E /* Build configuration list for PBXProject "Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F3B2CB9619A8D7480047830E /* Debug */,
 				F3B2CB9719A8D7480047830E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3B2CB9819A8D7480047830E /* Build configuration list for PBXNativeTarget "Game" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3B2CB9919A8D7480047830E /* Debug */,
-				F3B2CB9A19A8D7480047830E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
