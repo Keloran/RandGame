@@ -75,7 +75,7 @@ elseif (UNIX)
     target_link_libraries(RandGame ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} c++abi)
 endif()
 
-target_link_libraries(RandGame SQLite)
+#target_link_libraries(RandGame SQLite)
 target_link_libraries(RandGame GameLibrary)
 target_link_libraries(RandGame NordicOS)
 target_link_libraries(RandGame Valkyrie)

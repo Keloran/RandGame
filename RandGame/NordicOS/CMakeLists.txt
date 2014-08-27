@@ -120,9 +120,9 @@ list(APPEND LibHeaders ${NOS}/Noise/Simplex.hpp)
 list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 
 # SQLite
-link_directories(${NOS}/SQLite)
-include_directories(${NOS}/SQLite)
-add_subdirectory(${NOS}/SQLite)
+#link_directories(${NOS}/SQLite)
+#include_directories(${NOS}/SQLite)
+#add_subdirectory(${NOS}/SQLite)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
@@ -144,5 +144,5 @@ elseif (UNIX)
 endif()
 
 # Library Linker
-target_link_libraries(NordicOS SQLite)
+#target_link_libraries(NordicOS SQLite)
 target_link_libraries(NordicOS boost_locale)
