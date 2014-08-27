@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf Build
+
 # Delete CMake Stuff
 rm -rf `find . -type d -name CMakeFiles`
 rm -rf `find . -type d -name build`
@@ -20,3 +22,7 @@ rm -rf `find . -type f -name libNordicOS.a`
 # Delete Binary
 rm -rf `find . -type f -name RandGame.app`
 rm -rf `find . -type f -name RandGame.log`
+
+mkdir Build
+cd Build
+touch empty

@@ -4,11 +4,17 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(SQLite)
 
+# Output Dir
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../../../../Build/Lib)
+
+# Set Source/Headers
 set(Lib_Headers ${PROJECT_SOURCE_DIR}/sqlite3.h)
 set(Lib_Source ${PROJECT_SOURCE_DIR}/sqlite3.c)
 
+# Add Source/Headers
 list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/sqlite3ext.h)
 
+# Library Build
 add_library(SQLite STATIC ${Lib_Source} ${Lib_Headers})
 set_target_properties(SQLite PROPERTIES LINKER_LANGUAGE C)
 set_target_properties(SQLite PROPERTIES OUTPUT_NAME "SQLite")
