@@ -4,11 +4,6 @@ cmake_minimum_required(VERSION 2.8)
 # Project Name
 project(SQLite)
 
-# C++11
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 --stdlib=libc++ -m64")
-set(EXTRA_FLAGS " -x objective-c++")
-
-
 set(Lib_Headers ${PROJECT_SOURCE_DIR}/sqlite3.h)
 set(Lib_Source ${PROJECT_SOURCE_DIR}/sqlite3.c)
 
@@ -17,7 +12,6 @@ list(APPEND Lib_Headers ${PROJECT_SOURCE_DIR}/sqlite3ext.h)
 add_library(SQLite STATIC ${Lib_Source} ${Lib_Headers})
 set_target_properties(SQLite PROPERTIES LINKER_LANGUAGE C)
 set_target_properties(SQLite PROPERTIES OUTPUT_NAME "SQLite")
-set_target_properties(SQLite PROPERTIES COMPILE_FLAGS ${EXTRA_FLAGS})
 
 # Linker
 if (WIN32)

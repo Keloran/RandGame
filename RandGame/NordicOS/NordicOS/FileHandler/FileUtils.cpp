@@ -11,15 +11,7 @@
 namespace NordicArts {
     namespace NordicOS {
         bool fileExists(std::string cFileName) {
-            bool bExists = false;
-            
-            std::ifstream pFile(cFileName);
-            if (pFile) {
-                bExists = true;
-                pFile.close();
-            }
- 
-            return bExists;
+            return fileExists(cFileName.c_str());
         }
 
         bool fileExists(const char *cFileName) {

@@ -9,11 +9,13 @@ namespace NordicArts {
             if (cFileName.empty()) {
                 throw ExceptionHandler(__FUNCTION__ + std::string(" Missing FileName"), bSaveException);
             } else {
-                if (fileExists(cFilePath.c_str())) {
-                    m_cFilePath = cFilePath;
-                } else {
-                    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
-                }
+                fileExists(cFilePath);
+
+                //if (fileExists(cFilePath.c_str())) {
+                m_cFilePath = cFilePath;
+                //} else {
+                //    throw ExceptionHandler(__FUNCTION__ + std::string(" Missing File ") + cFileName, bSaveException);
+                //}
             }
         }
 
