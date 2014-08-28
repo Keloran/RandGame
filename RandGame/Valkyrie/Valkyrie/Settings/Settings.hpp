@@ -26,21 +26,21 @@ namespace NordicArts {
         };
 
         class Settings {
-            // Variables
-            public:
-            protected:
-            private:
-                GameSettings m_sGameSettings;
+        // Variables
+        public:
+        protected:
+        private:
+            GameSettings m_sGameSettings;
 
-            // Methods
-            public:
-                Settings();
-                virtual ~Settings();
+        // Methods
+        public:
+            Settings();
+            virtual ~Settings();
 
-                GameSettings getSettings() const;
+            GameSettings getSettings() const;
 
-            protected:
-            private:
+        protected:
+        private:
 
         };
     };

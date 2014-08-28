@@ -6,17 +6,17 @@
 namespace NordicArts {
     namespace NordicOS {
         class OSSpecific {
-            // Variables
-            public:
-            protected:
-            private:
+        // Variables
+        public:
+        protected:
+        private:
 
-            // Methods
-            public:
-                std::string ResourcePath(std::string cFileName);
+        // Methods
+        public:
+            std::string ResourcePath(std::string cFileName);
 
-            protected:
-            private:
+        protected:
+        private:
 
         };
     };

@@ -33,4 +33,13 @@
 // Valkyrie
 #include <Valkyrie/Valkyrie.hpp>
 
+// Namespace
+namespace NordicArts {
+    void ThreadUpdateGame(GameNS::Game *pGame, GameNS::GameState eGS);
+    void ThreadRenderGame(GameNS::Game *pGame, GameNS::GameState eGS);
+    void handleException(std::exception_ptr ptrException);
+    
+    int main();
+};
+
 #endif

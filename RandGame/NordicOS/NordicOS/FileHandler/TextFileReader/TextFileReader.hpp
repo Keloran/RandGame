@@ -7,20 +7,20 @@
 namespace NordicArts {
     namespace NordicOS {
         class TextFileReader : public FileHandler {
-            // Variables
-            public:
-            protected:
-            private:
+        // Variables
+        public:
+        protected:
+        private:
 
-            // Methods
-            public:
-                explicit TextFileReader(const std::string &cFileName);
-                explicit TextFileReader(const std::string &cFileName, bool bFilePath);
+        // Methods
+        public:
+            explicit TextFileReader(const std::string &cFileName);
+            explicit TextFileReader(const std::string &cFileName, bool bFilePath);
         
-                std::string readAll() const;
+            std::string readAll() const;
     
-            protected:
-            private:
+        protected:
+        private:
         };
     };
 };

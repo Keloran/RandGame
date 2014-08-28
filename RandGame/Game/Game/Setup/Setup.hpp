@@ -10,35 +10,35 @@
 namespace NordicArts {
     namespace GameNS {
     	class Setup {
-    		// Variables
-    		public:
-    		protected:
-    		private:
-                ValkyrieNS::GameSettings m_sGameSettings;
+        // Variables
+        public:
+        protected:
+        private:
+            ValkyrieNS::GameSettings m_sGameSettings;
 
-    		// Methods
-    		public:
-    			Setup();
-    			virtual ~Setup();
+        // Methods
+        public:
+            Setup();
+            virtual ~Setup();
 
-    			bool doSetup();
-                bool isVSync() const;
+            bool doSetup();
+            bool isVSync() const;
 
-                glm::vec2 getResolution() const;
-                glm::vec2 getOpenGL() const;
+            glm::vec2 getResolution() const;
+            glm::vec2 getOpenGL() const;
 
-                std::string getGameName();
+            std::string getGameName();
 
-                int getRefreshRate() const;
+            int getRefreshRate() const;
             
-                void setOpenGL(glm::uvec2 vOpenGL);
-                void setGameName(std::string cGameName);
+            void setOpenGL(glm::uvec2 vOpenGL);
+            void setGameName(std::string cGameName);
 
-    		protected:
-    		private:
-    			bool checkForDatabase();
+        protected:
+        private:
+            bool checkForDatabase();
 
-    			void createDatabase();
+            void createDatabase();
         };
 	};
 };

@@ -6,18 +6,18 @@
 namespace NordicArts {
 	namespace GameNS {
 		class Parser {
-			// Variables
-			public:
-			protected:
-			private:
+        // Variables
+        public:
+        protected:
+        private:
 
-			// Methods
-			public:
-				Parser();
-				virtual ~Parser();
+        // Methods
+        public:
+            Parser();
+            virtual ~Parser();
 
-			protected:
-			private:
+        protected:
+        private:
 		};
 	};
 };

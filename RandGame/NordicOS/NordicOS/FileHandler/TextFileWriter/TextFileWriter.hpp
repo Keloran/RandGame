@@ -7,19 +7,19 @@
 namespace NordicArts {
     namespace NordicOS {
         class TextFileWriter : public FileHandler {
-            // Variables
-            public:
-            protected:
-            private:
+        // Variables
+        public:
+        protected:
+        private:
 
-            // Methods
-            public:
-                TextFileWriter(const std::string &cFileName, bool bAppend, bool bSaveException = true);
+        // Methods
+        public:
+            TextFileWriter(const std::string &cFileName, bool bAppend, bool bSaveException = true);
         
-                void write(const std::string &cMessage);
-        
-            protected:
-            private:
+            void write(const std::string &cMessage);
+    
+        protected:
+        private:
         };
     };
 };

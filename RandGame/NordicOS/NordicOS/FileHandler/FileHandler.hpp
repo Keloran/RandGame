@@ -8,29 +8,29 @@
 namespace NordicArts {
     namespace NordicOS {
         class FileHandler {
-            // Variables
-            public:
-            protected:
-                std::fstream    m_cFileStream;
-                std::string     m_cFilePath;
-                std::string     m_cFileName;
+        // Variables
+        public:
+        protected:
+            std::fstream    m_cFileStream;
+            std::string     m_cFilePath;
+            std::string     m_cFileName;
 
-            private:
-                bool            m_bSaveException;
-    
-            // Methods
-            public:
-                virtual ~FileHandler();
+        private:
+            bool            m_bSaveException;
+
+        // Methods
+        public:
+            virtual ~FileHandler();
             
-                std::string getFilePath() const;
+            std::string getFilePath() const;
+            
+        protected:
+            FileHandler(std::string cFileName, bool bSaveException);
 
-            protected:
-                FileHandler(std::string cFileName, bool bSaveException);
+            void throwError(const std::string &cMessage) const;
+            void throwError(const std::ostringstream &cMessage) const;
 
-                void throwError(const std::string &cMessage) const;
-                void throwError(const std::ostringstream &cMessage) const;
-
-            private:
+        private:
         };
     };
 };

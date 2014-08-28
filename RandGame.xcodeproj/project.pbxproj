@@ -46,21 +46,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = F3B2CBDF19A8D9F70047830E /* NordicOS.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F3B2CB1319A8D52F0047830E;
+			remoteGlobalIDString = F3B23A1819AE75FB0064E08F;
 			remoteInfo = NordicOS;
 		};
 		F3B2CBE719A8DA480047830E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3B2CBD919A8D9EE0047830E /* Game.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F3B2CB9319A8D7480047830E;
+			remoteGlobalIDString = F3B23A6A19AE7E500064E08F;
 			remoteInfo = Game;
 		};
 		F3B2CBE919A8DA480047830E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3B2CBD319A8D9E30047830E /* Valkyrie.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F356F54619A8D2FA00369D19;
+			remoteGlobalIDString = F3B23A4A19AE76AD0064E08F;
 			remoteInfo = Valkyrie;
 		};
 /* End PBXContainerItemProxy section */
@@ -440,6 +440,7 @@
 					"$(PROJECT_DIR)/RandGame/Valkyrie/**",
 					"$(PROJECT_DIR)/RandGame/NordicOS/**",
 					"$(PROJECT_DIR)/RandGame/Game/**",
+					"$(PROJECT_DIR)/RandGame/glm",
 				);
 				INFOPLIST_FILE = "RandGame/RandGame-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -469,6 +470,7 @@
 					"$(PROJECT_DIR)/RandGame/Valkyrie/**",
 					"$(PROJECT_DIR)/RandGame/NordicOS/**",
 					"$(PROJECT_DIR)/RandGame/Game/**",
+					"$(PROJECT_DIR)/RandGame/glm",
 				);
 				INFOPLIST_FILE = "RandGame/RandGame-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

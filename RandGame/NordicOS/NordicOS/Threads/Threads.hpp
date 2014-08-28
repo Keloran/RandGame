@@ -1,19 +1,19 @@
 //
-//  Utility.hpp
+//  Threads.h
 //  NordicOS
 //
-//  Created by Max Hooton on 23/08/2014.
+//  Created by Max Hooton on 28/08/2014.
 //  Copyright (c) 2014 NordicArts.net. All rights reserved.
 //
 
-#ifndef NordicArts_NordicOS_Utility_hpp
-#define NordicArts_NordicOS_Utility_hpp
+#ifndef NordicArts_NordicOS_Threads_H
+#define NordicArts_NordicOS_Threads_H
 
-#include "../OS.hpp"
+#include "../OSLoad.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
-        class Utility {
+        class Threads {
         // Variables
         public:
         protected:
@@ -21,15 +21,12 @@ namespace NordicArts {
             
         // Methods
         public:
-            Utility();
-            
-            void isPlatformCompatible();
-        
         protected:
         private:
+            
         };
     };
 };
 
 
-#endif
+#endif /* defined(__NordicOS__Threads__) */

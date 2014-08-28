@@ -894,7 +894,7 @@
 					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../NordicOS/**",
 					/usr/local/include,
-					"./glm/**",
+					"../glm/**",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -916,7 +916,7 @@
 					"/Applications/Xcode6-Beta6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../NordicOS/**",
 					/usr/local/include,
-					"./glm/**",
+					"../glm/**",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";

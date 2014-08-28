@@ -12,35 +12,35 @@
 namespace NordicArts {
     namespace GameNS {
         class Names {
-            // Variables
-            public:
-            protected:
-            private:
-                bool m_bDebug;
+        // Variables
+        public:
+        protected:
+        private:
+            bool m_bDebug;
 
-                std::vector<std::string> m_vPrefixes;
-                std::vector<std::string> m_vStems;
-                std::vector<std::string> m_vSuffixes;
+            std::vector<std::string> m_vPrefixes;
+            std::vector<std::string> m_vStems;
+            std::vector<std::string> m_vSuffixes;
 
-                std::locale m_pLocale;
+            std::locale m_pLocale;
 
-                NordicOS::Logger      *m_pLogger = nullptr;;
+            NordicOS::Logger      *m_pLogger = nullptr;;
 
-            // Methods
-            public:
-                Names(NordicOS::Logger *pLogger);
-                Names();
-                virtual ~Names();
+        // Methods
+        public:
+            Names(NordicOS::Logger *pLogger);
+            Names();
+            virtual ~Names();
 
-                std::string generateName();
+            std::string generateName();
 
-            protected:
-            private:
-                void init();
+        protected:
+        private:
+            void init();
 
-                void fillPrefixes();
-                void fillStems();
-                void fillSuffixes();
+            void fillPrefixes();
+            void fillStems();
+            void fillSuffixes();
         };
     };
 };

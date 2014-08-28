@@ -46,6 +46,8 @@
 		F3B23A4319AE766D0064E08F /* String.inl in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB5519A8D5420047830E /* String.inl */; };
 		F3B23A4419AE766D0064E08F /* Time.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB5819A8D5420047830E /* Time.hpp */; };
 		F3B23A4519AE766E0064E08F /* Utility.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B2CB8A19A8D5790047830E /* Utility.hpp */; };
+		F3B23A8C19AFC16A0064E08F /* Threads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B23A8A19AFC16A0064E08F /* Threads.cpp */; };
+		F3B23A8D19AFC16A0064E08F /* Threads.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3B23A8B19AFC16A0064E08F /* Threads.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		F3B23A1919AE75FB0064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libNordicOS.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B23A8A19AFC16A0064E08F /* Threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Threads.cpp; sourceTree = "<group>"; };
+		F3B23A8B19AFC16A0064E08F /* Threads.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Threads.hpp; sourceTree = "<group>"; };
 		F3B2CB1E19A8D5420047830E /* BlockProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlockProcess.cpp; sourceTree = "<group>"; };
 		F3B2CB1F19A8D5420047830E /* BlockProcess.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockProcess.hpp; sourceTree = "<group>"; };
 		F3B2CB2119A8D5420047830E /* BlockThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlockThread.cpp; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3B23A8919AFC1590064E08F /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				F3B23A8A19AFC16A0064E08F /* Threads.cpp */,
+				F3B23A8B19AFC16A0064E08F /* Threads.hpp */,
+			);
+			path = Threads;
+			sourceTree = "<group>";
+		};
 		F3B2CB0B19A8D52F0047830E = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 		F3B2CB1C19A8D5420047830E /* NordicOS */ = {
 			isa = PBXGroup;
 			children = (
+				F3B23A8919AFC1590064E08F /* Threads */,
 				F3B2CB1D19A8D5420047830E /* BlockProcess */,
 				F3B2CB2019A8D5420047830E /* BlockThread */,
 				F3B2CB2319A8D5420047830E /* buildNumber.hpp */,
@@ -359,6 +373,7 @@
 				F3B23A3819AE766D0064E08F /* TextFileReader.hpp in Headers */,
 				F3B23A3919AE766D0064E08F /* TextFileWriter.hpp in Headers */,
 				F3B23A3A19AE766D0064E08F /* Logger.hpp in Headers */,
+				F3B23A8D19AFC16A0064E08F /* Threads.hpp in Headers */,
 				F3B23A3B19AE766D0064E08F /* Mutex.hpp in Headers */,
 				F3B23A3C19AE766D0064E08F /* Simplex.hpp in Headers */,
 				F3B23A3D19AE766D0064E08F /* nonWindows.hpp in Headers */,
@@ -463,6 +478,7 @@
 				F3B23A2E19AE764E0064E08F /* String.cpp in Sources */,
 				F3B23A2F19AE764E0064E08F /* Time.cpp in Sources */,
 				F3B23A3019AE764E0064E08F /* Utility.cpp in Sources */,
+				F3B23A8C19AFC16A0064E08F /* Threads.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,46 +11,46 @@
 namespace NordicArts {
     namespace GameNS {
         class Forest {
-            // Variables
-            public:
-            protected:
-            private:
-                std::vector<Tree> m_vTrees;
+        // Variables
+        public:
+        protected:
+        private:
+            std::vector<Tree> m_vTrees;
 
-                std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
+            std::map<int, std::map<int, std::vector<Tree>>> m_mCells;
 
-                int m_iWidth;
-                int m_iHeight;
-                int m_iCellSize;
-                int m_iMaxWidth;
-                int m_iMaxHeight;
+            int m_iWidth;
+            int m_iHeight;
+            int m_iCellSize;
+            int m_iMaxWidth;
+            int m_iMaxHeight;
 
-            // Methods
-            public:
-                Forest(int iRandomSeed, int iWidth, int iHeight);
+        // Methods
+        public:
+            Forest(int iRandomSeed, int iWidth, int iHeight);
 
-                void addTree(Tree oTree);
-                void removeTree(Tree oTree);
-                void iterate();
+            void addTree(Tree oTree);
+            void removeTree(Tree oTree);
+            void iterate();
 
-                std::vector<Tree> spreadTreeSeed(Tree oTree);
+            std::vector<Tree> spreadTreeSeed(Tree oTree);
 
-                std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
-                std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
-                std::vector<Tree> getCellFromPoint(int iX, int iY);
-                std::vector<Tree> getCell(Tree oTree);
+            std::map<int, std::map<int, std::vector<Tree>>> getAllBoringCellsByPoint(int iX, int iY);
+            std::vector<Tree> getAllBoringCellsByTree(Tree oTree);
+            std::vector<Tree> getCellFromPoint(int iX, int iY);
+            std::vector<Tree> getCell(Tree oTree);
 
-                int getHeight() const;
-                int getMaxHeight() const;
-                int getWidth() const;
-                int getMaxWidth() const;
-                int getSize() const;
+            int getHeight() const;
+            int getMaxHeight() const;
+            int getWidth() const;
+            int getMaxWidth() const;
+            int getSize() const;
 
-            protected:
-            private:
-                bool canPlantSeed(int iX, int iY, Species sSpecies);
-                bool isPointTooCloseToTree(int iX, int iY, Species sSpecies);
-                bool isPointInTree(int iX, int iY);
+        protected:
+        private:
+            bool canPlantSeed(int iX, int iY, Species sSpecies);
+            bool isPointTooCloseToTree(int iX, int iY, Species sSpecies);
+            bool isPointInTree(int iX, int iY);
         };
     };
 };

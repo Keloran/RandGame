@@ -7,15 +7,15 @@
 namespace NordicArts {
     namespace ValkyrieNS {
         class Valkyrie {
-            // Variables
-            public:
-            protected:
-            private:
+        // Variables
+        public:
+        protected:
+        private:
 
-            // Methods
-            public:
-            protected:
-            private:
+        // Methods
+        public:
+        protected:
+        private:
 
         };
 

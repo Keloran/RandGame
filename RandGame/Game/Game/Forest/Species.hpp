@@ -34,21 +34,21 @@ namespace NordicArts {
         };
 
         class Species {
-            // Variables
-            public:
-            protected:
-            private:
-                std::vector<TreeSpecies> m_vTrees;
+        // Variables
+        public:
+        protected:
+        private:
+            std::vector<TreeSpecies> m_vTrees;
 
-            // Methods
-            public:
-                Species();
+        // Methods
+        public:
+            Species();
 
-                std::vector<TreeSpecies> getSpecies();
-
-            protected:
-            private:
-                void loadSpecies();
+            std::vector<TreeSpecies> getSpecies();
+            
+        protected:
+        private:
+            void loadSpecies();
         };
     };
 };

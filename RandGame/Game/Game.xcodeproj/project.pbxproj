@@ -281,6 +281,7 @@
 					../Valkyrie,
 					../NordicOS,
 					/usr/local/include,
+					../glm,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,6 +304,7 @@
 					../Valkyrie,
 					../NordicOS,
 					/usr/local/include,
+					../glm,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
