@@ -14,6 +14,7 @@
 
 // Includes
 #include <NordicOS/Singleton/Singleton.hpp>
+#include <glm/glm.hpp>
 
 // Namespace
 namespace NordicArts {

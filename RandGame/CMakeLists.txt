@@ -40,6 +40,10 @@ set(Main_Libs ${PROJECT_SOURCE_DIR}/Main/Main.cpp)
 # Includes
 list(APPEND Main_Headers ${PROJECT_SOURCE_DIR}/Main/includes.hpp)
 
+# GLM
+find_package(GLM)
+include_directories(${GLM_INCLUDE_DIR})
+
 # NordicOS
 find_package(NordicOS)
 include_directories(${NORDICOS_INCLUDE_DIR})

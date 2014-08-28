@@ -17,6 +17,10 @@ set(EXTRA_FLAGS " -x objective-c++")
 # Directories
 set(GameDir ${PROJECT_SOURCE_DIR}/Game)
 
+# GLM
+find_package(GLM REQUIRED)
+include_directories(${GLM_INCLUDE_DIR})
+
 # Main Game Files
 set(GameHeaders ${GameDir}/Game.hpp)
 set(GameLibs ${GameDir}/Game.cpp)

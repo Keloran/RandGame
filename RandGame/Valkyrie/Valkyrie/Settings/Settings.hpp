@@ -1,7 +1,7 @@
 #ifndef NORDICARTS_VALKYRIE_SETTINGS_H
 #define NORDICARTS_VALKYRIE_SETTINGS_H
 
-#include "../glm/glm.hpp"
+#include "../Includes.hpp"
 
 #include <NordicOS/FileHandler/TextFileReader/TextFileReader.hpp>
 

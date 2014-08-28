@@ -15,7 +15,8 @@ set(EXTRA_FLAGS " -x objective-c++")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/../CMakeModules/")
 
 # GLM
-include_directories(${PROJECT_SOURCE_DIR}/glm)
+find_package(GLM REQUIRED)
+include_directories(${GLM_INCLUDE_DIR})
 
 # SFML
 find_package(SFML REQUIRED system window graphics audio network)
@@ -31,6 +32,9 @@ add_definitions(${NORDICOS_DEFINITIONS})
 set(BasePath ${PROJECT_SOURCE_DIR}/Valkyrie)
 set(LibHeaders ${BasePath}/Valkyrie.hpp)
 set(LibSources ${BasePath}/Valkyrie.cpp)
+
+# Includes
+list(APPEND LibHeaders ${BasePath}/Includes.hpp)
 
 # Window
 list(APPEND LibHeaders ${BasePath}/Window/Window.hpp)
