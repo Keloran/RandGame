@@ -3,7 +3,7 @@
 
 #include "../OS.hpp"
 
-#include "../Mutex/Mutex.hpp"
+#include "../Threads/Mutex.hpp"
 #ifndef MUTEX_THREAD
     #if defined(nonWindows)
         #define MUTEX_THREAD pthread_mutex_t

@@ -3,7 +3,7 @@
 
 #include "../OS.hpp"
 #include "../Time/Time.hpp"
-#include "../Critical/Critical.hpp"
+#include "../Threads/Critical.hpp"
 #include "../Singleton/Singleton.hpp"
 #include "../String/String.hpp"
 

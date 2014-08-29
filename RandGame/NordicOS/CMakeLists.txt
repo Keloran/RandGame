@@ -87,29 +87,17 @@ include_directories(${NOS}/FileHandler/TextFileReader)
 list(APPEND LibHeaders ${NOS}/FileHandler/TextFileReader/TextFileReader.hpp)
 list(APPEND LibSources ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
 
-# BlockProcess
-link_directories(${NOS}/BlockProcess)
-include_directories(${NOS}/BlockProcess)
-list(APPEND LibHeaders ${NOS}/BlockProcess/BlockProcess.hpp)
-list(APPEND LibSources ${NOS}/BlockProcess/BlockProcess.cpp)
-
-# BlockThread
-link_directories(${NOS}/BlockThread)
-include_directories(${NOS}/BlockThread)
-list(APPEND LibHeaders ${NOS}/BlockThread/BlockThread.hpp)
-list(APPEND LibSources ${NOS}/BlockThread/BlockThread.cpp)
-
-# Critical Section
-link_directories(${NOS}/Critical)
-include_directories(${NOS}/Critical)
-list(APPEND LibHeaders ${NOS}/Critical/Critical.hpp)
-list(APPEND LibSources ${NOS}/Critical/Critical.cpp)
-
-# Mutex
-link_directories(${NOS}/Mutex)
-include_directories(${NOS}/Mutex)
-list(APPEND LibHeaders ${NOS}/Mutex/Mutex.hpp)
-list(APPEND LibSources ${NOS}/Mutex/Mutex.cpp)
+# Threads
+link_directories(${NOS}/Threads)
+include_directories(${NOS}/Threads)
+list(APPEND LibHeaders ${NOS}/Threads/BlockProcess.hpp)
+list(APPEND LibHeaders ${NOS}/Threads/BlockThread.hpp)
+list(APPEND LibHeaders ${NOS}/Threads/Critical.hpp)
+list(APPEND LibHeaders ${NOS}/Threads/Mutex.hpp)
+list(APPEND LibSources ${NOS}/Threads/BlockProcess.cpp)
+list(APPEND LibSources ${NOS}/Threads/BlockThread.cpp)
+list(APPEND LibSources ${NOS}/Threads/Critical.cpp)
+list(APPEND LibSources ${NOS}/Threads/Mutex.cpp)
 
 # Singleton
 link_directories(${NOS}/Singleton)

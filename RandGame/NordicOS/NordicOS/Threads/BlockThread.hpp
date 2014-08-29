@@ -2,7 +2,7 @@
 #define NordicArts_NordicOS_BlockThread_H
 
 #include "../OS.hpp"
-#include "../Critical/Critical.hpp"
+#include "./Critical.hpp"
 
 namespace NordicArts {
     namespace NordicOS {

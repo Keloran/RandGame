@@ -1,8 +1,8 @@
 #include "./Logger.hpp"
 #include "../ExceptionHandler/ExceptionHandler.hpp"
 #include "../FileHandler/TextFileWriter/TextFileWriter.hpp"
-#include "../Critical/Critical.hpp"
-#include "../BlockThread/BlockThread.hpp"
+#include "../Threads/Critical.hpp"
+#include "../Threads/BlockThread.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
