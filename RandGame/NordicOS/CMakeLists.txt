@@ -118,7 +118,7 @@ add_subdirectory(${NOS}/SQLite)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
-file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER ${buildNumber}\n#endif")
+file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER \"${buildNumber}\"\n#endif")
 list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 
 # Generate Library
