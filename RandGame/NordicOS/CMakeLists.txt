@@ -90,14 +90,8 @@ list(APPEND LibSources ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
 # Threads
 link_directories(${NOS}/Threads)
 include_directories(${NOS}/Threads)
-list(APPEND LibHeaders ${NOS}/Threads/BlockProcess.hpp)
-list(APPEND LibHeaders ${NOS}/Threads/BlockThread.hpp)
-list(APPEND LibHeaders ${NOS}/Threads/Critical.hpp)
-list(APPEND LibHeaders ${NOS}/Threads/Mutex.hpp)
-list(APPEND LibSources ${NOS}/Threads/BlockProcess.cpp)
-list(APPEND LibSources ${NOS}/Threads/BlockThread.cpp)
-list(APPEND LibSources ${NOS}/Threads/Critical.cpp)
-list(APPEND LibSources ${NOS}/Threads/Mutex.cpp)
+list(APPEND LibHeaders ${NOS}/Threads/Threads.hpp)
+list(APPEND LibSources ${NOS}/Threads/Threads.cpp)
 
 # Singleton
 link_directories(${NOS}/Singleton)
@@ -118,7 +112,7 @@ add_subdirectory(${NOS}/SQLite)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
-file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER \"${buildNumber}\"\n#endif")
+file(WRITE ${NOS}/buildNumber.hpp "#ifndef NORDICOS_BUILDNUMBER\n#define NORDICOS_BUILDNUMBER ${buildNumber}\n#endif")
 list(APPEND LibHeaders ${NOS}/buildNumber.hpp)
 
 # Generate Library
