@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F39A5FCA19C0ECC200D4BC12 /* GameState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
 		F3B23A6B19AE7E500064E08F /* libGame.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libGame.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libNordicOS.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.dylib"; sourceTree = "<group>"; };
 		F3B23A7019AE7E610064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libValkyrie.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libValkyrie.dylib"; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 				F3B2CBAB19A8D75B0047830E /* Names */,
 				F3B2CBAE19A8D75B0047830E /* Settings */,
 				F3B2CBB119A8D75B0047830E /* Setup */,
+				F39A5FCA19C0ECC200D4BC12 /* GameState.hpp */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -401,6 +403,7 @@
 				F3B23A6E19AE7E500064E08F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3B2CB8F19A8D7480047830E /* Build configuration list for PBXProject "Game" */ = {
 			isa = XCConfigurationList;
