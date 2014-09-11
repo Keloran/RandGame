@@ -23,7 +23,9 @@ namespace NordicArts {
             
         // Methods
         public:
-            virtual void draw(const float fDT) = 0;
+            virtual void draw(const int iDT) = 0;
+            virtual void update(const int iDT) = 0;
+            virtual void handleInput() = 0;
             
         protected:
         private:

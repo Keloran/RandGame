@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F39983F519C1C9370017D764 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F39983F319C1C9370017D764 /* Color.cpp */; };
+		F39983F619C1C9370017D764 /* Color.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F39983F419C1C9370017D764 /* Color.hpp */; };
 		F3B23A4F19AE76BA0064E08F /* libNordicOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A7542119AD2AE1001DAEEF /* libNordicOS.dylib */; };
 		F3B23A5219AE76DF0064E08F /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6819A8D4EB0047830E /* Settings.cpp */; };
 		F3B23A5319AE76DF0064E08F /* Valkyrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CA6A19A8D4EB0047830E /* Valkyrie.cpp */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F39983F319C1C9370017D764 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		F39983F419C1C9370017D764 /* Color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
 		F3A7541B19AD2AE1001DAEEF /* NordicOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NordicOS.xcodeproj; path = ../NordicOS/NordicOS.xcodeproj; sourceTree = "<group>"; };
 		F3B23A4B19AE76AD0064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libValkyrie.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23A5A19AE771E0064E08F /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "/Library/Frameworks/sfml-audio.framework"; sourceTree = "<absolute>"; };
@@ -348,6 +352,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F39983F219C1C9020017D764 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				F39983F319C1C9370017D764 /* Color.cpp */,
+				F39983F419C1C9370017D764 /* Color.hpp */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		F3A7541C19AD2AE1001DAEEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +385,7 @@
 		F3B2C96419A8D4EB0047830E /* Valkyrie */ = {
 			isa = PBXGroup;
 			children = (
+				F39983F219C1C9020017D764 /* Color */,
 				F3B2C96519A8D4EB0047830E /* buildNumber.hpp */,
 				F3B2C96619A8D4EB0047830E /* glm */,
 				F3B2CA6619A8D4EB0047830E /* Includes.hpp */,
@@ -691,6 +705,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39983F619C1C9370017D764 /* Color.hpp in Headers */,
 				F3B23A5519AE76EF0064E08F /* buildNumber.hpp in Headers */,
 				F3B23A5619AE76EF0064E08F /* Includes.hpp in Headers */,
 				F3B23A5719AE76EF0064E08F /* Settings.hpp in Headers */,
@@ -773,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B23A5219AE76DF0064E08F /* Settings.cpp in Sources */,
+				F39983F519C1C9370017D764 /* Color.cpp in Sources */,
 				F3B23A5319AE76DF0064E08F /* Valkyrie.cpp in Sources */,
 				F3B23A5419AE76DF0064E08F /* Window.cpp in Sources */,
 			);
@@ -942,6 +958,7 @@
 				F3B23A4E19AE76AD0064E08F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

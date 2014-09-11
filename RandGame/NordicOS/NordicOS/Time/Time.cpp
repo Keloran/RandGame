@@ -2,6 +2,7 @@
 
 namespace NordicArts {
     namespace NordicOS {
+        // Time
         Time::Time() {
             m_tpSystemTime      = std::chrono::system_clock::now();
             m_tpHighClock       = std::chrono::high_resolution_clock::now();
@@ -18,7 +19,7 @@ namespace NordicArts {
             #endif
         }
 
-        int Time::getDay() {
+        int Time::getDay() const {
             #if defined(nonWindows)
                 return m_sTimeInfo->tm_mday;
             #else
@@ -28,7 +29,7 @@ namespace NordicArts {
             return -1;
         }
 
-        int Time::getMonth() {
+        int Time::getMonth() const {
             #if defined(nonWindows)
                 return m_sTimeInfo->tm_mon;
             #else
@@ -39,7 +40,7 @@ namespace NordicArts {
         }
 
 
-        int Time::getYear() {
+        int Time::getYear() const {
             #if defined(nonWindows)
                 return (1900 + m_sTimeInfo->tm_year);
             #else
@@ -49,7 +50,7 @@ namespace NordicArts {
             return -1;
         }
 
-        int Time::getHour() {
+        int Time::getHour() const {
             #if defined(nonWindows)
                 return m_sTimeInfo->tm_hour;
             #else
@@ -59,7 +60,7 @@ namespace NordicArts {
             return -1;
         }
 
-        int Time::getMinute() {
+        int Time::getMinute() const {
             #if defined(nonWindows)
                 return m_sTimeInfo->tm_min;
             #else
@@ -69,7 +70,7 @@ namespace NordicArts {
             return -1;
         }
 
-        int Time::getSecond() {
+        int Time::getSecond() const {
             #if defined(nonWindows)
                 return m_sTimeInfo->tm_sec;
             #else
@@ -78,15 +79,47 @@ namespace NordicArts {
 
             return -1;
         }
-
-        int Time::getMilliSecond() {
-            std::chrono::milliseconds timeDuration                      = std::chrono::duration_cast<std::chrono::milliseconds>(m_tpHighClock.time_since_epoch());
+        
+        int Time::getSeconds() const {
+            std::chrono::seconds timeDuration = std::chrono::duration_cast<std::chrono::seconds>(m_tpHighClock.time_since_epoch());
             return (int)timeDuration.count();
         }
 
-        int Time::getNanoSeconds() {
-            std::chrono::nanoseconds timeDuration                       = std::chrono::duration_cast<std::chrono::nanoseconds>(m_tpHighClock.time_since_epoch());
+        int Time::getMilliSeconds() const {
+            std::chrono::milliseconds timeDuration = std::chrono::duration_cast<std::chrono::milliseconds>(m_tpHighClock.time_since_epoch());
             return (int)timeDuration.count();
+        }
+
+        int Time::getNanoSeconds() const {
+            std::chrono::nanoseconds timeDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(m_tpHighClock.time_since_epoch());
+            return (int)timeDuration.count();
+        }
+        
+        int Time::getMicroSeconds() const {
+            std::chrono::microseconds timeDuration = std::chrono::duration_cast<std::chrono::microseconds>(m_tpHighClock.time_since_epoch());
+            
+            return (int)timeDuration.count();
+        }
+        
+        // Clock
+        Clock::Clock() {
+            Time oTime;
+            
+            m_iStartTime = oTime.getSeconds();
+        }
+        
+        int Clock::getElapsedTime() const {
+            Time oTime;
+            
+            return (oTime.getSeconds() - m_iStartTime);
+        }
+        
+        int Clock::restart() {
+            Time oTime;
+            int iElapsed    = (oTime.getSeconds() - m_iStartTime);
+            m_iStartTime    = oTime.getSeconds();
+            
+            return iElapsed;
         }
     };
 };

@@ -2,6 +2,7 @@
 #define NordicArts_Valkyrie_Window_H
 
 #include "../Includes.hpp"
+#include "../Color/Color.hpp"
 
 namespace NordicArts {
     namespace ValkyrieNS {
@@ -17,6 +18,8 @@ namespace NordicArts {
             int m_iOpenGLMinor;
                 
             std::string m_cTitle;
+            
+            sf::RenderWindow m_oWindow;
     
         // Methods
         public:
@@ -26,13 +29,21 @@ namespace NordicArts {
 
             void setWidth(int iX);
             void setHeight(int iY);
+            void setDimensions(int iX, int iY);
             void setTitle(std::string cTitle);
             void setFramerateLimit(int iFrameLimit);
             void setOpenGL(int iMajor, int iMinor);
+            void createWindow();
+            void clear(const ValkyrieNS::Color &oColor);
+            void display();
+            
+            bool isOpen() const;
 
             void debugStuff();
 
             virtual ~Window();
+            
+            sf::RenderWindow returnWindow() const;
     
         protected:
         private:

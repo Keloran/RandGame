@@ -8,56 +8,46 @@
 // NordicOS
 #include <NordicOS/OS.hpp>
 #include <NordicOS/Logger/Logger.hpp>
+#include <NordicOS/Time/Time.hpp>
 
 // Valkyrie
 #include <Valkyrie/Valkyrie.hpp>
 #include <Valkyrie/Window/Window.hpp>
+#include <Valkyrie/Color/Color.hpp>
 
 namespace NordicArts {
     namespace GameNS {
-        // Game State
-        enum GameState {
-            GS_INTRO,
-            GS_MENU,
-            GS_PAUSED_MENU,
-            GS_GAME,
-            GS_QUIT,
-            GS_NUM_STATES,
-        };
-
-        // Class
+        class GameState;
+        
         class Game {
         // Variables
         public:
+            std::stack<GameState*>  m_sStates;
+        
+            ValkyrieNS::Window      m_oWindow;
+            
+            NordicOS::Logger        *m_pLogger = nullptr;
+            
         protected:
         private:
-            NordicOS::Logger    *m_pLogger  = nullptr;
             
-            std::string          m_cGameName;
-            glm::uvec2           m_vOpenGL;
-
         // Methods
         public:
+            void pushState(GameState *pState);
+            void popState();
+            void changeState(GameState *pState);
+            
+            GameState *peekState();
+            
+            void gameLoop();
+            
             Game();
             Game(NordicOS::Logger *pLogger);
-
-            virtual ~Game();
+            ~Game();
             
-            void Startup();
-            bool RenderIntroCutScenes();
-            void RenderMainMenu();
-            void RenderGame(GameState eGS);
-            void UpdateGame(GameState eGS);
-            void RenderPauseMenu();
-            void ShutDown();
-            void ProcessInputs();
-            void VideoPageFlip();
-            
-            void setOpenGL(int iMajor, int iMinor);
-            void setGameName(std::string cGameName);
-
         protected:
         private:
+            void doWindow();
         };
 
         const char *getBuildNumber();

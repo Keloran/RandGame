@@ -17,6 +17,7 @@
 #include <vector>
 #include <math.h>
 #include <cstdint>
+#include <stack>
 
 // GLM
 #include <glm/glm.hpp>

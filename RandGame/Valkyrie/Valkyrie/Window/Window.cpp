@@ -12,6 +12,10 @@ namespace NordicArts {
         void Window::setHeight(int iY) {
             m_iHeight = iY;
         }
+        void Window::setDimensions(int iX, int iY) {
+            m_iWidth    = iX;
+            m_iHeight   = iY;
+        }
         void Window::setTitle(std::string cTitle) {
             m_cTitle = cTitle;
         }
@@ -22,6 +26,30 @@ namespace NordicArts {
             m_iOpenGLMajor = iMajor;
             m_iOpenGLMinor = iMinor;
         }
+        
+        bool Window::isOpen() const {
+            return m_oWindow.isOpen();
+        }
+        
+        void Window::clear(const ValkyrieNS::Color &oColor) {
+            sf::Color sfColor(oColor.m_iRed, oColor.m_iGreen, oColor.m_iBlue, oColor.m_iAlpha);
+            
+            m_oWindow.clear(sfColor);
+        }
+        
+        sf::RenderWindow Window::returnWindow() const {
+            return m_oWindow;
+        }
+        
+        void Window::createWindow() {
+            m_oWindow.create(sf::VideoMode(m_iWidth, m_iHeight), m_cTitle);
+            m_oWindow.setFramerateLimit(m_iFrameLimit);
+        }
+        void Window::display() {
+            m_oWindow.display();
+        }
+        
+        
 
         Window::~Window() {
         }

@@ -16,6 +16,7 @@
 
 namespace NordicArts {
     namespace NordicOS {
+        // Time
         class Time {
         // Variables
         public:
@@ -32,17 +33,39 @@ namespace NordicArts {
             Time();
             Time(NA_TIME &oTime);
 
-            int getDay();
-            int getMonth();
-            int getYear();
-            int getHour();
-            int getMinute();
-            int getSecond();
-            int getMilliSecond();
-            int getNanoSeconds();
+            int getDay() const;
+            int getMonth() const;
+            int getYear() const;
+            int getHour() const;
+            int getMinute() const;
+            int getSecond() const;
+            int getSeconds() const;
+            int getMilliSeconds() const;
+            int getNanoSeconds() const;
+            int getMicroSeconds() const;
 
         protected:
         private:
+        };
+        
+        // Clock
+        class Clock {
+        // Variables
+        public:
+        protected:
+        private:
+            int m_iStartTime;
+            
+        // Methods
+        public:
+            Clock();
+            
+            int getElapsedTime() const;
+            int restart();
+            
+        protected:
+        private:
+            
         };
     };
 };
