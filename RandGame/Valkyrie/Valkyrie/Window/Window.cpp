@@ -28,29 +28,26 @@ namespace NordicArts {
         }
         
         bool Window::isOpen() const {
-            return m_oWindow.isOpen();
+            return m_pWindow->isOpen();
         }
         
         void Window::clear(const ValkyrieNS::Color &oColor) {
             sf::Color sfColor(oColor.m_iRed, oColor.m_iGreen, oColor.m_iBlue, oColor.m_iAlpha);
             
-            m_oWindow.clear(sfColor);
-        }
-        
-        sf::RenderWindow Window::returnWindow() const {
-            return m_oWindow;
+            m_pWindow->clear(sfColor);
         }
         
         void Window::createWindow() {
-            m_oWindow.create(sf::VideoMode(m_iWidth, m_iHeight), m_cTitle);
-            m_oWindow.setFramerateLimit(m_iFrameLimit);
+            sf::RenderWindow oWindow;
+            m_pWindow = &oWindow;
+            
+            m_pWindow->create(sf::VideoMode(m_iWidth, m_iHeight), m_cTitle);
+            m_pWindow->setFramerateLimit(m_iFrameLimit);
         }
         void Window::display() {
-            m_oWindow.display();
+            m_pWindow->display();
         }
         
-        
-
         Window::~Window() {
         }
 

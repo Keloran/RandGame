@@ -2,6 +2,7 @@
 #define NordicArts_NordicOS_String_INL
 
 #include "../ExceptionHandler/ExceptionHandler.hpp"
+#include "../Time/Time.hpp"
 
 template<typename T>
 T convertToType(const std::string &cString, std::ios_base &(*pFormat)(std::ios_base&)) {

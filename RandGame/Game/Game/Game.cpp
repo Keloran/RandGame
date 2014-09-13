@@ -1,4 +1,5 @@
 #include "./Game.hpp"
+#include "./GameState/GameState.hpp"
 
 namespace NordicArts {
     namespace GameNS {
@@ -48,7 +49,7 @@ namespace NordicArts {
                 peekState()->handleInput();
                 peekState()->update(iElapsed);
                 
-                this->m_oWindow.clear(NordicOS::Color::Black);
+                this->m_oWindow.clear(ValkyrieNS::Color::Black);
                 
                 peekState()->draw(iElapsed);
                 
@@ -76,7 +77,7 @@ namespace NordicArts {
             this->m_oWindow.setFramerateLimit(60);
         }
         
-        void Game::~Game() {
+        Game::~Game() {
             while(!this->m_sStates.empty()) {
                 popState();
             }

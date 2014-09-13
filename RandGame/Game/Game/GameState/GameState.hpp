@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 NordicArts.net. All rights reserved.
 //
 
-#ifndef Game_GameState_H
-#define Game_GameState_H
+#ifndef NordicArts_Game_GameState_H
+#define NordicArts_Game_GameState_H
 
-#include "./Game.hpp"
+#include "../Game.hpp"
 
 namespace NordicArts {
     namespace GameNS {

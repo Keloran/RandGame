@@ -19,7 +19,7 @@ namespace NordicArts {
                 
             std::string m_cTitle;
             
-            sf::RenderWindow m_oWindow;
+            sf::RenderWindow *m_pWindow;
     
         // Methods
         public:
@@ -42,8 +42,6 @@ namespace NordicArts {
             void debugStuff();
 
             virtual ~Window();
-            
-            sf::RenderWindow returnWindow() const;
     
         protected:
         private:

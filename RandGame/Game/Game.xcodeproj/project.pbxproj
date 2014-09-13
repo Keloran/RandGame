@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F323247E19C3313300570A48 /* GameState.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F323247D19C3313300570A48 /* GameState.hpp */; };
+		F323248219C3A54A00570A48 /* GameStateStart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F323248119C3A54A00570A48 /* GameStateStart.cpp */; };
 		F3B23A7119AE7E610064E08F /* libNordicOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */; };
 		F3B23A7219AE7E610064E08F /* libValkyrie.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A7019AE7E610064E08F /* libValkyrie.dylib */; };
 		F3B23A7319AE7E990064E08F /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB9F19A8D75B0047830E /* Forest.cpp */; };
@@ -32,7 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F39A5FCA19C0ECC200D4BC12 /* GameState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
+		F323247D19C3313300570A48 /* GameState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
+		F323247F19C3316700570A48 /* GameStateStart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameStateStart.hpp; sourceTree = "<group>"; };
+		F323248019C331BC00570A48 /* GameStateEditor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameStateEditor.hpp; sourceTree = "<group>"; };
+		F323248119C3A54A00570A48 /* GameStateStart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStateStart.cpp; sourceTree = "<group>"; };
 		F3B23A6B19AE7E500064E08F /* libGame.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libGame.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libNordicOS.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.dylib"; sourceTree = "<group>"; };
 		F3B23A7019AE7E610064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libValkyrie.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libValkyrie.dylib"; sourceTree = "<group>"; };
@@ -73,6 +78,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F323247C19C3313300570A48 /* GameState */ = {
+			isa = PBXGroup;
+			children = (
+				F323247D19C3313300570A48 /* GameState.hpp */,
+				F323247F19C3316700570A48 /* GameStateStart.hpp */,
+				F323248019C331BC00570A48 /* GameStateEditor.hpp */,
+				F323248119C3A54A00570A48 /* GameStateStart.cpp */,
+			);
+			path = GameState;
+			sourceTree = "<group>";
+		};
 		F3B239FD19AD2C3A0064E08F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +119,7 @@
 		F3B2CB9C19A8D75B0047830E /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				F323247C19C3313300570A48 /* GameState */,
 				F3B2CB9D19A8D75B0047830E /* buildNumber.hpp */,
 				F3B2CB9E19A8D75B0047830E /* Forest */,
 				F3B2CBA519A8D75B0047830E /* Game.cpp */,
@@ -112,7 +129,6 @@
 				F3B2CBAB19A8D75B0047830E /* Names */,
 				F3B2CBAE19A8D75B0047830E /* Settings */,
 				F3B2CBB119A8D75B0047830E /* Setup */,
-				F39A5FCA19C0ECC200D4BC12 /* GameState.hpp */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 				F3B23A8019AE7EA80064E08F /* Includes.hpp in Headers */,
 				F3B23A8119AE7EA80064E08F /* Markov.hpp in Headers */,
 				F3B23A8219AE7EA80064E08F /* Names.hpp in Headers */,
+				F323247E19C3313300570A48 /* GameState.hpp in Headers */,
 				F3B23A8319AE7EA80064E08F /* Settings.hpp in Headers */,
 				F3B23A8419AE7EA80064E08F /* Parser.hpp in Headers */,
 				F3B23A8519AE7EA80064E08F /* Setup.hpp in Headers */,
@@ -256,6 +273,7 @@
 				F3B23A7419AE7E990064E08F /* Species.cpp in Sources */,
 				F3B23A7519AE7E990064E08F /* Tree.cpp in Sources */,
 				F3B23A7619AE7E990064E08F /* Game.cpp in Sources */,
+				F323248219C3A54A00570A48 /* GameStateStart.cpp in Sources */,
 				F3B23A7719AE7E990064E08F /* Markov.cpp in Sources */,
 				F3B23A7819AE7E990064E08F /* Names.cpp in Sources */,
 				F3B23A7919AE7E990064E08F /* Settings.cpp in Sources */,

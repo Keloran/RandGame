@@ -83,7 +83,7 @@ namespace NordicArts {
             cStream << std::setfill(' ') << std::setw(2) << oTime.getHour() << ":";
             cStream << std::setfill('0') << std::setw(2) << oTime.getMinute() << ":";
             cStream << std::setfill('0') << std::setw(2) << oTime.getSecond() << ".";
-            cStream << std::setfill('0') << std::setw(3) << oTime.getMilliSecond() << "] ";
+            cStream << std::setfill('0') << std::setw(3) << oTime.getMilliSeconds() << "] ";
 
             // Message
             cStream << cLog << std::endl;

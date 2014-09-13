@@ -36,6 +36,10 @@ set(LibSources ${BasePath}/Valkyrie.cpp)
 # Includes
 list(APPEND LibHeaders ${BasePath}/Includes.hpp)
 
+# Color
+list(APPEND LibHeaders ${BasePath}/Color/Color.hpp)
+list(APPEND LibSources ${BasePath}/Color/Color.cpp)
+
 # Window
 list(APPEND LibHeaders ${BasePath}/Window/Window.hpp)
 list(APPEND LibSources ${BasePath}/Window/Window.cpp)

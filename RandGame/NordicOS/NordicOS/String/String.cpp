@@ -1,4 +1,5 @@
 #include "./String.hpp"
+#include "../Time/Time.hpp"
 
 namespace NordicArts {
     namespace NordicOS {

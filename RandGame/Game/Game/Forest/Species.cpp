@@ -1,4 +1,5 @@
 #include "./Species.hpp"
+#include <NordicOS/Time/Time.hpp>
 
 namespace NordicArts {
     namespace GameNS {

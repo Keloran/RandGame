@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F311F29219C3A9730057DF56 /* Errors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F311F29119C3A9730057DF56 /* Errors.cpp */; };
 		F3B23A1F19AE760C0064E08F /* libSQLite.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC1719A8DB3B0047830E /* libSQLite.dylib */; };
 		F3B23A2319AE764E0064E08F /* ExceptionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */; };
 		F3B23A2419AE764E0064E08F /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2B19A8D5420047830E /* FileHandler.cpp */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F311F29119C3A9730057DF56 /* Errors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errors.cpp; sourceTree = "<group>"; };
+		F3155AE919C3A8990021A0DE /* Errors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Errors.hpp; sourceTree = "<group>"; };
 		F3B23A1919AE75FB0064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libNordicOS.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23BFB19B338630064E08F /* Threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Threads.cpp; sourceTree = "<group>"; };
 		F3B23BFC19B338630064E08F /* Threads.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Threads.hpp; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 			children = (
 				F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */,
 				F3B2CB2919A8D5420047830E /* ExceptionHandler.hpp */,
+				F3155AE919C3A8990021A0DE /* Errors.hpp */,
+				F311F29119C3A9730057DF56 /* Errors.cpp */,
 			);
 			path = ExceptionHandler;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				F3B23A2319AE764E0064E08F /* ExceptionHandler.cpp in Sources */,
 				F3B23A2419AE764E0064E08F /* FileHandler.cpp in Sources */,
 				F3B23A2519AE764E0064E08F /* TextFileReader.cpp in Sources */,
+				F311F29219C3A9730057DF56 /* Errors.cpp in Sources */,
 				F3B23A2619AE764E0064E08F /* TextFileWriter.cpp in Sources */,
 				F3B23A2719AE764E0064E08F /* FileUtils.cpp in Sources */,
 				F3B23A2819AE764E0064E08F /* Logger.cpp in Sources */,

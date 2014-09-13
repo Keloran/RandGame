@@ -28,6 +28,11 @@ set(GameLibs ${GameDir}/Game.cpp)
 # Includes
 list(APPEND GameHeaders ${GameDir}/Includes.hpp)
 
+# GameState
+list(APPEND GameHeaders ${GameDir}/GameState/GameState.hpp)
+list(APPEND GameHeaders ${GameDir}/GameState/GameStateStart.hpp)
+list(APPEND GameHeaders ${GameDir}/GameState/GameStateEditor.hpp)
+
 # General
 include_directories(${GameDir})
 
