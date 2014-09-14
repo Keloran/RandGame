@@ -7,6 +7,7 @@
 // OS Specific Includes
 #if defined (__WIN32__) || defined(_WIN32) || defined(_WIN64)
     #include "./Windows/Windows.hpp"
+    #define NordicOS_Windows
 #else
     #include "./nonWindows/nonWindows.hpp"
 
