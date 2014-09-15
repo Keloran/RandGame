@@ -6,15 +6,19 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8BB0CC5C-838B-4B8E-8818-6DFF8FE98B3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RandGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</key>
 		<string>github.com:Keloran/RandGame.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RandGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BB5BB56FE2DE07E926F111E98FEDA6C98B4F7AFD</key>
-		<string>RandGame</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:Keloran/RandGame.git</string>
