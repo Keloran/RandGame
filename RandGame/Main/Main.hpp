@@ -26,6 +26,7 @@
 
 // Game Stuff
 #include <Game/Game.hpp>
+#include <Game/GameState/GameStateStart.hpp>
 
 // NordicOS Stuff
 #include <NordicOS/OS.hpp>
@@ -35,8 +36,6 @@
 
 // Namespace
 namespace NordicArts {
-    void ThreadUpdateGame(GameNS::Game *pGame, GameNS::GameState eGS);
-    void ThreadRenderGame(GameNS::Game *pGame, GameNS::GameState eGS);
     void handleException(std::exception_ptr ptrException);
     
     int main();

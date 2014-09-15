@@ -152,6 +152,29 @@ add_subdirectory(${NOS}/SQLite)
 
 # Implementations Stuff
 if (WIN32)
+    # Mutex    
+    link_directories(${NOS}/Windows/Mutex)
+    include_directories(${NOS}/Windows/Mutex)
+    list(APPEND LibHeaders ${NOS}/Windows/Mutex/Mutex.hpp)
+    list(APPEND LibSources ${NOS}/Windows/Mutex/Mutex.cpp)
+    
+    # Sleep
+    link_directories(${NOS}/nonWindows/Sleep)
+    include_directories(${NOS}/nonWindows/Sleep)
+    list(APPEND LibHeaders ${NOS}/Windows/Sleep/Sleep.hpp)
+    list(APPEND LibSources ${NOS}/Windows/Sleep/Sleep.cpp)
+
+    # Thread
+    link_directories(${NOS}/Windows/Thread)
+    include_directories(${NOS}/Windows/Thread)
+    list(APPEND LibHeaders ${NOS}/Windows/Thread/Thread.hpp)    
+    list(APPEND LibSources ${NOS}/Windows/Thread/Thread.cpp)
+
+    # ThreadLocal    
+    link_directories(${NOS}/Windows/ThreadLocal)
+    include_directories(${NOS}/Windows/ThreadLocal)
+    list(APPEND LibHeaders ${NOS}/Windows/ThreadLocal/ThreadLocal.hpp)
+    list(APPEND LibSources ${NOS}/Windows/ThreadLocal/ThreadLocal.cpp)
 else()
     # Mutex
     link_directories(${NOS}/nonWindows/Mutex)

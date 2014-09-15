@@ -19,7 +19,8 @@ namespace NordicArts {
 
             GameNS::Game::Game oGame(pLogger);
             GameNS::Game::Game* pGame = &oGame;
-            
+
+            pGame->pushState(new GameStateStart(pGame));            
             pGame->gameLoop();
         } catch (std::exception &ex) {
             throw NordicOS::ExceptionHandler::ExceptionHandler(ex.what());

@@ -210,19 +210,19 @@ namespace NordicArts {
         Clock::Clock() {
             Time oTime;
             
-            m_iStartTime = oTime.getSeconds();
+            m_iStartTime = oTime.getMicroSeconds();
         }
         
-        int Clock::getElapsedTime() const {
+        int64_t Clock::getElapsedTime() const {
             Time oTime;
             
-            return (oTime.getSeconds() - m_iStartTime);
+            return (oTime.getMicroSeconds() - m_iStartTime);
         }
         
-        int Clock::restart() {
+        int64_t Clock::restart() {
             Time oTime;
-            int iElapsed    = (oTime.getSeconds() - m_iStartTime);
-            m_iStartTime    = oTime.getSeconds();
+            int64_t iElapsed    = (oTime.getMicroSeconds() - m_iStartTime);
+            m_iStartTime        = oTime.getMicroSeconds();
             
             return iElapsed;
         }

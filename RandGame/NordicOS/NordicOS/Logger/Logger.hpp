@@ -37,6 +37,7 @@ namespace NordicArts {
             static void log(const char *cLog);
             static void log(std::string cString);
             static void log(float fLog);
+            static void log(int iLog);
             static void log(int iUnknown, const char *cLog);
             static void log(LoggerType eType, const std::string &cLog);
             static void log(LoggerType eType, const std::ostringstream &cLog);

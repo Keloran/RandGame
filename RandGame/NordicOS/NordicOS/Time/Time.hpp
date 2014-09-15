@@ -94,14 +94,14 @@ namespace NordicArts {
         public:
         protected:
         private:
-            int m_iStartTime;
+            int64_t m_iStartTime;
             
         // Methods
         public:
             Clock();
             
-            int getElapsedTime() const;
-            int restart();
+            int64_t getElapsedTime() const;
+            int64_t restart();
             
         protected:
         private:

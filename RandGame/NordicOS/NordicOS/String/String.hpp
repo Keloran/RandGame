@@ -9,6 +9,7 @@ namespace NordicArts {
         std::string getString(char cChar);
         std::string getString(float fFloat);
         std::string getString(int iInt);
+        std::string getString(int64_t iInt);
 
         std::string randString();
         std::string randString(int iLength);

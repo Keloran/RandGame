@@ -37,28 +37,43 @@ namespace NordicArts {
         
         void Game::gameLoop() {
             NordicOS::Clock oClock;
+
+            m_pLogger->log("Start Loop");
             
             while (this->m_oWindow.isOpen()) {
                 int iElapsed = oClock.restart();
+                m_pLogger->log("Elapsed");
+                m_pLogger->log(iElapsed);
                 
                 // Not in a state
                 if (peekState() == nullptr) {
+                    m_pLogger->log("Null PeekState");
                     continue;
                 }
-                
+               
+                m_pLogger->log("Handle Inputs"); 
                 peekState()->handleInput();
+
+                m_pLogger->log("Update");
                 peekState()->update(iElapsed);
                 
+                m_pLogger->log("Clear");
                 this->m_oWindow.clear(ValkyrieNS::Color::Black);
                 
+                m_pLogger->log("Draw");
                 peekState()->draw(iElapsed);
                 
+                m_pLogger->log("Display");
                 this->m_oWindow.display();
             }
         }
         
         Game::Game() {
             doWindow();
+
+            NordicOS::Logger::Logger oLogger("RandGame.log");
+            NordicOS::Logger::Logger *pLogger = &oLogger;
+            m_pLogger = pLogger;
         }
         
         Game::Game(NordicOS::Logger *pLogger) {
@@ -81,6 +96,8 @@ namespace NordicArts {
             while(!this->m_sStates.empty()) {
                 popState();
             }
+
+            m_pLogger = nullptr;
         }
 
         // Build Number

@@ -32,6 +32,16 @@ namespace NordicArts {
             return returnString;
         }
 
+        std::string getString(int64_t iInt) {
+            std::stringstream stringStream;
+            std::string returnString;
+    
+            stringStream << iInt;
+            stringStream >> returnString;
+
+            return returnString;
+        }
+
         // Generate Random String
         std::string randString() {
             return randString(15);
