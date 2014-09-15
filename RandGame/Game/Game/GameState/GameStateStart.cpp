@@ -59,14 +59,10 @@ namespace NordicArts {
             return;
         }
 
-        GameStateStart::GameStateStart(Game *pGame) {
-            this->m_pGame = pGame;
-            
-            sf::Vector2f vPos = sf::Vector2f(this->m_pGame->m_owindow.getSize());
-            
-            this->m_oView.setSize(vPos);
-            vPos *= 0.5f;
-            this->m_oView.setCenter(vPos);
+        void GameStateStart::loadGame() {
+            this->m_pGame->pushState(new GameStateEditor(this->m_pGame));
+        
+            return;
         }
     };
 };

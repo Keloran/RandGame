@@ -31,7 +31,9 @@ list(APPEND GameHeaders ${GameDir}/Includes.hpp)
 # GameState
 list(APPEND GameHeaders ${GameDir}/GameState/GameState.hpp)
 list(APPEND GameHeaders ${GameDir}/GameState/GameStateStart.hpp)
+list(APPEND GameSources ${GameDir}/GameState/GameStateStart.cpp)
 list(APPEND GameHeaders ${GameDir}/GameState/GameStateEditor.hpp)
+list(APPEND GameSources ${GameDir}/GameState/GameStateEditor.cpp)
 
 # General
 include_directories(${GameDir})

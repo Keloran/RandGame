@@ -31,7 +31,7 @@ namespace NordicArts {
             
         protected:
         private:
-            
+            void loadGame();
         };
     };
 };

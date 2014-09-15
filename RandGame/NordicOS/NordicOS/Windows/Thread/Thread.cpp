@@ -1,5 +1,5 @@
 #include "./Thread.hpp"
-#include "../../Thread/Thread.hpp"
+#include "../../Threading/Thread/Thread.hpp"
 #include "../../ExceptionHandler/Error.hpp"
 #include <cassert>
 #include <process.h>

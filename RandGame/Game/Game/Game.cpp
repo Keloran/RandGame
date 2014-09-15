@@ -5,6 +5,8 @@ namespace NordicArts {
     namespace GameNS {
         void Game::pushState(GameState *pState) {
             this->m_sStates.push(pState);
+        
+            return;
         }
         
         void Game::popState() {

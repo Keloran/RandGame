@@ -97,29 +97,29 @@ list(APPEND LibHeaders ${NOS}/FileHandler/TextFileReader/TextFileReader.hpp)
 list(APPEND LibSources ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
 
 # Lock
-link_directories(${NOS}/Lock)
-include_directories(${NOS}/Lock)
-list(APPEND LibHeaders ${NOS}/Lock/Lock.hpp)
-list(APPEND LibHeaders ${NOS}/Lock/Lock.cpp)
+link_directories(${NOS}/Threading/Lock)
+include_directories(${NOS}/Threading/Lock)
+list(APPEND LibHeaders ${NOS}/Threading/Lock/Lock.hpp)
+list(APPEND LibHeaders ${NOS}/Threading/Lock/Lock.cpp)
 
 # Mutex
-link_directories(${NOS}/Mutex)
-include_directories(${NOS}/Mutex)
-list(APPEND LibHeaders ${NOS}/Mutex/Mutex.hpp)
-list(APPEND LibSources ${NOS}/Mutex/Mutex.cpp)
+link_directories(${NOS}/Threading/Mutex)
+include_directories(${NOS}/Threading/Mutex)
+list(APPEND LibHeaders ${NOS}/Threading/Mutex/Mutex.hpp)
+list(APPEND LibSources ${NOS}/Threading/Mutex/Mutex.cpp)
 
 # Thread
-link_directories(${NOS}/Thread)
-include_directories(${NOS}/Thread)
-list(APPEND LibHeaders ${NOS}/Thread/Thread.hpp)
-list(APPEND LibHeaders ${NOS}/Thread/Thread.inl)
-list(APPEND LibSources ${NOS}/Thread/Thread.cpp)
+link_directories(${NOS}/Threading/Thread)
+include_directories(${NOS}/Threading/Thread)
+list(APPEND LibHeaders ${NOS}/Threading/Thread/Thread.hpp)
+list(APPEND LibHeaders ${NOS}/Threading/Thread/Thread.inl)
+list(APPEND LibSources ${NOS}/Threading/Thread/Thread.cpp)
 
 # ThreadLocal
-link_directories(${NOS}/ThreadLocal)
-include_directories(${NOS}/ThreadLocal)
-list(APPEND LibHeaders ${NOS}/ThreadLocal/ThreadLocal.hpp)
-list(APPEND LibSources ${NOS}/ThreadLocal/ThreadLocal.cpp)
+link_directories(${NOS}/Threading/ThreadLocal)
+include_directories(${NOS}/Threading/ThreadLocal)
+list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocal.hpp)
+list(APPEND LibSources ${NOS}/Threading/ThreadLocal/ThreadLocal.cpp)
 
 # Threads
 link_directories(${NOS}/Threads)
@@ -128,10 +128,10 @@ list(APPEND LibHeaders ${NOS}/Threads/Threads.hpp)
 list(APPEND LibSources ${NOS}/Threads/Threads.cpp)
 
 # Sleep
-link_directories(${NOS}/Sleep)
-include_directories(${NOS}/Sleep)
-list(APPEND LibHeaders ${NOS}/Sleep/Sleep.hpp)
-list(APPEND LibSources ${NOS}/Sleep/Sleep.cpp)
+link_directories(${NOS}/Threading/Sleep)
+include_directories(${NOS}/Threading/Sleep)
+list(APPEND LibHeaders ${NOS}/Threading/Sleep/Sleep.hpp)
+list(APPEND LibSources ${NOS}/Threading/Sleep/Sleep.cpp)
 
 # Singleton
 link_directories(${NOS}/Singleton)

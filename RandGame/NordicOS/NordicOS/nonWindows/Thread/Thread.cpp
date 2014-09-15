@@ -7,7 +7,7 @@
 //
 
 #include "./Thread.hpp"
-#include "../../Thread/Thread.hpp"
+#include "../../Threading/Thread/Thread.hpp"
 #include <iostream>
 #include <cassert>
 
