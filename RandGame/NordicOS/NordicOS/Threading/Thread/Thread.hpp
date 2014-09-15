@@ -9,8 +9,8 @@
 #ifndef NordicArts_NordicOS_Thread_H
 #define NordicArts_NordicOS_Thread_H
 
-#include "../OS.hpp"
-#include "../NonCopyable/NonCopyable.hpp"
+#include "../../OS.hpp"
+#include "../../NonCopyable/NonCopyable.hpp"
 
 namespace NordicArts {
     namespace NordicOS {

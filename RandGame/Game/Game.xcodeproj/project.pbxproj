@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F323247E19C3313300570A48 /* GameState.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F323247D19C3313300570A48 /* GameState.hpp */; };
 		F323248219C3A54A00570A48 /* GameStateStart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F323248119C3A54A00570A48 /* GameStateStart.cpp */; };
+		F3A0949819C77498008DA61A /* GameStateEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0949719C77498008DA61A /* GameStateEditor.cpp */; };
 		F3B23A7119AE7E610064E08F /* libNordicOS.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */; };
 		F3B23A7219AE7E610064E08F /* libValkyrie.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B23A7019AE7E610064E08F /* libValkyrie.dylib */; };
 		F3B23A7319AE7E990064E08F /* Forest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB9F19A8D75B0047830E /* Forest.cpp */; };
@@ -38,6 +39,7 @@
 		F323247F19C3316700570A48 /* GameStateStart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameStateStart.hpp; sourceTree = "<group>"; };
 		F323248019C331BC00570A48 /* GameStateEditor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameStateEditor.hpp; sourceTree = "<group>"; };
 		F323248119C3A54A00570A48 /* GameStateStart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStateStart.cpp; sourceTree = "<group>"; };
+		F3A0949719C77498008DA61A /* GameStateEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStateEditor.cpp; sourceTree = "<group>"; };
 		F3B23A6B19AE7E500064E08F /* libGame.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libGame.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23A6F19AE7E610064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libNordicOS.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libNordicOS.dylib"; sourceTree = "<group>"; };
 		F3B23A7019AE7E610064E08F /* libValkyrie.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libValkyrie.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/RandGame-dqbvgwesicqjspdvvwhpcjcwzrai/Build/Products/Debug/libValkyrie.dylib"; sourceTree = "<group>"; };
@@ -81,12 +83,29 @@
 		F323247C19C3313300570A48 /* GameState */ = {
 			isa = PBXGroup;
 			children = (
+				F3A0949A19C774AB008DA61A /* GameStateStart */,
+				F3A0949919C7749E008DA61A /* GameStateEditor */,
 				F323247D19C3313300570A48 /* GameState.hpp */,
-				F323247F19C3316700570A48 /* GameStateStart.hpp */,
-				F323248019C331BC00570A48 /* GameStateEditor.hpp */,
-				F323248119C3A54A00570A48 /* GameStateStart.cpp */,
 			);
 			path = GameState;
+			sourceTree = "<group>";
+		};
+		F3A0949919C7749E008DA61A /* GameStateEditor */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0949719C77498008DA61A /* GameStateEditor.cpp */,
+				F323248019C331BC00570A48 /* GameStateEditor.hpp */,
+			);
+			name = GameStateEditor;
+			sourceTree = "<group>";
+		};
+		F3A0949A19C774AB008DA61A /* GameStateStart */ = {
+			isa = PBXGroup;
+			children = (
+				F323247F19C3316700570A48 /* GameStateStart.hpp */,
+				F323248119C3A54A00570A48 /* GameStateStart.cpp */,
+			);
+			name = GameStateStart;
 			sourceTree = "<group>";
 		};
 		F3B239FD19AD2C3A0064E08F /* Libraries */ = {
@@ -278,6 +297,7 @@
 				F3B23A7819AE7E990064E08F /* Names.cpp in Sources */,
 				F3B23A7919AE7E990064E08F /* Settings.cpp in Sources */,
 				F3B23A7A19AE7E990064E08F /* Parser.cpp in Sources */,
+				F3A0949819C77498008DA61A /* GameStateEditor.cpp in Sources */,
 				F3B23A7B19AE7E990064E08F /* Setup.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

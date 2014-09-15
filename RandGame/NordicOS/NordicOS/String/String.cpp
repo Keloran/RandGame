@@ -1,8 +1,11 @@
 #include "./String.hpp"
 #include "../Time/Time.hpp"
+#include "./UTF.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
+        const std::size_t String::InvalidPos = std::basic_string<int32_t>::npos;
+        
         // Get String from input
         std::string getString(char cChar) {
             std::stringstream stringStream;
@@ -84,6 +87,14 @@ namespace NordicArts {
             } catch ( ... ) {
                 return 0;
             }
+        }
+        
+        // Class Stuff
+        String::String() {
+        }
+        
+        String::String(char cString, const std::locale &oLocale) {
+            m_cString += UTF32::decodeAnsi(cString, oLocale);
         }
     };
 };

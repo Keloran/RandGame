@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F311643819C44CEC0003AA52 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F311643619C44CEC0003AA52 /* Mutex.cpp */; };
-		F311643919C44CEC0003AA52 /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F311643719C44CEC0003AA52 /* Mutex.hpp */; };
 		F311F29219C3A9730057DF56 /* Errors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F311F29119C3A9730057DF56 /* Errors.cpp */; };
 		F3A0946019C49E3D008DA61A /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0945519C49E3D008DA61A /* Mutex.cpp */; };
 		F3A0946119C49E3D008DA61A /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0945619C49E3D008DA61A /* Mutex.hpp */; };
@@ -18,6 +16,16 @@
 		F3A0946519C49E3D008DA61A /* Thread.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0945C19C49E3D008DA61A /* Thread.hpp */; };
 		F3A0946619C49E3D008DA61A /* ThreadLocal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0945E19C49E3D008DA61A /* ThreadLocal.cpp */; };
 		F3A0946719C49E3D008DA61A /* ThreadLocal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0945F19C49E3D008DA61A /* ThreadLocal.hpp */; };
+		F3A0948D19C77489008DA61A /* Lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0947E19C77489008DA61A /* Lock.cpp */; };
+		F3A0948E19C77489008DA61A /* Lock.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0947F19C77489008DA61A /* Lock.hpp */; };
+		F3A0948F19C77489008DA61A /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0948119C77489008DA61A /* Mutex.cpp */; };
+		F3A0949019C77489008DA61A /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0948219C77489008DA61A /* Mutex.hpp */; };
+		F3A0949119C77489008DA61A /* Sleep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0948419C77489008DA61A /* Sleep.cpp */; };
+		F3A0949219C77489008DA61A /* Sleep.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0948519C77489008DA61A /* Sleep.hpp */; };
+		F3A0949319C77489008DA61A /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0948719C77489008DA61A /* Thread.cpp */; };
+		F3A0949419C77489008DA61A /* Thread.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0948819C77489008DA61A /* Thread.hpp */; };
+		F3A0949519C77489008DA61A /* ThreadLocal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0948B19C77489008DA61A /* ThreadLocal.cpp */; };
+		F3A0949619C77489008DA61A /* ThreadLocal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0948C19C77489008DA61A /* ThreadLocal.hpp */; };
 		F3B23A1F19AE760C0064E08F /* libSQLite.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B2CC1719A8DB3B0047830E /* libSQLite.dylib */; };
 		F3B23A2319AE764E0064E08F /* ExceptionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2819A8D5420047830E /* ExceptionHandler.cpp */; };
 		F3B23A2419AE764E0064E08F /* FileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3B2CB2B19A8D5420047830E /* FileHandler.cpp */; };
@@ -72,8 +80,6 @@
 
 /* Begin PBXFileReference section */
 		F311643519C44C3E0003AA52 /* NonCopyable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
-		F311643619C44CEC0003AA52 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
-		F311643719C44CEC0003AA52 /* Mutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mutex.hpp; sourceTree = "<group>"; };
 		F311F29119C3A9730057DF56 /* Errors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errors.cpp; sourceTree = "<group>"; };
 		F3155AE919C3A8990021A0DE /* Errors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Errors.hpp; sourceTree = "<group>"; };
 		F3A0945519C49E3D008DA61A /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
@@ -84,6 +90,19 @@
 		F3A0945C19C49E3D008DA61A /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
 		F3A0945E19C49E3D008DA61A /* ThreadLocal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadLocal.cpp; sourceTree = "<group>"; };
 		F3A0945F19C49E3D008DA61A /* ThreadLocal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadLocal.hpp; sourceTree = "<group>"; };
+		F3A0947E19C77489008DA61A /* Lock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lock.cpp; sourceTree = "<group>"; };
+		F3A0947F19C77489008DA61A /* Lock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lock.hpp; sourceTree = "<group>"; };
+		F3A0948119C77489008DA61A /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		F3A0948219C77489008DA61A /* Mutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mutex.hpp; sourceTree = "<group>"; };
+		F3A0948419C77489008DA61A /* Sleep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sleep.cpp; sourceTree = "<group>"; };
+		F3A0948519C77489008DA61A /* Sleep.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sleep.hpp; sourceTree = "<group>"; };
+		F3A0948719C77489008DA61A /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		F3A0948819C77489008DA61A /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
+		F3A0948919C77489008DA61A /* Thread.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Thread.inl; sourceTree = "<group>"; };
+		F3A0948B19C77489008DA61A /* ThreadLocal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadLocal.cpp; sourceTree = "<group>"; };
+		F3A0948C19C77489008DA61A /* ThreadLocal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadLocal.hpp; sourceTree = "<group>"; };
+		F3A0949B19C77B11008DA61A /* UTF.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UTF.hpp; sourceTree = "<group>"; };
+		F3A0949C19C77B2A008DA61A /* UTF.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = UTF.inl; sourceTree = "<group>"; };
 		F3B23A1919AE75FB0064E08F /* libNordicOS.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libNordicOS.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B23BFB19B338630064E08F /* Threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Threads.cpp; sourceTree = "<group>"; };
 		F3B23BFC19B338630064E08F /* Threads.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Threads.hpp; sourceTree = "<group>"; };
@@ -180,13 +199,69 @@
 			path = ThreadLocal;
 			sourceTree = "<group>";
 		};
+		F3A0947C19C77489008DA61A /* Threading */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0947D19C77489008DA61A /* Lock */,
+				F3A0948019C77489008DA61A /* Mutex */,
+				F3A0948319C77489008DA61A /* Sleep */,
+				F3A0948619C77489008DA61A /* Thread */,
+				F3A0948A19C77489008DA61A /* ThreadLocal */,
+			);
+			path = Threading;
+			sourceTree = "<group>";
+		};
+		F3A0947D19C77489008DA61A /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0947E19C77489008DA61A /* Lock.cpp */,
+				F3A0947F19C77489008DA61A /* Lock.hpp */,
+			);
+			path = Lock;
+			sourceTree = "<group>";
+		};
+		F3A0948019C77489008DA61A /* Mutex */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0948119C77489008DA61A /* Mutex.cpp */,
+				F3A0948219C77489008DA61A /* Mutex.hpp */,
+			);
+			path = Mutex;
+			sourceTree = "<group>";
+		};
+		F3A0948319C77489008DA61A /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0948419C77489008DA61A /* Sleep.cpp */,
+				F3A0948519C77489008DA61A /* Sleep.hpp */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		F3A0948619C77489008DA61A /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0948719C77489008DA61A /* Thread.cpp */,
+				F3A0948819C77489008DA61A /* Thread.hpp */,
+				F3A0948919C77489008DA61A /* Thread.inl */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		F3A0948A19C77489008DA61A /* ThreadLocal */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0948B19C77489008DA61A /* ThreadLocal.cpp */,
+				F3A0948C19C77489008DA61A /* ThreadLocal.hpp */,
+			);
+			path = ThreadLocal;
+			sourceTree = "<group>";
+		};
 		F3B23A8919AFC1590064E08F /* Threads */ = {
 			isa = PBXGroup;
 			children = (
 				F3B23BFB19B338630064E08F /* Threads.cpp */,
 				F3B23BFC19B338630064E08F /* Threads.hpp */,
-				F311643619C44CEC0003AA52 /* Mutex.cpp */,
-				F311643719C44CEC0003AA52 /* Mutex.hpp */,
 			);
 			path = Threads;
 			sourceTree = "<group>";
@@ -211,6 +286,7 @@
 		F3B2CB1C19A8D5420047830E /* NordicOS */ = {
 			isa = PBXGroup;
 			children = (
+				F3A0947C19C77489008DA61A /* Threading */,
 				F311643419C44C100003AA52 /* NonCopyable */,
 				F3B23A8919AFC1590064E08F /* Threads */,
 				F3B2CB2319A8D5420047830E /* buildNumber.hpp */,
@@ -338,6 +414,8 @@
 				F3B2CB5319A8D5420047830E /* String.cpp */,
 				F3B2CB5419A8D5420047830E /* String.hpp */,
 				F3B2CB5519A8D5420047830E /* String.inl */,
+				F3A0949B19C77B11008DA61A /* UTF.hpp */,
+				F3A0949C19C77B2A008DA61A /* UTF.inl */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -384,13 +462,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A0949419C77489008DA61A /* Thread.hpp in Headers */,
+				F3A0949219C77489008DA61A /* Sleep.hpp in Headers */,
 				F3B23A3319AE766D0064E08F /* buildNumber.hpp in Headers */,
 				F3A0946319C49E3D008DA61A /* Sleep.hpp in Headers */,
-				F311643919C44CEC0003AA52 /* Mutex.hpp in Headers */,
 				F3B23BFE19B338630064E08F /* Threads.hpp in Headers */,
 				F3B23A3519AE766D0064E08F /* ExceptionHandler.hpp in Headers */,
 				F3B23A3619AE766D0064E08F /* FileHandler.hpp in Headers */,
 				F3B23A3719AE766D0064E08F /* FileUtils.hpp in Headers */,
+				F3A0948E19C77489008DA61A /* Lock.hpp in Headers */,
 				F3B23A3819AE766D0064E08F /* TextFileReader.hpp in Headers */,
 				F3B23A3919AE766D0064E08F /* TextFileWriter.hpp in Headers */,
 				F3B23A3A19AE766D0064E08F /* Logger.hpp in Headers */,
@@ -405,7 +485,9 @@
 				F3B23A4219AE766D0064E08F /* String.hpp in Headers */,
 				F3A0946519C49E3D008DA61A /* Thread.hpp in Headers */,
 				F3B23A4319AE766D0064E08F /* String.inl in Headers */,
+				F3A0949619C77489008DA61A /* ThreadLocal.hpp in Headers */,
 				F3B23A4419AE766D0064E08F /* Time.hpp in Headers */,
+				F3A0949019C77489008DA61A /* Mutex.hpp in Headers */,
 				F3B23A4519AE766E0064E08F /* Utility.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,17 +571,21 @@
 				F3B23A2519AE764E0064E08F /* TextFileReader.cpp in Sources */,
 				F311F29219C3A9730057DF56 /* Errors.cpp in Sources */,
 				F3B23A2619AE764E0064E08F /* TextFileWriter.cpp in Sources */,
+				F3A0948D19C77489008DA61A /* Lock.cpp in Sources */,
 				F3B23A2719AE764E0064E08F /* FileUtils.cpp in Sources */,
 				F3B23A2819AE764E0064E08F /* Logger.cpp in Sources */,
 				F3B23A2A19AE764E0064E08F /* Simplex.cpp in Sources */,
 				F3B23A2B19AE764E0064E08F /* OS.cpp in Sources */,
+				F3A0949319C77489008DA61A /* Thread.cpp in Sources */,
 				F3B23A2C19AE764E0064E08F /* OSX.mm in Sources */,
 				F3A0946419C49E3D008DA61A /* Thread.cpp in Sources */,
+				F3A0948F19C77489008DA61A /* Mutex.cpp in Sources */,
 				F3B23A2D19AE764E0064E08F /* Singleton.cpp in Sources */,
 				F3B23A2E19AE764E0064E08F /* String.cpp in Sources */,
+				F3A0949119C77489008DA61A /* Sleep.cpp in Sources */,
 				F3A0946219C49E3D008DA61A /* Sleep.cpp in Sources */,
+				F3A0949519C77489008DA61A /* ThreadLocal.cpp in Sources */,
 				F3B23A2F19AE764E0064E08F /* Time.cpp in Sources */,
-				F311643819C44CEC0003AA52 /* Mutex.cpp in Sources */,
 				F3B23A3019AE764E0064E08F /* Utility.cpp in Sources */,
 				F3A0946619C49E3D008DA61A /* ThreadLocal.cpp in Sources */,
 				F3B23BFD19B338630064E08F /* Threads.cpp in Sources */,

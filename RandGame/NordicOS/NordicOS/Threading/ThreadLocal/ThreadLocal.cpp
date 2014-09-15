@@ -9,9 +9,9 @@
 #include "./ThreadLocal.hpp"
 
 #if defined(NordicOS_Windows)
-    #include "../Windows/ThreadLocal/ThreadLocal.hpp"
+    #include "../../Windows/ThreadLocal/ThreadLocal.hpp"
 #else
-    #include "../nonWindows/ThreadLocal/ThreadLocal.hpp"
+    #include "../../nonWindows/ThreadLocal/ThreadLocal.hpp"
 #endif
 
 namespace NordicArts {

@@ -8,8 +8,8 @@
 #ifndef NordicArts_NordicOS_ThreadLocal_H
 #define NordicArts_NordicOS_ThreadLocal_H
 
-#include "../OS.hpp"
-#include "../NonCopyable/NonCopyable.hpp"
+#include "../../OS.hpp"
+#include "../../NonCopyable/NonCopyable.hpp"
 #include <cstdlib>
 
 namespace NordicArts {

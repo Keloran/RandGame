@@ -9,9 +9,9 @@
 #include "./Mutex.hpp"
 
 #if defined(NordicOS_Windows)
-    #include "../Windows/Mutex/Mutex.hpp"
+    #include "../../Windows/Mutex/Mutex.hpp"
 #else
-    #include "../nonWindows/Mutex/Mutex.hpp"
+    #include "../../nonWindows/Mutex/Mutex.hpp"
 #endif
 
 namespace NordicArts {

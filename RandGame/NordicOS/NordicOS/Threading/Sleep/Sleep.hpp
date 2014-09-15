@@ -9,8 +9,8 @@
 #ifndef NordicArts_NordicOS_Sleep_H
 #define NordicArts_NordicOS_Sleep_H
 
-#include "../OS.hpp"
-#include "../Time/Time.hpp"
+#include "../../OS.hpp"
+#include "../../Time/Time.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
