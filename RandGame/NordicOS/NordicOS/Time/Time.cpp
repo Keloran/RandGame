@@ -2,6 +2,8 @@
 
 namespace NordicArts {
     namespace NordicOS {
+        const Time Time::Zero;
+
         // Time
         Time::Time() : m_iMicroseconds(0) {
             m_tpSystemTime      = std::chrono::system_clock::now();
@@ -163,6 +165,9 @@ namespace NordicArts {
         Time operator *(Time oLeft, float fRight) {
             return microseconds(oLeft.asSeconds() * fRight);
         }
+        Time operator *(Time oLeft, int64_t iRight) {
+            return microseconds(oLeft.asMicroseconds() * iRight);
+        }
         Time operator *(float fLeft, Time oRight) {
             return (oRight * fLeft);
         }
@@ -179,25 +184,25 @@ namespace NordicArts {
             return microseconds(oLeft.asMicroseconds() % oRight.asMicroseconds());
         }
         
-        Time &operator +=(Time oLeft, Time oRight) {
+        Time &operator +=(Time &oLeft, Time oRight) {
             return (oLeft = (oLeft + oRight));
         }
-        Time &operator -=(Time oLeft, Time oRight) {
+        Time &operator -=(Time &oLeft, Time oRight) {
             return (oLeft = (oLeft - oRight));
         }
-        Time &operator *=(Time oLeft, float fRight) {
+        Time &operator *=(Time &oLeft, float fRight) {
             return (oLeft = (oLeft * fRight));
         }
-        Time &operator *=(Time oLeft, int64_t iRight) {
+        Time &operator *=(Time &oLeft, int64_t iRight) {
             return (oLeft = (oLeft * iRight));
         }
-        Time &operator /=(Time oLeft, float fRight) {
+        Time &operator /=(Time &oLeft, float fRight) {
             return (oLeft = (oLeft / fRight));
         }
-        Time &operator /=(Time oLeft, int64_t iRight) {
+        Time &operator /=(Time &oLeft, int64_t iRight) {
             return (oLeft = (oLeft / iRight));
         }
-        Time &operator %=(Time oLeft, Time oRight) {
+        Time &operator %=(Time &oLeft, Time oRight) {
             return (oLeft = (oLeft % oRight));
         }
         

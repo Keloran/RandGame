@@ -9,9 +9,9 @@
 #include "./Thread.hpp"
 
 #if defined(__WIN32__) || defined(_WIN64)
-    #include "../Windows/Thread/ThreadImp.hpp"
+    #include "../Windows/Thread/Thread.hpp"
 #else
-    #include "../nonWindows/Thread/ThreadImp.hpp"
+    #include "../nonWindows/Thread/Thread.hpp"
 #endif
 
 namespace NordicArts {

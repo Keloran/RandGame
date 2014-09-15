@@ -67,6 +67,15 @@ include_directories(${NOS}/ExceptionHandler)
 list(APPEND LibHeaders ${NOS}/ExceptionHandler/ExceptionHandler.hpp)
 list(APPEND LibSources ${NOS}/ExceptionHandler/ExceptionHandler.cpp)
 
+# Error Handler
+list(APPEND LibHeaders ${NOS}/ExceptionHandler/Errors.hpp)
+list(APPEND LibSources ${NOS}/ExceptionHandler/Errors.cpp)
+
+# NonCopyable
+link_directories(${NOS}/NonCopyable)
+include_directories(${NOS}/NonCopyable)
+list(APPEND LibHeaders ${NOS}/NonCopyable/NonCopyable.hpp)
+
 # File Handler
 link_directories(${NOS}/FileHandler)
 include_directories(${NOS}/FileHandler)
@@ -87,11 +96,42 @@ include_directories(${NOS}/FileHandler/TextFileReader)
 list(APPEND LibHeaders ${NOS}/FileHandler/TextFileReader/TextFileReader.hpp)
 list(APPEND LibSources ${NOS}/FileHandler/TextFileReader/TextFileReader.cpp)
 
+# Lock
+link_directories(${NOS}/Lock)
+include_directories(${NOS}/Lock)
+list(APPEND LibHeaders ${NOS}/Lock/Lock.hpp)
+list(APPEND LibHeaders ${NOS}/Lock/Lock.cpp)
+
+# Mutex
+link_directories(${NOS}/Mutex)
+include_directories(${NOS}/Mutex)
+list(APPEND LibHeaders ${NOS}/Mutex/Mutex.hpp)
+list(APPEND LibSources ${NOS}/Mutex/Mutex.cpp)
+
+# Thread
+link_directories(${NOS}/Thread)
+include_directories(${NOS}/Thread)
+list(APPEND LibHeaders ${NOS}/Thread/Thread.hpp)
+list(APPEND LibHeaders ${NOS}/Thread/Thread.inl)
+list(APPEND LibSources ${NOS}/Thread/Thread.cpp)
+
+# ThreadLocal
+link_directories(${NOS}/ThreadLocal)
+include_directories(${NOS}/ThreadLocal)
+list(APPEND LibHeaders ${NOS}/ThreadLocal/ThreadLocal.hpp)
+list(APPEND LibSources ${NOS}/ThreadLocal/ThreadLocal.cpp)
+
 # Threads
 link_directories(${NOS}/Threads)
 include_directories(${NOS}/Threads)
 list(APPEND LibHeaders ${NOS}/Threads/Threads.hpp)
 list(APPEND LibSources ${NOS}/Threads/Threads.cpp)
+
+# Sleep
+link_directories(${NOS}/Sleep)
+include_directories(${NOS}/Sleep)
+list(APPEND LibHeaders ${NOS}/Sleep/Sleep.hpp)
+list(APPEND LibSources ${NOS}/Sleep/Sleep.cpp)
 
 # Singleton
 link_directories(${NOS}/Singleton)
@@ -109,6 +149,34 @@ list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 link_directories(${NOS}/SQLite)
 include_directories(${NOS}/SQLite)
 add_subdirectory(${NOS}/SQLite)
+
+# Implementations Stuff
+if (WIN32)
+else()
+    # Mutex
+    link_directories(${NOS}/nonWindows/Mutex)
+    include_directories(${NOS}/nonWindows/Mutex)
+    list(APPEND LibHeaders ${NOS}/nonWindows/Mutex/Mutex.hpp)
+    list(APPEND LibSources ${NOS}/nonWindows/Mutex/Mutex.cpp)
+
+    # Sleep
+    link_directories(${NOS}/nonWindows/Sleep)
+    include_directories(${NOS}/nonWindows/Sleep)
+    list(APPEND LibHeaders ${NOS}/nonWindows/Sleep/Sleep.hpp)
+    list(APPEND LibSources ${NOS}/nonWindows/Sleep/Sleep.cpp)
+
+    # Thread
+    link_directories(${NOS}/nonWindows/Thread)
+    include_directories(${NOS}/nonWindows/Thread)
+    list(APPEND LibHeaders ${NOS}/nonWindows/Thread/Thread.hpp)
+    list(APPEND LibSources ${NOS}/nonWindows/Thread/Thread.cpp)
+
+    # ThreadLocal
+    link_directories(${NOS}/nonWindows/ThreadLocal)
+    include_directories(${NOS}/nonWindows/ThreadLocal)
+    list(APPEND LibHeaders ${NOS}/nonWindows/ThreadLocal/ThreadLocal.hpp)
+    list(APPEND LibSources ${NOS}/nonWindows/ThreadLocal/ThreadLocal.cpp)
+endif()
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")

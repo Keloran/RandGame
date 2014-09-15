@@ -83,25 +83,6 @@ namespace NordicArts {
             BlockProcess(const BlockProcess &cConst);
             
         };
-        
-        // Lock
-        class Lock : NonCopyable {
-        // Variables
-        public:
-        protected:
-        private:
-            Mutex &m_oMutex;
-            
-        // Methods
-        public:
-            explicit Lock(Mutex &oMutex);
-            
-            ~Lock();
-            
-        protected:
-        private:
-            
-        };
     };
 };
 

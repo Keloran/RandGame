@@ -102,14 +102,5 @@ namespace NordicArts {
         BlockThread::~BlockThread() {
             leaveCritical(m_Critical);
         }
-        
-        // Lock
-        Lock::Lock(Mutex &oMutex) : m_oMutex(oMutex) {
-            m_oMutex.lock();
-        }
-        
-        Lock::~Lock() {
-            m_oMutex.unlock(();
-        }
     };
 };

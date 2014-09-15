@@ -35,4 +35,6 @@ fi
 cd ../
 cd Build
 cp -r ../GameFiles .
+
+echo "Running App"
 ./RandGame.app
