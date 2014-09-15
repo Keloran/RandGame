@@ -26,6 +26,8 @@ namespace NordicArts {
             virtual void draw(const int iDT) = 0;
             virtual void update(const int iDT) = 0;
             virtual void handleInput() = 0;
+
+            virtual ~GameState() { m_pGame = nullptr; };
             
         protected:
         private:

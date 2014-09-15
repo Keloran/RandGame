@@ -4,6 +4,9 @@
 #include "./buildNumber.hpp"
 #include "./OSLoad.hpp"
 
+// Interesting error display
+#define printIt(variable) { std::cout << #variable << " " << variable << std::endl; }
+
 // OS Specific Includes
 #if defined (__WIN32__) || defined(_WIN32) || defined(_WIN64)
     #include "./Windows/Windows.hpp"

@@ -8,7 +8,7 @@ namespace NordicArts {
                 std::rethrow_exception(ptrException);
             }
         } catch (const std::exception &ex) {
-            std::cout << "Caught Exception: " << ex.what() << std::endl;
+            printIt(ex.what());
         }
     }
 
@@ -24,15 +24,15 @@ namespace NordicArts {
         } catch (std::exception &ex) {
             throw NordicOS::ExceptionHandler::ExceptionHandler(ex.what());
         } catch (NordicOS::ExceptionHandler::ExceptionHandler &ex) {
-            std::cout << "Exception: " << ex.getMessage() << std::endl;
+            printIt(ex.getMessage());
         } catch ( ... ) {
             handleException(std::current_exception());
         }
-        
-        std::cout << "RandGame: " << RANDGAME_BUILDNUMBER << std::endl;
-        std::cout << "NordicOS: " << NordicOS::getBuildNumber() << std::endl;
-        std::cout << "Game: " << GameNS::getBuildNumber() << std::endl;
-        std::cout << "Valkyrie: " << ValkyrieNS::getBuildNumber() << std::endl;
+    
+        printIt(RANDGAME_BUILDNUMBER);
+        printIt(NordicOS::getBuildNumber());
+        printIt(GameNS::getBuildNumber());
+        printIt(ValkyrieNS::getBuildNumber());
 
         return EXIT_SUCCESS;
     }
