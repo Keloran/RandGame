@@ -146,9 +146,9 @@ list(APPEND LibHeaders ${NOS}/Noise/Simplex.hpp)
 list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 
 # SQLite
-link_directories(${NOS}/SQLite)
-include_directories(${NOS}/SQLite)
-add_subdirectory(${NOS}/SQLite)
+link_directories(${NOS}/sqlite)
+include_directories(${NOS}/sqlite)
+add_subdirectory(${NOS}/sqlite)
 
 # Implementations Stuff
 if (WIN32)
@@ -217,7 +217,7 @@ if (WIN32)
 elseif (APPLE)
     target_link_libraries(NordicOS "-framework Foundation -framework AppKit -framework IOKit -framework Carbon -framework OpenGL -framework CoreFoundation -framework OpenAL -framework GameKit -framework GLKit" c++abi)
 elseif (UNIX)
-    target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} c++abi)
+    target_link_libraries(NordicOS ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB})
 endif()
 
 # Library Linker

@@ -64,7 +64,7 @@ if (WIN32)
 elseif (APPLE)
     target_link_libraries(Valkyrie "-framework Foundation -framework AppKit -framework IOKit -framework Carbon -framework OpenGL -framework CoreFoundation -framework OpenAL -framework GameKit -framework GLKit" c++abi)
 elseif (UNIX)
-    target_link_libraries(Valkyrie ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB} c++abi)
+    target_link_libraries(Valkyrie ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${X11_X11_LIB} ${X11_Xrandr_LIB})
 endif()
 
 # Library Linker
