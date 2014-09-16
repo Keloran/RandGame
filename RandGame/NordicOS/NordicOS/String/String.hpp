@@ -10,27 +10,34 @@ namespace NordicArts {
         class String {
         // Variables
         public:
-            typedef std::basic_string<int32_t>::iterator        Iterator;
-            typedef std::basic_string<int32_t>::const_iterator  ConstIterator;
+            typedef std::basic_string<UINT32>::iterator        Iterator;
+            typedef std::basic_string<UINT32>::const_iterator  ConstIterator;
             
             static const std::size_t                            InvalidPos;
             
         protected:
         private:
-            std::basic_string<int32_t>  m_cString;
+            std::basic_string<UINT32>  m_cString;
             
         // Methods
         public:
             String();
             String(char cChar, const std::locale &oLocale = std::locale());
             String(wchar_t cChar);
-            String(int32_t iChar);
+            String(UINT32 iChar);
             String(const char *pChar, const std::locale &oLocale = std::locale());
+            String(const std::string &oString, const std::locale &oLocale = std::locale());
             String(const wchar_t *pChar);
             String(const std::wstring &oString);
-            String(const int32_t *pString);
-            String(const std::basic_string<int32_t> &oString);
+            String(const UINT32 *pString);
+            String(const std::basic_string<UINT32> &oString);
             String(const String &oCopy);
+            
+            template<typename T>
+            static String fromUTF8(T begin, T end);
+            
+            template<typename T>
+            static String fromUTF16(T begin, T end);
             
             template<typename T>
             static String fromUTF32(T begin, T end);
@@ -42,15 +49,15 @@ namespace NordicArts {
             
             std::wstring toWideString() const;
             
-            std::basic_string<int8_t> toUTF8() const;
-            std::basic_string<int16_t> toUTF16() const;
-            std::basic_string<int32_t> toUTF32() const;
+            std::basic_string<UINT8> toUTF8() const;
+            std::basic_string<UINT16> toUTF16() const;
+            std::basic_string<UINT32> toUTF32() const;
             
             String &operator =(const String &oRight);
             String &operator +=(const String &oRight);
             
-            int32_t operator [](std::size_t index) const;
-            int32_t &operator [](std::size_t index);
+            UINT32 operator [](std::size_t index) const;
+            UINT32 &operator [](std::size_t index);
             
             void clear();
             void erase(std::size_t position, std::size_t count = 1);
@@ -63,9 +70,9 @@ namespace NordicArts {
             
             String substring(std::size_t position, std::size_t length = InvalidPos) const;
             
-            bool isEmpty();
+            bool isEmpty() const;
             
-            const int32_t *getData() const;
+            const UINT32 *getData() const;
             
             Iterator begin();
             Iterator end();
