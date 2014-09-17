@@ -42,9 +42,13 @@ elseif (UNIX)
     list(APPEND LibSources ${NOS}/Linux/Linux.cpp)
 endif()
 
-# String
+# UTF
 link_directories(${NOS}/String)
 include_directories(${NOS}/String)
+list(APPEND LibHeaders ${NOS}/String/UTF.hpp)
+list(APPEND LibHeaders ${NOS}/String/UTF.inl)
+
+# String
 list(APPEND LibHeaders ${NOS}/String/String.hpp)
 list(APPEND LibHeaders ${NOS}/String/String.inl)
 list(APPEND LibSources ${NOS}/String/String.cpp)
