@@ -16,8 +16,10 @@
 
     #if defined(__APPLE__) || defined(__APPLE_CC__)
         #include "./OSX/OSX.hpp"
+        #define NordicOS_OSX
     #else
         #include "./Linux/Linux.hpp"
+        #define NordicOS_Linux
     #endif
 #endif
 

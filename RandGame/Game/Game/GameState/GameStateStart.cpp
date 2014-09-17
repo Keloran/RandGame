@@ -18,7 +18,7 @@ namespace NordicArts {
             this->m_pGame->m_oWindow.clear(ValkyrieNS::Color::Black);
             this->m_pGame->m_oWindow.draw(this->m_pGame->m_oBackground);
             
-            return
+            return;
         }
 
         void GameStateStart::update(const int iDT) {
