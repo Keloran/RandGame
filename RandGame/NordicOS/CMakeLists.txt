@@ -28,23 +28,60 @@ list(APPEND LibHeaders ${NOS}/nonWindows/nonWindows.hpp)
 if (WIN32)
     link_directories(${NOS}/Windows)
     include_directories(${NOS}/Windows)
-    list(APPEND LibHeaders ${IR}/Windows/Windows.hpp)
+    list(APPEND LibHeaders ${NOS}/Windows/Windows.hpp)
     list(APPEND LibSources ${NOS}/Windows/Windows.cpp)
+
+    # Window Handle
+    link_directories(${NOS}/Windows/Window)
+    include_directories(${NOS}/Windows/Window)
+    list(APPEND LibHeaders ${NOS}/Windows/Window/WindowHandle.hpp)
 elseif (APPLE)
     link_directories(${NOS}/OSX)
     include_directories(${NOS}/OSX)
     list(APPEND LibHeaders ${NOS}/OSX/OSX.hpp)
     list(APPEND LibHeaders ${NOS}/OSX/OSX.mm)
+
+    # Window Handle
+    link_directories(${NOS}/OSX/Window)
+    include_directories(${NOS}/OSX/Window)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/WindowHandle.hpp)
 elseif (UNIX)
     link_directories(${NOS}/Linux)
     include_directories(${NOS}/Linux)
     list(APPEND LibHeaders ${NOS}/Linux/Linux.hpp)
     list(APPEND LibSources ${NOS}/Linux/Linux.cpp)
+
+    # Window Handle
+    link_directories(${NOS}/Linux/Window)
+    include_directories(${NOS}/Linux/Window)
+    list(APPEND LibHeaders ${NOS}/Linux/Window/WindowHandle.hpp)
 endif()
 
-# String
+# Window
+link_directories(${NOS}/Window)
+include_directories(${NOS}/Window)
+list(APPEND LibHeaders ${NOS}/Window/Window.hpp)
+link_directories(${NOS}/Window/Window)
+include_directories(${NOS}/Window/Window)
+list(APPEND LibHeaders ${NOS}/Window/Window/Window.hpp)
+list(APPEND LibSources ${NOS}/Window/Window/Window.cpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/ContextSettings.hpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/WindowHandle.hpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/WindowStyle.hpp)
+
+# Video Mode
+link_directories(${NOS}/Window/Window/VideoMode)
+include_directories(${NOS}/Window/Window/VideoMode)
+list(APPEND LibHeaders ${NOS}/Window/Window/VideoMode/VideoMode.hpp)
+list(APPEND LibSources ${NOS}/Window/Window/VideoMode/VideoMode.cpp)
+
+# UTF
 link_directories(${NOS}/String)
 include_directories(${NOS}/String)
+list(APPEND LibHeaders ${NOS}/String/UTF.hpp)
+list(APPEND LibHeaders ${NOS}/String/UTF.inl)
+
+# String
 list(APPEND LibHeaders ${NOS}/String/String.hpp)
 list(APPEND LibHeaders ${NOS}/String/String.inl)
 list(APPEND LibSources ${NOS}/String/String.cpp)
@@ -120,6 +157,8 @@ link_directories(${NOS}/Threading/ThreadLocal)
 include_directories(${NOS}/Threading/ThreadLocal)
 list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocal.hpp)
 list(APPEND LibSources ${NOS}/Threading/ThreadLocal/ThreadLocal.cpp)
+list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocalPtr.hpp)
+list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocalPtr.inl)
 
 # Threads
 link_directories(${NOS}/Threads)

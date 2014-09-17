@@ -6,7 +6,7 @@ namespace NordicArts {
     namespace GameNS {
         void GameStateEditor::draw(const int iDT) {
             this->m_pGame->m_pWindow->clear(ValkyrieNS::Color::Black);
-            this->m_pGame->m_oWindow->draw(this->m_pGame->background);
+            this->m_pGame->m_pWindow->draw(this->m_pGame->background);
 
             return;
         }
