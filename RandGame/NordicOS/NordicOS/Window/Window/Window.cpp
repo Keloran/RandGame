@@ -1,5 +1,5 @@
 #include "./Window.hpp"
-#include "./GLContext.hpp"
+#include "./GL/Context.hpp"
 #include "./WindowImp.hpp"
 #include "../../Threading/Sleep/Sleep.hpp"
 #include "../../ExceptionHandler/Error.hpp"

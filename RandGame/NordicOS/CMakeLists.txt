@@ -67,6 +67,7 @@ list(APPEND LibHeaders ${NOS}/Window/Window/Window.hpp)
 list(APPEND LibSources ${NOS}/Window/Window/Window.cpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/ContextSettings.hpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/WindowHandle.hpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/WindowStyle.hpp)
 
 # Video Mode
 link_directories(${NOS}/Window/Window/VideoMode)
@@ -156,6 +157,8 @@ link_directories(${NOS}/Threading/ThreadLocal)
 include_directories(${NOS}/Threading/ThreadLocal)
 list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocal.hpp)
 list(APPEND LibSources ${NOS}/Threading/ThreadLocal/ThreadLocal.cpp)
+list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocalPtr.hpp)
+list(APPEND LibHeaders ${NOS}/Threading/ThreadLocal/ThreadLocalPtr.inl)
 
 # Threads
 link_directories(${NOS}/Threads)

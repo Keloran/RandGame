@@ -5,12 +5,12 @@
 #include "./VideoMode/VideoMode.hpp"
 #include "./WindowHandle.hpp"
 #include "./WindowStyle.hpp"
-#include "./GLResource.hpp"
+#include "./GL/Resource.hpp"
 #include "../../Time/Time.hpp"
 #include <glm/glm.hpp>
 #include "../../NonCopyable/NonCopyable.hpp"
-#include "../../String/String/.hpp"
-#include "../../Logging/Logging.hpp"
+#include "../../String/String.hpp"
+#include "../../Logger/Logger.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -58,7 +58,7 @@ namespace NordicArts {
             bool isOpen() const;
             bool pollEvent(Event &oEvent);
             bool waitEvent(Event &oEvent);
-            bool setActive(bool bActive = true); const;
+            bool setActive(bool bActive = true) const;
 
             glm::vec2 getPosition() const;
             glm::vec2 getSize() const;
