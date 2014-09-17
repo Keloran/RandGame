@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F309949A19CA184C000D6259 /* ContextSettings.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309948C19CA184C000D6259 /* ContextSettings.hpp */; };
+		F309949B19CA184C000D6259 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F309948E19CA184C000D6259 /* Context.cpp */; };
+		F309949C19CA184C000D6259 /* Context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309948F19CA184C000D6259 /* Context.hpp */; };
+		F309949D19CA184C000D6259 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F309949019CA184C000D6259 /* Resource.cpp */; };
+		F309949E19CA184C000D6259 /* Resource.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309949119CA184C000D6259 /* Resource.hpp */; };
+		F309949F19CA184C000D6259 /* VideoMode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F309949319CA184C000D6259 /* VideoMode.cpp */; };
+		F30994A119CA184C000D6259 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F309949519CA184C000D6259 /* Window.cpp */; };
+		F30994A219CA184C000D6259 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309949619CA184C000D6259 /* Window.hpp */; };
+		F30994A319CA184C000D6259 /* WindowHandle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309949719CA184C000D6259 /* WindowHandle.hpp */; };
+		F30994A419CA184C000D6259 /* WindowStyle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309949819CA184C000D6259 /* WindowStyle.hpp */; };
+		F30994A519CA184C000D6259 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F309949919CA184C000D6259 /* Window.hpp */; };
+		F30994BF19CA1888000D6259 /* WindowHandle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994B619CA1888000D6259 /* WindowHandle.hpp */; };
+		F30994C219CA18DE000D6259 /* WindowHandle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994C119CA18DE000D6259 /* WindowHandle.hpp */; };
+		F30994C519CA18EF000D6259 /* ThreadLocalPtr.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994C319CA18EF000D6259 /* ThreadLocalPtr.hpp */; };
+		F30994D019CA1F65000D6259 /* WindowImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F30994CE19CA1F65000D6259 /* WindowImp.cpp */; };
+		F30994D119CA1F65000D6259 /* WindowImp.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994CF19CA1F65000D6259 /* WindowImp.hpp */; };
+		F30994D419CA24DB000D6259 /* Window.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30994D219CA24DB000D6259 /* Window.mm */; };
+		F30994D519CA24DB000D6259 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994D319CA24DB000D6259 /* Window.hpp */; };
 		F311F29219C3A9730057DF56 /* Errors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F311F29119C3A9730057DF56 /* Errors.cpp */; };
 		F3A0946019C49E3D008DA61A /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0945519C49E3D008DA61A /* Mutex.cpp */; };
 		F3A0946119C49E3D008DA61A /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0945619C49E3D008DA61A /* Mutex.hpp */; };
@@ -79,6 +97,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F309948C19CA184C000D6259 /* ContextSettings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextSettings.hpp; sourceTree = "<group>"; };
+		F309948E19CA184C000D6259 /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
+		F309948F19CA184C000D6259 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
+		F309949019CA184C000D6259 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
+		F309949119CA184C000D6259 /* Resource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Resource.hpp; sourceTree = "<group>"; };
+		F309949319CA184C000D6259 /* VideoMode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoMode.cpp; sourceTree = "<group>"; };
+		F309949419CA184C000D6259 /* VideoMode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VideoMode.hpp; sourceTree = "<group>"; };
+		F309949519CA184C000D6259 /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		F309949619CA184C000D6259 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		F309949719CA184C000D6259 /* WindowHandle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowHandle.hpp; sourceTree = "<group>"; };
+		F309949819CA184C000D6259 /* WindowStyle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowStyle.hpp; sourceTree = "<group>"; };
+		F309949919CA184C000D6259 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		F30994A719CA185F000D6259 /* WindowHandle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowHandle.hpp; sourceTree = "<group>"; };
+		F30994AA19CA1888000D6259 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		F30994AB19CA1888000D6259 /* Mutex.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mutex.hpp; sourceTree = "<group>"; };
+		F30994AD19CA1888000D6259 /* Sleep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sleep.cpp; sourceTree = "<group>"; };
+		F30994AE19CA1888000D6259 /* Sleep.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sleep.hpp; sourceTree = "<group>"; };
+		F30994B019CA1888000D6259 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		F30994B119CA1888000D6259 /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
+		F30994B319CA1888000D6259 /* ThreadLocal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadLocal.cpp; sourceTree = "<group>"; };
+		F30994B419CA1888000D6259 /* ThreadLocal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadLocal.hpp; sourceTree = "<group>"; };
+		F30994B619CA1888000D6259 /* WindowHandle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowHandle.hpp; sourceTree = "<group>"; };
+		F30994C119CA18DE000D6259 /* WindowHandle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowHandle.hpp; sourceTree = "<group>"; };
+		F30994C319CA18EF000D6259 /* ThreadLocalPtr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadLocalPtr.hpp; sourceTree = "<group>"; };
+		F30994C419CA18EF000D6259 /* ThreadLocalPtr.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThreadLocalPtr.inl; sourceTree = "<group>"; };
+		F30994CE19CA1F65000D6259 /* WindowImp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WindowImp.cpp; sourceTree = "<group>"; };
+		F30994CF19CA1F65000D6259 /* WindowImp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowImp.hpp; sourceTree = "<group>"; };
+		F30994D219CA24DB000D6259 /* Window.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Window.mm; sourceTree = "<group>"; };
+		F30994D319CA24DB000D6259 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
 		F311643519C44C3E0003AA52 /* NonCopyable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
 		F311F29119C3A9730057DF56 /* Errors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errors.cpp; sourceTree = "<group>"; };
 		F3155AE919C3A8990021A0DE /* Errors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Errors.hpp; sourceTree = "<group>"; };
@@ -155,6 +202,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F309948A19CA184C000D6259 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				F309948B19CA184C000D6259 /* Window */,
+				F309949919CA184C000D6259 /* Window.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		F309948B19CA184C000D6259 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				F309948C19CA184C000D6259 /* ContextSettings.hpp */,
+				F309948D19CA184C000D6259 /* GL */,
+				F309949219CA184C000D6259 /* VideoMode */,
+				F309949519CA184C000D6259 /* Window.cpp */,
+				F309949619CA184C000D6259 /* Window.hpp */,
+				F309949719CA184C000D6259 /* WindowHandle.hpp */,
+				F309949819CA184C000D6259 /* WindowStyle.hpp */,
+				F30994CE19CA1F65000D6259 /* WindowImp.cpp */,
+				F30994CF19CA1F65000D6259 /* WindowImp.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		F309948D19CA184C000D6259 /* GL */ = {
+			isa = PBXGroup;
+			children = (
+				F309948E19CA184C000D6259 /* Context.cpp */,
+				F309948F19CA184C000D6259 /* Context.hpp */,
+				F309949019CA184C000D6259 /* Resource.cpp */,
+				F309949119CA184C000D6259 /* Resource.hpp */,
+			);
+			path = GL;
+			sourceTree = "<group>";
+		};
+		F309949219CA184C000D6259 /* VideoMode */ = {
+			isa = PBXGroup;
+			children = (
+				F309949319CA184C000D6259 /* VideoMode.cpp */,
+				F309949419CA184C000D6259 /* VideoMode.hpp */,
+			);
+			path = VideoMode;
+			sourceTree = "<group>";
+		};
+		F30994A619CA185F000D6259 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				F30994A719CA185F000D6259 /* WindowHandle.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		F30994A919CA1888000D6259 /* Mutex */ = {
+			isa = PBXGroup;
+			children = (
+				F30994AA19CA1888000D6259 /* Mutex.cpp */,
+				F30994AB19CA1888000D6259 /* Mutex.hpp */,
+			);
+			path = Mutex;
+			sourceTree = "<group>";
+		};
+		F30994AC19CA1888000D6259 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				F30994AD19CA1888000D6259 /* Sleep.cpp */,
+				F30994AE19CA1888000D6259 /* Sleep.hpp */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		F30994AF19CA1888000D6259 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				F30994B019CA1888000D6259 /* Thread.cpp */,
+				F30994B119CA1888000D6259 /* Thread.hpp */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		F30994B219CA1888000D6259 /* ThreadLocal */ = {
+			isa = PBXGroup;
+			children = (
+				F30994B319CA1888000D6259 /* ThreadLocal.cpp */,
+				F30994B419CA1888000D6259 /* ThreadLocal.hpp */,
+			);
+			path = ThreadLocal;
+			sourceTree = "<group>";
+		};
+		F30994B519CA1888000D6259 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				F30994B619CA1888000D6259 /* WindowHandle.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		F30994C019CA18DE000D6259 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				F30994C119CA18DE000D6259 /* WindowHandle.hpp */,
+				F30994D219CA24DB000D6259 /* Window.mm */,
+				F30994D319CA24DB000D6259 /* Window.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
 		F311643419C44C100003AA52 /* NonCopyable */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +405,8 @@
 		F3A0948A19C77489008DA61A /* ThreadLocal */ = {
 			isa = PBXGroup;
 			children = (
+				F30994C319CA18EF000D6259 /* ThreadLocalPtr.hpp */,
+				F30994C419CA18EF000D6259 /* ThreadLocalPtr.inl */,
 				F3A0948B19C77489008DA61A /* ThreadLocal.cpp */,
 				F3A0948C19C77489008DA61A /* ThreadLocal.hpp */,
 			);
@@ -286,6 +442,7 @@
 		F3B2CB1C19A8D5420047830E /* NordicOS */ = {
 			isa = PBXGroup;
 			children = (
+				F309948A19CA184C000D6259 /* Window */,
 				F3A0947C19C77489008DA61A /* Threading */,
 				F311643419C44C100003AA52 /* NonCopyable */,
 				F3B23A8919AFC1590064E08F /* Threads */,
@@ -354,6 +511,7 @@
 		F3B2CB3419A8D5420047830E /* Linux */ = {
 			isa = PBXGroup;
 			children = (
+				F30994A619CA185F000D6259 /* Window */,
 				F3B2CB3519A8D5420047830E /* Linux.cpp */,
 				F3B2CB3619A8D5420047830E /* Linux.hpp */,
 			);
@@ -393,6 +551,7 @@
 		F3B2CB4519A8D5420047830E /* OSX */ = {
 			isa = PBXGroup;
 			children = (
+				F30994C019CA18DE000D6259 /* Window */,
 				F3B2CB4619A8D5420047830E /* OSX.hpp */,
 				F3B2CB4719A8D5420047830E /* OSX.mm */,
 			);
@@ -441,6 +600,11 @@
 		F3B2CB5B19A8D5420047830E /* Windows */ = {
 			isa = PBXGroup;
 			children = (
+				F30994A919CA1888000D6259 /* Mutex */,
+				F30994AC19CA1888000D6259 /* Sleep */,
+				F30994AF19CA1888000D6259 /* Thread */,
+				F30994B219CA1888000D6259 /* ThreadLocal */,
+				F30994B519CA1888000D6259 /* Window */,
 				F3B2CB5C19A8D5420047830E /* Windows.cpp */,
 				F3B2CB5D19A8D5420047830E /* Windows.hpp */,
 			);
@@ -464,11 +628,19 @@
 			files = (
 				F3A0949419C77489008DA61A /* Thread.hpp in Headers */,
 				F3A0949219C77489008DA61A /* Sleep.hpp in Headers */,
+				F30994D519CA24DB000D6259 /* Window.hpp in Headers */,
+				F30994BF19CA1888000D6259 /* WindowHandle.hpp in Headers */,
+				F30994D119CA1F65000D6259 /* WindowImp.hpp in Headers */,
 				F3B23A3319AE766D0064E08F /* buildNumber.hpp in Headers */,
 				F3A0946319C49E3D008DA61A /* Sleep.hpp in Headers */,
+				F30994A419CA184C000D6259 /* WindowStyle.hpp in Headers */,
+				F30994A319CA184C000D6259 /* WindowHandle.hpp in Headers */,
 				F3B23BFE19B338630064E08F /* Threads.hpp in Headers */,
 				F3B23A3519AE766D0064E08F /* ExceptionHandler.hpp in Headers */,
+				F309949E19CA184C000D6259 /* Resource.hpp in Headers */,
 				F3B23A3619AE766D0064E08F /* FileHandler.hpp in Headers */,
+				F309949A19CA184C000D6259 /* ContextSettings.hpp in Headers */,
+				F30994A519CA184C000D6259 /* Window.hpp in Headers */,
 				F3B23A3719AE766D0064E08F /* FileUtils.hpp in Headers */,
 				F3A0948E19C77489008DA61A /* Lock.hpp in Headers */,
 				F3B23A3819AE766D0064E08F /* TextFileReader.hpp in Headers */,
@@ -477,12 +649,16 @@
 				F3B23A3C19AE766D0064E08F /* Simplex.hpp in Headers */,
 				F3B23A3D19AE766D0064E08F /* nonWindows.hpp in Headers */,
 				F3B23A3E19AE766D0064E08F /* OS.hpp in Headers */,
+				F309949C19CA184C000D6259 /* Context.hpp in Headers */,
+				F30994C219CA18DE000D6259 /* WindowHandle.hpp in Headers */,
+				F30994C519CA18EF000D6259 /* ThreadLocalPtr.hpp in Headers */,
 				F3B23A3F19AE766D0064E08F /* OSLoad.hpp in Headers */,
 				F3B23A4019AE766D0064E08F /* OSX.hpp in Headers */,
 				F3A0946719C49E3D008DA61A /* ThreadLocal.hpp in Headers */,
 				F3B23A4119AE766D0064E08F /* Singleton.hpp in Headers */,
 				F3A0946119C49E3D008DA61A /* Mutex.hpp in Headers */,
 				F3B23A4219AE766D0064E08F /* String.hpp in Headers */,
+				F30994A219CA184C000D6259 /* Window.hpp in Headers */,
 				F3A0946519C49E3D008DA61A /* Thread.hpp in Headers */,
 				F3B23A4319AE766D0064E08F /* String.inl in Headers */,
 				F3A0949619C77489008DA61A /* ThreadLocal.hpp in Headers */,
@@ -566,9 +742,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A0946019C49E3D008DA61A /* Mutex.cpp in Sources */,
+				F30994D419CA24DB000D6259 /* Window.mm in Sources */,
+				F309949D19CA184C000D6259 /* Resource.cpp in Sources */,
 				F3B23A2319AE764E0064E08F /* ExceptionHandler.cpp in Sources */,
 				F3B23A2419AE764E0064E08F /* FileHandler.cpp in Sources */,
+				F309949F19CA184C000D6259 /* VideoMode.cpp in Sources */,
+				F309949B19CA184C000D6259 /* Context.cpp in Sources */,
 				F3B23A2519AE764E0064E08F /* TextFileReader.cpp in Sources */,
+				F30994A119CA184C000D6259 /* Window.cpp in Sources */,
+				F30994D019CA1F65000D6259 /* WindowImp.cpp in Sources */,
 				F311F29219C3A9730057DF56 /* Errors.cpp in Sources */,
 				F3B23A2619AE764E0064E08F /* TextFileWriter.cpp in Sources */,
 				F3A0948D19C77489008DA61A /* Lock.cpp in Sources */,

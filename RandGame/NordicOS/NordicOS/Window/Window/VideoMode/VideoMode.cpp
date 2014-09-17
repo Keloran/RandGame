@@ -1,5 +1,5 @@
 #include "./VideoMode.hpp"
-#include "../VideoModeImp.hpp"
+#include "./VideoModeImp.hpp"
 #include <algorithm>
 #include <functional>
 
