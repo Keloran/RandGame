@@ -41,10 +41,12 @@ elseif (APPLE)
     list(APPEND LibHeaders ${NOS}/OSX/OSX.hpp)
     list(APPEND LibHeaders ${NOS}/OSX/OSX.mm)
 
-    # Window Handle
+    # Window Stuff
     link_directories(${NOS}/OSX/Window)
     include_directories(${NOS}/OSX/Window)
     list(APPEND LibHeaders ${NOS}/OSX/Window/WindowHandle.hpp)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/Window.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Window/Window.mm)
 elseif (UNIX)
     link_directories(${NOS}/Linux)
     include_directories(${NOS}/Linux)
@@ -188,6 +190,22 @@ list(APPEND LibSources ${NOS}/Noise/Simplex.cpp)
 link_directories(${NOS}/sqlite)
 include_directories(${NOS}/sqlite)
 add_subdirectory(${NOS}/sqlite)
+
+# Window Stuff
+link_directories(${NOS}/Window/Window)
+include_directories(${NOS}/Window/Window)
+list(APPEND LibHeaders ${NOS}/Window/Window/WindowImp.hpp)
+list(APPEND LibSources ${NOS}/Window/Window/WindowImp.hpp)
+
+# GL Stuff
+link_directories(${NOS}/Window/Window/GL)
+include_directories(${NOS}/Window/Window/GL)
+list(APPEND LibSources ${NOS}/Window/Window/GL/Context.cpp)
+
+# Video Mode
+link_directories(${NOS}/Window/Window/VideoMode)
+include_directories(${NOS}/Window/Window/VideoMode)
+list(APPEND LibSources ${NOS}/Window/Window/VideoMode/VideoMode.cpp)
 
 # Implementations Stuff
 if (WIN32)
