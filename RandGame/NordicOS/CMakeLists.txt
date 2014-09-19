@@ -47,6 +47,13 @@ elseif (APPLE)
     list(APPEND LibHeaders ${NOS}/OSX/Window/WindowHandle.hpp)
     list(APPEND LibHeaders ${NOS}/OSX/Window/Window.hpp)
     list(APPEND LibSources ${NOS}/OSX/Window/Window.mm)
+
+    # Input
+    link_directories(${NOS}/OSX/Input)
+    include_directories(${NOS}/OSX/Input)
+    list(APPEND LibHeaders ${NOS}/OSX/Input/Input.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Input/Input.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Input/HIDInputManager.hpp)
 elseif (UNIX)
     link_directories(${NOS}/Linux)
     include_directories(${NOS}/Linux)
@@ -70,6 +77,20 @@ list(APPEND LibSources ${NOS}/Window/Window/Window.cpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/ContextSettings.hpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/WindowHandle.hpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/WindowStyle.hpp)
+
+# Event
+list(APPEND LibHeaders ${NOS}/Window/Event.hpp)
+
+# Input
+list(APPEND LibHeaders ${NOS}/Window/InputImp.hpp)
+link_directories(${NOS}/Window/Mouse)
+include_directories(${NOS}/Window/Mouse)
+list(APPEND LibHeaders ${NOS}/Window/Mouse/Mouse.hpp)
+list(APPEND LibSources ${NOS}/Window/Mouse/Mouse.cpp)
+link_directories(${NOS}/Window/Keyboard)
+include_directories(${NOS}/Window/Keyboard)
+list(APPEND LibHeaders ${NOS}/Window/Keyboard/Keyboard.hpp)
+list(APPEND LibSources ${NOS}/Window/Keyboard/Keyboard.cpp)
 
 # Video Mode
 link_directories(${NOS}/Window/Window/VideoMode)

@@ -9,7 +9,7 @@
 #ifndef NordicArts_NordicOS_Window_OS_H
 #define NordicArts_NordicOS_Window_OS_H
 
-#include "../../Window/Event/Event.hpp"
+#include "../../Window/Event.hpp"
 #include "../../Window/Window/WindowImp.hpp"
 #include "../../String/String.hpp"
 

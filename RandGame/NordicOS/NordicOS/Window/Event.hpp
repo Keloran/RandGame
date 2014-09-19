@@ -3,6 +3,7 @@
 
 #include "./Keyboard/Keyboard.hpp"
 #include "./Mouse/Mouse.hpp"
+#include "../OS.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -43,7 +44,7 @@ namespace NordicArts {
                 int iY;
             };
 
-    `       enum EventType {
+            enum EventType {
                 Closed,
                 Resized,
                 LostFocus,

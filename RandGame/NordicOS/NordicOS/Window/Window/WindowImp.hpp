@@ -12,7 +12,7 @@
 #include "../../OS.hpp"
 #include "../../NonCopyable/NonCopyable.hpp"
 #include "../../String/String.hpp"
-#include "../Event/Event.hpp"
+#include "../Event.hpp"
 #include "../VideoMode/VideoMode.hpp"
 #include "./WindowHandle.hpp"
 #include "./ContextSettings.hpp"
