@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 NordicArts.net. All rights reserved.
 //
 
-#include "./Window.hpp"
+#include "./WindowOS.hpp"
 #include "../../ExceptionHandler/Errors.hpp"
 #include "../../String/String.hpp"
-#include "../AutoReleasePoolWrapper.hpp"
-#include "../Conversion.hpp"
+#include "../Wrapper/AutoReleasePool.hpp"
+#include "../Conversion/OBJC.hpp"
 #include "../Application/Application.hpp"
 #include "../Application/Delegate.hpp"
-#include "../KeyBoardHelper.hpp"
-#include "../Application/View.hpp"
-#include "../Application/Window.hpp"
+#include "../Input/KeyboardHelper.hpp"
+#include "../Application/Controller.hpp"
+#include "./Controller.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -30,14 +30,14 @@ namespace NordicArts {
         
         template<class T>
         void scaleInWidthHeight(T &in, id<WindowDelegateProtocol> delegate) {
-            scaleIn(in.width, delegate);
-            scaleIn(in.height, delegate);
+            scaleIn(in.m_iWidth, delegate);
+            scaleIn(in.m_iHeight, delegate);
         }
         
         template<class T>
         void scaleInXY(T &in, id<WindowDelegateProtocol> delegate) {
-            scaleIn(in.x, delegate);
-            scaleIn(in.y, delegate);
+            scaleIn(in.iX, delegate);
+            scaleIn(in.iY, delegate);
         }
         
         template<class T>
@@ -47,14 +47,14 @@ namespace NordicArts {
         
         template<class T>
         void scaleOutWidthHeight(T &out, id<WindowDelegateProtocol> delegate) {
-            scaleOut(out.width, delegate);
-            scaleOut(out.height, delegate);
+            scaleOut(out.iWidth, delegate);
+            scaleOut(out.iHeight, delegate);
         }
         
         template<class T>
         void scaleOutXY(T &out, id<WindowDelegateProtocol> delegate) {
-            scaleOut(out.x, delegate);
-            scaleOut(out.y, delegate);
+            scaleOut(out.iX, delegate);
+            scaleOut(out.iY, delegate);
         }
         
         WindowOS::WindowOS(WindowHandle hHandle) : m_bShowCursor(true) {
@@ -73,7 +73,7 @@ namespace NordicArts {
             
             [m_Delegate setRequesterTo:this];
             
-            initalizeKeyboardHelper();
+            initaliseKeyboardHelper();
         }
         
         WindowOS::WindowOS(VideoMode mode, const String &cTitle, unsigned long lStyle, const ContextSettings &) : m_bShowCursor(true) {
@@ -84,10 +84,10 @@ namespace NordicArts {
             scaleInWidthHeight(mode, nil);
             
             m_Delegate = [[NAWindowController alloc] initWithMode:mode andStyle:lStyle];
-            [m_Delegate changeTitle:StringToNSString(cTitle)];
+            [m_Delegate changeTitle:stringToNSString(cTitle)];
             [m_Delegate setRequesterTo:this];
             
-            initalizeKeyboardHelper();
+            initaliseKeyboardHelper();
         }
         
         WindowOS::~WindowOS() {
@@ -96,7 +96,7 @@ namespace NordicArts {
             
             NSArray *aWindows = [NSApp orderedWindows];
             if ([aWindows count] > 0) {
-                [[aWindoiws objectAtIndex:0] makeKeyAndOrderFront:nil];
+                [[aWindows objectAtIndex:0] makeKeyAndOrderFront:nil];
             }
             
             releasePool();
@@ -117,12 +117,12 @@ namespace NordicArts {
                 [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
                 [NSApp activateIgnoringOtherApps:YES];
                 
-                if (![[NAApplicatgion sharedApplication] delegate]) {
+                if (![[NAApplication sharedApplication] delegate]) {
                     [NSApp setDelegate:[[[NAApplicationDelegate alloc] init] autorelease]];
                 }
                 
                 [NAApplication setUpMenuBar];
-                [[NAApplication sharedApplication] finishLoading];
+                [[NAApplication sharedApplication] finishLaunching];
             }
         }
         
@@ -136,8 +136,8 @@ namespace NordicArts {
         void WindowOS::windowResized(unsigned int iWidth, unsigned int iHeight) {
             Event oEvent;
             oEvent.type         = Event::Resized;
-            oEvent.size.width   = iWidth;
-            oEvent.size.height  = iHeight;
+            oEvent.size.iWidth   = iWidth;
+            oEvent.size.iHeight  = iHeight;
             
             scaleOutWidthHeight(oEvent.size, m_Delegate);
             
@@ -170,8 +170,8 @@ namespace NordicArts {
             Event oEvent;
             oEvent.type                 = Event::MouseButtonPressed;
             oEvent.mouseButton.button   = eButton;
-            oEvent.mouseButton.x        = iX;
-            oEvent.mouseButton.y        = iY;
+            oEvent.mouseButton.iX       = iX;
+            oEvent.mouseButton.iY       = iY;
             
             scaleOutXY(oEvent.mouseButton, m_Delegate);
             
@@ -180,10 +180,10 @@ namespace NordicArts {
         
         void WindowOS::mouseUpAt(Mouse::Button eButton, int iX, int iY) {
             Event oEvent;
-            oEvent.type             = Event::MouseButtonReleased;
-            oEvent.mouseButton      = eButton;
-            oEvent.mouseButton.x    = iX;
-            oEvent.mouseButton.y    = iY;
+            oEvent.type                 = Event::MouseButtonReleased;
+            oEvent.mouseButton.button   = eButton;
+            oEvent.mouseButton.iX       = iX;
+            oEvent.mouseButton.iY       = iY;
             
             scaleOutXY(oEvent.mouseButton, m_Delegate);
             
@@ -193,8 +193,8 @@ namespace NordicArts {
         void WindowOS::mouseMovedAt(int iX, int iY) {
             Event oEvent;
             oEvent.type             = Event::MouseMoved;
-            oEvent.mouseMove.x      = iX;
-            oEvent.MouseMove.y      = iY;
+            oEvent.mouseMove.iX     = iX;
+            oEvent.mouseMove.iY     = iY;
             
             scaleOutXY(oEvent.mouseMove, m_Delegate);
             

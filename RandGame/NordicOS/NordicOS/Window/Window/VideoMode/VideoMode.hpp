@@ -26,6 +26,9 @@ namespace NordicArts {
 
             bool isValid() const;
 
+            unsigned int getWidth() const;
+            unsigned int getHeight() const;
+
         protected:
         private:
 

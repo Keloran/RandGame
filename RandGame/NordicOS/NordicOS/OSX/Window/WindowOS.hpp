@@ -38,6 +38,7 @@ namespace NordicArts {
             
         //Methods
         public:
+            WindowOS(WindowHandle hHandle);
             WindowOS(VideoMode mode, const String &cString, unsigned long lStyle, const ContextSettings &oSettings);
             
             ~WindowOS();

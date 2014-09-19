@@ -14,7 +14,7 @@ namespace NordicArts {
 
 @protocol WindowDelegateProtocol
 
--(CGFloat)displaySclaeFactor;
+-(CGFloat)displayScaleFactor;
 
 -(void)setRequesterTo:(NordicArts::NordicOS::WindowOS*)requester;
 -(void)hideMouseCursor;

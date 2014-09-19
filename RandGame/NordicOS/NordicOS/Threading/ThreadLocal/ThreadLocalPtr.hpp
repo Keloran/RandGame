@@ -14,6 +14,8 @@ namespace NordicArts {
 
         // Methods
         public:
+            ThreadLocalPtr(T *pValue = NULL);
+
             T &operator *() const;
             
             T *operator ->() const;

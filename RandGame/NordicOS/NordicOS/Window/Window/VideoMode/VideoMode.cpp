@@ -29,6 +29,14 @@ namespace NordicArts {
             return (std::find(vModes.begin(), vModes.end(), *this) != vModes.end());
         }
 
+        unsigned int VideoMode::getWidth() const {
+            return m_iWidth;
+        }
+    
+        unsigned int VideoMode::getHeigt() const {
+            return m_iHeight;
+        }
+
         bool operator ==(const VideoMode &oLeft, const VideoMode &oRight) {
             return (
                 (oLeft.m_iWidth == oRight.m_iWidth) &&

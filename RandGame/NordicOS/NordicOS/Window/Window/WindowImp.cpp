@@ -17,7 +17,7 @@
 #elif defined(NordicOS_Linux)
     #include "../../Linux/Window/Window.hpp"
 #elif defined(NordicOS_OSX)
-    #include "../../OSX/Window/Window.hpp"
+    #include "../../OSX/Window/WindowOS.hpp"
 #endif
 
 namespace NordicArts {

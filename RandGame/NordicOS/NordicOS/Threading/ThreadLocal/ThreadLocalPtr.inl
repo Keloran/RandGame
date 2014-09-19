@@ -4,7 +4,7 @@
 namespace NordicArts {
     namespace NordicOS {
         template<typename T>
-        ThreadLocalPtr<T>::ThreadLocalPtr(T *pValue) : ThreadLocal(true) {}
+        ThreadLocalPtr<T>::ThreadLocalPtr(T *pValue) : ThreadLocal(pValue) {}
 
         template<typename T>
         T &ThreadLocalPtr<T>::operator *() const {
