@@ -15,7 +15,7 @@
 
 #ifdef __OBJC__
 #import "../Window/DelegateProtocol.hpp"
-typedef id<DelegateProtocol, NSObject> DelegateRef;
+typedef id<WindowDelegateProtocol, NSObject> DelegateRef;
 
 @class NSOpenGLContext;
 typedef NSOpenGLContext *OpenGLRef;

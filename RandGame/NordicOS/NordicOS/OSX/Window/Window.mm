@@ -24,35 +24,35 @@ namespace NordicArts {
         }
         
         template<class T>
-        void scaleIn(T &in, id<DelegateProtocol> delegate) {
+        void scaleIn(T &in, id<WindowDelegateProtocol> delegate) {
             in /= (delegate ? [delegate displayScaleFactor] : getDefaultScaleFactor());
         }
         
         template<class T>
-        void scaleInWidthHeight(T &in, id<DelegateProtocol> delegate) {
+        void scaleInWidthHeight(T &in, id<WindowDelegateProtocol> delegate) {
             scaleIn(in.width, delegate);
             scaleIn(in.height, delegate);
         }
         
         template<class T>
-        void scaleInXY(T &in, id<DelegateProtocol> delegate) {
+        void scaleInXY(T &in, id<WindowDelegateProtocol> delegate) {
             scaleIn(in.x, delegate);
             scaleIn(in.y, delegate);
         }
         
         template<class T>
-        void scaleOut(T &out, id<DelegateProtocol> delegate) {
+        void scaleOut(T &out, id<WindowDelegateProtocol> delegate) {
             out *= (delegate ? [delegate displayScaleFactor] : getDefaultScaleFactor());
         }
         
         template<class T>
-        void scaleOutWidthHeight(T &out, id<DelegateProtocol> delegate) {
+        void scaleOutWidthHeight(T &out, id<WindowDelegateProtocol> delegate) {
             scaleOut(out.width, delegate);
             scaleOut(out.height, delegate);
         }
         
         template<class T>
-        void scaleOutXY(T &out, id<DelegateProtocol> delegate) {
+        void scaleOutXY(T &out, id<WindowDelegateProtocol> delegate) {
             scaleOut(out.x, delegate);
             scaleOut(out.y, delegate);
         }

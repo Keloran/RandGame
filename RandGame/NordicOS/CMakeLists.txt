@@ -47,6 +47,7 @@ elseif (APPLE)
     list(APPEND LibHeaders ${NOS}/OSX/Window/WindowHandle.hpp)
     list(APPEND LibHeaders ${NOS}/OSX/Window/Window.hpp)
     list(APPEND LibSources ${NOS}/OSX/Window/Window.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/DelegateProtocol.hpp)
 
     # Input
     link_directories(${NOS}/OSX/Input)
