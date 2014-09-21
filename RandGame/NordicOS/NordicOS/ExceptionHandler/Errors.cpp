@@ -66,5 +66,9 @@ namespace NordicArts {
             
             return stream;
         }
+        
+        std::ostream &Errors() {
+            return error();
+        }
     };
 };

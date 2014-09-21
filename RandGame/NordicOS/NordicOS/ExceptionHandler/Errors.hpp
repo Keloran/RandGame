@@ -14,6 +14,7 @@
 namespace NordicArts {
     namespace NordicOS {
         std::ostream &error();
+        std::ostream &Errors();
     };
 };
 

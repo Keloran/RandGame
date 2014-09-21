@@ -2,17 +2,17 @@
 #include "./GL/Context.hpp"
 #include "./WindowImp.hpp"
 #include "../../Threading/Sleep/Sleep.hpp"
-#include "../../ExceptionHandler/Error.hpp"
-#include "../../Logging/Logging.hpp"
+#include "../../ExceptionHandler/Errors.hpp"
+#include "../../Logger/Logger.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
-        const sf::Window *pFullScreenWindow = nullptr;
+        const Window *pFullScreenWindow = nullptr;
 
         Window::Window() : m_pImp(nullptr), m_pContext(nullptr), m_oFrameTimeLimit(Time::Zero), m_vSize(0, 0) {
         }
 
-        Window::Window(Logger *pLogger, VideoMode mode, const String &cTitle, UINT32 iStyle, const ContextSettings &oSettings) : m_pImp(nullptr), m_pContext(nullptr), m_oFrameTimeLimit(Time::Zero) m_vSize(0, 0), m_pLogger(pLogger) { 
+        Window::Window(Logger *pLogger, VideoMode mode, const String &cTitle, UINT32 iStyle, const ContextSettings &oSettings) : m_pImp(nullptr), m_pContext(nullptr), m_oFrameTimeLimit(Time::Zero),  m_vSize(0, 0), m_pLogger(pLogger) {
             create(mode, cTitle, iStyle, oSettings);
         }
         Window::Window(Logger *pLogger, WindowHandle hHandle, const ContextSettings &oSettings) : m_pImp(nullptr), m_pContext(nullptr), m_oFrameTimeLimit(Time::Zero), m_vSize(0, 0), m_pLogger(pLogger) { 
@@ -47,7 +47,7 @@ namespace NordicArts {
             }
 
             m_pImp      = WindowImp::create(mode, cTitle, iStyle, oSettings);
-            m_pContext  = GLContext::create(oSettings, m_pImp, mode.bitsPerPixel);
+            m_pContext  = GLContext::create(oSettings, m_pImp, mode.m_iBitsPerPixel);
 
             initalize();
         }
@@ -56,7 +56,7 @@ namespace NordicArts {
             close();
             
             m_pImp      = WindowImp::create(hHandle);
-            m_pContext  = GLContext::create(oSettings, m_pImp, VideoMode::GetDesktopMode().bitsPerPixel);
+            m_pContext  = GLContext::create(oSettings, m_pImp, VideoMode::getDesktopMode().m_iBitsPerPixel);
 
             initalize();
         }
@@ -142,9 +142,9 @@ namespace NordicArts {
             }
         }
 
-        void Window::setVerticalSync(bool bEnabled) {
-            if (m_pImp) {
-                m_pImp->setVerticalSync(bEnabled);
+        void Window::setVerticalSyncEnabled(bool bEnabled) {
+            if (setActive()) {
+                m_pContext->setVerticalSyncEnabled(bEnabled);
             }
         }
 
@@ -160,9 +160,11 @@ namespace NordicArts {
             }
         }
 
-        void Window::setFrameRateLimit(unsigned int iLimit) {
-            if (m_pImp) {
-                m_pImp->setFrameRateLimit(iLimit);
+        void Window::setFramerateLimit(unsigned int iLimit) {
+            if (iLimit > 0) {
+                m_oFrameTimeLimit = seconds(1.0f / iLimit);
+            } else {
+                m_oFrameTimeLimit = Time::Zero;
             }
         }
 
@@ -185,8 +187,8 @@ namespace NordicArts {
                 m_pContext->display();
             }
 
-            if (m_oFrameRateLimit != Time::Zero) {
-                sleep(m_oFrameRateLimit - m_oClock.getElapsedTime());
+            if (m_oFrameTimeLimit != Time::Zero) {
+                sleep(m_oFrameTimeLimit - m_oClock.getElapsedTime());
                 m_oClock.restart();
             }
         }
@@ -203,8 +205,8 @@ namespace NordicArts {
 
         bool Window::filterEvent(const Event &oEvent) {
             if (oEvent.type == Event::Resized) {
-                m_vSize.x = oEvent.size.width;
-                m_vSize.y = oEvent.size.height;
+                m_vSize.x = oEvent.size.iWidth;
+                m_vSize.y = oEvent.size.iHeight;
             
                 onResize();
             }
@@ -216,8 +218,8 @@ namespace NordicArts {
             setVisible(true);
             setMouseCursorVisible(true);
             setVerticalSyncEnabled(false);
-            setKeyRepeatEnalbed(true);
-            setFrameRateLimit(0);
+            setKeyRepeatEnabled(true);
+            setFramerateLimit(0);
 
             m_vSize = m_pImp->getSize();
 

@@ -2,15 +2,15 @@
 
 @implementation NAApplicationDelegate
 
--(NSApplicationTerminateReply)applicationShouldTermniate:(NSApplication*)sender {
+-(NSApplicationTerminateReply)applicationShouldTermniate:(NSApplication *)sender {
     (void)sender;
 
-    [NSApp makeWindowPerform:@selector(naClose) inOrder:NO];
+    [NSApp makeWindowsPerform:@selector(naClose) inOrder:NO];
 
     return NSTerminateCancel;
 }
 
--(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)theApplication {
+-(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     (void)theApplication;
 
     return YES;

@@ -20,8 +20,8 @@ namespace NordicArts {
             static void setVirtualKeyboardVisible(bool bVisible);
             static void setMousePositon(const glm::vec2 &vPosition);
 
-            static glm::vec2 getMousePositon();
-            static glm::vec2 getMousePotion(const Window &oWindiw);
+            static glm::vec2 getMousePosition();
+            static glm::vec2 getMousePosition(const Window &oWindiw);
 
         protected:
         private:

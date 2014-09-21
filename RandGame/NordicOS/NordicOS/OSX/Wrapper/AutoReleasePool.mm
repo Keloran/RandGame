@@ -1,6 +1,6 @@
-#include "../ExceptionHandler/Errors.hpp"
-#include "../NonCopyable/NonCopyable.hpp"
-#include "../Threading/ThreadLocal/ThreadLocalPtr.hpp"
+#include "../../ExceptionHandler/Errors.hpp"
+#include "../../NonCopyable/NonCopyable.hpp"
+#include "../../Threading/ThreadLocal/ThreadLocalPtr.hpp"
 
 #import "./AutoReleasePool.hpp"
 #import <Foundation/Foundation.h>
@@ -13,7 +13,7 @@ namespace NordicArts {
         protected:
         private:
             int                  m_iCount;
-            NSAutoreleasePool   *m_pPool;
+            //NSAutoreleasePool   *m_pPool;
 
         // Methods
         public:
@@ -29,7 +29,9 @@ namespace NordicArts {
 
         };
 
-        PoolWrapper::PoolWrapper() : m_iCount(0), m_pPool(0) {
+        //PoolWrapper::PoolWrapper() : m_iCount(0), m_pPool(0) {
+        //}
+        PoolWrapper::PoolWrapper() : m_iCount(0) {
         }
 
         PoolWrapper::~PoolWrapper() {
@@ -38,9 +40,9 @@ namespace NordicArts {
         void PoolWrapper::retain() {
             ++m_iCount;
 
-            if (m_pPool == 0) {
-                m_pPool = [[NSAutoreleasePool alloc] init];
-            }
+            //if (m_pPool == 0) {
+            //    m_pPool = [[NSAutoreleasePool alloc] init];
+            //}
         }
 
         void PoolWrapper::release() {
@@ -52,12 +54,12 @@ namespace NordicArts {
         }
 
         void PoolWrapper::drain() {
-            [m_pPool drain];
-            m_pPool = 0;
+            //[m_pPool drain];
+            //m_pPool = 0;
     
-            if (m_iCount != 0) {
-                m_pPool = [[NSAutoreleasePool alloc] init];
-            }
+            //if (m_iCount != 0) {
+            //    m_pPool = [[NSAutoreleasePool alloc] init];
+            //}
         }
 
         ThreadLocalPtr<PoolWrapper> localPool;

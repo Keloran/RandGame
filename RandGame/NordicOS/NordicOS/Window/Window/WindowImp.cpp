@@ -7,7 +7,7 @@
 //
 
 #include "./WindowImp.hpp"
-#include "../Event/Event.hpp"
+#include "../Event.hpp"
 #include "../../Threading/Sleep/Sleep.hpp"
 #include <algorithm>
 #include <cmath>

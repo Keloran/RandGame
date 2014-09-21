@@ -23,8 +23,33 @@
 		F30994C519CA18EF000D6259 /* ThreadLocalPtr.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994C319CA18EF000D6259 /* ThreadLocalPtr.hpp */; };
 		F30994D019CA1F65000D6259 /* WindowImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F30994CE19CA1F65000D6259 /* WindowImp.cpp */; };
 		F30994D119CA1F65000D6259 /* WindowImp.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994CF19CA1F65000D6259 /* WindowImp.hpp */; };
-		F30994D419CA24DB000D6259 /* Window.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30994D219CA24DB000D6259 /* Window.mm */; };
-		F30994D519CA24DB000D6259 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30994D319CA24DB000D6259 /* Window.hpp */; };
+		F30B07B819CE01F800E3DC54 /* Controller.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07B319CE01F800E3DC54 /* Controller.hpp */; };
+		F30B07B919CE01F800E3DC54 /* Controller.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07B419CE01F800E3DC54 /* Controller.mm */; };
+		F30B07BA19CE01F800E3DC54 /* DelegateProtocol.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07B519CE01F800E3DC54 /* DelegateProtocol.hpp */; };
+		F30B07BB19CE01F800E3DC54 /* WindowOS.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07B619CE01F800E3DC54 /* WindowOS.hpp */; };
+		F30B07BC19CE01F800E3DC54 /* WindowOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07B719CE01F800E3DC54 /* WindowOS.mm */; };
+		F30B07CF19CE021300E3DC54 /* Application.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07BE19CE021300E3DC54 /* Application.hpp */; };
+		F30B07D019CE021300E3DC54 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07BF19CE021300E3DC54 /* Application.mm */; };
+		F30B07D119CE021300E3DC54 /* Controller.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07C019CE021300E3DC54 /* Controller.hpp */; };
+		F30B07D219CE021300E3DC54 /* Delegate.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07C119CE021300E3DC54 /* Delegate.hpp */; };
+		F30B07D319CE021300E3DC54 /* Delegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07C219CE021300E3DC54 /* Delegate.mm */; };
+		F30B07D419CE021300E3DC54 /* OBJC.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07C419CE021300E3DC54 /* OBJC.hpp */; };
+		F30B07D519CE021300E3DC54 /* OBJC.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07C519CE021300E3DC54 /* OBJC.mm */; };
+		F30B07D619CE021300E3DC54 /* HIDInputManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07C719CE021300E3DC54 /* HIDInputManager.hpp */; };
+		F30B07D719CE021300E3DC54 /* Input.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07C819CE021300E3DC54 /* Input.hpp */; };
+		F30B07D819CE021300E3DC54 /* Input.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07C919CE021300E3DC54 /* Input.mm */; };
+		F30B07D919CE021300E3DC54 /* KeyboardHelper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07CA19CE021300E3DC54 /* KeyboardHelper.hpp */; };
+		F30B07DA19CE021300E3DC54 /* KeyboardHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07CB19CE021300E3DC54 /* KeyboardHelper.mm */; };
+		F30B07DB19CE021300E3DC54 /* AutoReleasePool.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07CD19CE021300E3DC54 /* AutoReleasePool.hpp */; };
+		F30B07DC19CE021300E3DC54 /* AutoReleasePool.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07CE19CE021300E3DC54 /* AutoReleasePool.mm */; };
+		F30B07DF19CE033700E3DC54 /* Window.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07DD19CE033700E3DC54 /* Window.mm */; };
+		F30B07E019CE033700E3DC54 /* Window.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07DE19CE033700E3DC54 /* Window.hpp */; };
+		F30B07E519CE34AC00E3DC54 /* Event.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07E319CE34AC00E3DC54 /* Event.hpp */; };
+		F30B07E619CE34AC00E3DC54 /* InputImp.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07E419CE34AC00E3DC54 /* InputImp.hpp */; };
+		F30B07EA19CF5FD000E3DC54 /* View.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07E819CF5FD000E3DC54 /* View.mm */; };
+		F30B07EB19CF5FD000E3DC54 /* View.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07E919CF5FD000E3DC54 /* View.hpp */; };
+		F30B07EE19CF61EC00E3DC54 /* SilentResponder.mm in Sources */ = {isa = PBXBuildFile; fileRef = F30B07EC19CF61EC00E3DC54 /* SilentResponder.mm */; };
+		F30B07EF19CF61EC00E3DC54 /* SilentResponder.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F30B07ED19CF61EC00E3DC54 /* SilentResponder.hpp */; };
 		F311F29219C3A9730057DF56 /* Errors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F311F29119C3A9730057DF56 /* Errors.cpp */; };
 		F3A0946019C49E3D008DA61A /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3A0945519C49E3D008DA61A /* Mutex.cpp */; };
 		F3A0946119C49E3D008DA61A /* Mutex.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F3A0945619C49E3D008DA61A /* Mutex.hpp */; };
@@ -124,8 +149,34 @@
 		F30994C419CA18EF000D6259 /* ThreadLocalPtr.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThreadLocalPtr.inl; sourceTree = "<group>"; };
 		F30994CE19CA1F65000D6259 /* WindowImp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WindowImp.cpp; sourceTree = "<group>"; };
 		F30994CF19CA1F65000D6259 /* WindowImp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowImp.hpp; sourceTree = "<group>"; };
-		F30994D219CA24DB000D6259 /* Window.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Window.mm; sourceTree = "<group>"; };
-		F30994D319CA24DB000D6259 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		F30B07B319CE01F800E3DC54 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		F30B07B419CE01F800E3DC54 /* Controller.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Controller.mm; sourceTree = "<group>"; };
+		F30B07B519CE01F800E3DC54 /* DelegateProtocol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DelegateProtocol.hpp; sourceTree = "<group>"; };
+		F30B07B619CE01F800E3DC54 /* WindowOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WindowOS.hpp; sourceTree = "<group>"; };
+		F30B07B719CE01F800E3DC54 /* WindowOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WindowOS.mm; sourceTree = "<group>"; };
+		F30B07BE19CE021300E3DC54 /* Application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Application.hpp; sourceTree = "<group>"; };
+		F30B07BF19CE021300E3DC54 /* Application.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Application.mm; sourceTree = "<group>"; };
+		F30B07C019CE021300E3DC54 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		F30B07C119CE021300E3DC54 /* Delegate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Delegate.hpp; sourceTree = "<group>"; };
+		F30B07C219CE021300E3DC54 /* Delegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Delegate.mm; sourceTree = "<group>"; };
+		F30B07C419CE021300E3DC54 /* OBJC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OBJC.hpp; sourceTree = "<group>"; };
+		F30B07C519CE021300E3DC54 /* OBJC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OBJC.mm; sourceTree = "<group>"; };
+		F30B07C719CE021300E3DC54 /* HIDInputManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HIDInputManager.hpp; sourceTree = "<group>"; };
+		F30B07C819CE021300E3DC54 /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		F30B07C919CE021300E3DC54 /* Input.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Input.mm; sourceTree = "<group>"; };
+		F30B07CA19CE021300E3DC54 /* KeyboardHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeyboardHelper.hpp; sourceTree = "<group>"; };
+		F30B07CB19CE021300E3DC54 /* KeyboardHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KeyboardHelper.mm; sourceTree = "<group>"; };
+		F30B07CD19CE021300E3DC54 /* AutoReleasePool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AutoReleasePool.hpp; sourceTree = "<group>"; };
+		F30B07CE19CE021300E3DC54 /* AutoReleasePool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AutoReleasePool.mm; sourceTree = "<group>"; };
+		F30B07DD19CE033700E3DC54 /* Window.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Window.mm; sourceTree = "<group>"; };
+		F30B07DE19CE033700E3DC54 /* Window.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Window.hpp; sourceTree = "<group>"; };
+		F30B07E219CE056700E3DC54 /* VideoModeImp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VideoModeImp.hpp; sourceTree = "<group>"; };
+		F30B07E319CE34AC00E3DC54 /* Event.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Event.hpp; path = NordicOS/Window/Event.hpp; sourceTree = SOURCE_ROOT; };
+		F30B07E419CE34AC00E3DC54 /* InputImp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = InputImp.hpp; path = NordicOS/Window/InputImp.hpp; sourceTree = SOURCE_ROOT; };
+		F30B07E819CF5FD000E3DC54 /* View.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = View.mm; sourceTree = "<group>"; };
+		F30B07E919CF5FD000E3DC54 /* View.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = View.hpp; sourceTree = "<group>"; };
+		F30B07EC19CF61EC00E3DC54 /* SilentResponder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SilentResponder.mm; sourceTree = "<group>"; };
+		F30B07ED19CF61EC00E3DC54 /* SilentResponder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SilentResponder.hpp; sourceTree = "<group>"; };
 		F311643519C44C3E0003AA52 /* NonCopyable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
 		F311F29119C3A9730057DF56 /* Errors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Errors.cpp; sourceTree = "<group>"; };
 		F3155AE919C3A8990021A0DE /* Errors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Errors.hpp; sourceTree = "<group>"; };
@@ -214,6 +265,8 @@
 		F309948B19CA184C000D6259 /* Window */ = {
 			isa = PBXGroup;
 			children = (
+				F30B07E319CE34AC00E3DC54 /* Event.hpp */,
+				F30B07E419CE34AC00E3DC54 /* InputImp.hpp */,
 				F309948C19CA184C000D6259 /* ContextSettings.hpp */,
 				F309948D19CA184C000D6259 /* GL */,
 				F309949219CA184C000D6259 /* VideoMode */,
@@ -243,6 +296,7 @@
 			children = (
 				F309949319CA184C000D6259 /* VideoMode.cpp */,
 				F309949419CA184C000D6259 /* VideoMode.hpp */,
+				F30B07E219CE056700E3DC54 /* VideoModeImp.hpp */,
 			);
 			path = VideoMode;
 			sourceTree = "<group>";
@@ -302,11 +356,85 @@
 		F30994C019CA18DE000D6259 /* Window */ = {
 			isa = PBXGroup;
 			children = (
+				F30B07F119CF61F900E3DC54 /* SilentResponder */,
+				F30B07F019CF61F000E3DC54 /* Controller */,
+				F30B07B519CE01F800E3DC54 /* DelegateProtocol.hpp */,
+				F30B07B619CE01F800E3DC54 /* WindowOS.hpp */,
+				F30B07B719CE01F800E3DC54 /* WindowOS.mm */,
 				F30994C119CA18DE000D6259 /* WindowHandle.hpp */,
-				F30994D219CA24DB000D6259 /* Window.mm */,
-				F30994D319CA24DB000D6259 /* Window.hpp */,
+				F30B07DD19CE033700E3DC54 /* Window.mm */,
+				F30B07DE19CE033700E3DC54 /* Window.hpp */,
 			);
 			path = Window;
+			sourceTree = "<group>";
+		};
+		F30B07BD19CE021300E3DC54 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07BE19CE021300E3DC54 /* Application.hpp */,
+				F30B07BF19CE021300E3DC54 /* Application.mm */,
+				F30B07C019CE021300E3DC54 /* Controller.hpp */,
+				F30B07C119CE021300E3DC54 /* Delegate.hpp */,
+				F30B07C219CE021300E3DC54 /* Delegate.mm */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F30B07C319CE021300E3DC54 /* Conversion */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07C419CE021300E3DC54 /* OBJC.hpp */,
+				F30B07C519CE021300E3DC54 /* OBJC.mm */,
+			);
+			path = Conversion;
+			sourceTree = "<group>";
+		};
+		F30B07C619CE021300E3DC54 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07C719CE021300E3DC54 /* HIDInputManager.hpp */,
+				F30B07C819CE021300E3DC54 /* Input.hpp */,
+				F30B07C919CE021300E3DC54 /* Input.mm */,
+				F30B07CA19CE021300E3DC54 /* KeyboardHelper.hpp */,
+				F30B07CB19CE021300E3DC54 /* KeyboardHelper.mm */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		F30B07CC19CE021300E3DC54 /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07CD19CE021300E3DC54 /* AutoReleasePool.hpp */,
+				F30B07CE19CE021300E3DC54 /* AutoReleasePool.mm */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
+		F30B07E719CF5FB100E3DC54 /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07E819CF5FD000E3DC54 /* View.mm */,
+				F30B07E919CF5FD000E3DC54 /* View.hpp */,
+			);
+			path = OpenGL;
+			sourceTree = "<group>";
+		};
+		F30B07F019CF61F000E3DC54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07B319CE01F800E3DC54 /* Controller.hpp */,
+				F30B07B419CE01F800E3DC54 /* Controller.mm */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F30B07F119CF61F900E3DC54 /* SilentResponder */ = {
+			isa = PBXGroup;
+			children = (
+				F30B07EC19CF61EC00E3DC54 /* SilentResponder.mm */,
+				F30B07ED19CF61EC00E3DC54 /* SilentResponder.hpp */,
+			);
+			name = SilentResponder;
 			sourceTree = "<group>";
 		};
 		F311643419C44C100003AA52 /* NonCopyable */ = {
@@ -551,6 +679,11 @@
 		F3B2CB4519A8D5420047830E /* OSX */ = {
 			isa = PBXGroup;
 			children = (
+				F30B07E719CF5FB100E3DC54 /* OpenGL */,
+				F30B07BD19CE021300E3DC54 /* Application */,
+				F30B07C319CE021300E3DC54 /* Conversion */,
+				F30B07C619CE021300E3DC54 /* Input */,
+				F30B07CC19CE021300E3DC54 /* Wrapper */,
 				F30994C019CA18DE000D6259 /* Window */,
 				F3B2CB4619A8D5420047830E /* OSX.hpp */,
 				F3B2CB4719A8D5420047830E /* OSX.mm */,
@@ -626,9 +759,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30B07EF19CF61EC00E3DC54 /* SilentResponder.hpp in Headers */,
 				F3A0949419C77489008DA61A /* Thread.hpp in Headers */,
 				F3A0949219C77489008DA61A /* Sleep.hpp in Headers */,
-				F30994D519CA24DB000D6259 /* Window.hpp in Headers */,
+				F30B07B819CE01F800E3DC54 /* Controller.hpp in Headers */,
+				F30B07E519CE34AC00E3DC54 /* Event.hpp in Headers */,
+				F30B07D119CE021300E3DC54 /* Controller.hpp in Headers */,
+				F30B07E019CE033700E3DC54 /* Window.hpp in Headers */,
+				F30B07D419CE021300E3DC54 /* OBJC.hpp in Headers */,
 				F30994BF19CA1888000D6259 /* WindowHandle.hpp in Headers */,
 				F30994D119CA1F65000D6259 /* WindowImp.hpp in Headers */,
 				F3B23A3319AE766D0064E08F /* buildNumber.hpp in Headers */,
@@ -637,6 +775,7 @@
 				F30994A319CA184C000D6259 /* WindowHandle.hpp in Headers */,
 				F3B23BFE19B338630064E08F /* Threads.hpp in Headers */,
 				F3B23A3519AE766D0064E08F /* ExceptionHandler.hpp in Headers */,
+				F30B07CF19CE021300E3DC54 /* Application.hpp in Headers */,
 				F309949E19CA184C000D6259 /* Resource.hpp in Headers */,
 				F3B23A3619AE766D0064E08F /* FileHandler.hpp in Headers */,
 				F309949A19CA184C000D6259 /* ContextSettings.hpp in Headers */,
@@ -644,17 +783,24 @@
 				F3B23A3719AE766D0064E08F /* FileUtils.hpp in Headers */,
 				F3A0948E19C77489008DA61A /* Lock.hpp in Headers */,
 				F3B23A3819AE766D0064E08F /* TextFileReader.hpp in Headers */,
+				F30B07D619CE021300E3DC54 /* HIDInputManager.hpp in Headers */,
 				F3B23A3919AE766D0064E08F /* TextFileWriter.hpp in Headers */,
+				F30B07D219CE021300E3DC54 /* Delegate.hpp in Headers */,
 				F3B23A3A19AE766D0064E08F /* Logger.hpp in Headers */,
+				F30B07D919CE021300E3DC54 /* KeyboardHelper.hpp in Headers */,
+				F30B07E619CE34AC00E3DC54 /* InputImp.hpp in Headers */,
 				F3B23A3C19AE766D0064E08F /* Simplex.hpp in Headers */,
 				F3B23A3D19AE766D0064E08F /* nonWindows.hpp in Headers */,
 				F3B23A3E19AE766D0064E08F /* OS.hpp in Headers */,
 				F309949C19CA184C000D6259 /* Context.hpp in Headers */,
 				F30994C219CA18DE000D6259 /* WindowHandle.hpp in Headers */,
+				F30B07BB19CE01F800E3DC54 /* WindowOS.hpp in Headers */,
 				F30994C519CA18EF000D6259 /* ThreadLocalPtr.hpp in Headers */,
 				F3B23A3F19AE766D0064E08F /* OSLoad.hpp in Headers */,
+				F30B07D719CE021300E3DC54 /* Input.hpp in Headers */,
 				F3B23A4019AE766D0064E08F /* OSX.hpp in Headers */,
 				F3A0946719C49E3D008DA61A /* ThreadLocal.hpp in Headers */,
+				F30B07EB19CF5FD000E3DC54 /* View.hpp in Headers */,
 				F3B23A4119AE766D0064E08F /* Singleton.hpp in Headers */,
 				F3A0946119C49E3D008DA61A /* Mutex.hpp in Headers */,
 				F3B23A4219AE766D0064E08F /* String.hpp in Headers */,
@@ -665,6 +811,8 @@
 				F3B23A4419AE766D0064E08F /* Time.hpp in Headers */,
 				F3A0949019C77489008DA61A /* Mutex.hpp in Headers */,
 				F3B23A4519AE766E0064E08F /* Utility.hpp in Headers */,
+				F30B07DB19CE021300E3DC54 /* AutoReleasePool.hpp in Headers */,
+				F30B07BA19CE01F800E3DC54 /* DelegateProtocol.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,21 +890,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3A0946019C49E3D008DA61A /* Mutex.cpp in Sources */,
-				F30994D419CA24DB000D6259 /* Window.mm in Sources */,
 				F309949D19CA184C000D6259 /* Resource.cpp in Sources */,
 				F3B23A2319AE764E0064E08F /* ExceptionHandler.cpp in Sources */,
+				F30B07DF19CE033700E3DC54 /* Window.mm in Sources */,
 				F3B23A2419AE764E0064E08F /* FileHandler.cpp in Sources */,
+				F30B07EE19CF61EC00E3DC54 /* SilentResponder.mm in Sources */,
 				F309949F19CA184C000D6259 /* VideoMode.cpp in Sources */,
+				F30B07BC19CE01F800E3DC54 /* WindowOS.mm in Sources */,
+				F30B07DC19CE021300E3DC54 /* AutoReleasePool.mm in Sources */,
 				F309949B19CA184C000D6259 /* Context.cpp in Sources */,
 				F3B23A2519AE764E0064E08F /* TextFileReader.cpp in Sources */,
 				F30994A119CA184C000D6259 /* Window.cpp in Sources */,
 				F30994D019CA1F65000D6259 /* WindowImp.cpp in Sources */,
+				F30B07D019CE021300E3DC54 /* Application.mm in Sources */,
 				F311F29219C3A9730057DF56 /* Errors.cpp in Sources */,
 				F3B23A2619AE764E0064E08F /* TextFileWriter.cpp in Sources */,
 				F3A0948D19C77489008DA61A /* Lock.cpp in Sources */,
 				F3B23A2719AE764E0064E08F /* FileUtils.cpp in Sources */,
+				F30B07D319CE021300E3DC54 /* Delegate.mm in Sources */,
 				F3B23A2819AE764E0064E08F /* Logger.cpp in Sources */,
 				F3B23A2A19AE764E0064E08F /* Simplex.cpp in Sources */,
+				F30B07DA19CE021300E3DC54 /* KeyboardHelper.mm in Sources */,
+				F30B07EA19CF5FD000E3DC54 /* View.mm in Sources */,
 				F3B23A2B19AE764E0064E08F /* OS.cpp in Sources */,
 				F3A0949319C77489008DA61A /* Thread.cpp in Sources */,
 				F3B23A2C19AE764E0064E08F /* OSX.mm in Sources */,
@@ -765,12 +920,15 @@
 				F3B23A2D19AE764E0064E08F /* Singleton.cpp in Sources */,
 				F3B23A2E19AE764E0064E08F /* String.cpp in Sources */,
 				F3A0949119C77489008DA61A /* Sleep.cpp in Sources */,
+				F30B07B919CE01F800E3DC54 /* Controller.mm in Sources */,
+				F30B07D819CE021300E3DC54 /* Input.mm in Sources */,
 				F3A0946219C49E3D008DA61A /* Sleep.cpp in Sources */,
 				F3A0949519C77489008DA61A /* ThreadLocal.cpp in Sources */,
 				F3B23A2F19AE764E0064E08F /* Time.cpp in Sources */,
 				F3B23A3019AE764E0064E08F /* Utility.cpp in Sources */,
 				F3A0946619C49E3D008DA61A /* ThreadLocal.cpp in Sources */,
 				F3B23BFD19B338630064E08F /* Threads.cpp in Sources */,
+				F30B07D519CE021300E3DC54 /* OBJC.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,12 +946,18 @@
 		F3B23A1B19AE75FB0064E08F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					../glm,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -802,9 +966,15 @@
 		F3B23A1C19AE75FB0064E08F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					../glm,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -62,11 +62,18 @@ elseif (APPLE)
 
     # Application
     link_directories(${NOS}/OSX/Application)
-    include_directorieS(${NOS}/OSX/Application)
+    include_directories(${NOS}/OSX/Application)
     list(APPEND LibHeaders ${NOS}/OSX/Application/Application.hpp)
     list(APPEND LibSources ${NOS}/OSX/Application/Application.mm)
     list(APPEND LibHeaders ${NOS}/OSX/Application/Delegate.hpp)
     list(APPEND LibSources ${NOS}/OSX/Application/Delegate.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Application/Controller.hpp)
+
+    # Conversion
+    link_directories(${NOS}/OSX/Conversion)
+    include_directories(${NOS}/OSX/Conversion)
+    list(APPEND LibHeaders ${NOS}/OSX/Conversion/OBJC.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Conversion/OBJC.mm)
 elseif (UNIX)
     link_directories(${NOS}/Linux)
     include_directories(${NOS}/Linux)
@@ -240,6 +247,8 @@ list(APPEND LibSources ${NOS}/Window/Window/GL/Context.cpp)
 link_directories(${NOS}/Window/Window/VideoMode)
 include_directories(${NOS}/Window/Window/VideoMode)
 list(APPEND LibSources ${NOS}/Window/Window/VideoMode/VideoMode.cpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/VideoMode/VideoMode.hpp)
+list(APPEND LibHeaders ${NOS}/Window/Window/VideoMode/VideoModeImp.hpp)
 
 # Implementations Stuff
 if (WIN32)

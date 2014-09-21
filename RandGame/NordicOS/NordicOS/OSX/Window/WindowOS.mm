@@ -36,8 +36,8 @@ namespace NordicArts {
         
         template<class T>
         void scaleInXY(T &in, id<WindowDelegateProtocol> delegate) {
-            scaleIn(in.iX, delegate);
-            scaleIn(in.iY, delegate);
+            scaleIn(in.x, delegate);
+            scaleIn(in.y, delegate);
         }
         
         template<class T>
@@ -53,14 +53,15 @@ namespace NordicArts {
         
         template<class T>
         void scaleOutXY(T &out, id<WindowDelegateProtocol> delegate) {
-            scaleOut(out.iX, delegate);
-            scaleOut(out.iY, delegate);
+            scaleOut(out.x, delegate);
+            scaleOut(out.y, delegate);
         }
         
         WindowOS::WindowOS(WindowHandle hHandle) : m_bShowCursor(true) {
             retainPool();
             
-            id nsHandle = (id)hHandle;
+            //id nsHandle = (id)hHandle;
+            id nsHandle = (__bridge id)hHandle;
             if ([nsHandle isKindOfClass:[NSWindow class]]) {
                 m_Delegate = [[NAWindowController alloc] initWithWindow:nsHandle];
             } else if ([nsHandle isKindOfClass:[NSView class]]) {
@@ -76,7 +77,7 @@ namespace NordicArts {
             initaliseKeyboardHelper();
         }
         
-        WindowOS::WindowOS(VideoMode mode, const String &cTitle, unsigned long lStyle, const ContextSettings &) : m_bShowCursor(true) {
+        WindowOS::WindowOS(VideoMode mode, const String &cTitle, unsigned long lStyle, const ContextSettings &/*settings*/) : m_bShowCursor(true) {
             setUpProcess();
             
             retainPool();
@@ -92,7 +93,6 @@ namespace NordicArts {
         
         WindowOS::~WindowOS() {
             [m_Delegate closeWindow];
-            [m_Delegate release];
             
             NSArray *aWindows = [NSApp orderedWindows];
             if ([aWindows count] > 0) {
@@ -118,7 +118,7 @@ namespace NordicArts {
                 [NSApp activateIgnoringOtherApps:YES];
                 
                 if (![[NAApplication sharedApplication] delegate]) {
-                    [NSApp setDelegate:[[[NAApplicationDelegate alloc] init] autorelease]];
+                    [NSApp setDelegate:[[NAApplicationDelegate alloc] init]];
                 }
                 
                 [NAApplication setUpMenuBar];
@@ -201,6 +201,129 @@ namespace NordicArts {
             pushEvent(oEvent);
         }
         
+        void WindowOS::mouseWheelScrolledAt(float fDelta, int iX, int iY) {
+            Event oEvent;
+            oEvent.type                 = Event::MouseWheelMoved;
+            oEvent.mouseWheel.iDelta    = fDelta;
+            oEvent.mouseWheel.iX        = iX;
+            oEvent.mouseWheel.iY        = iY;
+            scaleOutXY(oEvent.mouseWheel, m_Delegate);
+            
+            pushEvent(oEvent);
+        }
         
+        void WindowOS::mouseMovedIn(void) {
+            if (!m_bShowCursor) {
+                [m_Delegate hideMouseCursor];
+            }
+            
+            Event oEvent;
+            oEvent.type = Event::MouseEntered;
+            
+            pushEvent(oEvent);
+        }
+        
+        void WindowOS::mouseMovedOut(void) {
+            if (!m_bShowCursor) {
+                [m_Delegate showMouseCursor];
+            }
+            
+            Event oEvent;
+            oEvent.type = Event::MouseLeft;
+            
+            pushEvent(oEvent);
+        }
+        
+        void WindowOS::keyDown(Event::KeyEvent key) {
+            Event oEvent;
+            oEvent.type = Event::KeyPressed;
+            oEvent.key  = key;
+            
+            pushEvent(oEvent);
+        }
+        
+        void WindowOS::keyUp(Event::KeyEvent key) {
+            Event oEvent;
+            oEvent.type = Event::KeyReleased;
+            oEvent.key  = key;
+            
+            pushEvent(oEvent);
+        }
+        
+        void WindowOS::textEntered(unichar charCode) {
+            Event oEvent;
+            oEvent.type         = Event::TextEntered;
+            oEvent.text.unicode = charCode;
+            
+            pushEvent(oEvent);
+        }
+        
+        void WindowOS::processEvents() {
+            [m_Delegate processEvent];
+        }
+        
+        WindowHandle WindowOS::getSystemHandle() const {
+            return [m_Delegate getSystemHandle];
+        }
+        
+        glm::vec2 WindowOS::getPosition() const {
+            NSPoint pos = [m_Delegate position];
+            glm::vec2 ret(pos.x, pos.y);
+            scaleOutXY(ret, m_Delegate);
+            
+            return ret;
+        }
+        
+        void WindowOS::setPosition(const glm::vec2 &vPosition) {
+            glm::vec2 backingPositon = vPosition;
+            scaleInXY(backingPositon, m_Delegate);
+            [m_Delegate setWindowPositionToX:backingPositon.x Y:backingPositon.y];
+        }
+        
+        glm::vec2 WindowOS::getSize() const {
+            NSSize size = [m_Delegate size];
+            glm::vec2 ret(size.width, size.height);
+            scaleOutXY(ret, m_Delegate);
+            
+            return ret;
+        }
+        
+        void WindowOS::setSize(const glm::vec2 &vSize) {
+            glm::vec2 backingSize = vSize;
+            scaleInXY(backingSize, m_Delegate);
+            [m_Delegate resizeTo:backingSize.x by:backingSize.y];
+        }
+        
+        void WindowOS::setTitle(const String &cTitle) {
+            [m_Delegate changeTitle:stringToNSString(cTitle)];
+        }
+        
+        void WindowOS::setIcon(unsigned int iWidth, unsigned int iHeight, const UINT8 *pPixels) {
+            [m_Delegate setIconTo:iWidth by:iHeight width:pPixels];
+        }
+        
+        void WindowOS::setVisible(bool bVisible) {
+            if (bVisible) {
+                [m_Delegate showWindow];
+            } else {
+                [m_Delegate hideWindow];
+            }
+        }
+        
+        void WindowOS::setMouseCursorVisible(bool bVisible) {
+            if (bVisible) {
+                [m_Delegate showMouseCursor];
+            } else {
+                [m_Delegate hideMouseCursor];
+            }
+        }
+        
+        void WindowOS::setKeyRepeatEnabled(bool bEnabled) {
+            if (bEnabled) {
+                [m_Delegate enableKeyRepeat];
+            } else {
+                [m_Delegate disableKeyRepeat];
+            }
+        }
     };
 };

@@ -14,7 +14,7 @@
 #include "../../String/String.hpp"
 
 #ifdef __OBJC__
-#import "../Window/DelegateProtocol.hpp"
+#import "./DelegateProtocol.hpp"
 typedef id<WindowDelegateProtocol, NSObject> DelegateRef;
 
 @class NSOpenGLContext;

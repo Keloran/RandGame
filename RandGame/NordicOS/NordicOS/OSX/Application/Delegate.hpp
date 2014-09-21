@@ -6,9 +6,9 @@
 
 @interface NAApplicationDelegate : NSObject<NSApplicationDelegate>
 
--(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication*)sender;
+-(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender;
 
--(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)theApplication;
+-(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication;
 
 @end 
 

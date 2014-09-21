@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 NordicArts.net. All rights reserved.
 //
 
-#ifndef NordicArts_NordicOS__WindowImp_H
-#define NordicArts_NordicOS__WindowImp_H
+#ifndef NordicArts_NordicOS_WindowImp_H
+#define NordicArts_NordicOS_WindowImp_H
 
 #include "../../OS.hpp"
 #include "../../NonCopyable/NonCopyable.hpp"
 #include "../../String/String.hpp"
 #include "../Event.hpp"
-#include "../VideoMode/VideoMode.hpp"
+#include "./VideoMode/VideoMode.hpp"
 #include "./WindowHandle.hpp"
 #include "./ContextSettings.hpp"
 #include <queue>

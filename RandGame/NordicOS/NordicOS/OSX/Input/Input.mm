@@ -1,4 +1,4 @@
-#include "../../Window/VideoMode/VideoMode.hpp"
+#include "../../Window/Window/VideoMode/VideoMode.hpp"
 #include "../../Window/Window.hpp"
 #include "./Input.hpp"
 #include "./HIDInputManager.hpp"
@@ -10,13 +10,14 @@
 namespace NordicArts {
     namespace NordicOS {
         NAOpenGLView *getNAOpenGLViewFromWindow(const Window &oWindow) {
-            id nsHandle = (id)oWindow.getSystemHandle();
+            //id nsHandle = (id)oWindow.getSystemHandle();
+            id nsHandle = (__bridge id)oWindow.getSystemHandle();
 
             NAOpenGLView *pView = nil;
             if([nsHandle isKindOfClass:[NSWindow class]]) {
                 pView = [nsHandle contentView];
                 if ([pView isKindOfClass:[NAOpenGLView class]]) {
-                    error() << "Not valid view" << std::endl;
+                    Errors() << "Not valid view" << std::endl;
                     pView = nil;
                 }
             } else if ([nsHandle isKindOfClass:[NSView class]]) {
@@ -29,7 +30,7 @@ namespace NordicArts {
                 }
 
                 if (pView == nil) {
-                    error() << "Can't handle the window" << std::endl;
+                    Errors() << "Can't handle the window" << std::endl;
                 }
             }
 

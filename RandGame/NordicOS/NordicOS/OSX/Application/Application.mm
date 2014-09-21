@@ -6,7 +6,7 @@
     [NAApplication sharedApplication];
 
     NSEvent *pEvent = nil;
-    while (pEvent = [NSApp nextEventMatchingMask:NSAnyEvnetMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES]) {
+    while ((pEvent = [NSApp nextEventMatchingMask:NSAnyEventMask untilDate:[NSDate distantPast] inMode:NSDefaultRunLoopMode dequeue:YES])) {
         [NSApp sendEvent:pEvent];
     }
 }
@@ -18,22 +18,22 @@
     if (pMainMenu != nil) {
         return;
     }
-    pMainMenu = [[[NSMenu alloc] initWithTitle:@""] autorelease];
-    [NSApp setMainMenu:mainMenu];
+    pMainMenu = [[NSMenu alloc] initWithTitle:@""];
+    [NSApp setMainMenu:pMainMenu];
 
     // Apple Menu
     NSMenuItem  *pAppleItem = [pMainMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-    NSMenu      *pAppleMenu = [[NAApplication newAppleMenu] autorelease];
+    NSMenu      *pAppleMenu = [NAApplication newAppleMenu];
     [pAppleItem setSubmenu:pAppleMenu];
 
     // File Menu
     NSMenuItem  *pFileItem  = [pMainMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-    NSMenu      *pFileMenu  = [[NAApplication newFileMenu] autorelease];
+    NSMenu      *pFileMenu  = [NAApplication newFileMenu];
     [pFileItem setSubmenu:pFileMenu];
 
     // Window Menu
     NSMenuItem  *pWindowItem = [pMainMenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
-    NSMenu      *pWindowMenu = [[NAApplication newWindowMenu] autorelease];
+    NSMenu      *pWindowMenu = [NAApplication newWindowMenu];
     [pWindowItem setSubmenu:pWindowMenu];
     [NSApp setWindowsMenu:pWindowMenu];
 }
@@ -41,18 +41,18 @@
 +(NSMenu*)newAppleMenu {
     NSString *pAppName = [NAApplication applicationName];
     
-    NSMenu *pAppleMenu = [NSMenu alloc] initWithTitle:@""];
+    NSMenu *pAppleMenu = [[NSMenu alloc] initWithTitle:@""];
 
     // About
     [pAppleMenu addItemWithTitle:[@"About " stringByAppendingString:pAppName] action:@selector(orderFrontStandardAboutPanel:) keyEquivalent:@""];
-    [pAppleMenu addItemWithTitle:[NSMenuItem separatorItem]];
+    [pAppleMenu addItem:[NSMenuItem separatorItem]];
 
     // Preferences
     [pAppleMenu addItemWithTitle:@"Preferences..." action:nil keyEquivalent:@""];
     [pAppleMenu addItem:[NSMenuItem separatorItem]];
 
     // Services
-    NSMenu      *pServiceMenu = [[[NSMenu alloc] initWithTitle:@""] autorelease];
+    NSMenu      *pServiceMenu = [[NSMenu alloc] initWithTitle:@""];
     NSMenuItem  *pServiceItem = [pAppleMenu addItemWithTitle:@"Services..." action:nil keyEquivalent:@""];
     [pServiceItem setSubmenu:pServiceMenu];
     [NSApp setServicesMenu:pServiceMenu];
@@ -61,14 +61,14 @@
     // Hide
     [pAppleMenu addItemWithTitle:[@"Hode " stringByAppendingString:pAppName] action:@selector(hide:) keyEquivalent:@"h"];
     NSMenuItem *pHideOtherItem = [pAppleMenu addItemWithTitle:@"Hide Others" action:@selector(hideOtherApplications:) keyEquivalent:@"h"];
-    [pHideOtherItem setKeyEquivalentModiferMask:(NSAlternateKeyMask | NSCommandKeyMask)];
+    [pHideOtherItem setKeyEquivalentModifierMask:(NSAlternateKeyMask | NSCommandKeyMask)];
 
     // Show
     [pAppleMenu addItemWithTitle:@"Show All" action:@selector(unhideAllApplications:) keyEquivalent:@""];
     [pAppleMenu addItem:[NSMenuItem separatorItem]];
 
     // Quit
-    [pAppleMenu addItemWithTitle:[@"Quit " stringByAppendingString:pAppName] action:@selector(termniate:) keyEquivalent:@"q"];
+    [pAppleMenu addItemWithTitle:[@"Quit " stringByAppendingString:pAppName] action:@selector(terminate:) keyEquivalent:@"q"];
 
     return pAppleMenu;
 }
@@ -79,7 +79,6 @@
     // Close Window
     NSMenuItem *pCloseItem = [[NSMenuItem alloc] initWithTitle:@"Close Window" action:@selector(performClose:) keyEquivalent:@"w"];
     [pFileMenu addItem:pCloseItem];
-    [pCloseItem release];
 
     return pFileMenu;
 }
@@ -90,7 +89,6 @@
     // Minimize
     NSMenuItem *pMinimizeItem = [[NSMenuItem alloc] initWithTitle:@"Minimize" action:@selector(performMiniaturize:) keyEquivalent:@"m"];
     [pWindowMenu addItem:pMinimizeItem];
-    [pMinimizeItem release];
 
     // Zoom
     [pWindowMenu addItemWithTitle:@"Zoom" action:@selector(performZoom:) keyEquivalent:@""];
@@ -118,13 +116,14 @@
 
 -(void)bringAllToFront:(id)sender {
     (void)sender;
-    [[NSApp windows] makeObjectsPerformSelector:@selector(orderFrontRegardless:)];
+    [[NSApp windows] makeObjectsPerformSelector:@selector(orderFrontRegardless)];
 }
 
 -(void)sendEvent:(NSEvent*)anEvent {
     id firstResponder = [[anEvent window] firstResponder];
-    if (([anEvent type] != NSKeyUp) || (![firstResponder tryToPerform:@selector(NAKeyUp:) with:anEvent])) {
+    if (([anEvent type] != NSKeyUp) || (![firstResponder tryToPerform:@selector(naKeyUp:) with:anEvent])) {
         [super sendEvent:anEvent];
     }
 }
     
+@end

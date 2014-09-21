@@ -33,7 +33,7 @@ namespace NordicArts {
             return m_iWidth;
         }
     
-        unsigned int VideoMode::getHeigt() const {
+        unsigned int VideoMode::getHeight() const {
             return m_iHeight;
         }
 

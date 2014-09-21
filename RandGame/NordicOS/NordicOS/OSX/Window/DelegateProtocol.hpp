@@ -27,7 +27,7 @@ namespace NordicArts {
 -(void)closeWindow;
 -(void)enableKeyRepeat;
 -(void)disableKeyRepeat;
--(void)setIconTo:(unsigned int)width by:(unsigned int)height width:(const NordicArts::UINT8*)pixels;
+-(void)setIconTo:(unsigned int)width by:(unsigned int)height width:(const NordicArts::NordicOS::UINT8 *)pixels;
 -(void)processEvent;
 -(void)applyContext:(NSOpenGLContext*)context;
 

@@ -20,7 +20,7 @@ namespace NordicArts {
 }
 
 -(id)initWithWindow:(NSWindow*)window;
--(id)initWithMode:(const NordicArts::NordicOS::VideoMode&)mode andStyle:(unsigned long)style;
+-(id)initWithMode:(const NordicArts::NordicOS::VideoMode &)mode andStyle:(unsigned long)style;
 
 @end
 

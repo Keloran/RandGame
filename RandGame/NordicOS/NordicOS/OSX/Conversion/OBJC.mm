@@ -28,5 +28,5 @@ NSString *stringToNSString(const NordicArts::NordicOS::String &cString) {
 
     NSString *pString = [[NSString alloc] initWithBytes:pData length:iLength encoding:encoding];
     
-    return [pString autorelease];
+    return pString;
 }
