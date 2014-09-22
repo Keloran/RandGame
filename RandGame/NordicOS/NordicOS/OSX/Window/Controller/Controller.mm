@@ -47,7 +47,7 @@
             return self;
         }
 
-        m_pOGLView = [[NAOpenGLView alloc] initWithFrame:[[m_pWindow contentView] frame] fullscreen:NO];
+        m_pOGLView = [[NAOpenGLView alloc] initWithFrame:[[m_pWindow contentView] frame] fullScreen:NO];
         if(m_pOGLView == nil) {
             NordicArts::NordicOS::Errors() << "OGL not working" << std::endl;
 
@@ -60,7 +60,7 @@
     return self;
 }
 
--(id)initWithMode:(const NordicArts::NordicOS::VideoMode&)mode andStyle:(unsigned long)style {
+-(id)initWithMode:(const NordicArts::NordicOS::VideoMode &)mode andStyle:(unsigned long)style {
     if ([NSThread currentThread] != [NSThread mainThread]) {
         NordicArts::NordicOS::Errors() << "Not a worker thread" << std::endl;
         
@@ -72,7 +72,7 @@
         m_pOGLView      = nil;
         m_pRequester    = 0;
         
-        if (style & NordicArts::NordicOS::FullScreen) {
+        if (style & NordicArts::NordicOS::Style::FullScreen) {
             [self setupFullScreenViewWithMode:mode];
         } else {
             [self setupWindowWithMode:mode andStyle:style];
@@ -84,7 +84,7 @@
     return self;
 }
 
--(void)setupFullScreenWithMode:(const NordicArts::NordicOS::VideoMode&)mode {
+-(void)setupFullScreenViewWithMode:(const NordicArts::NordicOS::VideoMode &)mode {
     NordicArts::NordicOS::VideoMode desktop = NordicArts::NordicOS::VideoMode::getDesktopMode();
 
     NSRect windowRect = NSMakeRect(0, 0, desktop.getWidth(), desktop.getHeight());
@@ -116,7 +116,7 @@
 
     NSRect OGLRect = NSMakeRect(x, y, mode.getWidth(), mode.getHeight());
 
-    m_pOGLView = [[NAOpenGLView alloc] initWithFrame:OGLRect fullscreen:YES];
+    m_pOGLView = [[NAOpenGLView alloc] initWithFrame:OGLRect fullScreen:YES];
     if (m_pOGLView == nil) {
         NordicArts::NordicOS::Errors() << "Can't create OGL" << std::endl;
     
@@ -131,13 +131,13 @@
     NSRect rect = NSMakeRect(0, 0, mode.getWidth(), mode.getHeight());
     
     unsigned int nsStyle = NSBorderlessWindowMask;
-    if (style && NordicArts::NordicOS::TitleBar) {
+    if (style && NordicArts::NordicOS::Style::TitleBar) {
         nsStyle |= (NSTitledWindowMask | NSMiniaturizableWindowMask);
     }
-    if (style && NordicArts::NordicOS::Resize) {
+    if (style && NordicArts::NordicOS::Style::Resize) {
         nsStyle |= NSResizableWindowMask;
     }
-    if (style && NordicArts::NordicOS::Close) {
+    if (style && NordicArts::NordicOS::Style::Close) {
         nsStyle |= NSClosableWindowMask;
     }
     
@@ -148,7 +148,7 @@
         return;
     }
     
-    m_pOGLView = [[NAOpenGLView alloc] initWithFrame:[[m_pWindow contentView] frame] fullscreen:NO];
+    m_pOGLView = [[NAOpenGLView alloc] initWithFrame:[[m_pWindow contentView] frame] fullScreen:NO];
     if (m_pOGLView == nil) {
         NordicArts::NordicOS::Errors() << "OGL failed" << std::endl;
         
@@ -181,13 +181,13 @@
     [NSCursor hide];
 }
 -(void)showMouseCursor {
-    [NSCursor show];
+    [NSCursor unhide];
 }
 
 -(NSPoint)position {
     const NSPoint origin                = [m_pOGLView frame].origin;
     const NSSize size                   = [m_pOGLView frame].size;
-    const NSPoint topLeftCornerOfView   = [NSMakePoint(origin.x, (origin.y + size.height))];
+    const NSPoint topLeftCornerOfView   = NSMakePoint(origin.x, (origin.y + size.height));
     const NSPoint positionInView        = [m_pOGLView convertPointToBacking:topLeftCornerOfView];
     const NSPoint positionInWindow      = [m_pOGLView convertPoint:positionInView toView:nil];
     const NSPoint positionInScreen      = [[m_pOGLView window] convertBaseToScreen:positionInWindow];
@@ -255,7 +255,7 @@
     [m_pOGLView disableKeyRepeat];
 }
 
--(void)setIconTo:(unsigned int)width by:(unsigned int)height width:(id)pixels {
+-(void)setIconTo:(unsigned int)width by:(unsigned int)height width:(const NordicArts::NordicOS::UINT8 *)pixels {
     NSBitmapImageRep *pBitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:0 pixelsWide:width pixelsHigh:height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
     
     for (unsigned int y = 0; y < height; ++y) {
@@ -266,11 +266,11 @@
                 pixels[2],
                 pixels[3]
             };
-            [bitmap setPixel:pixel atX:x y:y];
+            [pBitmap setPixel:pixel atX:x y:y];
         }
     }
     
-    NSImage *pIcon = [[NSImage alloc] initWithSize:NSMAkeSize(width, height)];
+    NSImage *pIcon = [[NSImage alloc] initWithSize:NSMakeSize(width, height)];
     [pIcon addRepresentation:pBitmap];
     
     [[NAApplication sharedApplication] setApplicationIconImage:pIcon];
@@ -319,7 +319,7 @@
 
 
 -(float)titlebarHeight {
-    return (NSHeight([m_pWindow frame]) - (NSHeight([[m_pWindow contentView] frame]));
+    return (NSHeight([m_pWindow frame]) - (NSHeight([[m_pWindow contentView] frame])));
 }
 
 @end

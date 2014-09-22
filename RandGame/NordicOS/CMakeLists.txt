@@ -43,13 +43,42 @@ elseif (APPLE)
     list(APPEND LibHeaders ${NOS}/OSX/Wrapper/AutoReleasePool.hpp)
     list(APPEND LibSources ${NOS}/OSX/Wrapper/AutoReleasePool.mm)
 
+    # Application
+    link_directories(${NOS}/OSX/Application)
+    include_directories(${NOS}/OSX/Application)
+    list(APPEND LibHeaders ${NOS}/OSX/Application/Application.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Application/Application.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Application/Delegate.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Application/Delegate.mm)
+
+    # OpenGL
+    link_directories(${NOS}/OSX/OpenGL)
+    include_directories(${NOS}/OSX/OpenGL)
+    list(APPEND LibHeaders ${NOS}/OSX/OpenGL/View.hpp)
+    list(APPEND LibSources ${NOS}/OSX/OpenGL/View.mm)
+
     # Window Stuff
+    link_directories(${NOS}/OSX/Window/Controller)
+    include_directorieS(${NOS}/OSX/Window/Controller)
+    list(APPEND Libheaders ${NOS}/OSX/Window/Controller/Controller.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Window/Controller/Controller.mm)
+    
     link_directories(${NOS}/OSX/Window)
     include_directories(${NOS}/OSX/Window)
     list(APPEND LibHeaders ${NOS}/OSX/Window/WindowHandle.hpp)
-    list(APPEND LibHeaders ${NOS}/OSX/Window/WindowOS.hpp)
-    list(APPEND LibSources ${NOS}/OSX/Window/WindowOS.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/Window.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Window/Window.mm)
     list(APPEND LibHeaders ${NOS}/OSX/Window/DelegateProtocol.hpp)
+
+    link_directories(${NOS}/OSX/Window/WindowOS)
+    include_directories(${NOS}/OSX/Window/WindowOS)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/WindowOS/WindowOS.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Window/WindowOS/WindowOS.mm)
+
+    link_directories(${NOS}/OSX/Window/SilentResponder)
+    include_directories(${NOS}/OSX/Window/SilentResponder)
+    list(APPEND LibHeaders ${NOS}/OSX/Window/SilentResponder/SilentResponder.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Window/SilentResponder/SilentResponder.mm)
 
     # Input
     link_directories(${NOS}/OSX/Input)
@@ -57,6 +86,7 @@ elseif (APPLE)
     list(APPEND LibHeaders ${NOS}/OSX/Input/Input.hpp)
     list(APPEND LibSources ${NOS}/OSX/Input/Input.mm)
     list(APPEND LibHeaders ${NOS}/OSX/Input/HIDInputManager.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Input/HIDInputManager.mm)
     list(APPEND LibHeaders ${NOS}/OSX/Input/KeyboardHelper.hpp)
     list(APPEND LibSources ${NOS}/OSX/Input/KeyboardHelper.mm)
 

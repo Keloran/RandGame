@@ -4,7 +4,7 @@
 #include "./HIDInputManager.hpp"
 #include "../../ExceptionHandler/Errors.hpp"
 
-#import "../Window/OpenGLView.hpp"
+#import "../OpenGL/View.hpp"
 #import <AppKit/AppKit.h>
 
 namespace NordicArts {

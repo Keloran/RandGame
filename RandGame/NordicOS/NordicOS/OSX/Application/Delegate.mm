@@ -2,7 +2,7 @@
 
 @implementation NAApplicationDelegate
 
--(NSApplicationTerminateReply)applicationShouldTermniate:(NSApplication *)sender {
+-(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
     (void)sender;
 
     [NSApp makeWindowsPerform:@selector(naClose) inOrder:NO];

@@ -31,7 +31,7 @@ namespace NordicArts {
         // Methods
         public:
             Time();
-            Time(int64_t iMicroSeconds);
+            Time(INT64 iMicroSeconds);
             Time(NA_TIME &oTime);
 
             int getDay() const;
@@ -46,20 +46,20 @@ namespace NordicArts {
             int getMicroSeconds() const;
             
             float asSeconds() const;
-            int32_t asMilliseconds() const;
-            int64_t asMicroseconds() const;
+            INT32 asMilliseconds() const;
+            INT64 asMicroseconds() const;
             
             static const Time Zero;
 
         protected:
         private:
-            int64_t m_iMicroseconds;
+            INT64 m_iMicroseconds;
             
         };
         
         Time seconds(float fAmount);
-        Time milliseconds(int32_t iAmount);
-        Time microseconds(int64_t iAmount);
+        Time milliseconds(INT32 iAmount);
+        Time microseconds(INT64 iAmount);
         
         float operator /(Time oLeft, Time oRight);
         
@@ -73,18 +73,18 @@ namespace NordicArts {
         Time operator -(Time right);
         Time operator -(Time oLeft, Time oRight);
         Time operator +(Time oLeft, Time oRight);
-        Time operator *(Time oLeft, int64_t iRight);
+        Time operator *(Time oLeft, INT64 iRight);
         Time operator *(Time oLeft, float fRight);
         Time operator *(float fLeft, Time oRight);
-        Time operator *(int64_t iLeft, Time oRight);
+        Time operator *(INT64 iLeft, Time oRight);
         Time operator /(Time oLeft, float fRight);
-        Time operator /(Time oLeft, int64_t iRight);
+        Time operator /(Time oLeft, INT64 iRight);
         Time operator %(Time oLeft, Time oRight);
         
         Time &operator +=(Time &oLeft, Time oRight);
         Time &operator -=(Time &oLeft, Time oRight);
         Time &operator *=(Time &oLeft, float fRight);
-        Time &operator *=(Time &oLeft, int64_t iRight);
+        Time &operator *=(Time &oLeft, INT64 iRight);
         Time &operator /=(Time &oLeft, float fRight);
         Time &operator %=(Time &oLeft, Time oRight);
         
@@ -94,14 +94,14 @@ namespace NordicArts {
         public:
         protected:
         private:
-            int64_t m_iStartTime;
+            INT64 m_iStartTime;
             
         // Methods
         public:
             Clock();
             
-            int64_t getElapsedTime() const;
-            int64_t restart();
+            INT64 getElapsedTime() const;
+            INT64 restart();
             
         protected:
         private:

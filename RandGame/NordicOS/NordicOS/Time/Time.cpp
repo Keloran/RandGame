@@ -10,7 +10,7 @@ namespace NordicArts {
             m_tpHighClock       = std::chrono::high_resolution_clock::now();
         }
         
-        Time::Time(int64_t iMicroSeconds) : m_iMicroseconds(iMicroSeconds) {
+        Time::Time(INT64 iMicroSeconds) : m_iMicroseconds(iMicroSeconds) {
             m_tpSystemTime  = std::chrono::system_clock::now();
             m_tpHighClock   = std::chrono::high_resolution_clock::now();
         }
@@ -112,21 +112,21 @@ namespace NordicArts {
             return m_iMicroseconds / 1000000.0f;
         }
         
-        int32_t Time::asMilliseconds() const {
-            return static_cast<int32_t>(m_iMicroseconds / 1000);
+        INT32 Time::asMilliseconds() const {
+            return static_cast<INT32>(m_iMicroseconds / 1000);
         }
         
-        int64_t Time::asMicroseconds() const {
+        INT64 Time::asMicroseconds() const {
             return m_iMicroseconds;
         }
         
         Time seconds(float fAmount) {
-            return Time(static_cast<int64_t>(fAmount * 1000000));
+            return Time(static_cast<INT64>(fAmount * 1000000));
         }
-        Time milliseconds(int32_t iAmount) {
-            return Time(static_cast<int64_t>(iAmount) * 1000);
+        Time milliseconds(INT32 iAmount) {
+            return Time(static_cast<INT64>(iAmount) * 1000);
         }
-        Time microseconds(int64_t iAmount) {
+        Time microseconds(INT64 iAmount) {
             return Time(iAmount);
         }
         
@@ -165,19 +165,19 @@ namespace NordicArts {
         Time operator *(Time oLeft, float fRight) {
             return microseconds(oLeft.asSeconds() * fRight);
         }
-        Time operator *(Time oLeft, int64_t iRight) {
+        Time operator *(Time oLeft, INT64 iRight) {
             return microseconds(oLeft.asMicroseconds() * iRight);
         }
         Time operator *(float fLeft, Time oRight) {
             return (oRight * fLeft);
         }
-        Time operator *(int64_t iLeft, Time oRight) {
+        Time operator *(INT64 iLeft, Time oRight) {
             return (oRight * iLeft);
         }
         Time operator /(Time oLeft, float fRight) {
             return seconds(oLeft.asSeconds() / fRight);
         }
-        Time operator /(Time oLeft, int64_t iRight) {
+        Time operator /(Time oLeft, INT64 iRight) {
             return microseconds(oLeft.asMicroseconds() / iRight);
         }
         Time operator %(Time oLeft, Time oRight) {
@@ -193,13 +193,13 @@ namespace NordicArts {
         Time &operator *=(Time &oLeft, float fRight) {
             return (oLeft = (oLeft * fRight));
         }
-        Time &operator *=(Time &oLeft, int64_t iRight) {
+        Time &operator *=(Time &oLeft, INT64 iRight) {
             return (oLeft = (oLeft * iRight));
         }
         Time &operator /=(Time &oLeft, float fRight) {
             return (oLeft = (oLeft / fRight));
         }
-        Time &operator /=(Time &oLeft, int64_t iRight) {
+        Time &operator /=(Time &oLeft, INT64 iRight) {
             return (oLeft = (oLeft / iRight));
         }
         Time &operator %=(Time &oLeft, Time oRight) {
@@ -213,15 +213,15 @@ namespace NordicArts {
             m_iStartTime = oTime.getMicroSeconds();
         }
         
-        int64_t Clock::getElapsedTime() const {
+        INT64 Clock::getElapsedTime() const {
             Time oTime;
             
             return (oTime.getMicroSeconds() - m_iStartTime);
         }
         
-        int64_t Clock::restart() {
+        INT64 Clock::restart() {
             Time oTime;
-            int64_t iElapsed    = (oTime.getMicroSeconds() - m_iStartTime);
+            INT64 iElapsed    = (oTime.getMicroSeconds() - m_iStartTime);
             m_iStartTime        = oTime.getMicroSeconds();
             
             return iElapsed;

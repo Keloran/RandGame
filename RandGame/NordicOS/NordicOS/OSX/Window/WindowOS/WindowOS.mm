@@ -11,11 +11,11 @@
 #include "../../String/String.hpp"
 #include "../Wrapper/AutoReleasePool.hpp"
 #include "../Conversion/OBJC.hpp"
-#include "../Application/Application.hpp"
-#include "../Application/Delegate.hpp"
+#include "../../Application/Application.hpp"
+#include "../../Application/Delegate.hpp"
 #include "../Input/KeyboardHelper.hpp"
-#include "../Application/Controller.hpp"
-#include "./Controller.hpp"
+#include "../../Application/Controller.hpp"
+#include "../Controller/Controller.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -53,6 +53,12 @@ namespace NordicArts {
         
         template<class T>
         void scaleOutXY(T &out, id<WindowDelegateProtocol> delegate) {
+            scaleOut(out.iX, delegate);
+            scaleOut(out.iY, delegate);
+        }
+
+        template<class T>
+        void scaleOutGLM(T &out, id<WindowDelegateProtocol> delegate) {
             scaleOut(out.x, delegate);
             scaleOut(out.y, delegate);
         }
@@ -118,7 +124,7 @@ namespace NordicArts {
                 [NSApp activateIgnoringOtherApps:YES];
                 
                 if (![[NAApplication sharedApplication] delegate]) {
-                    [NSApp setDelegate:[[NAApplicationDelegate alloc] init]];
+                    [[NSApplication sharedApplication] setDelegate:[[NAApplicationDelegate alloc] init]];
                 }
                 
                 [NAApplication setUpMenuBar];
@@ -269,7 +275,7 @@ namespace NordicArts {
         glm::vec2 WindowOS::getPosition() const {
             NSPoint pos = [m_Delegate position];
             glm::vec2 ret(pos.x, pos.y);
-            scaleOutXY(ret, m_Delegate);
+            scaleOutGLM(ret, m_Delegate);
             
             return ret;
         }
@@ -283,7 +289,7 @@ namespace NordicArts {
         glm::vec2 WindowOS::getSize() const {
             NSSize size = [m_Delegate size];
             glm::vec2 ret(size.width, size.height);
-            scaleOutXY(ret, m_Delegate);
+            scaleOutGLM(ret, m_Delegate);
             
             return ret;
         }

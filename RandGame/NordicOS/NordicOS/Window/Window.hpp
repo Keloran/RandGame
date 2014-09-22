@@ -1,5 +1,5 @@
 #ifndef NordicArts_NordicOS_Window_H
-#define Nordicarts_NordicOS_Window_H
+#define NordicArts_NordicOS_Window_H
 
 #include "../OS.hpp"
 #include "./Context.hpp"

@@ -26,7 +26,8 @@ namespace NordicArts {
             
             IOHIDManagerRef     m_manager;
 
-            IOHIDElements       m_keys[Keyboard::Key key];
+            IOHIDElements       m_keys[Keyboard::KeyCount];
+            IOHIDElements       m_buttons[Mouse::ButtonCount];
 
         // Methods
         public:
