@@ -49,7 +49,7 @@ namespace NordicArts {
         }
         glm::vec2 InputImp::getMousePosition() {
             NSPoint pos = [NSEvent mouseLocation];
-            pos.y       = (VideoMode::getDesktopMode().iHeight - pos.y);
+            pos.y       = (VideoMode::getDesktopMode().getHeight() - pos.y);
             
             int iScale = [[NSScreen mainScreen] backingScaleFactor];
         
