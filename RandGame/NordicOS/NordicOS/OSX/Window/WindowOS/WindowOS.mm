@@ -272,30 +272,30 @@ namespace NordicArts {
             return [m_Delegate getSystemHandle];
         }
         
-        glm::vec2 WindowOS::getPosition() const {
+        Vector2i WindowOS::getPosition() const {
             NSPoint pos = [m_Delegate position];
-            glm::vec2 ret(pos.x, pos.y);
+            Vector2i ret(pos.x, pos.y);
             scaleOutGLM(ret, m_Delegate);
             
             return ret;
         }
         
-        void WindowOS::setPosition(const glm::vec2 &vPosition) {
-            glm::vec2 backingPositon = vPosition;
+        void WindowOS::setPosition(const Vector2i &vPosition) {
+            Vector2i backingPositon = vPosition;
             scaleInXY(backingPositon, m_Delegate);
             [m_Delegate setWindowPositionToX:backingPositon.x Y:backingPositon.y];
         }
         
-        glm::vec2 WindowOS::getSize() const {
+        Vector2u WindowOS::getSize() const {
             NSSize size = [m_Delegate size];
-            glm::vec2 ret(size.width, size.height);
+            Vector2u ret(size.width, size.height);
             scaleOutGLM(ret, m_Delegate);
             
             return ret;
         }
         
-        void WindowOS::setSize(const glm::vec2 &vSize) {
-            glm::vec2 backingSize = vSize;
+        void WindowOS::setSize(const Vector2u &vSize) {
+            Vector2u backingSize = vSize;
             scaleInXY(backingSize, m_Delegate);
             [m_Delegate resizeTo:backingSize.x by:backingSize.y];
         }

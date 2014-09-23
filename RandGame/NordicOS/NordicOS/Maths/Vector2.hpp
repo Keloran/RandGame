@@ -52,7 +52,7 @@ namespace NordicArts {
         Vector2<T> operator *(const Vector2<T> &oLeft, T right);
         
         template<typename T>
-        Vector2<T> operator *(T left, const Vector2 &oRight);
+        Vector2<T> operator *(T left, const Vector2<T> &oRight);
         
         template<typename T>
         Vector2<T> &operator *=(Vector2<T> &oLeft, T right);

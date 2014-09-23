@@ -1,7 +1,7 @@
 #ifndef NordicArts_NordicOS_Window_Mouse_H
 #define NordicArts_NordicOS_Window_Mouse_H
 
-#include <glm/glm.hpp>
+#include "../../Maths/Vector2.hpp"
 
 namespace NordicArts {
     namespace NordicOS {
@@ -27,11 +27,11 @@ namespace NordicArts {
         public:
             static bool isButtonPressed(Button eButton);
 
-            static glm::vec2 getPosition();
-            static glm::vec2 getPosition(const Window &oWindow);
+            static Vector2i getPosition();
+            static Vector2i getPosition(const Window &oWindow);
             
-            static void setPosition(const glm::vec2 &vPosition);
-            static void setPosition(const glm::vec2 &vPosition, const Window &oWindow);
+            static void setPosition(const Vector2i &vPosition);
+            static void setPosition(const Vector2i &vPosition, const Window &oWindow);
 
         protected:
         private:

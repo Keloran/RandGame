@@ -18,10 +18,11 @@ namespace NordicArts {
             static bool isMouseButtonPressed(Mouse::Button button);
 
             static void setVirtualKeyboardVisible(bool bVisible);
-            static void setMousePositon(const glm::vec2 &vPosition);
+            static void setMousePosition(const Vector2i &vPosition);
+            static void setMousePosition(const Vector2i &vPosition, const Window &oWindow);
 
-            static glm::vec2 getMousePosition();
-            static glm::vec2 getMousePosition(const Window &oWindiw);
+            static Vector2i getMousePosition();
+            static Vector2i getMousePosition(const Window &oWindiw);
 
         protected:
         private:

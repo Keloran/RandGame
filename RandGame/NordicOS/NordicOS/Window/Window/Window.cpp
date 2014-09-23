@@ -99,21 +99,21 @@ namespace NordicArts {
             }
         }
 
-        glm::vec2 Window::getPosition() const {
-            return (m_pImp ? m_pImp->getPosition() : glm::vec2());
+        Vector2i Window::getPosition() const {
+            return (m_pImp ? m_pImp->getPosition() : Vector2i());
         }
 
-        void Window::setPosition(const glm::vec2 &oPosition) {
+        void Window::setPosition(const Vector2i &oPosition) {
             if (m_pImp) {
                 m_pImp->setPosition(oPosition);
             }
         }
 
-        glm::vec2 Window::getSize() const {
+        Vector2u Window::getSize() const {
             return m_vSize;
         }
 
-        void Window::setSize(const glm::vec2 &oSize) {
+        void Window::setSize(const Vector2u &oSize) {
             if (m_pImp) {
                 m_pImp->setSize(oSize);
 

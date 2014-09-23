@@ -10,7 +10,7 @@
 #define NordicArts_NordicOS_Maths_Vector2_INL
 
 template<typename T>
-inline Vector2<T>::Vector2 : x(), y(0) {}
+inline Vector2<T>::Vector2() : x(), y(0) {}
 
 template<typename T>
 inline Vector2<T>::Vector2(T inX, T inY) : x(inX), y(inY) {}

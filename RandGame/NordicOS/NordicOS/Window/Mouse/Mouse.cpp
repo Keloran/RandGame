@@ -8,18 +8,18 @@ namespace NordicArts {
             return InputImp::isMouseButtonPressed(eButton);
         }
 
-        glm::vec2 Mouse::getPosition() {
+        Vector2i Mouse::getPosition() {
             return InputImp::getMousePosition();
         }
-        glm::vec2 Mouse::getPositon(const Window &oWindow) {
-            return InputImp::getMousePositon(oWindow);
+        Vector2i Mouse::getPosition(const Window &oWindow) {
+            return InputImp::getMousePosition(oWindow);
         }
 
-        void Mouse::setPosition(const glm::vec2 &vPosition) {
-            InputImp::setMousePostion(vPosition);
+        void Mouse::setPosition(const Vector2i &vPosition) {
+            InputImp::setMousePosition(vPosition);
         }
-        void Mouse::setPosition(const glm::vec2 &vPosition, const Window &oWindow) {
-            InputImp::setMousePositon(vPosition, oWindow);
+        void Mouse::setPosition(const Vector2i &vPosition, const Window &oWindow) {
+            InputImp::setMousePosition(vPosition, oWindow);
         }
     };
 };

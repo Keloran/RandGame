@@ -4,6 +4,7 @@
 #include "../../Window/Keyboard/Keyboard.hpp"
 #include "../../Window/Mouse/Mouse.hpp"
 #include "../../NonCopyable/NonCopyable.hpp"
+#include "../../OS.hpp"
 #include <Carbon/Carbon.h>
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/hid/IOHIDManager.h>

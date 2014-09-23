@@ -47,36 +47,36 @@ namespace NordicArts {
         bool InputImp::isMouseButtonPressed(Mouse::Button button) {
             return HIDInputManager::getInstance().isMouseButtonPressed(button);
         }
-        glm::vec2 InputImp::getMousePosition() {
+        Vector2i InputImp::getMousePosition() {
             NSPoint pos = [NSEvent mouseLocation];
             pos.y       = (VideoMode::getDesktopMode().getHeight() - pos.y);
             
             int iScale = [[NSScreen mainScreen] backingScaleFactor];
         
-            return (glm::vec2(pos.x, pos.y) * iScale);
+            return (Vector2i(pos.x, pos.y) * iScale);
         }
-        glm::vec2 InputImp::getMousePositon(const Window &oWindow) {
+        Vector2i InputImp::getMousePosition(const Window &oWindow) {
             NAOpenGLView *pView = getNAOpenGLViewFromWindow(oWindow);
             if (pView == nil) {
-                return glm::vec2();
+                return Vector2i();
             }
 
             NSPoint pos = [pView cursorPositionFromEvent:nil];
 
             int iScale = [pView displayScaleFactor];
 
-            return (glm::vec2(pos.x, pos.y) * iScale);
+            return (Vector2i(pos.x, pos.y) * iScale);
         }
-        void InputImp::setMousePositon(const glm::vec2 &vPosition) {
+        void InputImp::setMousePosition(const Vector2i &vPosition) {
             int iScale = [[NSScreen mainScreen] backingScaleFactor];
 
             CGPoint pos = CGPointMake((vPosition.x / iScale), (vPosition.y / iScale));
 
             CGEventRef event = CGEventCreateMouseEvent(NULL, kCGEventMouseMoved, pos, 0);
-            CGEventPost(kCGHIDEventTab, event);
+            CGEventPost(kCGHIDEventTap, event);
             CFRelease(event);
         }
-        void InputImp::setMousePosition(const glm::vec2 &vPosition, const Window &oWindow) {
+        void InputImp::setMousePosition(const Vector2i &vPosition, const Window &oWindow) {
             NAOpenGLView *pView = getNAOpenGLViewFromWindow(oWindow);
             if (pView == nil) {
                 return;
@@ -86,7 +86,7 @@ namespace NordicArts {
             NSPoint p   = NSMakePoint((vPosition.x / iScale), (vPosition.y / iScale));
             p           = [pView computeGlobalPositionOfRelativePoint:p];
             
-            setMousePosition(glm::vec2(p.x, p.y) * iScale);
+            setMousePosition(Vector2i(p.x, p.y) * iScale);
         }
     };
 };

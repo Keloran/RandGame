@@ -23,7 +23,7 @@ namespace NordicArts {
 				LAlt, LSystem, RControl,
 				RShift, RAlt, RSystem,
 				Menu, LBracket, RBracket,
-				SemiColor, Comma, Period,
+				SemiColon, Comma, Period,
 				Quote, Slash, BackSlash,
 				Tilde, Equal, Dash, Space,
 				Return, BackSpace, Tab,
@@ -40,7 +40,7 @@ namespace NordicArts {
 
 				F1, F2, F3, F4, F5, F6,
 				F7, F8, F9, F10, F11,
-				F12, F14, F15,
+				F12, F13, F14, F15,
 
 				Pause,
 
@@ -54,7 +54,7 @@ namespace NordicArts {
 		public:
 			static bool isKeyPressed(Key key);
 
-			static void setVirtualKeyboard(bool bVisible);
+			static void setVirtualKeyboardVisible(bool bVisible);
 
 		protected:
 		private:

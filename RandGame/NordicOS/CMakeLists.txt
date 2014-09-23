@@ -89,6 +89,8 @@ elseif (APPLE)
     list(APPEND LibSources ${NOS}/OSX/Input/HIDInputManager.mm)
     list(APPEND LibHeaders ${NOS}/OSX/Input/KeyboardHelper.hpp)
     list(APPEND LibSources ${NOS}/OSX/Input/KeyboardHelper.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/Input/KeyboardModifiersHelper.hpp)
+    list(APPEND LibSources ${NOS}/OSX/Input/KeyboardModifiersHelper.mm)
 
     # Application
     link_directories(${NOS}/OSX/Application)
@@ -130,6 +132,14 @@ list(APPEND LibHeaders ${NOS}/Window/Window/WindowStyle.hpp)
 
 # Event
 list(APPEND LibHeaders ${NOS}/Window/Event.hpp)
+
+# Maths
+link_directories(${NOS}/Maths)
+include_directories(${NOS}/Maths)
+list(APPEND LibHeaders ${NOS}/Maths/Vector2.hpp)
+list(APPEND LibHeaders ${NOS}/Maths/Vector2.inl)
+list(APPEND LibHeaders ${NOS}/Maths/Vector3.hpp)
+list(APPEND LibHeaders ${NOS}/Maths/Vector3.inl)
 
 # Input
 list(APPEND LibHeaders ${NOS}/Window/InputImp.hpp)

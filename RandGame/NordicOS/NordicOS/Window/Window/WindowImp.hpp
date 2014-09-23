@@ -39,11 +39,11 @@ namespace NordicArts {
             
             virtual WindowHandle getSystemHandle() const = 0;
             
-            virtual glm::vec2 getPosition() const = 0;
-            virtual glm::vec2 getSize() const = 0;
+            virtual Vector2i getPosition() const = 0;
+            virtual Vector2u getSize() const = 0;
             
-            virtual void setPosition(const glm::vec2) = 0;
-            virtual void setSize(const glm::vec2 &vSize) = 0;
+            virtual void setPosition(const Vector2i &vPosition) = 0;
+            virtual void setSize(const Vector2u &vSize) = 0;
             virtual void setTitle(const String &cTitle) = 0;
             virtual void setIcon(unsigned int iWidth, unsigned int iHeight, const UINT8 *pPixels) = 0;
             virtual void setVisible(bool bVisible) = 0;

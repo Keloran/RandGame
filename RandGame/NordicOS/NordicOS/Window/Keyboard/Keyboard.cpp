@@ -8,7 +8,7 @@ namespace NordicArts {
 		}
 
 		void Keyboard::setVirtualKeyboardVisible(bool bVisible) {
-			return InputImpL::setVirtualKeyboardVisible(bVisible);
+			return InputImp::setVirtualKeyboardVisible(bVisible);
 		}
 	};
 };

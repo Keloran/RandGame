@@ -7,7 +7,7 @@
 #include "./WindowStyle.hpp"
 #include "./GL/Resource.hpp"
 #include "../../Time/Time.hpp"
-#include <glm/glm.hpp>
+#include "../../Maths/Vector2.hpp"
 #include "../../NonCopyable/NonCopyable.hpp"
 #include "../../String/String.hpp"
 #include "../../Logger/Logger.hpp"
@@ -29,7 +29,7 @@ namespace NordicArts {
             Clock           m_oClock;
             Time            m_oFrameTimeLimit;
         
-            glm::vec2       m_vSize;
+            Vector2u       m_vSize;
 
             Logger         *m_pLogger = nullptr;
 
@@ -44,8 +44,8 @@ namespace NordicArts {
             void create(VideoMode mode, const String &cTitle, UINT32 iStyle = Style::Default, const ContextSettings &oSettings = ContextSettings());
             void create(WindowHandle hHandle, const ContextSettings &oSettings = ContextSettings());
             void close();
-            void setPosition(const glm::vec2 &oPosition);
-            void setSize(const glm::vec2 &oSize);
+            void setPosition(const Vector2i &oPosition);
+            void setSize(const Vector2u &oSize);
             void setTitle(const String &cTitle);
             void setIcon(unsigned int iWidth, unsigned int iHeight, const UINT8 *pPixels);
             void setVisible(bool bVisible);
@@ -60,8 +60,8 @@ namespace NordicArts {
             bool waitEvent(Event &oEvent);
             bool setActive(bool bActive = true) const;
 
-            glm::vec2 getPosition() const;
-            glm::vec2 getSize() const;
+            Vector2i getPosition() const;
+            Vector2u getSize() const;
 
             const ContextSettings &getSettings() const;
 
