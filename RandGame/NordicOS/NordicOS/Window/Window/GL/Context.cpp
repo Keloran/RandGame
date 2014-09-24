@@ -18,6 +18,8 @@
     #include "../../../OSX/OpenGL/Context.hpp"
 #endif
 
+typedef NordicArts::NordicOS::NAContext ContextType;
+
 namespace NordicArts {
     namespace NordicOS {
         ThreadLocalPtr<GLContext> currentContext(NULL);
@@ -42,7 +44,7 @@ namespace NordicArts {
             if (!hasInternalContext()) {
                 internalContext = GLContext::create();
                 Lock lock(internalContextsMutex);
-                inernalContexts.insert(internalContext);
+                internalContexts.insert(internalContext);
             }
 
             return internalContext;
@@ -104,7 +106,7 @@ namespace NordicArts {
         }
 
         const ContextSettings &GLContext::getSettings() const {
-            return m_oSettings;
+            return m_Settings;
         }
 
         bool GLContext::setActive(bool bActive) {
@@ -137,13 +139,25 @@ namespace NordicArts {
                 std::abs(static_cast<int>(iBitsPerPixel - iColorBits)) +
                 std::abs(static_cast<int>(oSettings.iDepthBits - iDepthBits)) +
                 std::abs(static_cast<int>(oSettings.iStencilBits - iStencilBits)) +
-                std::abs(static_cast<int>(oSettings.iAntiAliasing - iAntiAliasing))
+                std::abs(static_cast<int>(oSettings.iAntiAliasingLevel - iAntiAliasing))
             );
         }
 
         void GLContext::initalize() {
             setActive(true);
 
-            const GLubyte *version = glGetString(GL_
+            const GLubyte *version = glGetString(GL_VERSION);
+            if (version) {
+                m_Settings.iMajorVersion = (version[0] - '0');
+                m_Settings.iMinorVersion = (version[1] - '0');
+            } else {
+                m_Settings.iMajorVersion = 2;
+                m_Settings.iMinorVersion = 0;
+            }
+
+            if (m_Settings.iAntiAliasingLevel > 0) {
+                glEnable(GL_MULTISAMPLE);
+            }
+        }
     };
 };

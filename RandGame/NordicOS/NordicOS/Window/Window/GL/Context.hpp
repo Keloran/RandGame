@@ -40,7 +40,7 @@ namespace NordicArts {
 
             virtual bool makeCurrent() = 0;
 
-            static int evaluteFormat(unsigned int iBitsPerPixel, const ContextSettings &oSettings, int iColorBits, int iDepthBits, int iStencilBits, int iAntiAliasing);
+            static int evaluateFormat(unsigned int iBitsPerPixel, const ContextSettings &oSettings, int iColorBits, int iDepthBits, int iStencilBits, int iAntiAliasing);
 
         private:
             void initalize();

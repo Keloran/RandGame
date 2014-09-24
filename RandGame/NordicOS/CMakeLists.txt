@@ -56,6 +56,8 @@ elseif (APPLE)
     include_directories(${NOS}/OSX/OpenGL)
     list(APPEND LibHeaders ${NOS}/OSX/OpenGL/View.hpp)
     list(APPEND LibSources ${NOS}/OSX/OpenGL/View.mm)
+    list(APPEND LibHeaders ${NOS}/OSX/OpenGL/Context.hpp)
+    list(APPEND LibSources ${NOS}/OSX/OpenGL/Context.mm)
 
     # Window Stuff
     link_directories(${NOS}/OSX/Window/Controller)
@@ -132,6 +134,8 @@ list(APPEND LibSources ${NOS}/Window/Window/Window.cpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/ContextSettings.hpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/WindowHandle.hpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/WindowStyle.hpp)
+list(APPEND Libheaders ${NOS}/Window/Window/Context.hpp)
+list(APPEND LibSources ${NOS}/Window/Window/Context.cpp)
 
 # Event
 list(APPEND LibHeaders ${NOS}/Window/Event.hpp)
@@ -290,6 +294,9 @@ include_directories(${NOS}/Window/Window/GL)
 list(APPEND LibSources ${NOS}/Window/Window/GL/Context.cpp)
 list(APPEND LibHeaders ${NOS}/Window/Window/GL/Resource.hpp)
 list(APPEND LibSources ${NOS}/Window/Window/GL/Resource.cpp)
+link_directories(${NOS}/Window/Window/GL/Ext)
+include_directories(${NOS}/Window/Window/GL/Ext)
+list(APPEND LibHeaders ${NOS}/Window/Window/GL/Ext/Ext.hpp)
 
 # Video Mode
 link_directories(${NOS}/Window/Window/VideoMode)
@@ -348,6 +355,11 @@ else()
     list(APPEND LibHeaders ${NOS}/nonWindows/ThreadLocal/ThreadLocal.hpp)
     list(APPEND LibSources ${NOS}/nonWindows/ThreadLocal/ThreadLocal.cpp)
 endif()
+
+# OpenGL
+link_directories(${NOS}/OpenGL)
+include_directories(${NOS}/OpenGL)
+list(APPEND LibHeaders ${NOS}/OpenGL/OpenGL.hpp)
 
 # Build Number
 string(TIMESTAMP buildNumber "%j%Y%H%M%S")
